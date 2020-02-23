@@ -1,3 +1,4 @@
+/* DEFAULT EDITOR SETTINGS */
 .edit-post-visual-editor .block-editor-block-list__block {
     margin-left: initial;
     margin-right: initial;
@@ -5,4 +6,17 @@
 
 .wp-block {
     max-width: none;
+}
+
+
+/* CUSTOM GUTENBERG STYLE */
+.is-style-mediaobject {
+
+}
+
+
+.wp-block-cgb-block-wtp-plugin-block.is-style-mediaobject > .editor-inner-blocks > .editor-block-list__layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 3rem;
 }
