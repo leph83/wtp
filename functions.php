@@ -157,7 +157,7 @@ register_block_type(
 
 
 /**
- * Override Custom Gutenberg Styles
+ * Add Admin Style and Scripts
  */
 function wtp_admin_style() {
    wp_enqueue_style('admin-styles', get_template_directory_uri().'/style-admin.css');
@@ -167,6 +167,22 @@ function wtp_admin_style() {
 }
 
 add_action('admin_enqueue_scripts', 'wtp_admin_style');
+
+
+
+/**
+ * Defer Javascript
+ */
+function defer_parsing_of_js($url) {
+	if(is_admin()) return $url; // don't break wp admin
+	if (false === strpos($url, '.js')) return $url;
+	return str_replace(' src', ' defer src', $url);
+}
+add_filter('script_loader_tag', 'defer_parsing_of_js', 10);
+
+
+
+
 
 
 
