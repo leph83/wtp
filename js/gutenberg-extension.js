@@ -11,5 +11,11 @@ wp.domReady( () => {
         label: 'Media Object',
         isDefault: false,
     } );
+
+    wp.blocks.registerBlockStyle( 'cgb/block-wtp-plugin-block', {
+        name: 'mediaobject-reverse',
+        label: 'Media Object reverse',
+        isDefault: false,
+    } );
 } );
 

@@ -11,12 +11,28 @@
 
 /* CUSTOM GUTENBERG STYLE */
 
+/* media object */
 .is-style-mediaobject.wp-block-cgb-block-wtp-plugin-block > .editor-inner-blocks > .editor-block-list__layout {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 3rem;
 }
 
+/* media object reverse */
+.is-style-mediaobject-reverse.wp-block-cgb-block-wtp-plugin-block > .editor-inner-blocks > .editor-block-list__layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 3rem;
+    direction: rtl
+}
+
+/* media object reverse */
+.is-style-mediaobject-reverse.wp-block-cgb-block-wtp-plugin-block > .editor-inner-blocks > .editor-block-list__layout > * {
+    direction: ltr;
+}
+
+
+/* hero */
 .is-style-hero.wp-block-cgb-block-wtp-plugin-block > .editor-inner-blocks > .editor-block-list__layout {
     display: grid;
 }
@@ -25,3 +41,4 @@
     grid-column: -1 / 1;
     grid-row: -1 / 1;
 }
+
