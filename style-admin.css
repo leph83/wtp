@@ -10,13 +10,18 @@
 
 
 /* CUSTOM GUTENBERG STYLE */
-.is-style-mediaobject {
 
-}
-
-
-.wp-block-cgb-block-wtp-plugin-block.is-style-mediaobject > .editor-inner-blocks > .editor-block-list__layout {
+.is-style-mediaobject.wp-block-cgb-block-wtp-plugin-block > .editor-inner-blocks > .editor-block-list__layout {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 3rem;
+}
+
+.is-style-hero.wp-block-cgb-block-wtp-plugin-block > .editor-inner-blocks > .editor-block-list__layout {
+    display: grid;
+}
+
+.is-style-hero.wp-block-cgb-block-wtp-plugin-block > .editor-inner-blocks > .editor-block-list__layout > * {
+    grid-column: -1 / 1;
+    grid-row: -1 / 1;
 }

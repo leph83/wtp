@@ -992,18 +992,17 @@ object {
 
 
 /* Plugin Style */
-.block {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 3rem;
-align-items: center;
-  background: green;
+.block.is-style-mediaobject  {
+  	display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 3rem;
 }
 
-.block > * {
-	grid-column: -1 / 1;
+.block.is-style-hero {
+	display: grid;
+}
+
+.block.is-style-hero > * {
+	grid-column: -1 / 1; 
     grid-row: -1 / 1;
 }
-
-
-
