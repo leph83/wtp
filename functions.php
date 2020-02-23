@@ -116,6 +116,7 @@ function wtp_widgets_init() {
 }
 add_action( 'widgets_init', 'wtp_widgets_init' );
 
+
 /**
  * Enqueue scripts and styles.
  */
@@ -135,6 +136,50 @@ function wtp_scripts() {
 add_action( 'wp_enqueue_scripts', 'wtp_scripts' );
 
 
+
+/**
+ * LE WALKER
+ * Custom Navigation Classes
+ */
+class Le_Walker_Nav_Menu extends Walker_Nav_Menu {
+    public function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
+        $classes = array();
+        if( !empty( $item->classes ) ) {
+            $classes = (array) $item->classes;
+        }
+
+        $active_class = '';
+        if( in_array('current-menu-item', $classes) ) {
+            $active_class = 'active';
+        } else if( in_array('current-menu-parent', $classes) ) {
+            $active_class = 'active-parent';
+        } else if( in_array('current-menu-ancestor', $classes) ) {
+            $active_class = 'active-ancestor';
+        }
+
+        $parent_class = '';
+        $parent_icon = '';
+        if( in_array('menu-item-has-children', $classes) ) {
+            $parent_class = 'dropdown';
+        }
+
+        $url = '';
+        if( !empty( $item->url ) ) {
+            $url = $item->url;
+        }
+
+        $output .= '
+            <li class="nav__item  '. $active_class . ' ' . $parent_class . '">
+                <a class="nav__link" href="' . $url . '">
+                    ' . $item->title .$parent_icon .'
+                </a>'
+        ;
+    }
+
+    public function end_el( &$output, $item, $depth = 0, $args = array() ) {
+        $output .= '</li>';
+    }
+}
 
 
 
