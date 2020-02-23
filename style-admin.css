@@ -1,0 +1,8 @@
+.edit-post-visual-editor .block-editor-block-list__block {
+    margin-left: initial;
+    margin-right: initial;
+}
+
+.wp-block {
+    max-width: none;
+}

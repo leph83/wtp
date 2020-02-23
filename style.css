@@ -983,3 +983,27 @@ object {
 .gallery-caption {
 	display: block;
 }
+
+
+
+
+
+
+
+
+/* Plugin Style */
+.block {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 3rem;
+align-items: center;
+  background: green;
+}
+
+.block > * {
+	grid-column: -1 / 1;
+    grid-row: -1 / 1;
+}
+
+
+

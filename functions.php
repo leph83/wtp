@@ -154,6 +154,14 @@ register_block_type(
 
 
 
+/**
+ * Override Custom Gutenberg Styles
+ */
+function wtp_admin_style() {
+   wp_enqueue_style('admin-styles', get_template_directory_uri().'/style-admin.css');
+}
+
+add_action('admin_enqueue_scripts', 'wtp_admin_style');
 
 
 
