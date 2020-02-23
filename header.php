@@ -74,7 +74,7 @@
                         <?php
                             wp_nav_menu( array(
                                 'theme_location' => 'menu-1',
-                                'menu_class'     => 'nav  nav--primary  ' . $class_nav,
+                                'menu_class'     => 'nav  nav--primary  ',
                                 'container'      => false,
                                 'walker'         => new Le_Walker_Nav_Menu(),
                             ) );
