@@ -174,8 +174,9 @@ add_action('admin_enqueue_scripts', 'wtp_admin_style');
  * Defer Javascript
  */
 function defer_parsing_of_js($url) {
-	if(is_admin()) return $url; // don't break wp admin
+	if (is_admin()) return $url; // don't break wp admin
 	if (false === strpos($url, '.js')) return $url;
+	if (strpos($url, 'jquery.js')) return $url;
 	return str_replace(' src', ' defer src', $url);
 }
 add_filter('script_loader_tag', 'defer_parsing_of_js', 10);
