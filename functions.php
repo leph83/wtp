@@ -266,7 +266,7 @@ register_block_type(
  * Add Admin Style and Scripts
  */
 function wtp_admin_style() {
-   wp_enqueue_style('admin-styles', get_template_directory_uri().'/style-admin.css');
+   wp_enqueue_style('admin-styles', get_template_directory_uri().'/css/style-admin.css');
 
 	// extend gutenberg
 	wp_enqueue_script( 'wtp-gutenberg-extension', get_template_directory_uri() . '/js/gutenberg-extension.js', array(), '20151215', true );
