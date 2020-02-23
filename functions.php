@@ -132,6 +132,31 @@ function wtp_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'wtp_scripts' );
 
+
+
+
+
+/**
+ * Override Custom Gutenberg Styles
+ */
+register_block_type(
+	'cgb/block-wtp-plugin-block', array(
+		// Enqueue blocks.style.build.css on both frontend & backend.
+		// 'style'         => 'wtp_plugin_block-cgb-style-css',
+		// Enqueue blocks.build.js in the editor only.
+		'editor_script' => 'wtp_plugin_block-cgb-block-js',
+		// Enqueue blocks.editor.build.css in the editor only.
+		'editor_style'  => 'wtp_plugin_block-cgb-block-editor-css',
+		// Render Callback
+		'render_callback' => 'wtp_render_callback',
+	)
+);
+
+
+
+
+
+
 /**
  * Implement the Custom Header feature.
  */
