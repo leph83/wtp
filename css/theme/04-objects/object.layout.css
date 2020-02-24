@@ -1,3 +1,6 @@
+/*--------------------------------------------------------------
+# LIMIT CONTENT
+--------------------------------------------------------------*/
 .lc {
     margin-left: auto;
     margin-right: auto;
@@ -13,7 +16,29 @@
     max-width: var(--max-width-3);
 }
 
+/*--------------------------------------------------------------
+# DISPLAY
+--------------------------------------------------------------*/
+.display--none {
+    display: none;
+}
+
+.display--block {
+    display: block;
+}
+
+.display--inline {
+    display: inline;
+}
 
 .display--inline-block {
     display: inline-block;
+}
+
+.display--flex {
+    display: flex;
+}
+
+.display--grid {
+    display: grid;
 }
