@@ -13,47 +13,87 @@
 <!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
-	<meta charset="<?php bloginfo( 'charset' ); ?>">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="profile" href="https://gmpg.org/xfn/11">
+    <meta charset="<?php bloginfo( 'charset' ); ?>">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="profile" href="https://gmpg.org/xfn/11">
 
-	<?php wp_head(); ?>
+    <?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php body_class('body  body--layout  body--topbar'); ?>>
 
-<div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'wtp' ); ?></a>
+    <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'wtp' ); ?></a>
 
-	<header id="masthead" class="site-header">
-		<div class="site-branding">
-			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php
-			else :
-				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
-			$wtp_description = get_bloginfo( 'description', 'display' );
-			if ( $wtp_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $wtp_description; /* WPCS: xss ok. */ ?></p>
-			<?php endif; ?>
-		</div><!-- .site-branding -->
+    <input class="burger__input" type="checkbox" id="burger">
 
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'wtp' ); ?></button>
-			<?php
-			wp_nav_menu( array(
-				'theme_location' => 'menu-1',
-				'menu_id'        => 'primary-menu',
-			) );
-			?>
-		</nav><!-- #site-navigation -->
-	</header><!-- #masthead -->
+    <header class="header">
+        <div class="header__content">
 
-	<div id="content" class="site-content">
+            <!-- Branding -->
+            <div class="header__item  header__item--logo">
+
+                <?php if (has_custom_logo()) : ?>
+                    <?php // set image size of logo to halve of its actual size, retina for all ?>
+                    <?php $logo_src = wp_get_attachment_image_src( get_theme_mod( 'custom_logo' ) , 'logo' );  ?>
+
+                    <a class="header__logolink  display--inline-block" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+                        <img 
+                            class="header__logo"
+                            src="<?php echo esc_url( $logo_src[0] ); ?>" 
+                            width="<?php echo floor($logo_src[1]/2); ?>" 
+                            height="<?php echo floor($logo_src[2]/2); ?>" 
+                            alt="<?php echo get_bloginfo( 'name' ) ; ?>"
+                        >
+                    </a>
+
+                <?php endif; ?>
+
+
+                <?php if ( display_header_text() ) : ?>
+                    <?php if ( is_front_page() && is_home() ) : ?>
+                        <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+                    <?php else : ?>
+                        <p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+                    <?php endif; ?>
+
+                    <?php
+                        $wtp_description = get_bloginfo( 'description', 'display' );
+                        if ( $wtp_description || is_customize_preview() ) :
+                    ?>
+                        <p class="site-description"><?php echo $wtp_description; /* WPCS: xss ok. */ ?></p>
+                    <?php endif; ?>
+
+                <?php endif; ?>
+
+            </div><!-- .site-branding -->
+
+            <div class="header__item  header__item--nav">
+                <?php if ( has_nav_menu('menu-1') ) : ?>
+                    <!-- primary navigation -->
+                    <nav class="main-navigation  h6">
+                        <?php
+                            wp_nav_menu( array(
+                                'theme_location' => 'menu-1',
+                                'menu_class'     => 'nav  nav--primary  ',
+                                'container'      => false,
+                                'walker'         => new Le_Walker_Nav_Menu(),
+                            ) );
+                        ?>
+                    </nav><!-- #site-navigation -->
+                <?php endif; ?>
+            </div>
+
+             <!-- hamburger -->
+             <label for="burger" class="burger__label  burger__label--cross  hide--tablett">
+                <span class="burger__lines">
+                    <span class="burger__line"></span>
+                    <span class="burger__line"></span>
+                    <span class="burger__line"></span>
+                </span>
+             </label>
+
+        </div>
+    </header><!-- #masthead -->
+
+    <main id="#content" class="main">
+

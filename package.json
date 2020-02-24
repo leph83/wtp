@@ -8,5 +8,8 @@
     "stylecow-plugin-rem": "^5.0.0",
     "stylecow-plugin-variables": "^5.1.4",
     "stylecow-plugins": "^1.5.2"
+  },
+  "dependencies": {
+    "stylecow-plugin-import": "^5.0.2"
   }
 }

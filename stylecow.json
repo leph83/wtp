@@ -1,0 +1,42 @@
+{
+  "files": [
+    {
+      "input": "css/style.css",
+      "output": "css/style.min.css"
+    }
+  ],
+  "support": {
+    "explorer": 11,
+    "edge": 17,
+    "firefox": 66,
+    "chrome": 72,
+    "safari": 12,
+    "opera": false,
+    "android": false,
+    "ios": 12
+  },
+  "plugins": [
+    "calc",
+    "color",
+    "custom-media",
+    "custom-selector",
+    "extend",
+    "fixes",
+    "flex",
+    "font-variant",
+    "import",
+    "matches",
+    "media-queries",
+    "msfilter-background-alpha",
+    "msfilter-linear-gradient",
+    "msfilter-transform",
+    "nested-rules",
+    "npm-loader",
+    "prefixes",
+    "rem",
+    "variables",
+    "webkit-gradient"
+  ],
+  "code": "minify",
+  "map": "none"
+}

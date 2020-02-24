@@ -45,6 +45,7 @@ if ( ! function_exists( 'wtp_setup' ) ) :
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
 			'menu-1' => esc_html__( 'Primary', 'wtp' ),
+			'menu-2' => esc_html__( 'Footer', 'wtp' ),
 		) );
 
 		/*
@@ -116,13 +117,17 @@ function wtp_widgets_init() {
 }
 add_action( 'widgets_init', 'wtp_widgets_init' );
 
+
 /**
  * Enqueue scripts and styles.
  */
 function wtp_scripts() {
 	wp_enqueue_style( 'wtp-style', get_stylesheet_uri() );
+    wp_enqueue_style('wtp-theme-style', get_template_directory_uri().'/css/style.css');
 
 	wp_enqueue_script( 'wtp-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
+
+	
 
 	wp_enqueue_script( 'wtp-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
@@ -133,6 +138,110 @@ function wtp_scripts() {
 add_action( 'wp_enqueue_scripts', 'wtp_scripts' );
 
 
+
+/**
+ * LE WALKER
+ * Custom Navigation Classes
+ */
+class Le_Walker_Nav_Menu extends Walker_Nav_Menu {
+    public function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
+        $classes = array();
+        if( !empty( $item->classes ) ) {
+            $classes = (array) $item->classes;
+        }
+
+        $active_class = '';
+        if( in_array('current-menu-item', $classes) ) {
+            $active_class = 'active';
+        } else if( in_array('current-menu-parent', $classes) ) {
+            $active_class = 'active-parent';
+        } else if( in_array('current-menu-ancestor', $classes) ) {
+            $active_class = 'active-ancestor';
+        }
+
+        $parent_class = '';
+        $parent_icon = '';
+        if( in_array('menu-item-has-children', $classes) ) {
+            $parent_class = 'dropdown';
+        }
+
+        $url = '';
+        if( !empty( $item->url ) ) {
+            $url = $item->url;
+        }
+
+        $output .= '
+            <li class="nav__item  '. $active_class . ' ' . $parent_class . '">
+                <a class="nav__link" href="' . $url . '">
+                    ' . $item->title .$parent_icon .'
+                </a>'
+        ;
+    }
+
+    public function end_el( &$output, $item, $depth = 0, $args = array() ) {
+        $output .= '</li>';
+    }
+}
+
+/**
+ * Disable the emoji's
+ */
+function disable_emojis() {
+	remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+	remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
+	remove_action( 'wp_print_styles', 'print_emoji_styles' );
+	remove_action( 'admin_print_styles', 'print_emoji_styles' ); 
+	remove_filter( 'the_content_feed', 'wp_staticize_emoji' );
+	remove_filter( 'comment_text_rss', 'wp_staticize_emoji' ); 
+	remove_filter( 'wp_mail', 'wp_staticize_emoji_for_email' );
+	add_filter( 'tiny_mce_plugins', 'disable_emojis_tinymce' );
+	add_filter( 'wp_resource_hints', 'disable_emojis_remove_dns_prefetch', 10, 2 );
+}
+add_action( 'init', 'disable_emojis' );
+
+/**
+ * Filter function used to remove the tinymce emoji plugin.
+ * 
+ * @param array $plugins 
+ * @return array Difference betwen the two arrays
+ */
+function disable_emojis_tinymce( $plugins ) {
+	if ( is_array( $plugins ) ) {
+		return array_diff( $plugins, array( 'wpemoji' ) );
+	} else {
+		return array();
+	}
+}
+
+/**
+ * Remove emoji CDN hostname from DNS prefetching hints.
+ *
+ * @param array $urls URLs to print for resource hints.
+ * @param string $relation_type The relation type the URLs are printed for.
+ * @return array Difference betwen the two arrays.
+ */
+function disable_emojis_remove_dns_prefetch( $urls, $relation_type ) {
+	if ( 'dns-prefetch' == $relation_type ) {
+		/** This filter is documented in wp-includes/formatting.php */
+		$emoji_svg_url = apply_filters( 'emoji_svg_url', 'https://s.w.org/images/core/emoji/2/svg/' );
+
+		$urls = array_diff( $urls, array( $emoji_svg_url ) );
+	}
+	return $urls;
+}
+
+/**
+ * Remove empty paragraphs created by wpautop()
+ * @author Ryan Hamilton
+ * @link https://gist.github.com/Fantikerz/5557617
+ */
+function remove_empty_p( $content ) {
+    $content = force_balance_tags( $content );
+    $content = preg_replace( '#<p>\s*+(<br\s*/*>)?\s*</p>#i', '<p></p>', $content );
+    $content = preg_replace( '~\s?<p>(\s|&nbsp;)+</p>\s?~', '<p></p>', $content );
+    return $content;
+}
+add_filter('the_content', 'remove_empty_p', 20, 1);
 
 
 
@@ -151,6 +260,34 @@ register_block_type(
 		'render_callback' => 'wtp_render_callback',
 	)
 );
+
+
+
+/**
+ * Add Admin Style and Scripts
+ */
+function wtp_admin_style() {
+   wp_enqueue_style('admin-styles', get_template_directory_uri().'/css/style-admin.css');
+
+	// extend gutenberg
+	wp_enqueue_script( 'wtp-gutenberg-extension', get_template_directory_uri() . '/js/gutenberg-extension.js', array(), '20151215', true );
+}
+
+add_action('admin_enqueue_scripts', 'wtp_admin_style');
+
+
+
+/**
+ * Defer Javascript
+ */
+function defer_parsing_of_js($url) {
+	if (is_admin()) return $url; // don't break wp admin
+	if (false === strpos($url, '.js')) return $url;
+	if (strpos($url, 'jquery.js')) return $url;
+	return str_replace(' src', ' defer src', $url);
+}
+add_filter('script_loader_tag', 'defer_parsing_of_js', 10);
+
 
 
 

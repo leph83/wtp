@@ -11,24 +11,27 @@
 
 ?>
 
-	</div><!-- #content -->
+</main><!-- #content -->
 
-	<footer id="colophon" class="site-footer">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'wtp' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'wtp' ), 'WordPress' );
-				?>
-			</a>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'wtp' ), 'wtp', '<a href="http://whatthephuc.com">Phuc Le</a>' );
-				?>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
-</div><!-- #page -->
+<footer class="footer">
+    <div class="footer__content">
+    	<div class="footer__item">
+    		&copy;2020 - <?php bloginfo( 'name' ); ?>
+    	</div>
+
+    	<?php if ( has_nav_menu('menu-2') ) : ?>
+            <div class="footer__item">
+                <?php wp_nav_menu( array(
+                    'theme_location' => 'menu-2',
+                    'depth'          => 1,
+                    'menu_class'     => 'nav  nav--footer',
+                    'container'      => false,
+                    'walker'         => new Le_Walker_Nav_Menu(),
+                ) ); ?>
+            </div>
+        <?php endif; ?>
+    </div>
+</footer>
 
 <?php wp_footer(); ?>
 

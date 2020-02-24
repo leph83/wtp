@@ -1,0 +1,69 @@
+/*------------------------------------*\
+    $LAYOUT
+\*------------------------------------*/
+:root {
+    --gutter: .8rem;
+    --gutter-description: var(--font-size-base);
+
+    --max-width: 192rem;
+    --max-width-2: 104.2rem;
+    --max-width-3: 96rem;
+}
+
+
+
+/*------------------------------------*\
+    $COLORS
+\*------------------------------------*/
+:root {
+    --color-white: #fff;
+    --color-black: #000;
+
+    --color-1: #fdc300;
+    --color-2: #575756;
+    --color-3: #ededed;
+
+    --color-4: #624096;
+    --color-5: #4da1ff;
+}
+
+
+
+/*------------------------------------*\
+    $FONTS
+\*------------------------------------*/
+
+:root {
+    --font-family: 'Hind', sans-serif;
+    --font-family-2: 'Open Sans', sans-serif;
+}
+
+
+
+/*------------------------------------*\
+    $FONT SIZES
+\*------------------------------------*/
+:root {
+    /* FONT SETTINGS */
+    --font-size-base: calc(.8rem + 1vw);
+    --font-ratio: 1.25;
+}
+
+@media all and (min-width: 64em) {
+  :root {
+    --font-ratio: 1.333;
+  }
+}
+
+
+/*------------------------------------*\
+    $ANIMATION
+\*------------------------------------*/
+
+:root {
+    --transition-time: .3s;
+    --transition-style : ease-in-out;
+}
+
+
+
