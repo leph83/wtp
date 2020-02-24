@@ -19,7 +19,7 @@
     #03 ELEMENTS
     styling elements without classes
 \*------------------------------------*/
-@import url('phucstrap/03-elements/element.headings.css');
+@import url('phucstrap/03-elements/element.typography.css');
 /* @import url('theme/03-elements/element.headings.css'); */
 /*@import url('theme/03-elements/element.text.css');*/
 @import url('theme/03-elements/element.form.css');
