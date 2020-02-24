@@ -20,11 +20,11 @@
     <?php wp_head(); ?>
 </head>
 
-<body <?php body_class('body  body--layout  body--topbar'); ?>>
+<body <?php body_class('body  body--sticky-footer'); ?>>
 
     <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'wtp' ); ?></a>
 
-    <input class="burger__input" type="checkbox" id="burger">
+    <input class="burger__input  hidden" type="checkbox" id="burger">
 
     <header class="header">
         <div class="header__content">

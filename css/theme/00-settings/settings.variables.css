@@ -10,8 +10,6 @@
     --max-width-3: 96rem;
 }
 
-
-
 /*------------------------------------*\
     $COLORS
 \*------------------------------------*/
@@ -27,43 +25,39 @@
     --color-5: #4da1ff;
 }
 
-
-
 /*------------------------------------*\
-    $FONTS
+    $FONT
 \*------------------------------------*/
-
 :root {
+    /* Font Family */
     --font-family: 'Hind', sans-serif;
     --font-family-2: 'Open Sans', sans-serif;
-}
 
+    /* Modular Scale */
+    --font-size: calc(.8rem + 1vw);
+    --font-size-ratio: 1.25;
+    --line-height: 1.25;
 
-
-/*------------------------------------*\
-    $FONT SIZES
-\*------------------------------------*/
-:root {
-    /* FONT SETTINGS */
-    --font-size-base: calc(.8rem + 1vw);
-    --font-ratio: 1.25;
+    /* Line Height */
+    --line-height-1: var(--line-height);
+    --line-height-2: var(--line-height);
+    --line-height-3: var(--line-height);
+    --line-height-4: var(--line-height);
+    --line-height-5: var(--line-height);
+    --line-height-6: var(--line-height);
+    --line-height-7: var(--line-height);
 }
 
 @media all and (min-width: 64em) {
   :root {
-    --font-ratio: 1.333;
+    --font-size-ratio: 1.333;
   }
 }
-
 
 /*------------------------------------*\
     $ANIMATION
 \*------------------------------------*/
-
 :root {
     --transition-time: .3s;
     --transition-style : ease-in-out;
 }
-
-
-

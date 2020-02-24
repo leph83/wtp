@@ -2,16 +2,16 @@
     $MODULAR SCALE
 \*------------------------------------*/
 :root {
-    --font-size-h7: var(--font-size-base, calc(.8rem + 1vw));
+    --font-size-h7: var(--font-size, calc(.8rem + 1vw));
     /* smaller font size */
-    --font-size-h8: calc( var(--font-size-h7) / var(--font-ratio, 1.25) );
-    --font-size-h9: calc( var(--font-size-h8) / var(--font-ratio, 1.25) );
+    --font-size-h8: calc( var(--font-size-h7) / var(--font-size-ratio, 1.25) );
+    --font-size-h9: calc( var(--font-size-h8) / var(--font-size-ratio, 1.25) );
     /* bigger font size */
-    --font-size-h6: calc( var(--font-size-h7) * var(--font-ratio, 1.25) );
-    --font-size-h5: calc( var(--font-size-h6) * var(--font-ratio, 1.25) );
-    --font-size-h4: calc( var(--font-size-h5) * var(--font-ratio, 1.25) );
-    --font-size-h3: calc( var(--font-size-h4) * var(--font-ratio, 1.25) );
-    --font-size-h2: calc( var(--font-size-h3) * var(--font-ratio, 1.25) );
-    --font-size-h1: calc( var(--font-size-h2) * var(--font-ratio, 1.25) );
-    --font-size-h0: calc( var(--font-size-h1) * var(--font-ratio, 1.25) );
+    --font-size-h6: calc( var(--font-size-h7) * var(--font-size-ratio, 1.25) );
+    --font-size-h5: calc( var(--font-size-h6) * var(--font-size-ratio, 1.25) );
+    --font-size-h4: calc( var(--font-size-h5) * var(--font-size-ratio, 1.25) );
+    --font-size-h3: calc( var(--font-size-h4) * var(--font-size-ratio, 1.25) );
+    --font-size-h2: calc( var(--font-size-h3) * var(--font-size-ratio, 1.25) );
+    --font-size-h1: calc( var(--font-size-h2) * var(--font-size-ratio, 1.25) );
+    --font-size-h0: calc( var(--font-size-h1) * var(--font-size-ratio, 1.25) );
 }
