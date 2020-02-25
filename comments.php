@@ -20,30 +20,24 @@ if ( post_password_required() ) {
 }
 ?>
 
-<div id="comments" class="comments-area">
-
-	<?php
-	// You can start editing here -- including this comment!
-	if ( have_comments() ) :
-		?>
+<?php if ( have_comments() ) : ?>
 		<h2 class="comments-title">
-			<?php
-			$wtp_comment_count = get_comments_number();
-			if ( '1' === $wtp_comment_count ) {
-				printf(
+			<?php $wtp_comment_count = get_comments_number(); ?>
+			<?php if ( '1' === $wtp_comment_count ) : ?>
+				<?php printf(
 					/* translators: 1: title. */
 					esc_html__( 'One thought on &ldquo;%1$s&rdquo;', 'wtp' ),
 					'<span>' . get_the_title() . '</span>'
-				);
-			} else {
-				printf( // WPCS: XSS OK.
+				); ?>
+			<?php else : ?>
+				<?php printf( // WPCS: XSS OK.
 					/* translators: 1: comment count number, 2: title. */
 					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $wtp_comment_count, 'comments title', 'wtp' ) ),
 					number_format_i18n( $wtp_comment_count ),
 					'<span>' . get_the_title() . '</span>'
-				);
-			}
-			?>
+				); ?>
+			<?php endif; ?>
+			
 		</h2><!-- .comments-title -->
 
 		<?php the_comments_navigation(); ?>
@@ -57,19 +51,12 @@ if ( post_password_required() ) {
 			?>
 		</ol><!-- .comment-list -->
 
-		<?php
-		the_comments_navigation();
+		<?php the_comments_navigation(); ?>
 
-		// If comments are closed and there are comments, let's leave a little note, shall we?
-		if ( ! comments_open() ) :
-			?>
+		<?php if ( ! comments_open() ) : ?>
 			<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'wtp' ); ?></p>
-			<?php
-		endif;
+		<?php endif; ?>
 
-	endif; // Check for have_comments().
+	<?php endif; ?>
 
-	comment_form();
-	?>
-
-</div><!-- #comments -->
+<?php comment_form(); ?>

@@ -6,11 +6,12 @@
  *
  * @package wtp
  */
-
-if ( ! is_active_sidebar( 'sidebar-1' ) ) {
-	return;
-}
 ?>
+
+
+<?php if ( ! is_active_sidebar( 'sidebar-1' ) ) : ?>
+	<?php return; ?>
+<?php endif?>
 
 <aside id="secondary" class="widget-area">
 	<?php dynamic_sidebar( 'sidebar-1' ); ?>
