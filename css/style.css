@@ -19,7 +19,6 @@
 # 03 ELEMENTS
 styling elements without classes
 --------------------------------------------------------------*/
-@import url('phucstrap/03-elements/element.typography.css');
 @import url('theme/03-elements/element.form.css');
 
 /*--------------------------------------------------------------
@@ -27,7 +26,9 @@ styling elements without classes
 styling elements with classes - e.g global classes
 --------------------------------------------------------------*/
 @import url('phucstrap/04-objects/object.body.css');
+@import url('phucstrap/04-objects/object.typography.css');
 @import url('theme/04-objects/object.layout.css');
+
 
 /* @import url('theme/04-objects/object.typography.css'); */
 /* @import url('theme/04-objects/object.boxmodel.css'); */
@@ -54,3 +55,37 @@ e.g hacks or ie11 styles
 @import url('theme/06-utilities/utilitites.img.css');
 @import url('theme/06-utilities/utilities.wordpress.css');
 @import url('theme/06-utilities/utilities.colors.css');*/
+
+
+@import url('../../../wp-includes/css/dist/block-library/style.min.css');
+
+
+/* media object */
+.block.is-style-mediaobject {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 3rem;
+}
+
+.block.is-style-mediaobject-reverse {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 3rem;
+    direction: rtl
+}
+
+/* media object reverse */
+.block.is-style-mediaobject-reverse > * {
+    direction: ltr;
+}
+
+
+/* hero */
+.block.is-style-hero {
+    display: grid;
+}
+
+.block.is-style-hero > * {
+    grid-column: -1 / 1; 
+    grid-row: -1 / 1;
+}
