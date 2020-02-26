@@ -3,6 +3,7 @@
 \*------------------------------------*/
 :root {
     --font-size-h7: var(--font-size, calc(.8rem + 1vw));
+    --font-size-h7: var(--font-size);
     /* smaller font size */
     --font-size-h8: calc( var(--font-size-h7) / var(--font-size-ratio, 1.25) );
     --font-size-h9: calc( var(--font-size-h8) / var(--font-size-ratio, 1.25) );
