@@ -123,7 +123,7 @@ add_action( 'widgets_init', 'wtp_widgets_init' );
  */
 function wtp_scripts() {
 	wp_enqueue_style( 'wtp-style', get_stylesheet_uri() );
-    wp_enqueue_style('wtp-theme-style', get_template_directory_uri().'/css/style.css');
+    wp_enqueue_style('wtp-theme-style', get_template_directory_uri().'/css/style.min.css');
 
 	wp_enqueue_script( 'wtp-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
@@ -181,6 +181,15 @@ class Le_Walker_Nav_Menu extends Walker_Nav_Menu {
     public function end_el( &$output, $item, $depth = 0, $args = array() ) {
         $output .= '</li>';
     }
+}
+
+/**
+ * Remove Gutenberg Style
+ * Addes via stylecow :)
+ */
+add_action( 'wp_print_styles', 'wps_deregister_styles', 100 );
+function wps_deregister_styles() {
+    wp_dequeue_style( 'wp-block-library' );
 }
 
 /**
