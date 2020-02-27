@@ -125,7 +125,7 @@ function wtp_scripts() {
 	wp_enqueue_style( 'wtp-style', get_stylesheet_uri() );
     wp_enqueue_style('wtp-theme-style', get_template_directory_uri().'/css/style.min.css');
 
-	wp_enqueue_script( 'wtp-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
+	// wp_enqueue_script( 'wtp-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
 	
 
