@@ -1,3 +1,8 @@
+/* 
+# when stylecow adds the feature to keep comments, will add this to css, to
+reduce one css file to load
+@import url('../style.css'); */
+
 /*--------------------------------------------------------------
 # 00 SETTINGS
 --------------------------------------------------------------*/

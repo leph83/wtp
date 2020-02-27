@@ -1,3 +1,24 @@
 /*------------------------------------*\
     $NAV
 \*------------------------------------*/
+.nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav__link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.nav--primary {
+    display: flex;
+    margin-left: calc(var(--gutter) * -1);
+    margin-bottom: calc(var(--gutter) * -1);
+}
+
+.nav--primary .nav__item {
+    margin-left: var(--gutter);
+    margin-bottom: var(--gutter);
+}
