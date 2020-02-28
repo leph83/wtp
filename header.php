@@ -19,6 +19,10 @@ $wtp_description = get_bloginfo( 'description', 'display' );
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="profile" href="https://gmpg.org/xfn/11">
 
+    <style>
+        <?php //include(dirname(__FILE__).'/css/style.min.css'); ?>
+    </style>
+
     <?php wp_head(); ?>
 </head>
 
