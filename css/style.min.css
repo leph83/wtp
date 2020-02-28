@@ -797,12 +797,6 @@ styling more complex sections - e.g header, blocks, sections
 # 06 UTILITIES
 e.g hacks or ie11 styles
 --------------------------------------------------------------*/
-
-/*@import url('theme/06-utilities/utilities.display.css');
-@import url('theme/06-utilities/utilities.typography.css');
-@import url('theme/06-utilities/utilitites.img.css');
-@import url('theme/06-utilities/utilities.wordpress.css');
-@import url('theme/06-utilities/utilities.colors.css');*/
 .wp-block-audio figcaption {
 	margin-top: 0.5em;
 	margin-bottom: 1em;
@@ -2456,6 +2450,17 @@ pre.wp-block-verse {
 .has-text-align-right {
 	text-align: right;
 }
+
+/* @import url('theme/06-utilities/utilities.display.css'); */
+
+/* @import url('theme/06-utilities/utilities.typography.css'); */
+
+/* @import url('theme/06-utilities/utilitites.img.css'); */
+.wp-block-image {
+	margin-bottom: 0;
+}
+
+/* @import url('theme/06-utilities/utilities.colors.css'); */
 
 /* media object */
 .block.is-style-mediaobject {
