@@ -7,15 +7,17 @@
   ],
   "support": {
     "explorer": 11,
-    "edge": 17,
-    "firefox": 66,
-    "chrome": 72,
-    "safari": 12,
+    "edge": 18,
+    "firefox": 72,
+    "chrome": 79,
+    "safari": 13,
     "opera": false,
     "android": false,
-    "ios": 12
+    "ios": 12.2
   },
   "plugins": [
+    "base64",
+    "bower-loader",
     "calc",
     "color",
     "custom-media",
@@ -37,6 +39,9 @@
     "variables",
     "webkit-gradient"
   ],
-  "code": "normal",
+  "code": {
+    "style": "minify",
+    "comments": "important"
+  },
   "map": "none"
 }
