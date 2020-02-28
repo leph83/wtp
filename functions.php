@@ -122,12 +122,8 @@ add_action( 'widgets_init', 'wtp_widgets_init' );
  * Enqueue scripts and styles.
  */
 function wtp_scripts() {
-	wp_enqueue_style( 'wtp-style', get_stylesheet_uri() );
-    wp_enqueue_style('wtp-theme-style', get_template_directory_uri().'/css/style.min.css');
-
-	// wp_enqueue_script( 'wtp-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
-
-	
+	// wp_enqueue_style( 'wtp-style', get_stylesheet_uri() );
+    wp_enqueue_style('wtp-theme-style', get_template_directory_uri().'/css/style.min.css', '', '20151215');
 
 	wp_enqueue_script( 'wtp-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 

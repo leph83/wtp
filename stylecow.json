@@ -37,6 +37,6 @@
     "variables",
     "webkit-gradient"
   ],
-  "code": "minify",
+  "code": "normal",
   "map": "none"
 }
