@@ -9,7 +9,7 @@
  * @package wtp
  */
 
-$wtp_description = get_bloginfo( 'description', 'display' );
+    $wtp_description = get_bloginfo( 'description', 'display' );
 
 ?>
 <!doctype html>
