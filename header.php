@@ -10,6 +10,10 @@
  */
 
     $wtp_description = get_bloginfo( 'description', 'display' );
+    $mainclass = 'transition-fade';
+    if (is_user_logged_in()) {
+        $mainclass = '';
+    }
 
 ?>
 <!doctype html>
@@ -98,5 +102,5 @@
         </div>
     </header><!-- #masthead -->
 
-    <main id="#content" class="main">
+    <main id="swup content" class="main  <?php echo $mainclass; ?>">
 
