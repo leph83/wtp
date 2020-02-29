@@ -102,5 +102,5 @@
         </div>
     </header><!-- #masthead -->
 
-    <main id="swup content" class="main  <?php echo $mainclass; ?>">
+    <main id="content" class="main  <?php echo $mainclass; ?>">
 
