@@ -59,7 +59,7 @@ e.g hacks or ie11 styles
 /* @import url('theme/06-utilities/utilities.colors.css'); */
 
 
-.transition-fade {
+.swup-enabled .transition-fade {
     transition: 0.4s;
     opacity: 1;
   }
