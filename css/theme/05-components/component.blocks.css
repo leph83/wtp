@@ -1,3 +1,6 @@
+.block__content > *:not(:first-child) {
+    margin-bottom: var(--gutter);
+}
 
 /* media object */
 .block.is-style-mediaobject {
