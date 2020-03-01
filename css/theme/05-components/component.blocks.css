@@ -1,5 +1,5 @@
 .block__content > *:not(:first-child) {
-    margin-bottom: var(--gutter);
+    margin-top: calc(var(--gutter) * 2);
 }
 
 /* media object */
