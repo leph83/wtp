@@ -117,6 +117,13 @@ function wtp_widgets_init() {
 }
 add_action( 'widgets_init', 'wtp_widgets_init' );
 
+/**
+ * Register support for Gutenberg wide images in your theme
+ */
+function mytheme_setup() {
+  add_theme_support( 'align-wide' );
+}
+add_action( 'after_setup_theme', 'mytheme_setup' );
 
 /**
  * Enqueue scripts and styles.
