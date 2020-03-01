@@ -1,5 +1,4 @@
 wp.domReady( () => {
-
     wp.blocks.registerBlockStyle( 'cgb/block-wtp-plugin-block', {
         name: 'hero',
         label: 'Hero',

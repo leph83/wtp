@@ -122,16 +122,16 @@ add_action( 'widgets_init', 'wtp_widgets_init' );
  * Enqueue scripts and styles.
  */
 function wtp_scripts() {
-    wp_enqueue_style('wtp-theme-style', get_template_directory_uri().'/css/style.min.css', '', '2020');
+    wp_enqueue_style('wtp-theme-style', get_template_directory_uri().'/css/style.min.css', '', '2020-02');
 
 	
 	
-	wp_enqueue_script( 'wtp-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '2020', true );
+	wp_enqueue_script( 'wtp-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '2020-02', true );
 	
 
 	if (!is_user_logged_in()) {
-		wp_enqueue_script( 'wtp-swup', get_template_directory_uri() . '/js/swup.min.js', array(), '2020', true );
-		wp_enqueue_script( 'wtp-swup-init', get_template_directory_uri() . '/js/script.js', array(), '2020', true );
+		wp_enqueue_script( 'wtp-swup', get_template_directory_uri() . '/js/swup.min.js', array(), '2020-02', true );
+		wp_enqueue_script( 'wtp-swup-init', get_template_directory_uri() . '/js/script.js', array(), '2020-02', true );
 	}
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -147,10 +147,31 @@ function wtp_admin_style() {
 	wp_enqueue_style('admin-styles', get_template_directory_uri().'/css/style-admin.css');
 
 	// extend gutenberg
-	wp_enqueue_script( 'wtp-gutenberg-extension', get_template_directory_uri() . '/js/gutenberg-extension.js', array(), '2020', true );
+	wp_enqueue_script( 'wtp-gutenberg-extension', get_template_directory_uri() . '/js/gutenberg-extension.js', array(), '2020-02', true );
 }
 add_action('admin_enqueue_scripts', 'wtp_admin_style');
- 
+
+/**
+ * Defer Javascript
+ */
+function defer_parsing_of_js($url) {
+	if (is_admin()) return $url; // don't break wp admin
+	if (false === strpos($url, '.js')) return $url;
+	// exclude defer for these files
+	if (strpos($url, 'jquery.js')) return $url;
+	if (strpos($url, 'swup.min.js')) return $url;
+	if (strpos($url, 'gutenberg-extension.js')) return $url;
+	
+	return str_replace(' src', ' defer src', $url);
+}
+add_filter('script_loader_tag', 'defer_parsing_of_js', 10);
+
+
+
+function my_deregister_scripts(){
+	wp_dequeue_script( 'wp-embed' );
+   }
+add_action( 'wp_footer', 'my_deregister_scripts' );
  
 /**
  * Remove Gutenberg Style
@@ -288,25 +309,6 @@ register_block_type(
 
 
 
-
-/**
- * Defer Javascript
- */
-function defer_parsing_of_js($url) {
-	if (is_admin()) return $url; // don't break wp admin
-	if (false === strpos($url, '.js')) return $url;
-	if (strpos($url, 'jquery.js')) return $url;
-	if (strpos($url, 'swup.min.js')) return $url;
-	return str_replace(' src', ' defer src', $url);
-}
-add_filter('script_loader_tag', 'defer_parsing_of_js', 10);
-
-
-
-function my_deregister_scripts(){
-	wp_dequeue_script( 'wp-embed' );
-   }
-   add_action( 'wp_footer', 'my_deregister_scripts' );
 
 
 
