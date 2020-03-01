@@ -58,7 +58,7 @@ e.g hacks or ie11 styles
 
 
 .swup-enabled .transition-fade {
-    transition: opacity 0.4s ease-in-out;
+    transition: opacity 0.3s ease-in-out;
     opacity: 1;
   }
   
