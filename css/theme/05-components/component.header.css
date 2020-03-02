@@ -1,6 +1,6 @@
-/*------------------------------------*\
-    $HEADER
-\*------------------------------------*/
+/*--------------------------------------------------------------
+# HEADER
+--------------------------------------------------------------*/
 .header {
   background-color: var(--color-1);
   position: sticky;
@@ -13,7 +13,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: var(--gutter);
+  padding-top: calc(var(--gutter) * 4);
+  padding-bottom: calc(var(--gutter) * 4);
 }
 
 .header a {

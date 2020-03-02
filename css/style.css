@@ -19,6 +19,7 @@
 # 03 ELEMENTS
 styling elements without classes
 --------------------------------------------------------------*/
+@import url('phucstrap/03-elements/element.headings.css');
 @import url('theme/03-elements/element.form.css');
 
 /*--------------------------------------------------------------
@@ -42,6 +43,7 @@ styling more complex sections - e.g header, blocks, sections
 --------------------------------------------------------------*/
 
 @import url('theme/05-components/component.header.css');
+@import url('theme/05-components/component.footer.css');
 @import url('theme/05-components/component.nav.css');
 @import url('theme/05-components/component.blocks.css');
 

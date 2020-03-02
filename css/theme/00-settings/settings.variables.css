@@ -5,9 +5,9 @@
     --gutter: .8rem;
     --gutter-description: var(--font-size);
 
-    --max-width: 192rem;
-    --max-width-2: 104.2rem;
-    --max-width-3: 96rem;
+    --max-width: 58em;
+    --max-width-2: 46em;
+    --max-width-3: 30em;
 }
 
 /*--------------------------------------------------------------
@@ -17,7 +17,7 @@
     --color-white: #fff;
     --color-black: #000;
 
-    --color-1: #fdc300;
+    --color-1: #ffdf00;
     --color-2: #575756;
     --color-3: #ededed;
 

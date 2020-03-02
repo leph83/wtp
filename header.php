@@ -37,7 +37,7 @@
     <input class="burger__input  hidden" type="checkbox" id="burger">
 
     <header class="header">
-        <div class="header__content">
+        <div class="header__content  lc  lc--padding">
 
             <!-- Branding -->
             <div class="header__item  header__item--logo">
