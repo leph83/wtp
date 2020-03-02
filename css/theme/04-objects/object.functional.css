@@ -6,23 +6,32 @@
     margin-right: auto;
 	max-width: var(--max-width);
 	width: 100%;
-	/* box-sizing: content-box; */
-	/* border: solid; */
+}
+
+.lc--padding {
+	padding-left: var(--gutter);
+	padding-left: var(--gutter);
 }
 
 .lc--2 {
     max-width: var(--max-width-2);
 }
 
-
 .lc--3 {
     max-width: var(--max-width-3);
 }
 
-.lc--padding {
-	padding-left: var(--gutter);
-	padding-left: var(--gutter);
-	max-width: calc(var(--max-width) + var(--gutter) + var(--gutter) );
+/* combinations */
+.lc.lc--padding {
+	max-width: calc(var(--max-width) + var(--gutter) * 2 );
+}
+
+.lc--2.lc--padding {
+	max-width: calc(var(--max-width-2) + var(--gutter) * 2 );
+}
+
+.lc--3.lc--padding {
+	max-width: calc(var(--max-width-3) + var(--gutter) * 2 );
 }
 
 /*--------------------------------------------------------------
@@ -55,12 +64,23 @@
 /*--------------------------------------------------------------
 # PADDING
 --------------------------------------------------------------*/
+
+.padding-top {
+	padding-top: var(--gutter);
+}
+
+.padding-bottom {
+	padding-bottom: var(--gutter);
+}
+
 .padding-left {
 	padding-left: var(--gutter);
 }
 .padding-right {
 	padding-right: var(--gutter);
 }
+
+
 
 /*--------------------------------------------------------------
 # GRID
