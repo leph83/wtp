@@ -67,7 +67,7 @@
                     <?php endif; ?>
 
                     <?php if ( $wtp_description || is_customize_preview() ) : ?>
-                        <p class="site-description"> - <?php echo $wtp_description; /* WPCS: xss ok. */ ?></p>
+                        <p class="site-description"> - <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php echo $wtp_description; /* WPCS: xss ok. */ ?></a</p>
                     <?php endif; ?>
 
                 <?php endif; ?>
