@@ -41,7 +41,7 @@
     position: relative;
 }
 
-.block.is-style-hero .block__media > figure > img {
+.block.is-style-hero .block__media > figure  img {
     position: absolute;
     top: 0;
     left: 0;
