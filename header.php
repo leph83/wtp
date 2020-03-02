@@ -44,7 +44,10 @@
 
                 <?php if (has_custom_logo()) : ?>
                     <?php // set image size of logo to halve of its actual size, retina for all ?>
-                    <?php $logo_src = wp_get_attachment_image_src( get_theme_mod( 'custom_logo' ) , 'logo' );  ?>
+                    <?php 
+                        $custom_logo_id = get_theme_mod( 'custom_logo' );
+                        $logo_src = wp_get_attachment_image_src( $custom_logo_id , 'medium' );
+                    ?>
 
                     <a class="header__logolink  display--inline-block" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
                         <img 
