@@ -1,0 +1,30 @@
+/*--------------------------------------------------------------
+# HEADER
+--------------------------------------------------------------*/
+.header {
+  background-color: green;
+}
+
+.header__content {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.header a {
+  text-decoration: none;
+  color: inherit;
+}
+/* 
+.header__item--logo {
+  display: flex;
+  align-items: center;
+  margin-left: calc(var(--gutter) * -1);
+  margin-bottom: calc(var(--gutter) * -1);
+
+  flex-grow: 1;
+}
+
+.header__item--logo > * {
+  margin-left: var(--gutter);
+  margin-bottom: var(--gutter);
+} */
