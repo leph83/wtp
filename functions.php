@@ -41,15 +41,15 @@ function wtp_setup()
     // }
 
 
-    // add_theme_support('customize-selective-refresh-widgets');
+    add_theme_support('customize-selective-refresh-widgets');
 
-    // add_theme_support('automatic-feed-links');
-    // add_theme_support('post-formats', array('aside', 'image', 'video', 'quote', 'link', 'status'));
-    // add_theme_support('woocommerce');
-    // add_theme_support('html5', array('search-form', 'comment-form', 'comment-list', 'gallery', 'caption'));
+    add_theme_support('automatic-feed-links');
+    add_theme_support('post-formats', array('aside', 'image', 'video', 'quote', 'link', 'status'));
+    add_theme_support('woocommerce');
+    add_theme_support('html5', array('search-form', 'comment-form', 'comment-list', 'gallery', 'caption'));
 
-    // add_theme_support('align-wide');
-    // add_theme_support('responsive-embeds');
+    add_theme_support('align-wide');
+    add_theme_support('responsive-embeds');
 }
 
 /**
@@ -63,7 +63,7 @@ function wtp_load_styles()
     $css_version = filemtime( get_stylesheet_directory() . '/style.min.css' );
 
     // STYLE
-    wp_enqueue_style( 'theme-style', get_stylesheet_directory_uri() . '/style.css', array(), $css_version );
+    wp_enqueue_style( 'theme-style', get_stylesheet_directory_uri() . '/style.min.css', array(), $css_version );
 }
 
 
@@ -94,7 +94,7 @@ function wtp_blog_info() {
         $custom_logo_id = get_theme_mod( 'custom_logo' );
         $image = wp_get_attachment_image_src( $custom_logo_id , 'medium' );
 
-        $brand = '<img src="' . $image[0] . '" alt="'.esc_html(get_bloginfo('name')).'" width="'.$image[1].'" height="'.$image[2].'" loading="lazy">';
+        $brand = '<img src="' . $image[0] . '" alt="'.esc_html(get_bloginfo('name')).'" width="'.$image[1].'" height="'.$image[2].'">';
     }
 
     return $brand;
@@ -111,20 +111,51 @@ require_once('inc/security.php');
 require_once('inc/disable_embed.php');
 require_once('inc/disable_rest_api.php');
 require_once('inc/add_nav_classes.php');
+require_once('inc/pagination_markup.php');
+
+
+
+/**
+ * Widgets
+ */
+function wtp_widgets_init() {
+    register_sidebar(array(
+        'name'          => 'Sidebar',
+        'id'            => 'primary-widget-area',
+        'description'   => 'Sidebar Widgets',
+    ) );
+
+    register_sidebar(array(
+        'name'          => 'Footer 1',
+        'id'            => 'footer-1-widget-area',
+        'description'   => 'Footer 1 Widgets',
+    ) );
+
+    register_sidebar(array(
+        'name'          => 'Footer 2',
+        'id'            => 'footer-2-widget-area',
+        'description'   => 'Footer 2 Widgets',
+    ) );
+
+    register_sidebar(array(
+        'name'          => 'Footer 3',
+        'id'            => 'footer-3-widget-area',
+        'description'   => 'Footer 3 Widgets',
+    ) );
+
+    register_sidebar(array(
+        'name'          => 'Footer 4',
+        'id'            => 'footer-4-widget-area',
+        'description'   => 'Footer 4 Widgets',
+    ) );
+}
+add_action( 'widgets_init', 'wtp_widgets_init' );
+
 
 /**
  * TODO
  * add Logo Size Width Slider
  * Checkbox to show title, description and logo
+ * add Sidebar Setting (left, right)
  */
 
-
-
-function wtp_widgets_init() {
-    register_sidebar(array(
-    'name'          => 'Sidebar',
-    'id'            => 'primary-widget-area',
-    'description'   => 'Sidebar Widgets',
-    ) );
-    }
-add_action( 'widgets_init', 'wtp_widgets_init' );

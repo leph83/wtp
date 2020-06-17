@@ -1,15 +1,21 @@
+<?php 
+    if ( ! defined( 'ABSPATH' ) ) {
+        exit; // Exit if accessed directly.
+    }
+?>
+
 <?php get_header(); ?>
 
-    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-            <?php get_template_part('template-parts/entry'); ?>
-            <?php if (comments_open() && !post_password_required()) {
-                comments_template('', true);
-            } ?>
-    <?php endwhile;
-    endif; ?>
-    <footer>
-        <?php get_template_part('nav', 'below-single'); ?>
-    </footer>
+    <?php if (have_posts()) : ?>
 
-<?php get_sidebar(); ?>
-<?php get_footer(); ?>
+        <?php while (have_posts()) : the_post(); ?>
+
+            <?php get_template_part('template-parts/content', 'single'); ?>
+
+        <?php endwhile; ?>
+
+        <?php get_template_part('template-parts/nav', 'pagination'); ?>
+
+    <?php endif; ?>
+
+<?php get_footer();

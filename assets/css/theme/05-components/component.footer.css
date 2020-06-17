@@ -2,8 +2,8 @@
 # FOOTER
 --------------------------------------------------------------*/
 .footer {
-    background-color: var(--color-black);
-    color: var(--color-white);
+    background-color: var(--color-black, #000);
+    color: var(--color-white, #fff);
 }
 
 .footer__content {

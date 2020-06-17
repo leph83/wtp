@@ -1,3 +1,5 @@
+TO BE REMOVED: entry.php
+
 <?php 
     if ( ! defined( 'ABSPATH' ) ) {
         exit; // Exit if accessed directly.

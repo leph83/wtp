@@ -7,14 +7,29 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <header>
         <h1>
-            <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark"><?php the_title(); ?></a>
+            <?php the_title(); ?>
         </h1>
-   
-   
-   
-   <?php edit_post_link(); ?>
-        <?php if ( ! is_search() ) { get_template_part( 'entry', 'meta' ); } ?>
+
+        <div class="entry-meta">
+  
+   +
+                <?php the_author_posts_link(); ?>
+  
+
+                <?php the_time( get_option( 'date_format' ) ); ?>
+
+                <?php the_tags('', ' | ', ''); ?>
+
+                <?php the_category( ); ?>
+
+        </div>
     </header>
-        <?php get_template_part( 'entry', ( is_front_page() || is_home() || is_front_page() && is_home() || is_archive() || is_search() ? 'summary' : 'content' ) ); ?>
-        <?php if ( is_singular() ) { get_template_part( 'entry-footer' ); } ?>
+   
+    <div class="">
+        <?php the_content(); ?>
+    </div>
 </article>
+
+<?php comments_template(); ?>
+
+<?php get_template_part('template-parts/nav-below', 'single'); ?>

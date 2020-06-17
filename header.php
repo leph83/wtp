@@ -6,6 +6,11 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
+
+$sidebar_class = '';
+if ( is_active_sidebar( 'primary-widget-area' ) ) {
+    $sidebar_class = 'has_sidebar';
+}
              
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -49,4 +54,5 @@ if ( ! defined( 'ABSPATH' ) ) {
         </div>
     </header>
 
-    <main id="content" class="main">
+    <div class="<?php echo $sidebar_class; ?>">
+        <main id="content" class="main">
