@@ -1,8 +1,4 @@
 <?php
-/**
- * The template for displaying the header.
- */
-
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
