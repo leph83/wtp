@@ -4,7 +4,6 @@
     }
 ?>
 
-
 <?php
     $args = array(
         'prev_text'             => __('Older posts'),

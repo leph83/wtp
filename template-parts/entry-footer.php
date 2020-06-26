@@ -1,3 +1,9 @@
+<?php 
+    if ( ! defined( 'ABSPATH' ) ) {
+        exit; // Exit if accessed directly.
+    }
+?>
+
 TO BE REMOVED: entry-footer.php
 
 <footer class="entry-footer">

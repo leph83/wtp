@@ -11,7 +11,7 @@
     </div>
 
 
-    <footer class="footer" id="footer">
+    <footer class="footer  padding--double" id="footer">
         <?php echo get_template_part( 'template-parts/content', 'widgets' ); ?>
 
 

@@ -2,29 +2,26 @@
 # HEADER
 --------------------------------------------------------------*/
 .header {
-  background-color: green;
+
 }
 
 .header__content {
+  position: absolute;
+  z-index: 1000;
+
+  border-bottom: 1px solid rgba(255,255,255,.5);
+  width: 100%;
+  color: var(--color-white);
+
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
 }
 
 .header a {
   text-decoration: none;
   color: inherit;
 }
-/* 
-.header__item--logo {
-  display: flex;
-  align-items: center;
-  margin-left: calc(var(--gutter) * -1);
-  margin-bottom: calc(var(--gutter) * -1);
-
-  flex-grow: 1;
-}
-
-.header__item--logo > * {
-  margin-left: var(--gutter);
-  margin-bottom: var(--gutter);
-} */

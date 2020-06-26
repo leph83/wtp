@@ -14,7 +14,7 @@
         </header>
 
         <?php while (have_posts()) : the_post(); ?>
-            <?php get_template_part('template-parts/entry'); ?>
+            <?php get_template_part('template-parts/content', 'overview'); ?>
         <?php endwhile; ?>
 
         <?php get_template_part('nav', 'below'); ?>

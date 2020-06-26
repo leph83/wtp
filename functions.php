@@ -140,7 +140,7 @@ if ( !function_exists('wtp_widgets_init') ) {
     add_action( 'widgets_init', 'wtp_widgets_init' );
 }
 
-require_once('inc/remove_gutenberg.php');
+// require_once('inc/remove_gutenberg.php');
 require_once('inc/disable_emoji.php');
 require_once('inc/empty_p.php');
 require_once('inc/security.php');
@@ -155,4 +155,3 @@ require_once('inc/pagination_markup.php');
  * Checkbox to show title, description and logo
  * add Sidebar Setting (left, right)
  */
-

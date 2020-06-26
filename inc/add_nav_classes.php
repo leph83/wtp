@@ -51,3 +51,17 @@
         }
         add_filter('nav_menu_link_attributes', 'add_additional_class_on_a', 1, 3);
     }
+
+    /**
+     * Add Class Submenu ul
+     */
+    if ( !function_exists('my_nav_menu_submenu_css_class') ) {
+        function my_nav_menu_submenu_css_class($classes, $args) {
+            if(isset($args->add_submenu_class)) {
+                $classes['class'] = $args->add_submenu_class;
+            }
+
+            return $classes;
+        }
+        add_filter( 'nav_menu_submenu_css_class', 'my_nav_menu_submenu_css_class', 1, 3 );
+    }

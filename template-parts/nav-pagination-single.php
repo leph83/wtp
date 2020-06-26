@@ -4,7 +4,6 @@
     }
 ?>
 
-
 <?php 
     $args = array(
         'prev_text' => '<span class="meta-nav">&larr;</span> %title',

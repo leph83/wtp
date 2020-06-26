@@ -5,31 +5,21 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-    <header>
-        <h1>
+    <header class="block__header">
+        <h1 class="block__title">
             <?php the_title(); ?>
         </h1>
 
-        <div class="entry-meta">
-  
-   +
-                <?php the_author_posts_link(); ?>
-  
-
-                <?php the_time( get_option( 'date_format' ) ); ?>
-
-                <?php the_tags('', ' | ', ''); ?>
-
-                <?php the_category( ); ?>
-
+        <div class="block__subtitle">
+            <?php get_template_part('template-parts/entry-meta', 'single'); ?>
         </div>
     </header>
    
-    <div class="">
+    <section class="">
         <?php the_content(); ?>
-    </div>
+    </section>
+
+    <?php comments_template(); ?>
 </article>
 
-<?php comments_template(); ?>
-
-<?php get_template_part('template-parts/nav-below', 'single'); ?>
+<?php get_template_part('template-parts/nav-pagination', 'single'); ?>

@@ -10,7 +10,7 @@
 
 .lc--padding {
 	padding-left: var(--gutter);
-	padding-left: var(--gutter);
+	padding-right: var(--gutter);
 }
 
 .lc--2 {
@@ -34,9 +34,60 @@
 	max-width: calc(var(--max-width-3) + var(--gutter) * 2 );
 }
 
+
+/*--------------------------------------------------------------
+# TYPOGRAPHY
+# Block: fw = font-weight
+--------------------------------------------------------------*/
+.fw--thin
+.fw--hairline {
+	font-weight: 100;
+}
+
+.fw--extra-light, 
+.fw--ultra-light {
+	font-weight: 200;
+}
+
+.fw--light {
+	font-weight: 300;
+}
+
+.fw--normal,
+.fw--regular {
+	font-weight: 400;
+}
+
+.fw--medium {
+	font-weight: 500;
+}
+
+.fw--semo-bold, 
+.fw--demi-bold {
+	font-weight: 600;
+}
+
+.fw--bold {
+	font-weight: 700;
+}
+
+.fw--extra-bold, 
+.fw--ultra-bold {
+	font-weight: 800;
+}
+
+.fw--black,
+.fw--heavy {
+	font-weight: 900;
+}
+
 /*--------------------------------------------------------------
 # DISPLAY
 --------------------------------------------------------------*/
+.hidden {
+    display: none;
+}
+
 .display--none {
     display: none;
 }
@@ -64,6 +115,13 @@
 /*--------------------------------------------------------------
 # PADDING
 --------------------------------------------------------------*/
+.padding {
+	padding: var(--gutter);
+}
+
+.padding--double {
+	padding: calc( var(--gutter) * 2 );
+}
 
 .padding-top {
 	padding-top: var(--gutter);
@@ -80,7 +138,27 @@
 	padding-right: var(--gutter);
 }
 
+/*--------------------------------------------------------------
+# Margin
+--------------------------------------------------------------*/
+.margin {
+	margin: var(--gutter);
+}
 
+.margin-top {
+	margin-top: var(--gutter);
+}
+
+.margin-bottom {
+	margin-bottom: var(--gutter);
+}
+
+.margin-left {
+	margin-left: var(--gutter);
+}
+.margin-right {
+	margin-right: var(--gutter);
+}
 
 /*--------------------------------------------------------------
 # GRID

@@ -1,13 +1,12 @@
 <?php
-if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly.
-}
+    if ( ! defined( 'ABSPATH' ) ) {
+        exit; // Exit if accessed directly.
+    }
 
-$sidebar_class = '';
-if ( is_active_sidebar( 'primary-widget-area' ) ) {
-    $sidebar_class = 'has_sidebar';
-}
-             
+    $has_sidebar = '';
+    if ( is_active_sidebar( 'primary-widget-area' ) ) {
+        $has_sidebar = 'main--has-sidebar';
+    }    
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -17,8 +16,7 @@ if ( is_active_sidebar( 'primary-widget-area' ) ) {
     <?php wp_head(); ?>
 </head>
 
-<body <?php body_class('body'); ?>>
-
+<body <?php body_class('body  body--sticky-footer '); ?>>
     <header class="header" id="header">
         <div class="header__content" id="branding">
             <div class="header__item" id="site-title">
@@ -34,8 +32,9 @@ if ( is_active_sidebar( 'primary-widget-area' ) ) {
                         $args = array(
                             'theme_location'=> 'primary',
                             'container'     => '',
-                            'menu_class'    => 'nav',
+                            'menu_class'    => 'nav  nav--dropdown  nav--primary',
                             'fallback_cb'   => false,
+                            'add_submenu_class'  => 'nav__submenu',
                             'add_li_class'  => 'nav__item',
                             'add_li_active_class' => 'nav__item--active',
                             'add_li_parent_class' => 'nav__item--parent',
@@ -50,5 +49,5 @@ if ( is_active_sidebar( 'primary-widget-area' ) ) {
         </div>
     </header>
 
-    <div class="<?php echo $sidebar_class; ?>">
+    <div class="<?php echo $has_sidebar; ?>">
         <main id="content" class="main">

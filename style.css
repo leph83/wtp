@@ -13,40 +13,40 @@ Author URI: http://what-the-phuc.at/
 /*--------------------------------------------------------------
 # 00 SETTINGS
 --------------------------------------------------------------*/
-@import url('assets/css/theme/00-settings/settings.variables.css');
-/*@import url('theme/00-settings/settings.fonts.css');*/
+@import 'assets/css/theme/00-settings/settings.variables.css';
+@import 'assets/css/theme/00-settings/settings.fonts.css';
 
 /*--------------------------------------------------------------
 # 01 TOOLS - generate variables
 --------------------------------------------------------------*/
-/* @import url('assets/css/phucstrap/01-tools/tools.modularscale.css'); */
+@import 'assets/css/phucstrap/01-tools/tools.modularscale.css';
 
 /*--------------------------------------------------------------
 # 02 GENERIC - normalize
 --------------------------------------------------------------*/
-@import url('assets/css/phucstrap/02-generic/generic.normalize.css');
-@import url('assets/css/phucstrap/02-generic/generic.custom.css');
+@import 'assets/css/phucstrap/02-generic/generic.normalize.css';
+@import 'assets/css/phucstrap/02-generic/generic.custom.css';
  
 /*--------------------------------------------------------------
 # 03 ELEMENTS
 styling elements without classes
 --------------------------------------------------------------*/
-/* @import url('assets/css/phucstrap/03-elements/element.headings.css'); */
-/* @import url('assets/css/theme/03-elements/element.form.css'); */
+@import 'assets/css/phucstrap/03-elements/element.headings.css';
+/* @import 'assets/css/theme/03-elements/element.form.css'; */
 
 /*--------------------------------------------------------------
 # 04 OBJECTS - molecules
 styling elements with classes - e.g global classes
 --------------------------------------------------------------*/
-/* @import url('assets/css/phucstrap/04-objects/object.body.css'); */
-/* @import url('assets/css/theme/04-objects/object.functional.css'); */
+@import 'assets/css/phucstrap/04-objects/object.body.css';
+@import 'assets/css/phucstrap/04-objects/object.functional.css';
 
 
-/* @import url('theme/04-objects/object.typography.css'); */
-/* @import url('theme/04-objects/object.boxmodel.css'); */
-/* @import url('theme/04-objects/object.body.css'); */
-/* @import url('theme/04-objects/object.grid.css'); */
-/* @import url('theme/04-objects/object.burger.css'); */
+/* @import 'assets/css/theme/04-objects/object.typography.css'; */
+/* @import 'assets/css/theme/04-objects/object.boxmodel.css'; */
+/* @import 'assets/css/theme/04-objects/object.body.css'; */
+/* @import 'assets/css/theme/04-objects/object.grid.css'; */
+/* @import 'assets/css/theme/04-objects/object.burger.css'; */
 
 
 /*--------------------------------------------------------------
@@ -54,22 +54,89 @@ styling elements with classes - e.g global classes
 styling more complex sections - e.g header, blocks, sections
 --------------------------------------------------------------*/
 
-@import url('assets/css/theme/05-components/component.header.css');
-@import url('assets/css/theme/05-components/component.footer.css');
-/* @import url('assets/css/theme/05-components/component.nav.css'); */
-/* @import url('assets/css/theme/05-components/component.blocks.css'); */
+@import 'assets/css/theme/05-components/component.header.css';
+@import 'assets/css/theme/05-components/component.footer.css';
+@import 'assets/css/phucstrap/05-components/component.nav.css';
+@import 'assets/css/theme/05-components/component.nav.css';
+/* @import 'assets/css/theme/05-components/component.blocks.css'; */
 
 /*--------------------------------------------------------------
 # 06 UTILITIES
 e.g hacks or ie11 styles
 --------------------------------------------------------------*/
-/* @import url('../../../wp-includes/css/dist/block-library/style.min.css'); */
-/* @import url('theme/06-utilities/utilities.display.css'); */
-/* @import url('theme/06-utilities/utilities.typography.css'); */
-/* @import url('theme/06-utilities/utilitites.img.css'); */
-/* @import url('theme/06-utilities/utility.wordpress.css'); */
-/* @import url('theme/06-utilities/utilities.colors.css'); */
+/* @import '../../../wp-includes/css/dist/block-library/style.min.css'; */
+/* @import 'theme/06-utilities/utilities.display.css'; */
+/* @import 'theme/06-utilities/utilities.typography.css'; */
+/* @import 'theme/06-utilities/utilitites.img.css'; */
+/* @import 'theme/06-utilities/utility.wordpress.css'; */
+/* @import 'theme/06-utilities/utilities.colors.css'; */
+@import 'assets/css/phucstrap/06-utilities/utility.wordpress.css';
 
 .screen-reader-text {
     display: none;
+}
+
+
+
+.block--card {
+    border: 1px solid rgba(0,0,0, .25);
+    box-shadow: 0 0 1rem rgba(0,0,0, .5);
+}
+
+.block--card .block__content {
+    padding: var(--gutter);
+}
+
+.grid {
+    display: grid;
+}
+
+.grid--auto {
+    grid-gap: calc(var(--gutter) * 4);
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr) );
+}
+
+
+.block--hero {
+    display: grid;
+   
+}
+
+.block--hero .block__media
+, .block--hero .block__content 
+{
+    grid-column: -1 / 1;
+    grid-row: -1 / 1;
+}
+
+.block--hero .block__media {
+    position: relative;
+    overflow: hidden;
+}
+
+.block--hero .block__media img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.block--hero .block__content {
+    position: relative;
+    display: grid;
+    place-items: center;
+    padding: var(--gutter);
+    color: var(--color-white);
+    font-weight: bold;
+    padding: calc( var(--gutter) * 6);
+    min-height: 75vh;
+    text-align: center;
+    background-color: var(--color-black);
+}
+
+.block--hero  .block__down {
+    position: absolute;
+    bottom: var(--gutter);
+    color: inherit;
+    text-decoration: none;
 }

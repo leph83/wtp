@@ -1,3 +1,9 @@
+<?php 
+    if ( ! defined( 'ABSPATH' ) ) {
+        exit; // Exit if accessed directly.
+    }
+?>
+
 <?php if (
     is_active_sidebar( 'footer-1-widget-area' )
     || is_active_sidebar( 'footer-2-widget-area' )
@@ -5,47 +11,46 @@
     || is_active_sidebar( 'footer-4-widget-area' )
 ) : ?>
 
-
-    <div class="footer__content  footer__content-top">
+    <section class="footer__content  footer__content-top">
         <?php if ( is_active_sidebar( 'footer-1-widget-area' ) ) : ?>
-            <div class="footer_1" >
+            <article class="footer_1" >
                 <div class="widget-area">
                     <ul>
                         <?php dynamic_sidebar( 'footer-1-widget-area' ); ?>
                     </ul>
                 </div>
-            </div>
+            </article>
         <?php endif; ?>
 
         <?php if ( is_active_sidebar( 'footer-2-widget-area' ) ) : ?>
-            <div class="footer_2" >
+            <article class="footer_2" >
                 <div class="widget-area">
                     <ul>
                         <?php dynamic_sidebar( 'footer-2-widget-area' ); ?>
                     </ul>
                 </div>
-            </div>
+            </article>
         <?php endif; ?>
 
         <?php if ( is_active_sidebar( 'footer-3-widget-area' ) ) : ?>
-            <div class="footer_3" >
+            <article class="footer_3" >
                 <div class="widget-area">
                     <ul>
                         <?php dynamic_sidebar( 'footer-3-widget-area' ); ?>
                     </ul>
                 </div>
-            </div>
+            </article>
         <?php endif; ?>
 
         <?php if ( is_active_sidebar( 'footer-4-widget-area' ) ) : ?>
-            <div class="footer_4" >
+            <article class="footer_4" >
                 <div class="widget-area">
                     <ul>
                         <?php dynamic_sidebar( 'footer-4-widget-area' ); ?>
                     </ul>
                 </div>
-            </div>
+            </article>
         <?php endif; ?>
-    </div>
+    </section>
 
 <?php endif; ?>
