@@ -1,0 +1,341 @@
+/*--------------------------------------------------------------
+# PADDING SETTINGS
+--------------------------------------------------------------*/
+:root {
+    --box-model-quarter: calc( 1/4 );
+    --box-model-third: calc( 1/3 );
+    --box-model-half: calc( 1/2 );
+    --box-model-two-thirds: calc( 2/3 );
+    
+    --box-model: 1;
+
+    --box-model-and-quarter: calc( 1 + 1/4 );
+    --box-model-and-third: calc( 1 + 1/3 );
+    --box-model-and-half: calc( 1 + 1/2 );
+    --box-model-and-two-thirds: calc( 1 + 2/3 );
+    --box-model-and-three-quarters: calc( 1 + 3/4 );
+
+    --box-model-double: 2;
+    --box-model-tripple: 3;
+    --box-model-quadruple: 4;
+}
+
+/*--------------------------------------------------------------
+# PADDING
+--------------------------------------------------------------*/
+.padding {
+    padding: calc( var(--gutter) * var(--box-model) );
+}
+
+.padding--quarter {
+    padding: calc( var(--gutter) * var(--box-model-quarter) );
+}
+
+.padding--third {
+    padding: calc( var(--gutter) * var(--box-model-third) );
+}
+
+.padding--half {
+    padding: calc( var(--gutter) * var(--box-model-half) );
+}
+
+.padding--double {
+    padding: calc( var(--gutter) * var(--box-model-double) );
+}
+
+.padding--tripple {
+    padding: calc( var(--gutter) * var(--box-model-tripple) );
+}
+
+.padding--quadruple {
+    padding: calc( var(--gutter) * var(--box-model-quadruple) );
+}
+
+/*--------------------------------------------------------------
+# PADDING-left
+--------------------------------------------------------------*/
+.padding-left {
+    padding-left: calc( var(--gutter) * var(--box-model) );
+}
+
+.padding-left--quarter {
+    padding-left: calc( var(--gutter) * var(--box-model-quarter) );
+}
+
+.padding-left--third {
+    padding-left: calc( var(--gutter) * var(--box-model-third) );
+}
+
+.padding-left--half {
+    padding-left: calc( var(--gutter) * var(--box-model-half) );
+}
+
+.padding-left--double {
+    padding-left: calc( var(--gutter) * var(--box-model-double) );
+}
+
+.padding-left--tripple {
+    padding-left: calc( var(--gutter) * var(--box-model-tripple) );
+}
+
+.padding-left--quadruple {
+    padding-left: calc( var(--gutter) * var(--box-model-quadruple) );
+}
+
+
+/*--------------------------------------------------------------
+# PADDING-right
+--------------------------------------------------------------*/
+.padding-right {
+    padding-right: calc( var(--gutter) * var(--box-model) );
+}
+
+.padding-right--quarter {
+    padding-right: calc( var(--gutter) * var(--box-model-quarter) );
+}
+
+.padding-right--third {
+    padding-right: calc( var(--gutter) * var(--box-model-third) );
+}
+
+.padding-right--half {
+    padding-right: calc( var(--gutter) * var(--box-model-half) );
+}
+
+.padding-right--double {
+    padding-right: calc( var(--gutter) * var(--box-model-double) );
+}
+
+.padding-right--tripple {
+    padding-right: calc( var(--gutter) * var(--box-model-tripple) );
+}
+
+.padding-right--quadruple {
+    padding-right: calc( var(--gutter) * var(--box-model-quadruple) );
+}
+
+
+/*--------------------------------------------------------------
+# PADDING-top
+--------------------------------------------------------------*/
+.padding-top {
+    padding-top: calc( var(--gutter) * var(--box-model) );
+}
+
+.padding-top--quarter {
+    padding-top: calc( var(--gutter) * var(--box-model-quarter) );
+}
+
+.padding-top--third {
+    padding-top: calc( var(--gutter) * var(--box-model-third) );
+}
+
+.padding-top--half {
+    padding-top: calc( var(--gutter) * var(--box-model-half) );
+}
+
+.padding-top--double {
+    padding-top: calc( var(--gutter) * var(--box-model-double) );
+}
+
+.padding-top--tripple {
+    padding-top: calc( var(--gutter) * var(--box-model-tripple) );
+}
+
+.padding-top--quadruple {
+    padding-top: calc( var(--gutter) * var(--box-model-quadruple) );
+}
+
+
+/*--------------------------------------------------------------
+# PADDING-bottom
+--------------------------------------------------------------*/
+.padding-bottom {
+    padding-bottom: calc( var(--gutter) * var(--box-model) );
+}
+
+.padding-bottom--quarter {
+    padding-bottom: calc( var(--gutter) * var(--box-model-quarter) );
+}
+
+.padding-bottom--third {
+    padding-bottom: calc( var(--gutter) * var(--box-model-third) );
+}
+
+.padding-bottom--half {
+    padding-bottom: calc( var(--gutter) * var(--box-model-half) );
+}
+
+.padding-bottom--double {
+    padding-bottom: calc( var(--gutter) * var(--box-model-double) );
+}
+
+.padding-bottom--tripple {
+    padding-bottom: calc( var(--gutter) * var(--box-model-tripple) );
+}
+
+.padding-bottom--quadruple {
+    padding-bottom: calc( var(--gutter) * var(--box-model-quadruple) );
+}
+
+
+
+
+
+/*--------------------------------------------------------------
+# margin
+--------------------------------------------------------------*/
+.margin {
+    margin: calc( var(--gutter) * var(--box-model) );
+}
+
+.margin--quarter {
+    margin: calc( var(--gutter) * var(--box-model-quarter) );
+}
+
+.margin--third {
+    margin: calc( var(--gutter) * var(--box-model-third) );
+}
+
+.margin--half {
+    margin: calc( var(--gutter) * var(--box-model-half) );
+}
+
+.margin--double {
+    margin: calc( var(--gutter) * var(--box-model-double) );
+}
+
+.margin--tripple {
+    margin: calc( var(--gutter) * var(--box-model-tripple) );
+}
+
+.margin--quadruple {
+    margin: calc( var(--gutter) * var(--box-model-quadruple) );
+}
+
+/*--------------------------------------------------------------
+# margin-left
+--------------------------------------------------------------*/
+.margin-left {
+    margin-left: calc( var(--gutter) * var(--box-model) );
+}
+
+.margin-left--quarter {
+    margin-left: calc( var(--gutter) * var(--box-model-quarter) );
+}
+
+.margin-left--third {
+    margin-left: calc( var(--gutter) * var(--box-model-third) );
+}
+
+.margin-left--half {
+    margin-left: calc( var(--gutter) * var(--box-model-half) );
+}
+
+.margin-left--double {
+    margin-left: calc( var(--gutter) * var(--box-model-double) );
+}
+
+.margin-left--tripple {
+    margin-left: calc( var(--gutter) * var(--box-model-tripple) );
+}
+
+.margin-left--quadruple {
+    margin-left: calc( var(--gutter) * var(--box-model-quadruple) );
+}
+
+
+/*--------------------------------------------------------------
+# margin-right
+--------------------------------------------------------------*/
+.margin-right {
+    margin-right: calc( var(--gutter) * var(--box-model) );
+}
+
+.margin-right--quarter {
+    margin-right: calc( var(--gutter) * var(--box-model-quarter) );
+}
+
+.margin-right--third {
+    margin-right: calc( var(--gutter) * var(--box-model-third) );
+}
+
+.margin-right--half {
+    margin-right: calc( var(--gutter) * var(--box-model-half) );
+}
+
+.margin-right--double {
+    margin-right: calc( var(--gutter) * var(--box-model-double) );
+}
+
+.margin-right--tripple {
+    margin-right: calc( var(--gutter) * var(--box-model-tripple) );
+}
+
+.margin-right--quadruple {
+    margin-right: calc( var(--gutter) * var(--box-model-quadruple) );
+}
+
+
+/*--------------------------------------------------------------
+# margin-top
+--------------------------------------------------------------*/
+.margin-top {
+    margin-top: calc( var(--gutter) * var(--box-model) );
+}
+
+.margin-top--quarter {
+    margin-top: calc( var(--gutter) * var(--box-model-quarter) );
+}
+
+.margin-top--third {
+    margin-top: calc( var(--gutter) * var(--box-model-third) );
+}
+
+.margin-top--half {
+    margin-top: calc( var(--gutter) * var(--box-model-half) );
+}
+
+.margin-top--double {
+    margin-top: calc( var(--gutter) * var(--box-model-double) );
+}
+
+.margin-top--tripple {
+    margin-top: calc( var(--gutter) * var(--box-model-tripple) );
+}
+
+.margin-top--quadruple {
+    margin-top: calc( var(--gutter) * var(--box-model-quadruple) );
+}
+
+
+/*--------------------------------------------------------------
+# margin-bottom
+--------------------------------------------------------------*/
+.margin-bottom {
+    margin-bottom: calc( var(--gutter) * var(--box-model) );
+}
+
+.margin-bottom--quarter {
+    margin-bottom: calc( var(--gutter) * var(--box-model-quarter) );
+}
+
+.margin-bottom--third {
+    margin-bottom: calc( var(--gutter) * var(--box-model-third) );
+}
+
+.margin-bottom--half {
+    margin-bottom: calc( var(--gutter) * var(--box-model-half) );
+}
+
+.margin-bottom--double {
+    margin-bottom: calc( var(--gutter) * var(--box-model-double) );
+}
+
+.margin-bottom--tripple {
+    margin-bottom: calc( var(--gutter) * var(--box-model-tripple) );
+}
+
+.margin-bottom--quadruple {
+    margin-bottom: calc( var(--gutter) * var(--box-model-quadruple) );
+}

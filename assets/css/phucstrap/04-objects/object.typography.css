@@ -1,0 +1,118 @@
+/*--------------------------------------------------------------
+# FONT SIZES
+--------------------------------------------------------------*/
+.h0 {
+    font-size: var(--font-size-0);
+    line-height: var(--line-height-0);
+}
+
+.h1 {
+    font-size: var(--font-size-1);
+    line-height: var(--line-height-1);
+}
+
+.h2 {
+    font-size: var(--font-size-2);
+    line-height: var(--line-height-2);
+}
+
+.h3 {
+    font-size: var(--font-size-3);
+    line-height: var(--line-height-3);
+}
+
+.h4 {
+    font-size: var(--font-size-4);
+    line-height: var(--line-height-4);
+}
+
+.h5 {
+    font-size: var(--font-size-5);
+    line-height: var(--line-height-5);
+}
+
+.h6 {
+    font-size: var(--font-size-6);
+    line-height: var(--line-height-6);
+}
+
+.h7 {
+    font-size: var(--font-size-7);
+    line-height: var(--line-height-7);
+}
+
+.h8 {
+    font-size: var(--font-size-8);
+    line-height: var(--line-height-8);
+}
+
+.h9 {
+    font-size: var(--font-size-9);
+    line-height: var(--line-height-9);
+}
+
+
+/*--------------------------------------------------------------
+# FONT FAMILY
+--------------------------------------------------------------*/
+.font-family {
+    font-family: var(--font-family, sans-serif);
+}
+
+.font-family-2 {
+    font-family: var(--font-family-2, sans-serif);
+}
+
+.font-family-3 {
+    font-family: var(--font-family-3, sans-serif);
+}
+
+
+
+/*--------------------------------------------------------------
+# TYPOGRAPHY
+# Block: fw = font-weight
+--------------------------------------------------------------*/
+.fw--thin
+.fw--hairline {
+	font-weight: 100;
+}
+
+.fw--extra-light, 
+.fw--ultra-light {
+	font-weight: 200;
+}
+
+.fw--light {
+	font-weight: 300;
+}
+
+.fw--normal,
+.fw--regular {
+	font-weight: 400;
+}
+
+.fw--medium {
+	font-weight: 500;
+}
+
+.fw--semo-bold, 
+.fw--demi-bold {
+	font-weight: 600;
+}
+
+.fw--bold {
+	font-weight: 700;
+}
+
+.fw--extra-bold, 
+.fw--ultra-bold {
+	font-weight: 800;
+}
+
+.fw--black,
+.fw--heavy {
+	font-weight: 900;
+}
+
+

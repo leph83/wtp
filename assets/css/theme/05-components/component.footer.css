@@ -1,0 +1,14 @@
+/*--------------------------------------------------------------
+# FOOTER
+--------------------------------------------------------------*/
+.footer {
+    background-color: var(--color-black, #000);
+    color: var(--color-white, #fff);
+}
+
+.footer__content {
+    display: grid;
+    grid-gap: var(--gutter);
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+}
+

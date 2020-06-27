@@ -1,0 +1,21 @@
+/*--------------------------------------------------------------
+# BODY LAYOUT
+--------------------------------------------------------------*/
+.body--sticky-footer {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+}
+
+.main--has-sidebar {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-gap: var(--gutter);
+}
+
+/*--------------------------------------------------------------
+# DESCRIPTION Margin between html tags
+--------------------------------------------------------------*/
+.description > *:not(:first-child) {
+    margin-top: var(--gutter-description);
+}

@@ -1,0 +1,9 @@
+.wp-block-image {
+    margin-bottom: 0;
+}
+
+.widget-area ul {
+    list-style-type: none;
+    margin-left: 0;
+    padding-left: 0;
+}
