@@ -50,5 +50,8 @@
     </header>
 
     <div class="<?php echo $has_sidebar; ?>">
+<<<<<<< HEAD
 
+=======
+>>>>>>> 6c79705faa91dfba707faea0ca13ee37a00671d2
         <main id="content" class="main">

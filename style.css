@@ -40,7 +40,10 @@ styling elements with classes - e.g global classes
 --------------------------------------------------------------*/
 @import 'assets/css/phucstrap/04-objects/object.body.css';
 @import 'assets/css/phucstrap/04-objects/object.functional.css';
+<<<<<<< HEAD
 @import 'assets/css/phucstrap/04-objects/object.padding.css';
+=======
+>>>>>>> 6c79705faa91dfba707faea0ca13ee37a00671d2
 
 
 /* @import 'assets/css/theme/04-objects/object.typography.css'; */
@@ -59,7 +62,11 @@ styling more complex sections - e.g header, blocks, sections
 @import 'assets/css/theme/05-components/component.footer.css';
 @import 'assets/css/phucstrap/05-components/component.nav.css';
 @import 'assets/css/theme/05-components/component.nav.css';
+<<<<<<< HEAD
 @import 'assets/css/theme/05-components/component.blocks.css';
+=======
+/* @import 'assets/css/theme/05-components/component.blocks.css'; */
+>>>>>>> 6c79705faa91dfba707faea0ca13ee37a00671d2
 
 /*--------------------------------------------------------------
 # 06 UTILITIES
@@ -72,3 +79,75 @@ e.g hacks or ie11 styles
 /* @import 'theme/06-utilities/utility.wordpress.css'; */
 /* @import 'theme/06-utilities/utilities.colors.css'; */
 @import 'assets/css/phucstrap/06-utilities/utility.wordpress.css';
+<<<<<<< HEAD
+=======
+
+.screen-reader-text {
+    display: none;
+}
+
+
+
+.block--card {
+    border: 1px solid rgba(0,0,0, .25);
+    box-shadow: 0 0 1rem rgba(0,0,0, .5);
+}
+
+.block--card .block__content {
+    padding: var(--gutter);
+}
+
+.grid {
+    display: grid;
+}
+
+.grid--auto {
+    grid-gap: calc(var(--gutter) * 4);
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr) );
+}
+
+
+.block--hero {
+    display: grid;
+   
+}
+
+.block--hero .block__media
+, .block--hero .block__content 
+{
+    grid-column: -1 / 1;
+    grid-row: -1 / 1;
+}
+
+.block--hero .block__media {
+    position: relative;
+    overflow: hidden;
+}
+
+.block--hero .block__media img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.block--hero .block__content {
+    position: relative;
+    display: grid;
+    place-items: center;
+    padding: var(--gutter);
+    color: var(--color-white);
+    font-weight: bold;
+    padding: calc( var(--gutter) * 6);
+    min-height: 75vh;
+    text-align: center;
+    background-color: var(--color-black);
+}
+
+.block--hero  .block__down {
+    position: absolute;
+    bottom: var(--gutter);
+    color: inherit;
+    text-decoration: none;
+}
+>>>>>>> 6c79705faa91dfba707faea0ca13ee37a00671d2
