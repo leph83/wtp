@@ -72,7 +72,6 @@
     margin-right: auto;
     max-width: calc( var(--max-width) + var(--gutter) * 5 );
     width: 100%;
-<<<<<<< HEAD
 }
 
 
@@ -130,6 +129,3 @@
     color: inherit;
     text-decoration: none;
 }
-=======
-}
->>>>>>> 6c79705faa91dfba707faea0ca13ee37a00671d2

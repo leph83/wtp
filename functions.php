@@ -57,7 +57,7 @@ function wtp_setup()
 if ( !function_exists('wtp_load_styles') ) {
     function wtp_load_styles() {
         // Version dependend on change date of file
-        $file_name = 'style.min.css';
+        $file_name = 'style.css';
         $css_version = filemtime( get_stylesheet_directory() . '/' . $file_name );
 
         // STYLE
