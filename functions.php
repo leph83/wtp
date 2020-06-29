@@ -27,6 +27,7 @@ function wtp_setup()
     // NAVIGATION
     register_nav_menus( array(
         'primary' => __( 'Primary Menu', 'wtp' ),
+        'secondary' => __( 'Secondary Menu', 'wtp' ),
         'footer' => __( 'Footer Menu', 'wtp' ),
     ) );
 
@@ -70,12 +71,12 @@ if ( !function_exists('wtp_load_styles') ) {
 /**
  * LOAD JavaScript
  */
-if ( !function_exists('wtp_load_scripts') ) {
-    function wtp_load_scripts()
-    {
-    
-    }
-    add_action('wp_enqueue_scripts', 'wtp_load_scripts');
+ if ( !function_exists('wtp_load_scripts') ) {
+     function wtp_load_scripts()
+     {
+        wp_enqueue_script( 'wtp-fontawesome', 'https://kit.fontawesome.com/816ec536e1.js', false, '1', true );
+     }
+     add_action('wp_enqueue_scripts', 'wtp_load_scripts');
 }
 
 /**
@@ -107,6 +108,12 @@ if ( !function_exists('wtp_blog_info') ) {
  */
 if ( !function_exists('wtp_widgets_init') ) {
     function wtp_widgets_init() {
+        register_sidebar(array(
+            'name'          => 'Header',
+            'id'            => 'header-widget-area',
+            'description'   => 'Header Widgets',
+        ) );
+
         register_sidebar(array(
             'name'          => 'Sidebar',
             'id'            => 'primary-widget-area',

@@ -38,10 +38,12 @@ styling elements without classes
 # 04 OBJECTS - molecules
 styling elements with classes - e.g global classes
 --------------------------------------------------------------*/
+
 @import 'assets/css/phucstrap/04-objects/object.body.css';
 @import 'assets/css/phucstrap/04-objects/object.functional.css';
 @import 'assets/css/phucstrap/04-objects/object.boxmodel.css';
 
+@import 'assets/css/phucstrap/04-objects/object.nav.css';
 
 /* @import 'assets/css/theme/04-objects/object.typography.css'; */
 /* @import 'assets/css/theme/04-objects/object.boxmodel.css'; */
