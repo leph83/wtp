@@ -147,7 +147,7 @@ if ( !function_exists('wtp_widgets_init') ) {
     add_action( 'widgets_init', 'wtp_widgets_init' );
 }
 
-// require_once('inc/remove_gutenberg.php');
+require_once('inc/remove_gutenberg.php');
 require_once('inc/disable_emoji.php');
 require_once('inc/empty_p.php');
 require_once('inc/security.php');
@@ -156,9 +156,146 @@ require_once('inc/disable_rest_api.php');
 require_once('inc/add_nav_classes.php');
 require_once('inc/pagination_markup.php');
 
+
+
+
+/**
+ * disable_custom_font_sizes.
+ *
+ * Disable the custom font-size options in the Gutenberg editor
+ *
+ * @see https://since1979.dev/wp-snippet-002-changing-the-gutenberg-font-sizes/
+ *
+ * @uses add_theme_support() https://developer.wordpress.org/reference/functions/add_theme_support/
+ */
+ function disable_custom_font_sizes()
+ {
+     add_theme_support('disable-custom-font-sizes');
+ }
+ 
+ /**
+  * Hook: after_setup_theme.
+  *
+  * @uses after_setup_theme https://developer.wordpress.org/reference/hooks/after_setup_theme/
+  * @uses add_action() https://developer.wordpress.org/reference/functions/add_action/
+  */
+ add_action('after_setup_theme', 'disable_custom_font_sizes');
+
+function set_editor_font_sizes()
+{
+    add_theme_support('editor-font-sizes', array(
+        array(
+            'name' => __('h1', 'wtp'),
+            'size' => 32,
+            'slug' => 'h1'
+        ),
+        array(
+            'name' => __('h2', 'wtp'),
+            'size' => 29,
+            'slug' => 'h2'
+        ),
+        array(
+            'name' => __('h3', 'wtp'),
+            'size' => 26,
+            'slug' => 'h3'
+        ),
+        array(
+            'name' => __('h4', 'wtp'),
+            'size' => 23,
+            'slug' => 'h4'
+        ),
+        array(
+            'name' => __('h5', 'wtp'),
+            'size' => 20,
+            'slug' => 'h5'
+        ),
+        array(
+            'name' => __('h6', 'wtp'),
+            'size' => 18,
+            'slug' => 'h6'
+        )
+    ));
+}
+
+/**
+ * Hook: after_setup_theme.
+ *
+ * @uses after_setup_theme https://developer.wordpress.org/reference/hooks/after_setup_theme/
+ * @uses add_action() https://developer.wordpress.org/reference/functions/add_action/
+ */
+add_action('after_setup_theme', 'set_editor_font_sizes');
+
+
+
+
+function change_gutenberg_color_palette() {
+ 
+    add_theme_support( 'editor-color-palette', array(
+        array(
+            'name' => __('Blackish', 'your-textdomain'),
+            'slug' => 'blackish',
+            'color' => '#323232',
+        ),
+        array(
+            'name' => __('Whiteish', 'your-textdomain'),
+            'slug' => 'white',
+            'color' => '#eeeeee',
+        ),
+        array(
+            'name' => __('White', 'your-textdomain'),
+            'slug' => 'white',
+            'color' => '#ffffff',
+        ),
+        array(
+            'name' => __('Dark blue', 'your-textdomain'),
+            'slug' => 'dark-blue',
+            'color' => '#1d2735',
+        ),
+        array(
+            'name' => __('Blue', 'your-textdomain'),
+            'slug' => 'blue',
+            'color' => '#00659b',
+        ),
+        array(
+            'name' => __('Light blue', 'your-textdomain'),
+            'slug' => 'light-blue',
+            'color' => '#4999ca',
+        ),
+    ));
+ 
+}
+ 
+
+function disable_custom_color_picker()
+{
+    add_theme_support('disable-custom-colors');
+}
+/**
+ * Hook: after_setup_theme.
+ *
+ * @uses add_action() https://developer.wordpress.org/reference/functions/add_action/
+ * @uses after_setup_theme https://developer.wordpress.org/reference/hooks/after_setup_theme/
+ */
+add_action('after_setup_theme', 'disable_custom_color_picker');
+
+
+
+/**
+ * Hook: after_setup_theme.
+ *
+ * @uses add_action() https://developer.wordpress.org/reference/functions/add_action/
+ * @uses after_setup_theme https://developer.wordpress.org/reference/hooks/after_setup_theme/
+ */
+add_action( 'after_setup_theme' , 'change_gutenberg_color_palette' );
+
+
+
+
 /**
  * TODO
  * add Logo Size Width Slider
  * Checkbox to show title, description and logo
  * add Sidebar Setting (left, right)
  */
+
+

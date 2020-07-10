@@ -1,0 +1,26 @@
+.body {
+    color: var(--color-1);
+}
+
+a {
+    color: var(--color-1);
+}
+
+
+.main--has-sidebar {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: auto auto auto;
+}
+
+.main--has-sidebar .main {
+    grid-column: span 6;
+}
+
+.main--has-sidebar .aside {
+    grid-column: 8;
+}
+
+.widgettitle {
+    font-size: var(--font-size-4);
+}

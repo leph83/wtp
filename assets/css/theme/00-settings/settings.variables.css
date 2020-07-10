@@ -2,10 +2,10 @@
 # LAYOUT
 --------------------------------------------------------------*/
 :root {
-    --gutter: .8rem;
+    --gutter: 2.4rem;
     --gutter-description: var(--font-size);
 
-    --max-width: 198rem;
+    --max-width: 120rem;
     --max-width-2: 102.4rem;
     --max-width-3: 76.8rem;
 }
@@ -15,14 +15,14 @@
 --------------------------------------------------------------*/
 :root {
     --color-white: #fff;
-    --color-black: #000;
+    --color-black: #4C4C4C;
 
-    --color-1: #ffdf00;
+    --color-1: #E56849;
     --color-2: #575756;
-    --color-3: #ededed;
+    --color-3: #EBE9DE;
 
-    --color-4: #624096;
-    --color-5: #4da1ff;
+    --color-4: #fff;
+    --color-5: #fff;
 }
 
 /*--------------------------------------------------------------

@@ -17,14 +17,38 @@
 </head>
 
 <body <?php body_class('body  body--sticky-footer '); ?>>
-    <header class="header" id="header">
-        <div class="header__content" id="branding">
+    <!-- header placeholder -->
+    <div class="background-grid  header--fake" style="opacity: 0;">
+        <div class="header__content  lc">
+
+        <div class="header__item  header__item--empty"></div>
+        <div class="header__item  header__item--empty"></div>
+        <div class="header__item  header__item--empty"></div>
+
+            <div class="header__item  header__item--branding">
+                <div class="branding">
+                    <?php if ( function_exists('wtp_blog_info') ) {
+                        echo wtp_blog_info();
+                    } ?>
+                </div>
+            </div>
+
+        <div class="header__item  header__item--empty"></div>
+        <div class="header__item  header__item--empty"></div>
+        <div class="header__item  header__item--empty"></div>
+
+        </div>
+    </div>
+    <!-- end header placeholder -->
+
+    <header id="header" class="header  background-grid  background-grid--half">
+        <div class="header__content  lc">
 
             <div class="header__item  header__item--empty"></div>
 
 
-            <div class="header__item  header__item--wide  header__item--branding" id="site-title">
-                <div class="position--relative">
+            <div class="header__item  header__item--branding" id="site-title">
+                <div id="branding" class="branding">
                     <?php if ( function_exists('wtp_blog_info') ) {
                         echo wtp_blog_info();
                     } ?>
@@ -32,7 +56,7 @@
             </div>
 
             
-            <div class="header__item  header__item--nav  header__item--nav-first">
+            <div class="header__item  header__item--nav  header__item--nav-1">
                 <nav id="menu">
                     <?php
                         $args = array(
@@ -53,7 +77,7 @@
                 </nav>
             </div>
 
-            <div class="header__item  header__item--nav  header__item--nav-second">
+            <div class="header__item  header__item--nav  header__item--nav-2">
                 <nav id="menu">
                     <?php
                         $args = array(
@@ -78,36 +102,21 @@
         </div>
     </header>
 
-    <div class="header  header--background">
-        <div class="header__content">
-            <div class="header__item  header__item--empty"></div>
+    <?php if ( is_active_sidebar( 'header-widget-area' ) ) : ?>
+        <article class="header__widget">
+            <div class="header__widgetcontent">
+                <div class="widget-area  lc">
 
-            <div class="header__item  header__item--wide  header__item--branding">
-                <div class="position--relative">
-                    <?php if ( function_exists('wtp_blog_info') ) {
-                        echo wtp_blog_info();
-                    } ?>
+                    <ul>
+                        <?php dynamic_sidebar( 'header-widget-area' ); ?>
+                    </ul>
+
                 </div>
             </div>
-
-            <div class="header__item  header__item--nav  header__item--nav-first">
-            </div>
-
-            <div class="header__item  header__item--nav  header__item--nav-second">
-            </div>
-
-            <div class="header__item  header__item--empty"></div>
-        </div>
-    </div>
-
-    <div class="<?php echo $has_sidebar; ?>">
-        <main id="content" class="main">
-            <?php if ( is_active_sidebar( 'header-widget-area' ) ) : ?>
-                <article class="header__widget" >
-                    <div class="widget-area  header__widgetcontent">
-                        <ul>
-                            <?php dynamic_sidebar( 'header-widget-area' ); ?>
-                        </ul>
-                    </div>
-                </article>
-            <?php endif; ?>
+        </article>
+    <?php endif; ?>
+        
+    <div class="<?php echo $has_sidebar; ?>  lc">
+        
+        <main id="content" class="main  lc  ">
+            

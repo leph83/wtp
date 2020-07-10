@@ -44,8 +44,8 @@ styling elements with classes - e.g global classes
 @import 'assets/css/phucstrap/04-objects/object.boxmodel.css';
 
 @import 'assets/css/phucstrap/04-objects/object.nav.css';
+@import 'assets/css/phucstrap/04-objects/object.typography.css';
 
-/* @import 'assets/css/theme/04-objects/object.typography.css'; */
 /* @import 'assets/css/theme/04-objects/object.boxmodel.css'; */
 /* @import 'assets/css/theme/04-objects/object.body.css'; */
 /* @import 'assets/css/theme/04-objects/object.grid.css'; */
@@ -56,12 +56,14 @@ styling elements with classes - e.g global classes
 # 05 COMPONENTS - organisms
 styling more complex sections - e.g header, blocks, sections
 --------------------------------------------------------------*/
-
+@import 'assets/css/theme/05-components/component.default.css';
 @import 'assets/css/theme/05-components/component.header.css';
 @import 'assets/css/theme/05-components/component.footer.css';
 @import 'assets/css/phucstrap/05-components/component.nav.css';
 @import 'assets/css/theme/05-components/component.nav.css';
 @import 'assets/css/theme/05-components/component.blocks.css';
+
+@import 'assets/css/theme/05-components/component.gutenberg.css';
 
 /*--------------------------------------------------------------
 # 06 UTILITIES
