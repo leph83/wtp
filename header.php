@@ -6,7 +6,7 @@
     $has_sidebar = '';
     if ( is_active_sidebar( 'primary-widget-area' ) ) {
         $has_sidebar = 'main--has-sidebar';
-    }    
+    }
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -78,7 +78,7 @@
             </div>
 
             <div class="header__item  header__item--nav  header__item--nav-2">
-                <nav id="menu">
+                <nav id="menu-2">
                     <?php
                         $args = array(
                             'theme_location'=> 'secondary',
@@ -103,7 +103,7 @@
     </header>
 
     <?php if ( is_active_sidebar( 'header-widget-area' ) ) : ?>
-        <article class="header__widget">
+        <div class="header__widget">
             <div class="header__widgetcontent">
                 <div class="widget-area  lc">
 
@@ -113,10 +113,9 @@
 
                 </div>
             </div>
-        </article>
+        </div>
     <?php endif; ?>
         
     <div class="<?php echo $has_sidebar; ?>  lc">
         
         <main id="content" class="main  lc  ">
-            

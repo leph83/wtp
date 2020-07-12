@@ -24,7 +24,6 @@ Author URI: http://what-the-phuc.at/
 /*--------------------------------------------------------------
 # 02 GENERIC - normalize
 --------------------------------------------------------------*/
-@import 'assets/css/phucstrap/02-generic/generic.normalize.css';
 @import 'assets/css/phucstrap/02-generic/generic.custom.css';
  
 /*--------------------------------------------------------------

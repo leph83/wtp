@@ -2,9 +2,9 @@
     if ( ! defined( 'ABSPATH' ) ) {
         exit; // Exit if accessed directly.
     }
-?>
 
-<?php get_header(); ?>
+    get_header(); 
+?>
 
     <?php if (have_posts()) : ?>
         <header class="block__header">

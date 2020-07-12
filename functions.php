@@ -58,7 +58,7 @@ function wtp_setup()
 if ( !function_exists('wtp_load_styles') ) {
     function wtp_load_styles() {
         // Version dependend on change date of file
-        $file_name = 'style.css';
+        $file_name = 'style.min.css';
         $css_version = filemtime( get_stylesheet_directory() . '/' . $file_name );
 
         // STYLE
@@ -74,7 +74,7 @@ if ( !function_exists('wtp_load_styles') ) {
  if ( !function_exists('wtp_load_scripts') ) {
      function wtp_load_scripts()
      {
-        wp_enqueue_script( 'wtp-fontawesome', 'https://kit.fontawesome.com/816ec536e1.js', false, '1', true );
+        // wp_enqueue_script( 'wtp-fontawesome', 'https://kit.fontawesome.com/816ec536e1.js', false, '1', true );
      }
      add_action('wp_enqueue_scripts', 'wtp_load_scripts');
 }
@@ -297,5 +297,3 @@ add_action( 'after_setup_theme' , 'change_gutenberg_color_palette' );
  * Checkbox to show title, description and logo
  * add Sidebar Setting (left, right)
  */
-
-

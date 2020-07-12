@@ -3,6 +3,8 @@
         exit; // Exit if accessed directly.
     }
 
+    get_header();
+
     $archive_title = '';
 
     if ( is_archive() ) {
@@ -14,7 +16,6 @@
     }
 ?>
 
-<?php get_header(); ?>
     <section>
         <div class="block">
             <header class="block__header">

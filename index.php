@@ -1,20 +1,18 @@
 <?php 
+
     if ( ! defined( 'ABSPATH' ) ) {
         exit; // Exit if accessed directly.
     }
-?>
 
-<?php 
+    get_header(); 
+
     $featured_image = false;
     if (is_home() && get_option('page_for_posts') ) {
         $img = wp_get_attachment_image_src(get_post_thumbnail_id(get_option('page_for_posts')),'full'); 
 
         $featured_image = $img[0];
     }
- 
 ?>
-
-<?php get_header(); ?>
     <section>
         <div class="block  block--hero">
             <div class="block__media">
