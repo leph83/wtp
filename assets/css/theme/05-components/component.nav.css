@@ -1,54 +1,60 @@
 /*--------------------------------------------------------------
-# NAV
+# NAV HEADER
 --------------------------------------------------------------*/
-
-
-/* .nav--header {
-    display: flex;
-    flex-wrap: wrap;
-} */
-
-/*--------------------------------------------------------------
-# NAV header
---------------------------------------------------------------*/
-/* .nav--header .nav__item {
-    margin-left: var(--gutter);
-    margin-bottom: var(--gutter);
-}
-
-.nav--header .nav__link {
-    padding: calc( var(--gutter) * 1) ;
-} */
-
-/*--------------------------------------------------------------
-# NAV FOOTER
---------------------------------------------------------------*/
-/* .nav--footer {
-    display: flex;
-    flex-wrap: wrap;
-    margin-left: calc(var(--gutter) * -1);
-    margin-bottom: calc(var(--gutter) * -1);
-}
-
-.nav--footer .nav__item {
-    margin-left: var(--gutter);
-    margin-bottom: var(--gutter);
-} */
-
-
-.header__item--nav nav {
-
-}
-
 .header__item--nav ul {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-
+    grid-gap: 1px;
+    grid-template-columns: 1fr;
 }
 
-.header__item--nav .nav__item {
 
+    .header__item--nav .nav__item {
+        display: flex;
+        align-items: center;
+        padding-left: calc(var(--gutter) / 2);
+
+        border: 1px solid var(--color-1);
+        border-top: 0;
+        margin: -1px;
+
+        font-size: var(--font-size-8);
+    }
+
+
+@media all and (min-width: 768px) {
+    .header__item--nav ul {
+        grid-template-columns: 1fr 1fr;
+        text-align: center;
+    } 
+    
+    .header__item--nav .nav__item {
+        justify-content: center;
+
+
+        font-size: var(--font-size-7);
+    }
+}
+
+/*--------------------------------------------------------------
+# NAV WIDGET FOOTER
+--------------------------------------------------------------*/
+.widget_nav_menu .menu {
     display: flex;
-    align-items: center;
-    justify-content: center;
+}
+
+.widget_nav_menu .menu li {
+    display: block;
+    padding-left: calc( var(--gutter) * .5 );
+    margin-left: calc( var(--gutter) * .5 );
+    border-left: 1px solid var(--color-1);
+}
+
+.widget_nav_menu .menu li:first-child {
+    padding-left: 0;
+    margin-left: 0;
+    border-left: none;
+}
+
+.widget_nav_menu .menu a {
+    display: block;
 }

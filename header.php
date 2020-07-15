@@ -18,7 +18,7 @@
 
 <body <?php body_class('body  body--sticky-footer '); ?>>
     <!-- header placeholder -->
-    <div class="background-grid  header--fake" style="opacity: 0;">
+    <div class="background-grid  header--fake" hidden>
         <div class="header__content  lc">
 
         <div class="header__item  header__item--empty"></div>
@@ -45,19 +45,9 @@
         <div class="header__content  lc">
 
             <div class="header__item  header__item--empty"></div>
-
-
-            <div class="header__item  header__item--branding" id="site-title">
-                <div id="branding" class="branding">
-                    <?php if ( function_exists('wtp_blog_info') ) {
-                        echo wtp_blog_info();
-                    } ?>
-                </div>
-            </div>
-
             
-            <div class="header__item  header__item--nav  header__item--nav-1">
-                <nav id="menu">
+            <div class="header__item  header__item--nav  header__item--nav-1  grid">
+                <nav id="menu" class="grid">
                     <?php
                         $args = array(
                             'theme_location'=> 'primary',
@@ -77,8 +67,16 @@
                 </nav>
             </div>
 
-            <div class="header__item  header__item--nav  header__item--nav-2">
-                <nav id="menu-2">
+            <div class="header__item  header__item--branding" id="site-title">
+                <div id="branding" class="branding">
+                    <?php if ( function_exists('wtp_blog_info') ) {
+                        echo wtp_blog_info();
+                    } ?>
+                </div>
+            </div>
+
+            <div class="header__item  header__item--nav  header__item--nav-2  grid">
+                <nav id="menu-2" class="grid">
                     <?php
                         $args = array(
                             'theme_location'=> 'secondary',

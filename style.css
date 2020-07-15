@@ -41,15 +41,10 @@ styling elements with classes - e.g global classes
 @import 'assets/css/phucstrap/04-objects/object.body.css';
 @import 'assets/css/phucstrap/04-objects/object.functional.css';
 @import 'assets/css/phucstrap/04-objects/object.boxmodel.css';
+@import 'assets/css/phucstrap/04-objects/object.grid.css';
 
 @import 'assets/css/phucstrap/04-objects/object.nav.css';
 @import 'assets/css/phucstrap/04-objects/object.typography.css';
-
-/* @import 'assets/css/theme/04-objects/object.boxmodel.css'; */
-/* @import 'assets/css/theme/04-objects/object.body.css'; */
-/* @import 'assets/css/theme/04-objects/object.grid.css'; */
-/* @import 'assets/css/theme/04-objects/object.burger.css'; */
-
 
 /*--------------------------------------------------------------
 # 05 COMPONENTS - organisms
@@ -58,8 +53,10 @@ styling more complex sections - e.g header, blocks, sections
 @import 'assets/css/theme/05-components/component.default.css';
 @import 'assets/css/theme/05-components/component.header.css';
 @import 'assets/css/theme/05-components/component.footer.css';
+
 @import 'assets/css/phucstrap/05-components/component.nav.css';
 @import 'assets/css/theme/05-components/component.nav.css';
+
 @import 'assets/css/theme/05-components/component.blocks.css';
 
 @import 'assets/css/theme/05-components/component.gutenberg.css';
@@ -68,7 +65,6 @@ styling more complex sections - e.g header, blocks, sections
 # 06 UTILITIES
 e.g hacks or ie11 styles
 --------------------------------------------------------------*/
-/* @import '../../../wp-includes/css/dist/block-library/style.min.css'; */
 /* @import 'theme/06-utilities/utilities.display.css'; */
 /* @import 'theme/06-utilities/utilities.typography.css'; */
 /* @import 'theme/06-utilities/utilitites.img.css'; */

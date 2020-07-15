@@ -1,113 +1,141 @@
 /*--------------------------------------------------------------
 # HEADER
 --------------------------------------------------------------*/
-.background-grid {
-  /* background-image: linear-gradient(90deg, red 0px, transparent 1px);
-  background-size: calc(100 / 8.5 * 1%);
-  background-position: calc(100 / 8.5 / 3.5 * 1%) top; */
-}
-
-.background-grid--half {
-  /* background-size: calc(100 / 8.5 * 1%) 50%;
-  background-repeat: repeat-x;
-  background-image: linear-gradient(90deg, red 0px, transparent 1px),
-    linear-gradient(to bottom, white 100%, transparent 100%); */
-}
-
-
 .header {
   position: relative;
   position: sticky;
   top: 0;
   z-index: 10000;
-  background-image: linear-gradient(to bottom, var(--color-white) 50%, transparent 50%);
+  background-color: var(--color-white);
 }
 
-.header:before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  border-bottom: 1px solid red;
-  transform: translateY(-1px);
-  top: 50%;
+@media all and (min-width: 768px) {
+  .header {
+    background-color: transparent;
+    background-image: linear-gradient(to bottom, var(--color-white) 50%, transparent 50%);
+  }
+
+  .header:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    border-bottom: 1px solid red;
+    transform: translateY(-1px);
+    top: 50%;
+  }
 }
+
+
+
+
 
 /* fake header */
-.header--fake {
-  position: absolute;
-  width: 100%;
-  opacity: 1 !important;
-  pointer-events: none;
+@media all and (min-width: 768px) {
+  .header--fake[hidden] {
+    display: block;
+  }
+
+  .header--fake {
+    position: absolute;
+    width: 100%;
+    opacity: 1 !important;
+    pointer-events: none;
+  }
+  
+  .header--fake .header__content {
+    transform: translateY( 50% );
+    border: 1px solid transparent;
+  }
+  
+  .header--fake .branding {
+    opacity: 0;
+    visibility: none;
+  }
 }
 
-.header--fake .header__content {
-  transform: translateY( 50% );
-  border: 1px solid transparent;
 
-
-}
-
-.header--fake .branding {
-  opacity: 0;
-  visibility: none;
-}
-
-
+/* HEADER CONTENT */
 .header__content {
   position: relative;
   display: grid;
   grid-gap: 1px;
   margin-bottom: 1px;
 
-  grid-template-columns: repeat(8, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  
   grid-template-rows: 1fr 1fr;
 
   border: 1px solid transparent;
   border-bottom: none;
 }
 
+.header__item--empty {
+  display: none;
+}
 
 /* HEADER ITEM */
 .header__item {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  margin-left: -1px;
+  margin-right: -1px;
+  border-left: 1px solid var(--color-1);
+  border-right: 1px solid var(--color-1);
+}
+
+.header__item--branding {
+  position: relative;
+  text-align: center;
+  border-bottom: 1px solid;
+  margin-bottom: -1px;
+  grid-row: span 2;
 
   margin-left: -1px;
   margin-right: -1px;
   border-left: 1px solid var(--color-1);
   border-right: 1px solid var(--color-1);
-/* 
-  border: 1px solid var(--color-1);
-  margin: -1px; */
-}
-
-.header__item--branding {
-  grid-column: 4 / span 2;
-  grid-row: span 2;
-  position: relative;
-
-  text-align: center;
-
-  border: none;
 }
 
 .header__item--branding img {
-  border-bottom: 1px solid red;
+  padding-bottom: 1px;
 }
 
 .header__item--nav {
-  grid-row: 1;
+  grid-row: span 2;
 }
 
-.header__item--nav-1 {
-  grid-column: 2 / span 2;
-}
 
-.header__item--nav-2 {
-  grid-column: 6 / span 2;
-}
+@media all and (min-width: 768px) {
+  .header__content {
+    grid-template-columns: repeat(8, 1fr);
+  }
 
+  .header__item--empty {
+    display: block;
+  }
+
+  .header__item--branding img {
+    padding-bottom: initial;
+    border-bottom: 1px solid red;
+  }
+
+  .header__item--branding {
+    border: none;
+    margin-bottom: initial;
+    grid-column: 4 / span 2;
+    grid-row: span 2;
+  }
+
+  .header__item--nav {
+    grid-row: 1;
+  }
+
+  .header__item--nav-1 {
+    grid-column: 2 / span 2;
+  }
+  
+  .header__item--nav-2 {
+    grid-column: 6 / span 2;
+  }
+}
 
 /* WIDGET HEADER */
 .header__widget {
@@ -117,13 +145,15 @@
 
 .header__widgetcontent {
   margin-top: calc(var(--gutter) * .5);
-  border-top: 1px solid red;
+  border-top: 1px solid var(--color-1);
 }
 
-.header__widget .widget-area {
-  display: grid;
-  grid-template-columns: 3fr 2fr 3fr;
-  margin-bottom: calc( var(--gutter) * 2.5 );
+@media all and (min-width: 768px) {
+  .header__widget .widget-area {
+    display: grid;
+    grid-template-columns: 3fr 2fr 3fr;
+    margin-bottom: calc( var(--gutter) * 2.5 );
+  }
 }
 
 
@@ -145,6 +175,5 @@
 
 .header__widgetcontent a {
   text-decoration: none;
-  color: red;
+  color: var(--color-1);
 }
-
