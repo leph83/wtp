@@ -12,11 +12,33 @@ a {
     font-size: var(--font-size-4);
 }
 
-@media all and (min-width: 768px) {
+.main--has-sidebar {
+    padding: calc(var(--gutter) * .25);
+    max-width: var(--max-width);
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: content-box;
+}
+
+@media all and (min-width: 820px) {
     .main--has-sidebar {
         display: grid;
+        grid-template-columns: repeat(6, 1fr);
+    }
+
+    .main--has-sidebar .main {
+        grid-column: span 4;
+    }
+
+    .main--has-sidebar .aside {
+        grid-column: 6;
+    }
+}
+
+
+@media all and (min-width: 1200px) {
+    .main--has-sidebar {
         grid-template-columns: repeat(8, 1fr);
-        grid-template-rows: auto auto auto;
     }
 
     .main--has-sidebar .main {
