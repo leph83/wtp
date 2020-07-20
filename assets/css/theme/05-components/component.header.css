@@ -20,7 +20,7 @@
   top: 50%;
 }
 
-@media all and (min-width: 820px) {
+@media all and (min-width: 768px) {
   .header {
     background-color: initial;
     background-image: linear-gradient(to bottom, var(--color-white) 50%, rgba(0,0,0, 0) 50%);
@@ -44,15 +44,14 @@
   border-bottom: .5px solid var(--color-1);
 }
 
-@media all and (min-width: 820px) {
+@media all and (min-width: 768px) {
   .header__content {
     border: initial;
-
     grid-template-columns: repeat(6, 1fr);
   }
 }
 
-@media all and (min-width: 1260px) {
+@media all and (min-width: 1280px) {
   .header__content {
     padding: .5px;
     grid-template-columns: repeat(8, 1fr);
@@ -82,7 +81,7 @@
   grid-row: span 2;
 }
 
-@media all and (min-width: 820px) {
+@media all and (min-width: 768px) {
   .header__item--branding {
     border: initial;
     background-color: initial;
@@ -112,7 +111,7 @@
   }
 }
 
-@media all and (min-width: 1260px) {
+@media all and (min-width: 1280px) {
   .header__item--empty {
     display: block;
   }
@@ -144,7 +143,7 @@
 
 
 /* fake header */
-@media all and (min-width: 820px) {
+@media all and (min-width: 768px) {
   .header--fake[hidden] {
     display: block;
   }
@@ -186,7 +185,7 @@
   }
 }
 
-@media all and (min-width: 1260px) {
+@media all and (min-width: 1280px) {
   .header--fake .header__item--empty-left {
     border-left: .5px solid var(--color-1);
     margin-left: -.5px;
@@ -221,7 +220,7 @@
   border-top: .5px solid var(--color-1);
 }
 
-@media all and (min-width: 1260px) {
+@media all and (min-width: 1280px) {
   .header__widget .widget-area {
     display: grid;
     grid-template-columns: 3fr 2fr 3fr;
@@ -232,6 +231,10 @@
 
 
 /* HEADER WIDGET CONTENT */
+.header__widgetcontent {
+  margin-bottom: calc( var(--gutter) / 3);
+}
+
 .widget-area ul {
   list-style-type: none;
   margin-left: 0;
@@ -258,4 +261,30 @@
 .header__widgetcontent .textwidget > * {
   margin-left: calc(var(--gutter) / 9);
   margin-right: calc(var(--gutter) / 9);
+}
+
+@media all and (min-width: 768px) {
+  .header__widgetcontent {
+    margin-bottom: calc( var(--gutter) * 3);
+  }
+
+  .header__widgetcontent .widget-area {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .header__widgetcontent ul {
+    grid-column: 3 / span 2;
+  }
+
+}
+
+@media all and (min-width: 1280px) {
+  .header__widgetcontent .widget-area { 
+    grid-template-columns: repeat(8, 1fr);
+  }
+
+  .header__widgetcontent ul {
+    grid-column: 4 / span 2;
+  }
 }

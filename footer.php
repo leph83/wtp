@@ -4,10 +4,10 @@
     }
 ?>
 
-        </main>
+            </main>
 
-        <?php get_sidebar(); ?>
-
+            <?php get_sidebar(); ?>
+        </div>
     </div>
 
 
@@ -16,7 +16,7 @@
 
 
         <div class="footer__content  footer__content--bottom" id="copyright">
-            &copy; <?php echo esc_html(date_i18n(__('Y', 'wtp'))); ?> <?php echo esc_html(get_bloginfo('name')); ?>
+            Merci Team
         </div>
     </footer>
 

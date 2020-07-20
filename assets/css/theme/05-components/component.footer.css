@@ -12,42 +12,65 @@
     text-decoration: none;
 }
 
+
+
 /* FOOTER TOP */
 .footer__content--top {
     border-top: .5px solid var(--color-1);
-    /* border-bottom: .5px solid var(--color-1); */
-}
-
-.footer__contentgrid {
-    grid-gap: 1px;
 }
 
 .footer__item--top {
     border-bottom: .5px solid var(--color-1);
 }
 
-.footer__item--top:first-child {
-    border-left: 0;
-}
-
-@media all and (min-width: 820px) {
+@media all and (min-width: 768px) {
     .footer__content--top {
-        border-top: .5px solid var(--color-1);
         border-bottom: .5px solid var(--color-1);
     }
 
     .footer__contentgrid {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        padding: .5px;
+        grid-gap: .5px;
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .footer__item--top {
         border-left: .5px solid var(--color-1);
-        border-bottom: initial;
+        margin-left: -.5px;
     }
 
-    .footer__item--top:first-child {
+    .footer__item--top:nth-child(4n+1),
+    .footer__item--top:nth-child(4n+3) {
         border-left: 0;
+    }
+
+    .footer__item--top:nth-child(4n+3),
+    .footer__item--top:nth-child(4n+4) {
+        border-bottom: initial;
+    }
+}
+
+@media all and (min-width: 1280px) {
+    .footer__contentgrid {
+        grid-template-columns: repeat(4, 1fr);
+        border-right: .5px solid var(--color-1);
+        margin-right: -.5px;
+    }
+
+    /* jep, it's a hack */
+    .footer__item--top.footer__item--top {
+        border: initial;
+
+        border-left: .5px solid var(--color-1);
+        margin-left: -.5px;
+
+
+    }
+
+    .footer__item--top.footer__item--top:first-child {
+        /* border-left: initial;
+        margin-left: initial; */
     }
 }
 
@@ -71,6 +94,18 @@
 
 .footer_3 .widget-area ul {
     padding: calc( var(--gutter) /3 );
+    height: 100%;
+}
+
+.footer_3 .widget-area ul li {
+    height: 100%;
+}
+
+.footer_3 img {
+    width: 100%;
+    height: 100% !important;
+    max-width: none;
+    object-fit: cover;
 }
 
 .footer_4 > .widget-area > ul {
@@ -84,4 +119,15 @@
 
 .footer__item--top .widget-area {
     height: 100%;
+}
+
+.footer_4 .widget_nav_menu {
+    margin-top: var(--gutter);
+}
+
+
+/* FOOTER CONTENT */
+.footer__content--bottom {
+    padding: calc( var(--gutter) / 2 );
+    text-align: center;
 }

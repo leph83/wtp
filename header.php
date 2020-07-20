@@ -116,6 +116,6 @@
         </div>
     <?php endif; ?>
         
-    <div class="<?php echo $has_sidebar; ?>">
-        
-        <main id="content" class="main  lc  ">
+    <div class="lc">
+        <div class="<?php echo $has_sidebar; ?>">
+        <main id="content" class="main">

@@ -30,8 +30,8 @@
 --------------------------------------------------------------*/
 :root {
     /* Font Family */
-    --font-family: 'Hind', sans-serif;
-    --font-family-2: 'Open Sans', sans-serif;
+    --font-family: 'Chivo', sans-serif;
+    --font-family-2: 'Chivo', sans-serif;
 
     /* Modular Scale */
     --font-size: 1.6rem;
