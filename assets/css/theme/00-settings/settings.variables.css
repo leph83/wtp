@@ -8,6 +8,14 @@
     --max-width: 120rem;
     --max-width-2: 102.4rem;
     --max-width-3: 76.8rem;
+
+    --gap: 1px;
+}
+
+@media all and (-webkit-min-device-pixel-ratio: 1.5) {
+  :root {
+    --gap: 2px;
+  }
 }
 
 /*--------------------------------------------------------------
@@ -35,7 +43,7 @@
 
     /* Modular Scale */
     --font-size: 1.6rem;
-    --font-size-ratio: 1.25;
+    --font-size-ratio: 1.125;
     --line-height: 1.25;
 
     /* Line Height */
@@ -51,7 +59,7 @@
 
 @media (min-width:64em) {
   :root {
-    --font-size-ratio: 1.333;
+    --font-size-ratio: 1.25;
   }
 }
 

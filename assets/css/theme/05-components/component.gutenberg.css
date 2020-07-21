@@ -2,6 +2,7 @@
 .wp-block-media-text {
     display: grid;
     grid-gap: calc( var(--gutter) / 3);
+    padding: .5px;
 }
 
 .wp-block-media-text__media {
@@ -37,7 +38,7 @@
     }
 
     .wp-block-media-text__content {
-        padding: calc(var(--gutter) * 2);
+        padding: calc(var(--gutter) * 1);
     }
 }
 
@@ -61,8 +62,8 @@
 .wp-block-button__link {
     text-decoration: none;
     color: inherit;
-    padding: calc( var(--gutter) * .5 ) calc( var(--gutter) * 1.25 ) ;
-    border: .5px solid;
+    padding: calc( var(--gutter) * .5 ) calc( var(--gutter) * .75 ) ;
+    border: var(--gap) solid;
     display: inline-block;
     font-weight: bold;
 
@@ -84,10 +85,14 @@
 .wp-block-group {
     margin-top: var(--gutter);
     margin-bottom: calc(var(--gutter) * 3);
+    border: var(--gap) solid var(--color-1);
+}
 
-    border: .5px solid var(--color-1);
-    margin-right: -.5px;
-    padding: .5px;
+@media all and (min-width: 768px) {
+    .wp-block-group {
+        margin-right: calc( var(--gap) * -1) ;
+        margin-left: calc( var(--gap) * -1) ;
+    }
 }
 
 .wp-block-group__inner-container > h1
@@ -101,7 +106,7 @@
 }
 
 .wp-block-group__inner-container > *:not(:first-child) {
-    border-top: .5px solid var(--color-1);
+    border-top: var(--gap) solid var(--color-1);
 }
 
 
@@ -127,33 +132,37 @@
 
 .wp-block-group .wp-block-latest-posts__list {
     display: grid;
-    grid-row-gap: .5px;
-    border-top: .5px solid var(--color-1);
+    grid-row-gap: var(--gap);
+    border-top: var(--gap) solid var(--color-1);
 }
 
 .wp-block-latest-posts__list > li:not(:first-child) {
-    border-top: .5px solid var(--color-1);
-    margin-top: -.5px;
+    border-top: var(--gap) solid var(--color-1);
+    margin-top: calc( var(--gap) * -1) ;
 }
 
 @media all and (min-width: 768px) { 
     .wp-block-group .wp-block-latest-posts__list {
         grid-row-gap: initial;
-        grid-column-gap: .5px;
-
-        margin-right: -.5px;
-        margin-left: -.5px;
+        grid-column-gap: var(--gap);
+        /* margin-left: calc( var(--gap) * -1) ; */
     }
 
     .wp-block-latest-posts__list > li:not(:first-child) {
         border-top: initial;
         margin-top: initial;
 
-        border-left: .5px solid var(--color-1);
-        margin-left: -.5px;
+        border-left: var(--gap) solid var(--color-1);
+        margin-left: calc( var(--gap) * -1) ;
+
     }
 }
 
+@media all and (min-width: 1280px) { 
+    .wp-block-group .wp-block-latest-posts__list {
+        margin-left: initial;
+    }
+}
 
 /* POSTS GRID VIEW */
 .wp-block-latest-posts__list.is-grid > li {

@@ -16,28 +16,32 @@
 
 /* FOOTER TOP */
 .footer__content--top {
-    border-top: .5px solid var(--color-1);
+    border-top: var(--gap) solid var(--color-1);
 }
 
 .footer__item--top {
-    border-bottom: .5px solid var(--color-1);
+    border-bottom: var(--gap) solid var(--color-1);
+}
+
+.footer__contentgrid {
+    padding-left: calc(var(--gutter) / 3);
+    padding-right: calc(var(--gutter) / 3);
 }
 
 @media all and (min-width: 768px) {
     .footer__content--top {
-        border-bottom: .5px solid var(--color-1);
+        border-bottom: var(--gap) solid var(--color-1);
     }
 
     .footer__contentgrid {
         display: grid;
-        padding: .5px;
-        grid-gap: .5px;
+        grid-gap: var(--gap);
         grid-template-columns: repeat(2, 1fr);
     }
 
     .footer__item--top {
-        border-left: .5px solid var(--color-1);
-        margin-left: -.5px;
+        border-left: var(--gap) solid var(--color-1);
+        margin-left: calc( var(--gap) * -1) ;
     }
 
     .footer__item--top:nth-child(4n+1),
@@ -54,23 +58,19 @@
 @media all and (min-width: 1280px) {
     .footer__contentgrid {
         grid-template-columns: repeat(4, 1fr);
-        border-right: .5px solid var(--color-1);
-        margin-right: -.5px;
     }
 
     /* jep, it's a hack */
     .footer__item--top.footer__item--top {
         border: initial;
 
-        border-left: .5px solid var(--color-1);
-        margin-left: -.5px;
-
-
+        border-left: var(--gap) solid var(--color-1);
+        margin-left: calc( var(--gap) * -1) ;
     }
 
-    .footer__item--top.footer__item--top:first-child {
-        /* border-left: initial;
-        margin-left: initial; */
+    .footer__item--top.footer__item--top:last-child {
+        border-right: var(--gap) solid var(--color-1);
+        margin-right: calc( var(--gap) * -1) ;
     }
 }
 
