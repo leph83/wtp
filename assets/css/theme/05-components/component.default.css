@@ -1,5 +1,7 @@
 .body {
     color: var(--color-1);
+
+    grid-template-rows: auto auto 1fr auto;
 }
 
 a {
