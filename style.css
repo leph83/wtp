@@ -1,5 +1,5 @@
 /*
-Theme Name: WhoThePhuc
+Theme Name: WTP Theme
 Text Domain: whothephuc
 Version: 2020.1
 Description: Who the Phuc cares?
@@ -41,7 +41,7 @@ styling elements with classes - e.g global classes
 
 @import 'assets/css/phucstrap/04-objects/object.body.css';
 @import 'assets/css/phucstrap/04-objects/object.functional.css';
-/* @import 'assets/css/phucstrap/04-objects/object.boxmodel.css'; */
+@import 'assets/css/phucstrap/04-objects/object.boxmodel.css';
 @import 'assets/css/phucstrap/04-objects/object.grid.css';
 
 @import 'assets/css/phucstrap/04-objects/object.nav.css';
@@ -58,7 +58,7 @@ styling more complex sections - e.g header, blocks, sections
 @import 'assets/css/phucstrap/05-components/component.nav.css';
 @import 'assets/css/theme/05-components/component.nav.css';
 
-/* @import 'assets/css/theme/05-components/component.blocks.css'; */
+@import 'assets/css/theme/05-components/component.blocks.css';
 
 @import 'assets/css/theme/05-components/component.gutenberg.css';
 

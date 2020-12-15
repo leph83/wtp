@@ -17,105 +17,46 @@
 </head>
 
 <body <?php body_class('body  body--sticky-footer '); ?>>
-    <!-- header placeholder -->
-    <div class="background-grid  header--fake" hidden>
-        <div class="lc">
-            <div class="header__content">
-                <div class="header__item  header__item--empty  header__item--empty-left"></div>
-                <div class="header__item  header__item--empty  header__item--empty-2  header__item--empty-left"></div>
-                <div class="header__item  header__item--empty  header__item--empty-2  header__item--empty-left  header__item--empty-left-last-child"></div>
-
-                    <div class="header__item  header__item--branding">
-                        <div class="branding">
-                            <?php if ( function_exists('wtp_blog_info') ) {
-                                echo wtp_blog_info();
-                            } ?>
-                        </div>
-                    </div>
-
-                <div class="header__item  header__item--empty  header__item--empty-2  header__item--empty-right  header__item--empty-right-first-child"></div>
-                <div class="header__item  header__item--empty  header__item--empty-2  header__item--empty-right"></div>
-                <div class="header__item  header__item--empty  header__item--empty-right"></div>
-            </div>
-        </div>
-    </div>
-    <!-- end header placeholder -->
-
     <header id="header" class="header  background-grid  background-grid--half">
-        <div class="lc">
-            <div class="header__content">
 
-                <div class="header__item  header__item--left  header__item--empty"></div>
-                
-                <div class="header__item  header__item--left    header__item--nav  header__item--nav-1  grid">
-                    <nav id="menu" class="grid">
-                        <?php
-                            $args = array(
-                                'theme_location'=> 'primary',
-                                'container'     => '',
-                                'menu_class'    => 'nav  nav--dropdown  nav--header',
-                                'fallback_cb'   => false,
-                                'add_submenu_class'  => 'nav__submenu',
-                                'add_li_class'  => 'nav__item',
-                                'add_li_active_class' => 'nav__item--active',
-                                'add_li_parent_class' => 'nav__item--parent',
-                                'add_a_class'   => 'nav__link',
-                                'add_a_active_class'   => 'nav__link--active',
-                                );
-                            wp_nav_menu($args);
-                        ?>
-                        
-                    </nav>
+        <div class="header__content  lc">
+
+            <div class="header__item  header__item--branding">
+                <div class="branding" href="<?php echo get_home_url(); ?>">
+                    <?php if ( function_exists('wtp_blog_info') ) {
+                        echo wtp_blog_info();
+                    } ?>
                 </div>
-
-                <div class="header__item  header__item--branding" id="site-title">
-                    <div id="branding" class="branding">
-                        <?php if ( function_exists('wtp_blog_info') ) {
-                            echo wtp_blog_info();
-                        } ?>
-                    </div>
-                </div>
-
-                <div class="header__item  header__item--right    header__item--nav  header__item--nav-2  grid">
-                    <nav id="menu-2" class="grid">
-                        <?php
-                            $args = array(
-                                'theme_location'=> 'secondary',
-                                'container'     => '',
-                                'menu_class'    => 'nav  nav--dropdown  nav--secondary  nav--header',
-                                'fallback_cb'   => false,
-                                'add_submenu_class'  => 'nav__submenu',
-                                'add_li_class'  => 'nav__item',
-                                'add_li_active_class' => 'nav__item--active',
-                                'add_li_parent_class' => 'nav__item--parent',
-                                'add_a_class'   => 'nav__link',
-                                'add_a_active_class'   => 'nav__link--active',
-                                );
-                            wp_nav_menu($args);
-                        ?>
-                        
-                    </nav>
-                </div>
-
-                <div class="header__item  header__item--right    header__item--empty"></div>
             </div>
+
+            <div class="header__item  header__item--meta">
+                <nav id="menu" class="">
+                    <?php
+                        $args = array(
+                            'theme_location'=> 'primary',
+                            'container'     => '',
+                            'menu_class'    => 'nav  nav--dropdown  nav--header',
+                            'fallback_cb'   => false,
+                            'add_submenu_class'  => 'nav__submenu',
+                            'add_li_class'  => 'nav__item',
+                            'add_li_active_class' => 'nav__item--active',
+                            'add_li_parent_class' => 'nav__item--parent',
+                            'add_a_class'   => 'nav__link',
+                            'add_a_active_class'   => 'nav__link--active',
+                            );
+                        wp_nav_menu($args);
+                    ?>
+                    
+                </nav>
+
+                <div class="">
+                    <?php get_sidebar(); ?>
+                </div>
+            </div>
+
         </div>
     </header>
 
-    <?php if ( is_active_sidebar( 'header-widget-area' ) ) : ?>
-        <div class="header__widget">
-            <div class="header__widgetcontent">
-                <div class="widget-area  lc">
 
-                    <ul>
-                        <?php dynamic_sidebar( 'header-widget-area' ); ?>
-                    </ul>
-
-                </div>
-            </div>
-        </div>
-    <?php endif; ?>
-        
-    <div class="lc">
-        <div class="<?php echo $has_sidebar; ?>">
+    <div class="<?php echo $has_sidebar; ?>">
         <main id="content" class="main">

@@ -5,6 +5,9 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(''); ?>>
+    <div class="">
+        <?php echo get_the_post_thumbnail(); ?>
+    </div>
 
     <div class="" id="page-content">
         <?php the_content(); ?>

@@ -1,40 +1,22 @@
-/* chivo-300 - latin */
+
+
+/* hind-regular - latin */
 @font-face {
      font-display: swap;
-     font-family: 'Chivo';
-     font-style: normal;
-     font-weight: 300;
-     src: local('Chivo Light'), local('Chivo-Light'),
-          url('../../../fonts/chivo/chivo-v11-latin-300.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-          url('../../../fonts/chivo/chivo-v11-latin-300.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-   }
-   /* chivo-regular - latin */
-   @font-face {
-     font-display: swap;
-     font-family: 'Chivo';
+     font-family: 'Hind';
      font-style: normal;
      font-weight: 400;
-     src: local('Chivo Regular'), local('Chivo-Regular'),
-          url('../../../fonts/chivo/chivo-v11-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-          url('../../../fonts/chivo/chivo-v11-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+     src: local('Hind Regular'), local('Hind-Regular'),
+          url('../../../fonts/hind/hind-v10-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+          url('../../../fonts/hind/hind-v10-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
    }
-   /* chivo-700 - latin */
-   @font-face {
+/* hind-700 - latin */
+@font-face {
      font-display: swap;
-     font-family: 'Chivo';
+     font-family: 'Hind';
      font-style: normal;
      font-weight: 700;
-     src: local('Chivo Bold'), local('Chivo-Bold'),
-          url('../../../fonts/chivo/chivo-v11-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-          url('../../../fonts/chivo/chivo-v11-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-   }
-   /* chivo-900 - latin */
-   @font-face {
-     font-display: swap;
-     font-family: 'Chivo';
-     font-style: normal;
-     font-weight: 900;
-     src: local('Chivo Black'), local('Chivo-Black'),
-          url('../../../fonts/chivo/chivo-v11-latin-900.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-          url('../../../fonts/chivo/chivo-v11-latin-900.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-   }
+     src: local('Hind Bold'), local('Hind-Bold'),
+          url('../../../fonts/hind/hind-v10-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+          url('../../../fonts/hind/hind-v10-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}

@@ -6,7 +6,7 @@
 
 <div class="entry-meta">
     <span class="author vcard">
-        <?php  _e('by'); ?> <?php the_author_posts_link(); ?>
+
     </span>
 
     <span class="meta-sep"> | </span>

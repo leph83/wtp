@@ -5,9 +5,9 @@
     --gutter: 2.4rem;
     --gutter-description: var(--font-size);
 
-    --max-width: 120rem;
-    --max-width-2: 102.4rem;
-    --max-width-3: 76.8rem;
+    --max-width: 80rem;
+    --max-width-2: 70rem;
+    --max-width-3: 60rem;
 
     --gap: 1px;
 }
@@ -23,11 +23,11 @@
 --------------------------------------------------------------*/
 :root {
     --color-white: #fff;
-    --color-black: #4C4C4C;
+    --color-black: #101213;
 
-    --color-1: #E56849;
-    --color-2: #575756;
-    --color-3: #EBE9DE;
+    --color-1: #0cb4ce;
+    --color-2: #444;
+    --color-3: #1595a9;
 
     --color-4: #fff;
     --color-5: #fff;
@@ -38,11 +38,11 @@
 --------------------------------------------------------------*/
 :root {
     /* Font Family */
-    --font-family: 'Chivo', sans-serif;
-    --font-family-2: 'Chivo', sans-serif;
+    --font-family: 'Hind', sans-serif;
+    --font-family-2: 'Hind', sans-serif;
 
     /* Modular Scale */
-    --font-size: 1.6rem;
+    --font-size: 1.2rem;
     --font-size-ratio: 1.125;
     --line-height: 1.25;
 
@@ -59,7 +59,7 @@
 
 @media (min-width:64em) {
   :root {
-    --font-size-ratio: 1.25;
+    --font-size-ratio: 1.125;
   }
 }
 
