@@ -5,33 +5,176 @@
     display: grid;
 }
 
-
-.grid-column-gap {
-    grid-column-gap: calc(var(--gutter) * 1);
-}
+/*--------------------------------------------------------------
+# GRID GAP
+--------------------------------------------------------------*/
 .grid-gap {
-    grid-gap: calc(var(--gutter) * 1);
+    grid-gap: calc(var(--gutter) * var(--whole) );
 }
 
+/* smaller */
+.grid-gap--quarter {
+    grid-gap: calc( var(--gutter) * var(--quarter) );
+}
+
+.grid-gap--third {
+    grid-gap: calc(var(--gutter) * var(--third) );
+}
+
+.grid-gap--half {
+    grid-gap: calc(var(--gutter) * var(--half) );
+}
+
+.grid-gap--two-thirds {
+    grid-gap: calc( var(--gutter) * var(--two-thirds) );
+}
+
+.grid-gap--three-quarters {
+    grid-gap: calc( var(--gutter) * var(--three-quarters) );
+}
+
+/* bigger */
 .grid-gap--double {
-    grid-gap: calc(var(--gutter) * 2);
+    grid-gap: calc(var(--gutter) * var(--double) );
 }
 
 .grid-gap--tripple {
-    grid-gap: calc(var(--gutter) * 3);
+    grid-gap: calc(var(--gutter) * var(--tripple) );
 }
+
+.grid-gap--quadruple {
+    grid-gap: calc(var(--gutter) * var(--quadruple) );
+}
+
+/*--------------------------------------------------------------
+# GRID COLUMN GAP
+--------------------------------------------------------------*/
+.grid-column-gap {
+    grid-column-gap: calc(var(--gutter) * var(--whole) );
+}
+
+/* smaller */
+.grid-column-gap--quarter {
+    grid-column-gap: calc( var(--gutter) * var(--quarter) );
+}
+
+.grid-column-gap--third {
+    grid-column-gap: calc(var(--gutter) * var(--third) );
+}
+
+.grid-column-gap--half {
+    grid-column-gap: calc(var(--gutter) * var(--half) );
+}
+
+.grid-column-gap--two-thirds {
+    grid-column-gap: calc( var(--gutter) * var(--two-thirds) );
+}
+
+.grid-column-gap--three-quarters {
+    grid-column-gap: calc( var(--gutter) * var(--three-quarters) );
+}
+
+/* bigger */
+.grid-column-gap--double {
+    grid-column-gap: calc(var(--gutter) * var(--double) );
+}
+
+.grid-column-gap--tripple {
+    grid-column-gap: calc(var(--gutter) * var(--tripple) );
+}
+
+.grid-column-gap--quadruple {
+    grid-column-gap: calc(var(--gutter) * var(--quadruple) );
+}
+
+/*--------------------------------------------------------------
+# GRID ROW GAP
+--------------------------------------------------------------*/
+.grid-row-gap {
+    grid-row-gap: calc(var(--gutter) * var(--whole) );
+}
+
+/* smaller */
+.grid-row-gap--quarter {
+    grid-row-gap: calc( var(--gutter) * var(--quarter) );
+}
+
+.grid-row-gap--third {
+    grid-row-gap: calc(var(--gutter) * var(--third) );
+}
+
+.grid-row-gap--half {
+    grid-row-gap: calc(var(--gutter) * var(--half) );
+}
+
+.grid-row-gap--two-thirds {
+    grid-row-gap: calc( var(--gutter) * var(--two-thirds) );
+}
+
+.grid-row-gap--three-quarters {
+    grid-row-gap: calc( var(--gutter) * var(--three-quarters) );
+}
+
+/* bigger */
+.grid-row-gap--double {
+    grid-row-gap: calc(var(--gutter) * var(--double) );
+}
+
+.grid-row-gap--tripple {
+    grid-row-gap: calc(var(--gutter) * var(--tripple) );
+}
+
+.grid-row-gap--quadruple {
+    grid-row-gap: calc(var(--gutter) * var(--quadruple) );
+}
+
+/*--------------------------------------------------------------
+# GRID TEMPLATE COLUMNS
+--------------------------------------------------------------*/
+.grid--1 {
+    grid-template-columns: repeat(1, 1fr);
+}
+
+.grid--2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.grid--3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
 .grid--4 {
     grid-template-columns: repeat(4, 1fr);
 }
 
-.grid--1fr-1fr {
-    grid-template-columns: 1fr 1fr;
+.grid--5 {
+    grid-template-columns: repeat(5, 1fr);
 }
 
-.grid--auto-1fr {
-    grid-template-columns: auto 1fr;
+.grid--6 {
+    grid-template-columns: repeat(6, 1fr);
 }
 
-.grid--1fr-auto {
-    grid-template-columns: 1fr auto;
+.grid--7 {
+    grid-template-columns: repeat(7, 1fr);
+}
+
+.grid--8 {
+    grid-template-columns: repeat(8, 1fr);
+}
+
+.grid--9 {
+    grid-template-columns: repeat(9, 1fr);
+}
+
+.grid--10 {
+    grid-template-columns: repeat(10, 1fr);
+}
+
+.grid--11 {
+    grid-template-columns: repeat(11, 1fr);
+}
+
+.grid--12 {
+    grid-template-columns: repeat(12, 1fr);
 }

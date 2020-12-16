@@ -1,52 +1,45 @@
 /*--------------------------------------------------------------
-# FONT SIZES
+# FONT SIZES + Wordpress Font sizes
 --------------------------------------------------------------*/
-.h0 {
-    font-size: var(--font-size-0);
-    line-height: var(--line-height-0);
-}
 
-.h1
-, .has-h-1-font-size {
+/* headings */
+.h1 {
     font-size: var(--font-size-1);
     line-height: var(--line-height-1);
 }
 
-.h2
-, .has-h-2-font-size {
+.h2 {
     font-size: var(--font-size-2);
     line-height: var(--line-height-2);
 }
 
-.h3
-, .has-h-3-font-size {
+.h3 {
     font-size: var(--font-size-3);
     line-height: var(--line-height-3);
 }
 
-.h4
-, .has-h-4-font-size {
+.h4 {
     font-size: var(--font-size-4);
     line-height: var(--line-height-4);
 }
 
-.h5
-, .has-h-5-font-size {
+.h5 {
     font-size: var(--font-size-5);
     line-height: var(--line-height-5);
 }
 
-.h6
-, .has-h-6-font-size {
+.h6 {
     font-size: var(--font-size-6);
     line-height: var(--line-height-6);
 }
 
+/* paragraph size */
 .h7 {
     font-size: var(--font-size-7);
     line-height: var(--line-height-7);
 }
 
+/* smaller headings */
 .h8 {
     font-size: var(--font-size-8);
     line-height: var(--line-height-8);
@@ -56,6 +49,28 @@
     font-size: var(--font-size-9);
     line-height: var(--line-height-9);
 }
+
+/* bigger headings */
+.h0 {
+    font-size: var(--font-size-0);
+    line-height: var(--line-height-0);
+}
+
+.ha {
+    font-size: var(--font-size-a);
+    line-height: var(--line-height-a);
+}
+
+.hb {
+    font-size: var(--font-size-b);
+    line-height: var(--line-height-b);
+}
+
+.hc {
+    font-size: var(--font-size-c);
+    line-height: var(--line-height-c);
+}
+
 
 
 /*--------------------------------------------------------------
@@ -125,14 +140,49 @@
 
 /*--------------------------------------------------------------
 # TYPOGRAPHY
+# Block: fs = font-style
+--------------------------------------------------------------*/
+.fs--normal {
+    font-style: normal;
+}
+
+.fs--italic {
+    font-style: italic;
+}
+
+/* fake italic, wenn kein italic vorhanden */
+.fs--oblique {
+    font-style: oblique;
+}
+
+
+
+/*--------------------------------------------------------------
+# TYPOGRAPHY
 # Text Align
 --------------------------------------------------------------*/
-.has-text-align-left {
+.ta--left {
     text-align: left;
 }
-.has-text-align-center {
+.ta--center {
     text-align: center;
 }
-.has-text-align-right {
+.ta---right {
     text-align: right;
+}
+
+.ta--justify {
+    text-align: justify;
+}
+
+/*--------------------------------------------------------------
+# TYPOGRAPHY
+# Text Transform
+--------------------------------------------------------------*/
+.uppercase {
+    text-transform: uppercase;
+}
+
+.lowercase {
+    text-transform: lowercase;
 }

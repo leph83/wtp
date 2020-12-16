@@ -3,36 +3,91 @@
 --------------------------------------------------------------*/
 .lc {
     margin-left: auto;
-    margin-right: auto;
-	max-width: var(--max-width);
+	margin-right: auto;
 	width: 100%;
-}
-
-.lc--padding {
-	padding-left: var(--gutter);
-	padding-right: var(--gutter);
+	max-width: var(--max-width);
 }
 
 .lc--2 {
-    max-width: var(--max-width-2);
+	--max-width: var(--max-width-2);
 }
 
 .lc--3 {
-    max-width: var(--max-width-3);
+    --max-width: var(--max-width-3);
 }
 
-/* combinations */
-.lc.lc--padding {
-	max-width: calc(var(--max-width) + var(--gutter) * 2 );
+/*--------------------------------------------------------------
+# COLORS
+--------------------------------------------------------------*/
+.color--1 {
+    color: var(--color-1);
 }
 
-.lc--2.lc--padding {
-	max-width: calc(var(--max-width-2) + var(--gutter) * 2 );
+.color--2 {
+    color: var(--color-2);
 }
 
-.lc--3.lc--padding {
-	max-width: calc(var(--max-width-3) + var(--gutter) * 2 );
+.color--3 {
+    color: var(--color-3);
 }
+
+.color--4 {
+    color: var(--color-4);
+}
+
+.color--5 {
+    color: var(--color-5);
+}
+
+/*--------------------------------------------------------------
+# BACKGROUND COLORS
+--------------------------------------------------------------*/
+.bg-color--1 {
+    background-color: var(--color-1);
+    color: var(--color-white);
+}
+
+.bg-color--2 {
+    background-color: var(--color-2);
+}
+
+.bg-color--3 {
+    background-color: var(--color-3);
+}
+
+.bg-color--4 {
+    background-color: var(--color-4);
+}
+
+.bg-color--5 {
+    background-color: var(--color-5);
+}
+
+
+
+/*--------------------------------------------------------------
+# POSITION
+--------------------------------------------------------------*/
+.position--static {
+	position: static;
+}
+
+.position--relative {
+	position: relative;
+}
+
+.position--absolute {
+	position: absolute;
+}
+
+.position--fixed {
+	position: fixed;
+}
+
+.position--sticky {
+	position: sticky;
+}
+
 
 
 /*--------------------------------------------------------------
@@ -66,50 +121,19 @@
     display: grid;
 }
 
-.position--relative {
-	position: relative;
-}
 
 /*--------------------------------------------------------------
-# Accessibility
+# RESET NAV LIST STYLES
+- creates layout shift
 --------------------------------------------------------------*/
-/* Text meant only for screen readers. */
-.screen-reader-text {
-	border: 0;
-	clip: rect(1px, 1px, 1px, 1px);
-	clip-path: inset(50%);
-	height: 1px;
-	margin: -1px;
-	overflow: hidden;
-	padding: 0;
-	position: absolute !important;
-	width: 1px;
-	word-wrap: normal !important; /* Many screen reader and browser combinations announce broken words as they would appear visually. */
+.nav,
+.nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
 
-.screen-reader-text:focus {
-	background-color: #f1f1f1;
-	border-radius: 3px;
-	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
-	clip: auto !important;
-	clip-path: none;
-	color: #21759b;
-	display: block;
-	font-size: 14px;
-	font-size: 0.875rem;
-	font-weight: bold;
-	height: auto;
-	left: 5px;
-	line-height: normal;
-	padding: 15px 23px 14px;
-	text-decoration: none;
-	top: 5px;
-	width: auto;
-	z-index: 100000;
-	/* Above WP toolbar. */
-}
-
-/* Do not show the outline on the skip link target. */
-#content[tabindex="-1"]:focus {
-	outline: 0;
+.nav__link {
+    text-decoration: none;
+    color: inherit;
 }

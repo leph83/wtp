@@ -11,20 +11,20 @@ Author URI: http://what-the-phuc.at/
 
 
 /*--------------------------------------------------------------
-# 00 SETTINGS
+# 00 SETTINGS - Variables
 --------------------------------------------------------------*/
-@import 'assets/css/theme/00-settings/settings.variables.css';
-@import 'assets/css/theme/00-settings/settings.fonts.css';
+@import 'assets/css/phucstrap/00-settings/setting.variables.css';
+@import 'assets/css/theme/00-settings/setting.variables.css';
+/* @import 'assets/css/theme/00-settings/setting.fonts.css'; */
 
 /*--------------------------------------------------------------
-# 01 TOOLS - generate variables
+# 01 TOOLS - generate additional variables
 --------------------------------------------------------------*/
-@import 'assets/css/phucstrap/01-tools/tools.modularscale.css';
+@import 'assets/css/phucstrap/01-tools/tool.modularscale.css';
 
 /*--------------------------------------------------------------
 # 02 GENERIC - normalize
 --------------------------------------------------------------*/
-/* @import 'assets/css/phucstrap/02-generic/generic.normalize.css'; */
 @import 'assets/css/phucstrap/02-generic/generic.custom.css';
  
 /*--------------------------------------------------------------
@@ -32,43 +32,30 @@ Author URI: http://what-the-phuc.at/
 styling elements without classes
 --------------------------------------------------------------*/
 @import 'assets/css/phucstrap/03-elements/element.headings.css';
-/* @import 'assets/css/theme/03-elements/element.form.css'; */
 
 /*--------------------------------------------------------------
 # 04 OBJECTS - molecules
-styling elements with classes - e.g global classes
+styling elements with classes - e.g functional CSS
 --------------------------------------------------------------*/
-
-@import 'assets/css/phucstrap/04-objects/object.body.css';
-@import 'assets/css/phucstrap/04-objects/object.functional.css';
 @import 'assets/css/phucstrap/04-objects/object.boxmodel.css';
+@import 'assets/css/phucstrap/04-objects/object.functional.css';
 @import 'assets/css/phucstrap/04-objects/object.grid.css';
-
-@import 'assets/css/phucstrap/04-objects/object.nav.css';
 @import 'assets/css/phucstrap/04-objects/object.typography.css';
+@import 'assets/css/phucstrap/04-objects/object.wordpress.css';
 
 /*--------------------------------------------------------------
 # 05 COMPONENTS - organisms
 styling more complex sections - e.g header, blocks, sections
 --------------------------------------------------------------*/
-@import 'assets/css/theme/05-components/component.default.css';
-@import 'assets/css/theme/05-components/component.header.css';
-@import 'assets/css/theme/05-components/component.footer.css';
-
-@import 'assets/css/phucstrap/05-components/component.nav.css';
-@import 'assets/css/theme/05-components/component.nav.css';
-
 @import 'assets/css/theme/05-components/component.blocks.css';
-
+@import 'assets/css/theme/05-components/component.default.css';
+@import 'assets/css/theme/05-components/component.footer.css';
 @import 'assets/css/theme/05-components/component.gutenberg.css';
+@import 'assets/css/theme/05-components/component.header.css';
+@import 'assets/css/theme/05-components/component.nav.css';
 
 /*--------------------------------------------------------------
 # 06 UTILITIES
 e.g hacks or ie11 styles
 --------------------------------------------------------------*/
-/* @import 'theme/06-utilities/utilities.display.css'; */
-/* @import 'theme/06-utilities/utilities.typography.css'; */
-/* @import 'theme/06-utilities/utilitites.img.css'; */
-/* @import 'theme/06-utilities/utility.wordpress.css'; */
-/* @import 'theme/06-utilities/utilities.colors.css'; */
-/* @import 'assets/css/phucstrap/06-utilities/utility.wordpress.css'; */
+@import 'assets/css/theme/06-utilities/utility.wordpress.css';

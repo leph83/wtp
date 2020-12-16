@@ -1,0 +1,54 @@
+/*--------------------------------------------------------------
+# LAYOUT
+--------------------------------------------------------------*/
+:root {
+    --gutter: 2.4rem;
+    --gutter-description: var(--font-size);
+
+    --max-width: 128rem;
+    --max-width-2: 100rem;
+    --max-width-3: 60rem;
+
+    --gap: 1px;
+}
+
+/*--------------------------------------------------------------
+# COLORS
+--------------------------------------------------------------*/
+:root {
+    --color-white: #fff;
+    --color-black: #000;
+
+    --color-1: #0cb4ce;
+    --color-2: #444;
+    --color-3: #1595a9;
+
+    --color-4: #fff;
+    --color-5: #fff;
+}
+
+/*--------------------------------------------------------------
+# FONT
+--------------------------------------------------------------*/
+:root {
+    /* Font Family */
+    --font-family: sans-serif;
+    --font-family-2: sans-serif;
+
+    /* Modular Scale */
+    --font-size: 1.6rem;
+    --font-size-ratio: 1.125;
+    --line-height: 1.6;
+
+    /* Line Height */
+    --line-height-0: var(--line-height);
+    --line-height-1: var(--line-height);
+    --line-height-2: var(--line-height);
+    --line-height-3: var(--line-height);
+    --line-height-4: var(--line-height);
+    --line-height-5: var(--line-height);
+    --line-height-6: var(--line-height);
+    --line-height-7: var(--line-height);
+}
+
+

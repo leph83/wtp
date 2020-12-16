@@ -12,14 +12,18 @@ html {
 }
 
 body {
+    margin: 0;
     font-family: var(--font-family);
     font-size: var(--font-size);
     line-height: var(--line-height);
-
-    margin: 0;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, 
+h2, 
+h3, 
+h4, 
+h5, 
+h6 {
     margin: 0;
     padding: 0;
     font-weight: inherit;

@@ -1,0 +1,177 @@
+/*!
+Author: Kev Quirk
+Author URI: https://kevq.uk
+This is a template for a stylesheet that allows WordPress users to use a custom theme within Gutenberg that matches their frontend.
+*/
+
+
+
+/* Set global width for all Gutenberg blocks - this should be the same as your article width */
+.wp-block {
+
+}
+
+ /* Main typography elements */
+ 
+ /* Sans Serif font for headers */
+ .editor-block-list__layout .editor-block-list__block,
+ .editor-post-title__block .editor-post-title__input,
+ h1.rich-text.block-editor-rich-text__editable,
+ h2.rich-text.block-editor-rich-text__editable,
+ h3.rich-text.block-editor-rich-text__editable,
+ h4.rich-text.block-editor-rich-text__editable,
+ h5.rich-text.block-editor-rich-text__editable,
+ h6.rich-text.block-editor-rich-text__editable,
+ .has-medium-font-size,
+ #post-title-0,
+ table {
+   font-family: var(--font-family-2);
+ }
+ 
+ /* Serif font for body text */
+ .editor-block-list__layout .editor-block-list__block p,
+ .rich-text.block-editor-rich-text__editable.wp-block-paragraph,
+ .block-editor-block-list__layout.is-root-container,
+ ul,
+ ol {
+   font-family: var(--font-family);
+ }
+ 
+ /* Monospace font for code */
+ pre, code, kbd, tt, var {
+     font-family: var(--font-family);
+ }
+ 
+ /* Format post images */
+ .wp-block-image img {
+
+ }
+ 
+ /* Format image captions */
+ .wp-block-image figcaption,
+ figcaption {
+
+ }
+ 
+ /*--------------------------------------------------------------
+ # Typography
+ --------------------------------------------------------------*/
+ h1.rich-text.block-editor-rich-text__editable {
+   font-size: var(--font-size-1);
+   line-height: var(--line-height-1);
+   margin-top: inherit;
+   margin-bottom: inherit;
+   padding-top: inherit;
+   padding-bottom: inherit;
+}
+
+ h2.rich-text.block-editor-rich-text__editable {
+    font-size: var(--font-size-2);
+    line-height: var(--line-height-2);
+    margin-top: inherit;
+    margin-bottom: inherit;
+    padding-top: inherit;
+    padding-bottom: inherit;
+ }
+ 
+ h3.rich-text.block-editor-rich-text__editable {
+    font-size: var(--font-size-3);
+    line-height: var(--line-height-3);
+    margin-top: inherit;
+    margin-bottom: inherit;
+    padding-top: inherit;
+    padding-bottom: inherit;
+ }
+ 
+ h4.rich-text.block-editor-rich-text__editable {
+    font-size: var(--font-size-4);
+    line-height: var(--line-height-4);
+    margin-top: inherit;
+    margin-bottom: inherit;
+    padding-top: inherit;
+    padding-bottom: inherit;
+ }
+ 
+ h5.rich-text.block-editor-rich-text__editable {
+    font-size: var(--font-size-5);
+    line-height: var(--line-height-5);
+    margin-top: inherit;
+    margin-bottom: inherit;
+    padding-top: inherit;
+    padding-bottom: inherit;
+ }
+ 
+ h6.rich-text.block-editor-rich-text__editable {
+    font-size: var(--font-size-6);
+    line-height: var(--line-height-6);
+    margin-top: inherit;
+    margin-bottom: inherit;
+    padding-top: inherit;
+    padding-bottom: inherit;
+ }
+ 
+ p.rich-text.block-editor-rich-text__editable {
+    font-size: var(--font-size-7);
+    line-height: var(--line-height-7);
+    margin-top: inherit;
+    margin-bottom: inherit;
+    padding-top: inherit;
+    padding-bottom: inherit;
+ }
+ 
+ /* Format code blocks */
+ pre {
+
+ }
+ 
+ /* Format inline code blocks */
+ code, kbd, tt, var {
+
+ }
+ 
+ /* Format blockquotes */
+ .wp-block-quote {
+
+ }
+ 
+ /* Format the cite text in blockquotes */
+ dfn, cite, i {
+
+ }
+ 
+ /* Links & buttons */
+ 
+ a,
+ a:visited,
+ article a,
+ p.feature-credit a,
+ p.feature-credit a:visited,
+ .menu-items a {
+    color: var(--color-1);
+    text-decoration: none;
+ }
+ 
+ a:hover,
+ a:focus,
+ a:active,
+ article a:hover,
+ article a:focus,
+ article a:active,
+ p.feature-credit a:hover,
+ p.feature-credit a:active,
+ .menu-items a:hover,
+ .menu-items a:active {
+    text-decoration: underline;
+ }
+ 
+ /* Standard WordPress button block */
+ .rich-text.block-editor-rich-text__editable.wp-block-button__link,
+ .rich-text.block-editor-rich-text__editable.wp-block-button__link:visited {
+
+ }
+ 
+ .rich-text.block-editor-rich-text__editable.wp-block-button__link:hover,
+ .rich-text.block-editor-rich-text__editable.wp-block-button__link:focus,
+ .rich-text.block-editor-rich-text__editable.wp-block-button__link:active {
+
+ }

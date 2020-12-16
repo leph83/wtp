@@ -58,5 +58,5 @@
     </header>
 
 
-    <div class="<?php echo $has_sidebar; ?>">
+    <div class="main--container  <?php echo $has_sidebar; ?>">
         <main id="content" class="main">

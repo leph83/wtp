@@ -1,0 +1,13 @@
+:root {
+    --quarter: calc( 1/4 );
+    --third: calc( 1/3 );
+    --half: calc( 1/2 );
+    --two-thirds: calc( 2/3 );
+    --three-quarters: calc( 3/4 );
+    
+    --whole: 1;
+
+    --double: 2;
+    --tripple: 3;
+    --quadruple: 4;
+}

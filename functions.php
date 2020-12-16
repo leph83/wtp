@@ -15,6 +15,7 @@ require_once('inc/setting_load-js.php');
 
 // ADD
 require_once('inc/add_security.php');
+// require_once('inc/add_css_defer.php');
 require_once('inc/add_nav_classes.php');
 require_once('inc/add_gutenberg-admin-styles.php');
 require_once('inc/add_pagination-markup.php');
@@ -35,3 +36,4 @@ require_once('inc/disable_embed.php');
  * Checkbox to show title, description and logo
  * add Sidebar Setting (left, right)
  */
+
