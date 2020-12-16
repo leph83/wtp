@@ -11,51 +11,60 @@ Author URI: http://what-the-phuc.at/
 
 
 /*--------------------------------------------------------------
-# 00 SETTINGS - Variables
+# 01 SETTINGS - Variables
 --------------------------------------------------------------*/
-@import 'assets/css/phucstrap/00-settings/setting.variables.css';
-@import 'assets/css/theme/00-settings/setting.variables.css';
 /* @import 'assets/css/theme/00-settings/setting.fonts.css'; */
+@import 'assets/css/phucstrap/01-settings/setting.variables.css';
+@import 'assets/css/theme/01-settings/setting.variables.css';
+
 
 /*--------------------------------------------------------------
-# 01 TOOLS - generate additional variables
+# 02 TOOLS - generate additional variables
 --------------------------------------------------------------*/
-@import 'assets/css/phucstrap/01-tools/tool.modularscale.css';
+@import 'assets/css/phucstrap/02-tools/tool.modularscale.css';
 
 /*--------------------------------------------------------------
-# 02 GENERIC - normalize
+# 03 GENERIC - normalize
 --------------------------------------------------------------*/
-@import 'assets/css/phucstrap/02-generic/generic.custom.css';
+@import 'assets/css/phucstrap/03-generic/generic.custom.css';
  
 /*--------------------------------------------------------------
-# 03 ELEMENTS
+# 04 ELEMENTS
 styling elements without classes
+
+can contain any default HTML element. Do not add classes here, just give the elements some basic styles.
 --------------------------------------------------------------*/
-@import 'assets/css/phucstrap/03-elements/element.headings.css';
+@import 'assets/css/phucstrap/04-elements/element.headings.css';
 
 /*--------------------------------------------------------------
-# 04 OBJECTS - molecules
+# 05 OBJECTS - molecules
 styling elements with classes - e.g functional CSS
+
+is all about adjusting the default block styles to the given layout. I only added three blocks as examples.
 --------------------------------------------------------------*/
-@import 'assets/css/phucstrap/04-objects/object.boxmodel.css';
-@import 'assets/css/phucstrap/04-objects/object.functional.css';
-@import 'assets/css/phucstrap/04-objects/object.grid.css';
-@import 'assets/css/phucstrap/04-objects/object.typography.css';
-@import 'assets/css/phucstrap/04-objects/object.wordpress.css';
+@import 'assets/css/phucstrap/05-objects/object.boxmodel.css';
+@import 'assets/css/phucstrap/05-objects/object.functional.css';
+@import 'assets/css/phucstrap/05-objects/object.grid.css';
+@import 'assets/css/phucstrap/05-objects/object.typography.css';
+@import 'assets/css/phucstrap/05-objects/object.wordpress.css';
 
 /*--------------------------------------------------------------
-# 05 COMPONENTS - organisms
+# 06 COMPONENTS - organisms
 styling more complex sections - e.g header, blocks, sections
+
+contains all "bigger" components which contain elements of the previous two categories like header, footer, page template, single template, comments section, archives, ...
 --------------------------------------------------------------*/
-@import 'assets/css/theme/05-components/component.blocks.css';
-@import 'assets/css/theme/05-components/component.default.css';
-@import 'assets/css/theme/05-components/component.footer.css';
-@import 'assets/css/theme/05-components/component.gutenberg.css';
-@import 'assets/css/theme/05-components/component.header.css';
-@import 'assets/css/theme/05-components/component.nav.css';
+@import 'assets/css/theme/06-components/component.blocks.css';
+@import 'assets/css/theme/06-components/component.default.css';
+@import 'assets/css/theme/06-components/component.footer.css';
+@import 'assets/css/theme/06-components/component.gutenberg.css';
+@import 'assets/css/theme/06-components/component.header.css';
+@import 'assets/css/theme/06-components/component.nav.css';
 
 /*--------------------------------------------------------------
-# 06 UTILITIES
+# 07 UTILITIES
 e.g hacks or ie11 styles
+
+is for any utility classes that are not assigned to a specific component.
 --------------------------------------------------------------*/
-@import 'assets/css/theme/06-utilities/utility.wordpress.css';
+@import 'assets/css/theme/07-utilities/utility.wordpress.css';
