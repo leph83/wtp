@@ -22,16 +22,16 @@ if ( !function_exists('wtp_blog_info') ) {
             ;
         }
 
-        if (get_theme_mod('header_text')) {
+        if ( get_theme_mod('display_title_and_tagline') ) {
             $brand .= '
                 <a href="'. esc_url(home_url('/')) .'" title="'. esc_html(get_bloginfo('name')) .'" rel="home">
-                    '. esc_html(get_bloginfo('name')) .'
+                    '. esc_html(get_bloginfo('name')) .'<span id="site-description">'. get_bloginfo('description').'</span>
                 </a>
-                <span id="site-description">'. get_bloginfo('description').'</span>
+                
+                
             ';
         }
 
         return $brand;
     }
 }
-

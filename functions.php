@@ -1,39 +1,42 @@
 <?php
-if ( ! defined( 'ABSPATH' ) ) {
+if (!defined('ABSPATH')) {
 	exit; // Exit if accessed directly.
 }
 
 // SETTINGS
 require_once('inc/setting_setup.php');
-require_once('inc/setting_fontsize.php');
-require_once('inc/setting_color.php');
 require_once('inc/setting_widgets.php');
-require_once('inc/setting_block-styles.php');
+require_once('inc/setting_customizer.php');
 
+require_once('inc/setting_block-styles.php');
 require_once('inc/setting_load-css.php');
 require_once('inc/setting_load-js.php');
 
+require_once('inc/setting_color.php');
+require_once('inc/setting_fontsize.php');
+
+
 // ADD
-require_once('inc/add_security.php');
-// require_once('inc/add_css_defer.php');
-require_once('inc/add_nav_classes.php');
-require_once('inc/add_gutenberg-admin-styles.php');
+require_once('inc/add_nav-classes.php');
+// require_once('inc/add_gutenberg-admin-styles.php');
 require_once('inc/add_pagination-markup.php');
-require_once('inc/bloginfo.php');
+require_once('inc/add_bloginfo.php');
+
+// ENABLE
+
+require_once('inc/enable_increase-security.php');
+
+
+
+
+
 
 // DISABLES
-require_once('inc/disable_custom_fontsize.php');
-require_once('inc/disable_custom_color.php');
+require_once('inc/disable_custom-fontsize.php');
+require_once('inc/disable_custom-color.php');
 require_once('inc/disable_rest_api.php');
-require_once('inc/disable_empty_p.php');
-// require_once('inc/disable_gutenberg_style.php');
 require_once('inc/disable_emoji.php');
 require_once('inc/disable_embed.php');
+// require_once('inc/disable_gutenberg-styles.php');
 
-/**
- * TODO
- * add Logo Size Width Slider
- * Checkbox to show title, description and logo
- * add Sidebar Setting (left, right)
- */
-
+require_once('inc/disable_embed.php');

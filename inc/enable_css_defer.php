@@ -3,6 +3,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
+
+if (get_theme_mod('enable_css_defer')) {
 function add_rel_preload($html, $handle, $href, $media) {
     
     if (is_admin())
@@ -14,3 +16,4 @@ EOT;
     return $html;
 }
 add_filter( 'style_loader_tag', 'add_rel_preload', 10, 4 );
+}

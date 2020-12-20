@@ -11,3 +11,8 @@
 .main--container {
     flex-grow: 1;
 } */
+
+
+p {
+    margin-bottom: var(--gutter);
+}

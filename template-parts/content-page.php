@@ -10,7 +10,7 @@ if (!defined('ABSPATH')) {
     </div>
 
     <div class="entry-content" id="page-content">
-        <?php the_content(); ?>
+        <?php wpautop(the_content()); ?>
 
         <div class="entry-links">
             <?php wp_link_pages(); ?>

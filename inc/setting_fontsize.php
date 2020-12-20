@@ -74,3 +74,35 @@ function set_editor_font_sizes() {
 }
 
 add_action('after_setup_theme', 'set_editor_font_sizes');
+
+
+
+
+// ADD SETTING TO CUSTOMIZER
+function wtp_customizer_modularscale($wp_customize)
+{
+	$wp_customize->add_setting(
+		'font_ratio',
+		array(
+			'capability'        => 'edit_theme_options',
+			'default'           => true,
+		)
+	);
+
+	$wp_customize->add_control(
+		'font_ratio',
+		array(
+			'type'    => 'select',
+			'section' => 'wtp_theme_customizer',
+			'label'   => esc_html__('Font Ratio', 'wtp'),
+			'choices' => array(
+				'1.067' => '15:16 minor second - 1.067',
+                '1.125' => '8:9 major second - 1.125',
+                '1.2'  => '5:6 minor third - 1.2',
+                '1.25'  => '4:5 major third - 1.25',
+                '1.333'  => '3:4 perfect fourth - 1.333',
+			),
+		)
+    );
+}
+add_action('customize_register', 'wtp_customizer_modularscale');
