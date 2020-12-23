@@ -1,11 +1,12 @@
 <?php
-if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly.
+if (!defined('ABSPATH')) {
+    exit; // Exit if accessed directly.
 }
 
-function set_editor_font_sizes() {
+function set_editor_font_sizes()
+{
     $base_font_size = '1.6';
-    if ( get_theme_mod('wtp_font_size') ) {
+    if (get_theme_mod('wtp_font_size')) {
         $base_font_size = floatval(get_theme_mod('wtp_font_size'));
     }
 
@@ -122,57 +123,59 @@ add_action('after_setup_theme', 'set_editor_font_sizes');
 // ADD SETTING TO CUSTOMIZER
 function wtp_customizer_modularscale($wp_customize)
 {
+    // SETTING - BASE FONT SIZE
+    $wp_customize->add_setting(
+        'wtp_font_size',
+        array(
+            'capability'        => 'edit_theme_options',
+            'default'           => false,
+        )
+    );
 
-    // FONT SIZE
-	$wp_customize->add_setting(
-		'wtp_font_size',
-		array(
-			'capability'        => 'edit_theme_options',
-			'default'           => false,
-		)
-	);
-
-	$wp_customize->add_control(
-		'wtp_font_size',
-		array(
-			'type'    => 'select',
-			'section' => 'wtp_theme_customizer',
-			'label'   => __('Font Size', 'wtp'),
-			'choices' => array(
-				'16' => '16px',
+    // CONTROL - BASE FONT SIZE
+    $wp_customize->add_control(
+        'wtp_font_size',
+        array(
+            'type'    => 'select',
+            'section' => 'wtp_font_section',
+            'label'   => __('Font Size', 'wtp'),
+            'choices' => array(
+                '16' => '16px',
                 '17' => '17px',
                 '18'  => '18px',
                 '19'  => '19px',
                 '20'  => '20px',
-			),
-		)
+            ),
+        )
     );
 
 
-    // FONT RATIO
-	$wp_customize->add_setting(
-		'wtp_font_ratio',
-		array(
-			'capability'        => 'edit_theme_options',
-			'default'           => false,
-		)
-	);
 
-	$wp_customize->add_control(
-		'wtp_font_ratio',
-		array(
-			'type'    => 'select',
-			'section' => 'wtp_theme_customizer',
-			'label'   => __('Font Ratio', 'wtp'),
-			'choices' => array(
-				'1.067' => '1.067 - minor second - 15:16',
+    // SETTING - FONT RATIO
+    $wp_customize->add_setting(
+        'wtp_font_ratio',
+        array(
+            'capability'        => 'edit_theme_options',
+            'default'           => false,
+        )
+    );
+
+    // CONTROLL - FONT RATIO
+    $wp_customize->add_control(
+        'wtp_font_ratio',
+        array(
+            'type'    => 'select',
+            'section' => 'wtp_font_section',
+
+            'label'   => __('Font Ratio', 'wtp'),
+            'choices' => array(
+                '1.067' => '1.067 - minor second - 15:16',
                 '1.125' => '1.125 - major second - 8:9',
                 '1.2'  => '1.2 - minor third - 5:6',
                 '1.25'  => '1.25 - major third - 4:5',
                 '1.333'  => '1.333 - perfect fourth - 3:4',
-			),
-		)
+            ),
+        )
     );
-
 }
 add_action('customize_register', 'wtp_customizer_modularscale');

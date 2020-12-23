@@ -6,11 +6,30 @@ if (!defined('ABSPATH')) {
 
 function wtp_customizer_settings($wp_customize)
 {
-	// ADD NEW SECTION FOR CUSTOMIZER
-	$wp_customize->add_section('wtp_theme_customizer', array(
-		'title'      => __('WTP Theme Settings', 'wtp'),
-		'priority' => 120,
+	// PANEL WTP THEME OPTIONS
+	$wp_customize->add_panel( 'wtp_panel',
+		array(
+			'title'      => __( 'WTP Theme Options', 'wtp' ),
+			'priority'   => 200,
+			'capability' => 'edit_theme_options',
+		)
+	);
+
+	// SECTION - FONT SETTING
+	$wp_customize->add_section('wtp_font_section', array(
+		'title' => __('Font Sizes - Modularscale', 'wtp'),
+		'capability' => 'edit_theme_options',
+		'panel'      => 'wtp_panel'
 	));
+
+	// SECTION - DISABLES
+	$wp_customize->add_section('wtp_disable_section', array(
+		'title'      => __('Disables', 'wtp'),
+		'capability' => 'edit_theme_options',
+		'panel'      => 'wtp_panel'
+	));
+	
+
 
 
 	// Add "display_title_and_tagline" setting for displaying the site-title & tagline.
@@ -27,8 +46,9 @@ function wtp_customizer_settings($wp_customize)
 		array(
 			'type'    => 'checkbox',
 			'section' => 'title_tagline',
-			'label'   => esc_html__('Display Site Title & Tagline', 'wtp'),
+			'label'   => __('Display Site Title & Tagline', 'wtp'),
 		)
 	);
+
 }
 add_action('customize_register', 'wtp_customizer_settings');

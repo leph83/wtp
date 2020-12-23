@@ -1,42 +1,38 @@
 <?php
-if ( ! defined( 'ABSPATH' ) ) {
+if (!defined('ABSPATH')) {
 	exit; // Exit if accessed directly.
 }
 
-if ( get_theme_mod('disable_custom_color_picker') ) {
-    function disable_custom_color_picker() {
-        add_theme_support('disable-custom-colors');
-    }
+if (get_theme_mod('disable_custom_color_picker')) {
+	function disable_custom_color_picker()
+	{
+		add_theme_support('disable-custom-colors');
+	}
 
-    add_action('after_setup_theme', 'disable_custom_color_picker');
+	add_action('after_setup_theme', 'disable_custom_color_picker');
 }
 
 
 
 // ADD SETTING TO CUSTOMIZER
-function wtp_customizer_disable_custom_color_picker($wp_customize) {
+function wtp_customizer_disable_custom_color_picker($wp_customize)
+{
+	// SETTING
+	$wp_customize->add_setting(
+		'disable_custom_color_picker',
+		array(
+			'capability'	=> 'edit_theme_options',
+			'default'    	=> true
+		)
+	);
 
-	// SECTION
-	$wp_customize->add_section('wtp_theme_customizer', array(
-		'title'      => __( 'WTP Theme Settings', 'wtp' ),
-		'priority' => 120,
-	));
-
-	$wp_customize->add_setting('disable_custom_color_picker', array(
-		'default'    => true
-	));
+	// CONTROL
 	$wp_customize->add_control(
-		new WP_Customize_Control(
-			$wp_customize,
-			'disable_custom_color_picker',
-			array(
-				'label'     => __('Disable Custom Color Picker', 'wtp'),
-				'section'   => 'wtp_theme_customizer',
-				'settings'  => 'disable_custom_color_picker',
-				'type'      => 'checkbox',
-
-				'capability' => 'edit_theme_options',
-			)
+		'disable_custom_color_picker',
+		array(
+			'type'      => 'checkbox',
+			'section'   => 'wtp_disable_section',
+			'label'     => __('Disable Custom Color Picker', 'wtp'),
 		)
 	);
 }

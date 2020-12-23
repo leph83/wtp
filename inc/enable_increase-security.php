@@ -29,21 +29,29 @@ function wtp_customizer_increase_security($wp_customize)
 {
 
     // SECTION
-    $wp_customize->add_section('wtp_theme_customizer', array(
-        'title'      => __('WTP Theme Settings', 'wtp'),
-        'priority' => 120,
+    $wp_customize->add_section('wtp_increase_security', array(
+        'title'      => __('Security', 'wtp'),
+        'capability' => 'edit_theme_options',
+        'panel'      => 'wtp_panel'
     ));
 
-    $wp_customize->add_setting('increase_security', array(
-        'default'    => true
-    ));
+
+    // SETTING
+    $wp_customize->add_setting(
+        'increase_security',
+        array(
+            'default'    => true
+        )
+    );
+
+    // CONTROL
     $wp_customize->add_control(
         new WP_Customize_Control(
             $wp_customize,
             'increase_security',
             array(
                 'label'     => __('Increase Security', 'wtp'),
-                'section'   => 'wtp_theme_customizer',
+                'section'   => 'wtp_increase_security',
                 'settings'  => 'increase_security',
                 'type'      => 'checkbox',
 
