@@ -28,6 +28,8 @@ function wtp_customizer_settings($wp_customize)
 		'capability' => 'edit_theme_options',
 		'panel'      => 'wtp_panel'
 	));
+
+	
 	
 
 
@@ -43,6 +45,24 @@ function wtp_customizer_settings($wp_customize)
 
 	$wp_customize->add_control(
 		'display_title_and_tagline',
+		array(
+			'type'    => 'checkbox',
+			'section' => 'title_tagline',
+			'label'   => __('Display Site Title & Tagline', 'wtp'),
+		)
+	);
+
+	// ADD LOGO SIZE
+	$wp_customize->add_setting(
+		'logo_size',
+		array(
+			'capability'        => 'edit_theme_options',
+			'default'           => true,
+		)
+	);
+
+	$wp_customize->add_control(
+		'logo_size',
 		array(
 			'type'    => 'checkbox',
 			'section' => 'title_tagline',

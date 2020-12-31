@@ -6,13 +6,16 @@ if (!defined('ABSPATH')) {
 function set_editor_font_sizes()
 {
     $base_font_size = '1.6';
-    if (get_theme_mod('wtp_font_size')) {
+    if ( get_theme_mod('wtp_font_size') ) {
         $base_font_size = floatval(get_theme_mod('wtp_font_size'));
     }
 
-    // I guess this calculation doesn't have to be that complicated, but it's late
-    $font_ratio = floatval(get_theme_mod('wtp_font_ratio'));
+    $font_ratio = 1.2;
+    if ( get_theme_mod('wtp_font_ratio') ) {
+        $font_ratio = floatval(get_theme_mod('wtp_font_ratio'));
+    }
 
+    // I guess this calculation doesn't have to be that complicated, but it's late
     $font_size_h7_calc = $base_font_size / 10;
     $font_size_h6_calc = $font_size_h7_calc * $font_ratio;
     $font_size_h5_calc = $font_size_h6_calc * $font_ratio;
