@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "postcss --use postcss-import postcss-url postcss-clean -o style.min.css style.css --watch"
+    "build": "postcss --use postcss-import postcss-url postcss-clean  --map false -o style.min.css style.css --watch"
   },
   "author": "Phuc Le",
   "license": "ISC",
