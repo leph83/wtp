@@ -119,18 +119,35 @@ add_action('customize_register', 'wtp_customizer_colors');
 function hook_css()
 {
 	global $wtp_colors;
-	$style = '<style>:root {';
+
+	$style = '';
+	$style_variables = '';
+	$style_colors = '';
 
 	if (!empty($wtp_colors)) {
 		foreach ($wtp_colors as $key => $value) {
 			if (get_theme_mod('wtp_color_' . $key)) {
 				$value = get_theme_mod('wtp_color_' . $key);
 			}
-			$style .= '--color-' . $key . ': ' . $value . ';';
+			$style_variables .= '
+			--color-' . $key . ': ' . $value . ';';
+
+			$style_colors .= '
+			.has-color-'.$key.'-color {
+				color: var(--color-'.$key.');
+			}
+
+			.has-color-'.$key.'-background-color {
+				background-color: var(--color-'.$key.');
+			}';
 		}
 	}
 
-	$style .= '}</style>';
+	$style .= '<style>
+	:root {'. $style_variables .'
+	}
+	'. $style_colors .'
+	</style>';
 
 	echo $style;
 }
