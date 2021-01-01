@@ -11,11 +11,12 @@ if (!defined('ABSPATH')) {
 $wtp_colors = array(
 	"black" => "#000000",
 	"white" => "#ffffff",
-	"1" => "#111111",
-	"2" => "#222222",
-	"3" => "#333333",
-	"4" => "#444444",
-	"5" => "#555555",
+	"1" => "#dd3333",
+	"2" => "#dd9933",
+	"3" => "#eeee22",
+	"4" => "#81d742",
+	"5" => "#1e73be",
+	"6" => "#8224e3",
 );
 
 
@@ -62,6 +63,20 @@ add_action('after_setup_theme', 'change_gutenberg_color_palette');
 
 /**
  * ADD COLORS TO CUSTOMIZER
+ * 
+ * 	$wp_customize->add_setting('wtp_color_white', array(
+ *		'default'   => '#FFFFFF',
+ *	));
+ *	$wp_customize->add_control(new WP_Customize_Color_Control(
+ *		$wp_customize,
+ *		'wtp_color_white',
+ *		array(
+ *			'label' => __('Color White', 'wtp'),
+ *			'section' => 'colors',
+ *			'settings' => 'wtp_color_white',
+ *		)
+ *	));
+ * 
  */
 function wtp_customizer_colors($wp_customize)
 {
@@ -71,103 +86,25 @@ function wtp_customizer_colors($wp_customize)
 		'priority' => 120,
 	));
 
-	// Color Black
-	$wp_customize->add_setting('wtp_color_black', array(
-		'default'   => '#000000',
-	));
-	$wp_customize->add_control(new WP_Customize_Color_Control(
-		$wp_customize,
-		'wtp_color_black',
-		array(
-			'label' => __('Color Black', 'wtp'),
-			'section' => 'colors',
-			'settings' => 'wtp_color_black',
-		)
-	));
+	global $wtp_colors;
 
-	// Color White
-	$wp_customize->add_setting('wtp_color_white', array(
-		'default'   => '#FFFFFF',
-	));
-	$wp_customize->add_control(new WP_Customize_Color_Control(
-		$wp_customize,
-		'wtp_color_white',
-		array(
-			'label' => __('Color White', 'wtp'),
-			'section' => 'colors',
-			'settings' => 'wtp_color_white',
-		)
-	));
+	if (!empty($wtp_colors)) {
+		foreach ($wtp_colors as $key => $value) {
+			$wp_customize->add_setting('wtp_color_' . $key, array(
+				'default'   => $value,
+			));
+			$wp_customize->add_control(new WP_Customize_Color_Control(
+				$wp_customize,
+				'wtp_color_' . $key,
+				array(
+					'label' => __('Color ' . $key, 'wtp'),
+					'section' => 'colors',
+					'settings' => 'wtp_color_' . $key,
+				)
+			));
+		}
+	}
 
-	// Color 1
-	$wp_customize->add_setting('wtp_color_1', array(
-		'default'   => '#111111',
-	));
-	$wp_customize->add_control(new WP_Customize_Color_Control(
-		$wp_customize,
-		'wtp_color_1',
-		array(
-			'label' => __('Color 1', 'wtp'),
-			'section' => 'colors',
-			'settings' => 'wtp_color_1',
-		)
-	));
-
-	// Color 2
-	$wp_customize->add_setting('wtp_color_2', array(
-		'default'   => '#222222',
-	));
-	$wp_customize->add_control(new WP_Customize_Color_Control(
-		$wp_customize,
-		'wtp_color_2',
-		array(
-			'label' => __('Color 2', 'wtp'),
-			'section' => 'colors',
-			'settings' => 'wtp_color_2',
-		)
-	));
-
-	// Color 3
-	$wp_customize->add_setting('wtp_color_3', array(
-		'default'   => '#333333',
-	));
-	$wp_customize->add_control(new WP_Customize_Color_Control(
-		$wp_customize,
-		'wtp_color_3',
-		array(
-			'label' => __('Color 3', 'wtp'),
-			'section' => 'colors',
-			'settings' => 'wtp_color_3',
-		)
-	));
-
-	// Color 4
-	$wp_customize->add_setting('wtp_color_4', array(
-		'default'   => '#444444',
-	));
-	$wp_customize->add_control(new WP_Customize_Color_Control(
-		$wp_customize,
-		'wtp_color_4',
-		array(
-			'label' => __('Color 4', 'wtp'),
-			'section' => 'colors',
-			'settings' => 'wtp_color_4',
-		)
-	));
-
-	// Color 5
-	$wp_customize->add_setting('wtp_color_5', array(
-		'default'   => '#555555',
-	));
-	$wp_customize->add_control(new WP_Customize_Color_Control(
-		$wp_customize,
-		'wtp_color_5',
-		array(
-			'label' => __('Color 5', 'wtp'),
-			'section' => 'colors',
-			'settings' => 'wtp_color_5',
-		)
-	));
 }
 add_action('customize_register', 'wtp_customizer_colors');
 
