@@ -13,7 +13,7 @@ Author URI: http://what-the-phuc.at/
 /*--------------------------------------------------------------
 # 01 SETTINGS - Variables
 --------------------------------------------------------------*/
-/* @import 'assets/css/theme/00-settings/setting.fonts.css'; */
+@import 'assets/css/theme/01-settings/setting.fonts.css';
 /* @import 'assets/css/phucstrap/01-settings/setting.variables.css'; */
 @import 'assets/css/theme/01-settings/setting.variables.css';
 
@@ -42,9 +42,10 @@ styling elements with classes - e.g functional CSS
 
 is all about adjusting the default block styles to the given layout. I only added three blocks as examples.
 --------------------------------------------------------------*/
-@import 'assets/css/phucstrap/05-objects/object.boxmodel.css';
+/* @import 'assets/css/phucstrap/05-objects/object.boxmodel.css'; */
+/* @import 'assets/css/phucstrap/05-objects/object.grid.css'; */
+
 @import 'assets/css/phucstrap/05-objects/object.functional.css';
-@import 'assets/css/phucstrap/05-objects/object.grid.css';
 @import 'assets/css/phucstrap/05-objects/object.typography.css';
 @import 'assets/css/phucstrap/05-objects/object.wordpress.css';
 
