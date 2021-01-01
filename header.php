@@ -17,8 +17,9 @@ if (is_active_sidebar('primary-widget-area')) {
     <link rel="profile" href="https://gmpg.org/xfn/11">
 
     <!-- TODO: Find an easy way to preload assets -->
-    <link rel="preload" href="/wp-content/themes/wtp-theme/assets/fonts/hind/hind-v10-latin-regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-    <link rel="preload" href="/wp-content/themes/wtp-theme/assets/fonts/hind/hind-v10-latin-regular.woff" as="font" type="font/woff2" crossorigin="anonymous">
+    <!-- <link rel="preload" href="<?php //echo get_stylesheet_directory_uri() ?>/assets/fonts/hind/hind-v10-latin-regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="<?php //echo get_stylesheet_directory_uri() ?>/assets/fonts/hind/hind-v10-latin-regular.woff" as="font" type="font/woff" crossorigin="anonymous"> -->
+
 
     <?php wp_head(); ?>
 </head>
