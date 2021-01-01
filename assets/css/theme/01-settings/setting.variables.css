@@ -2,51 +2,53 @@
 # LAYOUT
 --------------------------------------------------------------*/
 :root {
-    --gutter: 2.4rem;
-    --gutter-description: var(--font-size);
+  --gutter: 2.4rem;
+  --gutter-description: var(--font-size);
 
-    --max-width: 128rem;
-    --max-width-2: 100rem;
-    --max-width-3: 60rem;
+  --max-width: 128rem;
+  --max-width-2: 100rem;
+  --max-width-3: 60rem;
 
-    --gap: 1px;
+  --gap: 1px;
 }
 
 /*--------------------------------------------------------------
-# COLORS
+# COLORS - FALLBACK
+Wordpress Customizer Setting will override this because it's inline
 --------------------------------------------------------------*/
 :root {
-    --color-white: #fff;
-    --color-black: #000;
+  --color-white: #fff;
+  --color-black: #000;
 
-    --color-1: #0cb4ce;
-    --color-2: #444;
-    --color-3: #1595a9;
+  --color-1: #0cb4ce;
+  --color-2: #444;
+  --color-3: #1595a9;
 
-    --color-4: #fff;
-    --color-5: #fff;
+  --color-4: #fff;
+  --color-5: #fff;
 }
 
 /*--------------------------------------------------------------
 # FONT
+Wordpress Customizer Setting will override this because it's inline
 --------------------------------------------------------------*/
 :root {
-    /* Font Family */
-    --font-family: 'Hind', serif;
-    --font-family-2: 'Open Sans', serif;
+  /* Font Family */
+  --font-family: "Hind", serif;
+  --font-family-2: "Open Sans", serif;
 
-    /* Modular Scale */
-    --font-size: 1.6rem;
-    --font-size-ratio: 1.125;
-    --line-height: 1.6;
+  /* Modular Scale */
+  --font-size: 1.6rem;
+  --font-size-ratio: 1.125;
+  --line-height: 1.6;
 
-    /* Line Height */
-    --line-height-0: var(--line-height);
-    --line-height-1: var(--line-height);
-    --line-height-2: var(--line-height);
-    --line-height-3: var(--line-height);
-    --line-height-4: var(--line-height);
-    --line-height-5: var(--line-height);
-    --line-height-6: var(--line-height);
-    --line-height-7: var(--line-height);
+  /* Line Height */
+  --line-height-0: var(--line-height);
+  --line-height-1: var(--line-height);
+  --line-height-2: var(--line-height);
+  --line-height-3: var(--line-height);
+  --line-height-4: var(--line-height);
+  --line-height-5: var(--line-height);
+  --line-height-6: var(--line-height);
+  --line-height-7: var(--line-height);
 }

@@ -14,8 +14,9 @@ Author URI: http://what-the-phuc.at/
 # 01 SETTINGS - Variables
 --------------------------------------------------------------*/
 @import 'assets/css/theme/01-settings/setting.fonts.css';
-/* @import 'assets/css/phucstrap/01-settings/setting.variables.css'; */
 @import 'assets/css/theme/01-settings/setting.variables.css';
+/* @import 'assets/css/phucstrap/01-settings/setting.variables.css'; */
+
 
 
 /*--------------------------------------------------------------
@@ -31,7 +32,6 @@ Author URI: http://what-the-phuc.at/
 /*--------------------------------------------------------------
 # 04 ELEMENTS
 styling elements without classes
-
 can contain any default HTML element. Do not add classes here, just give the elements some basic styles.
 --------------------------------------------------------------*/
 @import 'assets/css/phucstrap/04-elements/element.headings.css';
@@ -40,13 +40,17 @@ can contain any default HTML element. Do not add classes here, just give the ele
 # 05 OBJECTS - molecules
 styling elements with classes - e.g functional CSS
 
-is all about adjusting the default block styles to the given layout. I only added three blocks as examples.
+is all about adjusting the default block styles to the given layout.
 --------------------------------------------------------------*/
 /* @import 'assets/css/phucstrap/05-objects/object.boxmodel.css'; */
 /* @import 'assets/css/phucstrap/05-objects/object.grid.css'; */
 
 @import 'assets/css/phucstrap/05-objects/object.functional.css';
+
 @import 'assets/css/phucstrap/05-objects/object.typography.css';
+@import 'assets/css/phucstrap/05-objects/object.colors.css';
+@import 'assets/css/phucstrap/05-objects/object.layout.css';
+
 @import 'assets/css/phucstrap/05-objects/object.wordpress.css';
 
 /*--------------------------------------------------------------
@@ -68,4 +72,4 @@ e.g hacks or ie11 styles
 
 is for any utility classes that are not assigned to a specific component.
 --------------------------------------------------------------*/
-@import 'assets/css/theme/07-utilities/utility.wordpress.css';
+/* @import 'assets/css/theme/07-utilities/utility.wordpress.css'; */

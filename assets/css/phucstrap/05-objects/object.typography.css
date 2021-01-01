@@ -4,175 +4,166 @@
 
 /* headings */
 .h1 {
-    font-size: var(--font-size-1);
-    line-height: var(--line-height-1);
+  font-size: var(--font-size-1);
+  line-height: var(--line-height-1);
 }
 
 .h2 {
-    font-size: var(--font-size-2);
-    line-height: var(--line-height-2);
+  font-size: var(--font-size-2);
+  line-height: var(--line-height-2);
 }
 
 .h3 {
-    font-size: var(--font-size-3);
-    line-height: var(--line-height-3);
+  font-size: var(--font-size-3);
+  line-height: var(--line-height-3);
 }
 
 .h4 {
-    font-size: var(--font-size-4);
-    line-height: var(--line-height-4);
+  font-size: var(--font-size-4);
+  line-height: var(--line-height-4);
 }
 
 .h5 {
-    font-size: var(--font-size-5);
-    line-height: var(--line-height-5);
+  font-size: var(--font-size-5);
+  line-height: var(--line-height-5);
 }
 
 .h6 {
-    font-size: var(--font-size-6);
-    line-height: var(--line-height-6);
+  font-size: var(--font-size-6);
+  line-height: var(--line-height-6);
 }
 
 /* paragraph size */
 .h7 {
-    font-size: var(--font-size-7);
-    line-height: var(--line-height-7);
+  font-size: var(--font-size-7);
+  line-height: var(--line-height-7);
 }
 
 /* smaller headings */
 .h8 {
-    font-size: var(--font-size-8);
-    line-height: var(--line-height-8);
+  font-size: var(--font-size-8);
+  line-height: var(--line-height-8);
 }
 
 .h9 {
-    font-size: var(--font-size-9);
-    line-height: var(--line-height-9);
+  font-size: var(--font-size-9);
+  line-height: var(--line-height-9);
 }
 
 /* bigger headings */
 .h0 {
-    font-size: var(--font-size-0);
-    line-height: var(--line-height-0);
+  font-size: var(--font-size-0);
+  line-height: var(--line-height-0);
 }
 
 .ha {
-    font-size: var(--font-size-a);
-    line-height: var(--line-height-a);
+  font-size: var(--font-size-a);
+  line-height: var(--line-height-a);
 }
 
 .hb {
-    font-size: var(--font-size-b);
-    line-height: var(--line-height-b);
+  font-size: var(--font-size-b);
+  line-height: var(--line-height-b);
 }
 
 .hc {
-    font-size: var(--font-size-c);
-    line-height: var(--line-height-c);
+  font-size: var(--font-size-c);
+  line-height: var(--line-height-c);
 }
-
-
 
 /*--------------------------------------------------------------
 # FONT FAMILY
 --------------------------------------------------------------*/
 .font-family {
-    font-family: var(--font-family, sans-serif);
+  font-family: var(--font-family);
 }
 
 .font-family-2 {
-    font-family: var(--font-family-2, sans-serif);
+  font-family: var(--font-family-2);
 }
 
 .font-family-3 {
-    font-family: var(--font-family-3, sans-serif);
+  font-family: var(--font-family-3);
 }
-
-
 
 /*--------------------------------------------------------------
 # TYPOGRAPHY
 # Block: fw = font-weight
 --------------------------------------------------------------*/
-.fw--thin
-.fw--hairline {
-	font-weight: 100;
+.fw--thin .fw--hairline {
+  font-weight: 100;
 }
 
-.fw--extra-light, 
+.fw--extra-light,
 .fw--ultra-light {
-	font-weight: 200;
+  font-weight: 200;
 }
 
 .fw--light {
-	font-weight: 300;
+  font-weight: 300;
 }
 
 .fw--normal,
 .fw--regular {
-	font-weight: 400;
+  font-weight: 400;
 }
 
 .fw--medium {
-	font-weight: 500;
+  font-weight: 500;
 }
 
-.fw--semo-bold, 
+.fw--semo-bold,
 .fw--demi-bold {
-	font-weight: 600;
+  font-weight: 600;
 }
 
 .fw--bold {
-	font-weight: 700;
+  font-weight: 700;
 }
 
-.fw--extra-bold, 
+.fw--extra-bold,
 .fw--ultra-bold {
-	font-weight: 800;
+  font-weight: 800;
 }
 
 .fw--black,
 .fw--heavy {
-	font-weight: 900;
+  font-weight: 900;
 }
-
-
 
 /*--------------------------------------------------------------
 # TYPOGRAPHY
 # Block: fs = font-style
 --------------------------------------------------------------*/
 .fs--normal {
-    font-style: normal;
+  font-style: normal;
 }
 
 .fs--italic {
-    font-style: italic;
+  font-style: italic;
 }
 
 /* fake italic, wenn kein italic vorhanden */
 .fs--oblique {
-    font-style: oblique;
+  font-style: oblique;
 }
-
-
 
 /*--------------------------------------------------------------
 # TYPOGRAPHY
 # Text Align
 --------------------------------------------------------------*/
 .ta--left {
-    text-align: left;
+  text-align: left;
 }
 .ta--center {
-    text-align: center;
+  text-align: center;
 }
 .ta---right {
-    text-align: right;
+  text-align: right;
 }
 
 .ta--justify {
-    text-align: justify;
+  text-align: justify;
 }
 
 /*--------------------------------------------------------------
@@ -180,9 +171,9 @@
 # Text Transform
 --------------------------------------------------------------*/
 .uppercase {
-    text-transform: uppercase;
+  text-transform: uppercase;
 }
 
 .lowercase {
-    text-transform: lowercase;
+  text-transform: lowercase;
 }
