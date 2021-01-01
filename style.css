@@ -45,7 +45,7 @@ is all about adjusting the default block styles to the given layout.
 /* @import 'assets/css/phucstrap/05-objects/object.boxmodel.css'; */
 /* @import 'assets/css/phucstrap/05-objects/object.grid.css'; */
 
-@import 'assets/css/phucstrap/05-objects/object.functional.css';
+/* @import 'assets/css/phucstrap/05-objects/object.functional.css'; */
 
 @import 'assets/css/phucstrap/05-objects/object.typography.css';
 @import 'assets/css/phucstrap/05-objects/object.colors.css';

@@ -21,6 +21,10 @@
     color: var(--color-5);
 }
 
+.color--6 {
+    color: var(--color-6);
+}
+
 /*--------------------------------------------------------------
 # BACKGROUND COLORS
 --------------------------------------------------------------*/
@@ -43,4 +47,8 @@
 
 .bg-color--5 {
     background-color: var(--color-5);
+}
+
+.bg-color--6 {
+    background-color: var(--color-6);
 }

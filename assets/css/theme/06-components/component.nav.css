@@ -1,6 +1,30 @@
 /*--------------------------------------------------------------
+# RESET NAV LIST STYLES
+--------------------------------------------------------------*/
+.nav,
+.nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav__link {
+    text-decoration: none;
+    color: inherit;
+}
+
+/*--------------------------------------------------------------
 # NAV PRIMARY - Usually Header
 --------------------------------------------------------------*/
+.nav--dropdown   {
+    display: flex;
+    margin-left: calc( var(--gutter) * -1);
+}
+
+.nav--dropdown .nav__item {
+    margin-left: var(--gutter);
+}
+
 
 /*--------------------------------------------------------------
 # NAV SECONDARY - Usually Footer
