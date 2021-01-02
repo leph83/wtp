@@ -104,7 +104,6 @@ function wtp_customizer_colors($wp_customize)
 			));
 		}
 	}
-
 }
 add_action('customize_register', 'wtp_customizer_colors');
 
@@ -133,20 +132,20 @@ function hook_css()
 			--color-' . $key . ': ' . $value . ';';
 
 			$style_colors .= '
-			.has-color-'.$key.'-color {
-				color: var(--color-'.$key.');
+			.has-color-' . $key . '-color {
+				color: var(--color-' . $key . ');
 			}
 
-			.has-color-'.$key.'-background-color {
-				background-color: var(--color-'.$key.');
+			.has-color-' . $key . '-background-color {
+				background-color: var(--color-' . $key . ');
 			}';
 		}
 	}
 
 	$style .= '<style>
-	:root {'. $style_variables .'
+	:root {' . $style_variables . '
 	}
-	'. $style_colors .'
+	' . $style_colors . '
 	</style>';
 
 	echo $style;

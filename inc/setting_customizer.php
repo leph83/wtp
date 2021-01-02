@@ -42,7 +42,6 @@ function wtp_customizer_settings($wp_customize)
 			'default'           => true,
 		)
 	);
-
 	$wp_customize->add_control(
 		'display_title_and_tagline',
 		array(
@@ -52,21 +51,48 @@ function wtp_customizer_settings($wp_customize)
 		)
 	);
 
+
+
 	// ADD LOGO SIZE
 	$wp_customize->add_setting(
 		'logo_size',
 		array(
 			'capability'        => 'edit_theme_options',
-			'default'           => true,
+			'default'           => 100,
 		)
 	);
-
 	$wp_customize->add_control(
 		'logo_size',
 		array(
-			'type'    => 'checkbox',
+			'type'    => 'number',
 			'section' => 'title_tagline',
-			'label'   => __('Display Site Title & Tagline', 'wtp'),
+			'label'   => __('Logo width', 'wtp'),
+			// 'input_attrs' => array(
+			// 	'min' => 10,
+			// 	'max' => 200,
+			// 	'step' => 1,
+			//   ),
+		)
+	);
+
+	// LOGO WIDTH OR HEIGHT
+	$wp_customize->add_setting(
+		'logo_width_height',
+		array(
+			'capability'        => 'edit_theme_options',
+			'default'           => 'width',
+		)
+	);
+	$wp_customize->add_control(
+		'logo_width_height',
+		array(
+			'type'    => 'radio',
+			'section' => 'title_tagline',
+			'label'   => __('Logo Size', 'wtp'),
+			'choices' => array(
+				'width' => __( 'Width', 'wtp' ),
+				'height' => __( 'Height', 'wtp' ),
+			  ),
 		)
 	);
 
