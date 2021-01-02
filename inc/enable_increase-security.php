@@ -5,7 +5,7 @@ if (!defined('ABSPATH')) {
 
 
 
-if (get_theme_mod('increase_security')) {
+if (get_theme_mod('wtp_increase_security')) {
     /**
      * Disable php edit
      */
@@ -24,26 +24,27 @@ if (get_theme_mod('increase_security')) {
 
 
 
+
 // ADD SETTING TO CUSTOMIZER
-function wtp_customizer_increase_security($wp_customize)
+function wtp_customizer_enable_increase_security($wp_customize)
 {
     // SETTING
     $wp_customize->add_setting(
-        'increase_security',
+        'wtp_increase_security',
         array(
-            'capability' => 'edit_theme_options',
-            'default'    => true,
+            'capability'    => 'edit_theme_options',
+            'default'       => false
         )
     );
- 
+
     // CONTROL
     $wp_customize->add_control(
-        'increase_security',
+        'wtp_increase_security',
         array(
             'type'      => 'checkbox',
-            'section'   => 'wtp_increase_security',
-            'label'     => __('Increase Security', 'wtp'),
+            'section'   => 'wtp_enable_section',
+            'label'     => __('Enable increased security', 'wtp'),
         )
     );
 }
-add_action('customize_register', 'wtp_customizer_increase_security');
+add_action('customize_register', 'wtp_customizer_enable_increase_security');

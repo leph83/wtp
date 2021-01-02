@@ -24,6 +24,7 @@ require_once('inc/add_pagination-markup.php');
 
 // ENABLE
 require_once('inc/enable_increase-security.php');
+require_once('inc/enable_css_defer.php');
 
 // DISABLES
 require_once('inc/disable_custom-fontsize.php');

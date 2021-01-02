@@ -19,21 +19,3 @@ if ( !function_exists('wtp_load_styles') ) {
 }
 
 
-
-/**
- * INCREASE PERFORMANCE
- * LOOP THROUGH CSS FILES AND ADD REL PRELOAD FOR EACH FILE
- */
-function add_rel_preload($html, $handle, $href, $media)
-{
-    if (is_admin())
-        return $html;
-
-    $html .= <<<EOT
-    <link rel='preload' as='style' href='$href'>
-    EOT;
-
-    return $html;
-}
-
-add_filter('style_loader_tag', 'add_rel_preload', 10, 4);

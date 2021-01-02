@@ -22,6 +22,13 @@ function wtp_customizer_settings($wp_customize)
 		'panel'      => 'wtp_panel'
 	));
 
+	// SECTION - Enable
+	$wp_customize->add_section('wtp_enable_section', array(
+		'title'      => __('Enable', 'wtp'),
+		'capability' => 'edit_theme_options',
+		'panel'      => 'wtp_panel'
+	));
+
 	// SECTION - DISABLES
 	$wp_customize->add_section('wtp_disable_section', array(
 		'title'      => __('Disables', 'wtp'),
