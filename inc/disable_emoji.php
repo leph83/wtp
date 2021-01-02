@@ -73,7 +73,7 @@ function wtp_customizer_disable_emoji($wp_customize)
         'wtp_disable_emojis',
         array(
             'capability'    => 'edit_theme_options',
-            'default'       => true
+            'default'       => false
         )
     );
 

@@ -22,7 +22,7 @@ function wtp_customizer_disable_custom_color_picker($wp_customize)
 		'disable_custom_color_picker',
 		array(
 			'capability'	=> 'edit_theme_options',
-			'default'    	=> true
+			'default'    	=> false
 		)
 	);
 

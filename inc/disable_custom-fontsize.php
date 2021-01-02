@@ -22,7 +22,7 @@ function wtp_customizer_disable_custom_fontsize($wp_customize)
         'disable_custom_fontsize',
         array(
             'capability'    => 'edit_theme_options',
-            'default'       => true
+            'default'       => false
         )
     );
 

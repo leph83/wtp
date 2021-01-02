@@ -31,6 +31,6 @@ require_once('inc/disable_custom-color.php');
 require_once('inc/disable_rest_api.php');
 require_once('inc/disable_emoji.php');
 require_once('inc/disable_embed.php');
-// require_once('inc/disable_gutenberg-styles.php');
+require_once('inc/disable_gutenberg-styles.php');
 
 require_once('inc/disable_embed.php');
