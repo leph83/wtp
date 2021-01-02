@@ -5,8 +5,8 @@ if (!defined('ABSPATH')) {
 
 // SETTINGS
 require_once('inc/setting_setup.php');
-require_once('inc/setting_widgets.php');
 require_once('inc/setting_customizer.php');
+require_once('inc/setting_widgets.php');
 
 require_once('inc/setting_block-styles.php');
 require_once('inc/setting_load-css.php');
@@ -18,8 +18,8 @@ require_once('inc/setting_fontsize.php');
 
 // ADD
 require_once('inc/add_nav-classes.php');
-// require_once('inc/add_gutenberg-admin-styles.php');
 require_once('inc/add_pagination-markup.php');
+// require_once('inc/add_gutenberg-admin-styles.php');
 
 
 // ENABLE
@@ -33,5 +33,3 @@ require_once('inc/disable_rest_api.php');
 require_once('inc/disable_emoji.php');
 require_once('inc/disable_embed.php');
 require_once('inc/disable_gutenberg-styles.php');
-
-require_once('inc/disable_embed.php');

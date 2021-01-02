@@ -9,7 +9,7 @@ if ( function_exists( 'register_block_style' ) ) {
 	 * @return void
 	 */
 	function wtp_register_block_styles() {
-		// Columns: Overlap.
+		// Spacer small
 		register_block_style(
 			'core/spacer',
 			array(
