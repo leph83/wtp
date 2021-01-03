@@ -76,7 +76,7 @@ function hook_wtp_fontsizes_css()
 
     $style_variables .= '
         --font-size: '.$base_font_size.';
-        --font-ratio: '.$font_ratio.';';
+        --font-size-ratio: '.$font_ratio.';';
 
 
 	if (!empty($wtp_font_sizes)) {
