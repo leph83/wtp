@@ -4,6 +4,8 @@ if (!defined('ABSPATH')) {
 }
 
 
+// TODO: Use GET Option to store all css in that and just output one <style> tag
+
 /**
  * DEFINE HOW MANY COLORS ARE AVAILABLE WITH FALLBACK
  * Don't use colors twice, editor will mark both as selected
@@ -80,12 +82,6 @@ add_action('after_setup_theme', 'change_gutenberg_color_palette');
  */
 function wtp_customizer_colors($wp_customize)
 {
-	// SECTION
-	$wp_customize->add_section('wtp_theme_customizer', array(
-		'title'      => __('WTP Theme Settings', 'wtp'),
-		'priority' => 120,
-	));
-
 	global $wtp_colors;
 
 	if (!empty($wtp_colors)) {

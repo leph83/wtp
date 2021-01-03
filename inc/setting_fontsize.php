@@ -3,7 +3,7 @@ if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly.
 }
 
-
+// TODO: Use GET Option to store all css in that and just output one <style> tag
 
 
 /**
@@ -50,53 +50,6 @@ $wtp_font_sizes = [
 
 
 
-
-
-
-/**
- * ADD FONT VARIABLES AS INLINE CSS TO HEADER
- */
-function hook_wtp_fontsizes_css()
-{
-	global $wtp_font_sizes;
-
-	$style = '';
-	$style_variables = '';
-	$style_fontsizes = '';
-
-    $base_font_size = '1.6rem';
-    if (get_theme_mod('wtp_font_size') && (get_theme_mod('wtp_font_size') != 'initial') ) {
-        $base_font_size = get_theme_mod('wtp_font_size');
-    }
-
-    $font_ratio = 1.125;
-    if (get_theme_mod('wtp_font_ratio') && (get_theme_mod('wtp_font_ratio') != 'initial')) {
-        $font_ratio = get_theme_mod('wtp_font_ratio');
-    }
-
-    $style_variables .= '
-        --font-size: '.$base_font_size.';
-        --font-size-ratio: '.$font_ratio.';';
-
-
-	if (!empty($wtp_font_sizes)) {
-		foreach ($wtp_font_sizes as $key => $value) {
-			$style_fontsizes .= '
-			.has-' . $key . '-font-size {
-				font-size: var(--font-size-' . $value . ');
-			}';
-		}
-	}
-
-	$style .= '<style>
-	:root {' . $style_variables . '
-	}
-	' . $style_fontsizes . '
-	</style>';
-
-	echo $style;
-}
-add_action('wp_head', 'hook_wtp_fontsizes_css');
 
 
 
@@ -187,5 +140,48 @@ add_action('customize_register', 'wtp_customizer_modularscale');
 
 
 
+/**
+ * ADD FONT VARIABLES AS INLINE CSS TO HEADER
+ */
+function hook_wtp_fontsizes_css()
+{
+	global $wtp_font_sizes;
 
+	$style = '';
+	$style_variables = '';
+	$style_fontsizes = '';
+
+    $base_font_size = '1.6rem';
+    if (get_theme_mod('wtp_font_size') && (get_theme_mod('wtp_font_size') != 'initial') ) {
+        $base_font_size = get_theme_mod('wtp_font_size');
+    }
+
+    $font_ratio = 1.125;
+    if (get_theme_mod('wtp_font_ratio') && (get_theme_mod('wtp_font_ratio') != 'initial')) {
+        $font_ratio = get_theme_mod('wtp_font_ratio');
+    }
+
+    $style_variables .= '
+        --font-size: '.$base_font_size.';
+        --font-size-ratio: '.$font_ratio.';';
+
+
+	if (!empty($wtp_font_sizes)) {
+		foreach ($wtp_font_sizes as $key => $value) {
+			$style_fontsizes .= '
+			.has-' . $key . '-font-size {
+				font-size: var(--font-size-' . $value . ');
+			}';
+		}
+	}
+
+	$style .= '<style>
+	:root {' . $style_variables . '
+	}
+	' . $style_fontsizes . '
+	</style>';
+
+	echo $style;
+}
+add_action('wp_head', 'hook_wtp_fontsizes_css');
 

@@ -14,6 +14,7 @@ require_once('inc/setting_load-js.php');
 
 require_once('inc/setting_color.php');
 require_once('inc/setting_fontsize.php');
+require_once('inc/setting_layout_width.php');
 
 
 // ADD

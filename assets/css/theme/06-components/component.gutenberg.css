@@ -17,10 +17,8 @@
 .default-max-width {
     margin-left: auto;
     margin-right: auto;
-    max-width: var(--max-width-2);
+    max-width: var(--max-width-3);
 }
-
-
 
 .widget-area, 
 .pagination, 
@@ -32,12 +30,12 @@
 .wide-max-width {
     margin-left: auto;
     margin-right: auto;
-    max-width: var(--max-width);
+    max-width: var(--max-width-2);
 }
 
 .alignfull, 
 .full-max-width {
-    max-width: none;
+    max-width: var(--max-width-1);
     margin-left: auto;
     margin-right: auto;
 }

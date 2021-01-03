@@ -62,7 +62,7 @@ contains all "bigger" components which contain elements of the previous two cate
 @import 'assets/css/theme/06-components/component.blocks.css';
 @import 'assets/css/theme/06-components/component.default.css';
 @import 'assets/css/theme/06-components/component.footer.css';
-/* @import 'assets/css/theme/06-components/component.gutenberg.css'; */
+@import 'assets/css/theme/06-components/component.gutenberg.css';
 @import 'assets/css/theme/06-components/component.header.css';
 @import 'assets/css/theme/06-components/component.nav.css';
 

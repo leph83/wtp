@@ -4,12 +4,15 @@ if (!defined('ABSPATH')) {
 }
 
 
+
+
 function wtp_customizer_settings($wp_customize)
 {
 	// PANEL WTP THEME OPTIONS
-	$wp_customize->add_panel( 'wtp_panel',
+	$wp_customize->add_panel(
+		'wtp_panel',
 		array(
-			'title'      => __( 'WTP Theme Options', 'wtp' ),
+			'title'      => __('WTP Theme Options', 'wtp'),
 			'priority'   => 200,
 			'capability' => 'edit_theme_options',
 		)
@@ -18,6 +21,13 @@ function wtp_customizer_settings($wp_customize)
 	// SECTION - FONT SETTING
 	$wp_customize->add_section('wtp_font_section', array(
 		'title' => __('Font Sizes - Modularscale', 'wtp'),
+		'capability' => 'edit_theme_options',
+		'panel'      => 'wtp_panel'
+	));
+
+	// SECTION - LAYOUT WIDTHS
+	$wp_customize->add_section('wtp_layoutwidth_section', array(
+		'title' => __('Layout Widths', 'wtp'),
 		'capability' => 'edit_theme_options',
 		'panel'      => 'wtp_panel'
 	));
@@ -36,8 +46,8 @@ function wtp_customizer_settings($wp_customize)
 		'panel'      => 'wtp_panel'
 	));
 
-	
-	
+
+
 
 
 
@@ -97,11 +107,10 @@ function wtp_customizer_settings($wp_customize)
 			'section' => 'title_tagline',
 			'label'   => __('Logo Size', 'wtp'),
 			'choices' => array(
-				'width' => __( 'Width', 'wtp' ),
-				'height' => __( 'Height', 'wtp' ),
-			  ),
+				'width' => __('Width', 'wtp'),
+				'height' => __('Height', 'wtp'),
+			),
 		)
 	);
-
 }
 add_action('customize_register', 'wtp_customizer_settings');
