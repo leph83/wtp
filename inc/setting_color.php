@@ -115,7 +115,7 @@ add_action('customize_register', 'wtp_customizer_colors');
 /**
  * ADD COLOR VARIABLES AS INLINE CSS TO HEADER
  */
-function hook_css()
+function hook_wtp_colors_css()
 {
 	global $wtp_colors;
 
@@ -150,4 +150,4 @@ function hook_css()
 
 	echo $style;
 }
-add_action('wp_head', 'hook_css');
+add_action('wp_head', 'hook_wtp_colors_css');

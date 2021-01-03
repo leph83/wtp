@@ -26,10 +26,11 @@ Wordpress Customizer Setting will override this because it's inline
 
   --color-4: #fff;
   --color-5: #fff;
+  --color-6: #fff;
 }
 
 /*--------------------------------------------------------------
-# FONT
+# FONT - FALLBACK
 Wordpress Customizer Setting will override this because it's inline
 --------------------------------------------------------------*/
 :root {
@@ -41,8 +42,17 @@ Wordpress Customizer Setting will override this because it's inline
   --font-size: 1.6rem;
   --font-size-ratio: 1.125;
   --line-height: 1.6;
+}
 
-  /* Line Height */
+/*--------------------------------------------------------------
+# LINE HEIGHT
+TODO: Add to Customizer
+--------------------------------------------------------------*/
+:root {
+  --line-height-a: var(--line-height);
+  --line-height-b: var(--line-height);
+  --line-height-c: var(--line-height);
+
   --line-height-0: var(--line-height);
   --line-height-1: var(--line-height);
   --line-height-2: var(--line-height);
@@ -51,4 +61,7 @@ Wordpress Customizer Setting will override this because it's inline
   --line-height-5: var(--line-height);
   --line-height-6: var(--line-height);
   --line-height-7: var(--line-height);
+
+  --line-height-8: var(--line-height);
+  --line-height-9: var(--line-height);
 }
