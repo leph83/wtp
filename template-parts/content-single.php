@@ -21,7 +21,5 @@ if (!defined('ABSPATH')) {
 
 </article>
 
-
-
-<?php // get_template_part('template-parts/nav-pagination', 'single'); 
+<?php get_template_part('template-parts/nav-pagination', 'single'); 
 ?>

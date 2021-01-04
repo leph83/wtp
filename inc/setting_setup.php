@@ -128,6 +128,15 @@ function wtp_setup()
         {
             $brand = '';
 
+            $blog_info    = get_bloginfo('name');
+            $description  = get_bloginfo('description', 'display');
+            $show_title   = (true === get_theme_mod('display_title_and_tagline', true));
+
+            $tag = 'p';
+            if (is_front_page() || is_home()) {
+                $tag = 'h1';
+            }
+
             if (has_custom_logo()) {
                 $custom_logo_id = get_theme_mod('custom_logo');
 
@@ -147,20 +156,25 @@ function wtp_setup()
                 $image = wp_get_attachment_image_src($custom_logo_id, [$logo_width, $logo_height]);
 
                 $brand .= '
-                <a class="custom-logo-link" href="' . esc_url(home_url('/')) . '" rel="home" aria-current="page">
-                    <img src="' . $image[0] . '" alt="' . esc_html(get_bloginfo('name')) . '" width="' . $image[1] . '" height="' . $image[2] . '">
+                <a class="custom-logo-link" href="' . esc_url(home_url('/')) . '" rel="home">
+                    <img class="custom-logo" src="' . $image[0] . '" alt="' . esc_html($blog_info) . '" width="' . $image[1] . '" height="' . $image[2] . '">
                 </a>';
             }
 
-            if (!(has_custom_logo()) || (get_theme_mod('display_title_and_tagline') && has_custom_logo())) {
+            if (!(has_custom_logo()) || ($show_title && has_custom_logo())) {
                 $brand .= '
-                <a href="' . esc_url(home_url('/')) . '" title="' . esc_html(get_bloginfo('name')) . '" rel="home">
-                    <span id="site-title">' . esc_html(get_bloginfo('name')) . '</span>
-                    <span id="site-description">
-                        ' . get_bloginfo('description') . '
-                    </span>
-                </a>
-            ';
+                <div class="custom-title-tagline">
+                    <' . $tag . ' id="site-title" class="site-title">
+                        <a href="' . esc_url(home_url('/')) . '" title="' . esc_html($blog_info) . '" rel="home">
+                            ' . esc_html($blog_info) . '
+                        </a>
+                    </' . $tag . '>
+
+                    <p id="site-description" class="site-description">
+                        ' . $description . '
+                    </p>
+                </div>
+                ';
             }
 
             return $brand;
