@@ -21,7 +21,9 @@ if (is_active_sidebar('primary-widget-area')) {
     <link rel="preload" href="<?php echo get_stylesheet_directory_uri() ?>/assets/fonts/hind/hind-v10-latin-regular.woff" as="font" type="font/woff" crossorigin="anonymous">
 
     <meta name="referrer" content="no-referrer">
-    <!-- <meta 
+    <!-- 
+        TODO: Add to Customizer and make it work
+        <meta 
         http-equiv="Content-Security-Policy" 
         content="
             script-src 'self';             
@@ -33,34 +35,18 @@ if (is_active_sidebar('primary-widget-area')) {
 </head>
 
 <body <?php body_class('body'); ?>>
-    <header id="header" class="header">
+    <input type="checkbox" id="burger" class="burger__input  hidden">
+
+    <header id="header" class="header  burger__content">
 
         <div class="header__content">
 
             <div class="header__item  header__item--branding">
-                <div class="branding">
-                    <?php get_template_part( 'template-parts/header/site-branding' ); ?>
-                </div>
+                <?php get_template_part('template-parts/header/site-branding'); ?>
             </div>
 
             <div class="header__item  header__item--nav">
-
-                <?php
-                $args = array(
-                    'theme_location' => 'primary',
-                    'container'     => 'nav',
-                    'menu_class'    => 'nav  nav--dropdown  nav--header',
-                    'fallback_cb'   => false,
-                    'add_submenu_class'  => 'nav__submenu',
-                    'add_li_class'  => 'nav__item',
-                    'add_li_active_class' => 'nav__item--active',
-                    'add_li_parent_class' => 'nav__item--parent',
-                    'add_a_class'   => 'nav__link',
-                    'add_a_active_class'   => 'nav__link--active',
-                );
-                wp_nav_menu($args);
-                ?>
-
+                <?php get_template_part('template-parts/header/site-navigation'); ?>
             </div>
 
         </div>

@@ -1,0 +1,11 @@
+/*--------------------------------------------------------------
+# MOBILE NAV
+--------------------------------------------------------------*/
+.burger__label {
+    display: block;
+}
+
+.burger__input:checked ~ .burger__content .nav {
+    display: flex;
+  }
+  

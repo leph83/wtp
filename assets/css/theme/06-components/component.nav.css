@@ -3,29 +3,59 @@
 --------------------------------------------------------------*/
 .nav,
 .nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
 .nav__link {
-    text-decoration: none;
-    color: inherit;
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.burger__label {
+  display: none;
 }
 
 /*--------------------------------------------------------------
 # NAV PRIMARY - Usually Header
 --------------------------------------------------------------*/
-.nav--dropdown   {
-    display: flex;
-    margin-left: calc( var(--gutter) * -1);
+.nav--dropdown {
+  display: flex;
+  margin-left: calc(var(--gutter) * -1);
 }
 
 .nav--dropdown .nav__item {
-    margin-left: var(--gutter);
+  margin-left: var(--gutter);
 }
 
+.nav--dropdown .nav__link {
+  color: var(--color-1);
+  background-color: var(--color-2);
+  padding: calc(var(--gutter) / 2)  var(--gutter);
+}
+
+.nav--dropdown .nav__item--active .nav__link {
+  color: var(--color-5);
+}
 
 /*--------------------------------------------------------------
 # NAV SECONDARY - Usually Footer
 --------------------------------------------------------------*/
+.nav--inline {
+  display: flex;
+  margin-left: calc(var(--gutter) * -1);
+}
+
+.nav--inline .nav__item {
+  margin-left: var(--gutter);
+}
+
+.nav--inline .nav__link {
+  color: var(--color-black);
+}
+
+.nav--inline .nav__item--active .nav__link {
+  color: var(--color-3);
+}

@@ -1,3 +1,9 @@
+<?php 
+    if ( ! defined( 'ABSPATH' ) ) {
+        exit; // Exit if accessed directly.
+    }
+?>
+
 <?php
 
 /**
@@ -40,30 +46,31 @@ if (has_custom_logo()) {
 
 ?>
 
-<?php if (has_custom_logo() && $show_title) : ?>
-    <div class="site-logo"><?php echo $logo; ?></div>
-<?php endif; ?>
-
 <div class="site-branding">
 
-    <?php if (has_custom_logo() && !$show_title) : ?>
-        <div class="site-logo"><?php echo $logo; ?></div>
+    <?php if (has_custom_logo()) : ?>
+        <div class="site-logo">
+            <?php echo $logo; ?>
+        </div>
     <?php endif; ?>
 
-    <?php if ($blog_info) : ?>
-        <?php if (is_front_page() && !is_paged()) : ?>
-            <h1 class="<?php echo esc_attr($header_class); ?>"><?php echo esc_html($blog_info); ?></h1>
-        <?php elseif (is_front_page() || is_home()) : ?>
-            <h1 class="<?php echo esc_attr($header_class); ?>"><a href="<?php echo esc_url(home_url('/')); ?>"><?php echo esc_html($blog_info); ?></a></h1>
-        <?php else : ?>
-            <p class="<?php echo esc_attr($header_class); ?>"><a href="<?php echo esc_url(home_url('/')); ?>"><?php echo esc_html($blog_info); ?></a></p>
+    <?php if ($show_title) : ?>
+
+        <?php if ($blog_info) : ?>
+            <?php if (is_front_page() || is_home()) : ?>
+                <h1 class="<?php echo esc_attr($header_class); ?>"><a href="<?php echo esc_url(home_url('/')); ?>"><?php echo esc_html($blog_info); ?></a></h1>
+            <?php else : ?>
+                <p class="<?php echo esc_attr($header_class); ?>"><a href="<?php echo esc_url(home_url('/')); ?>"><?php echo esc_html($blog_info); ?></a></p>
+            <?php endif; ?>
         <?php endif; ?>
+
+
+        <?php if ($description) : ?>
+            <p class="site-description">
+                <?php echo $description; ?>
+            </p>
+        <?php endif; ?>
+
     <?php endif; ?>
 
-    <?php if ($description && get_theme_mod('display_title_and_tagline', true) === true) : ?>
-        <p class="site-description">
-            <?php echo $description; // phpcs:ignore WordPress.Security.EscapeOutput 
-            ?>
-        </p>
-    <?php endif; ?>
-</div><!-- .site-branding -->
+</div>
