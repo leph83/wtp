@@ -44,7 +44,6 @@ is all about adjusting the default block styles to the given layout.
 --------------------------------------------------------------*/
 /* @import 'assets/css/phucstrap/05-objects/object.boxmodel.css'; */
 /* @import 'assets/css/phucstrap/05-objects/object.grid.css'; */
-
 /* @import 'assets/css/phucstrap/05-objects/object.functional.css'; */
 
 @import 'assets/css/phucstrap/05-objects/object.typography.css';
@@ -59,12 +58,15 @@ styling more complex sections - e.g header, blocks, sections
 
 contains all "bigger" components which contain elements of the previous two categories like header, footer, page template, single template, comments section, archives, ...
 --------------------------------------------------------------*/
-@import 'assets/css/theme/06-components/component.blocks.css';
-@import 'assets/css/theme/06-components/component.default.css';
-@import 'assets/css/theme/06-components/component.footer.css';
-@import 'assets/css/theme/06-components/component.gutenberg.css';
+@import 'assets/css/theme/06-components/component.layout.css';
+
 @import 'assets/css/theme/06-components/component.header.css';
+@import 'assets/css/theme/06-components/component.footer.css';
+
 @import 'assets/css/theme/06-components/component.nav.css';
+
+@import 'assets/css/theme/06-components/component.gutenberg.css';
+@import 'assets/css/theme/06-components/component.blocks.css';
 
 /*--------------------------------------------------------------
 # 07 UTILITIES
@@ -72,4 +74,5 @@ e.g hacks or ie11 styles
 
 is for any utility classes that are not assigned to a specific component.
 --------------------------------------------------------------*/
+/* @import 'assets/css/phucstrap/07-utilities/utility.wordpress.css'; */
 /* @import 'assets/css/theme/07-utilities/utility.wordpress.css'; */
