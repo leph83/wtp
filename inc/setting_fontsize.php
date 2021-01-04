@@ -50,9 +50,6 @@ $wtp_font_sizes = [
 
 
 
-
-
-
 /** 
  * Make fontsizes selectable in the editor
  * to keep font settings, after changing values in customizer the size is fixed to 16
@@ -64,23 +61,24 @@ function set_editor_font_sizes()
     global $wtp_font_sizes;
 
     $editor_font_sizes = array();
+    $count = 0;
     foreach ($wtp_font_sizes as $key => $value) {
         array_push(
             $editor_font_sizes,
             array(
                 'name' => __($key, 'wtp'),
-                'size' => 16,
+                'size' => 16 + 10 - $count,
                 'slug' => $key,
             )
         );
+
+        $count++;
     }
 
     add_theme_support('editor-font-sizes', $editor_font_sizes);
 }
 
 add_action('after_setup_theme', 'set_editor_font_sizes');
-
-
 
 
 
@@ -145,14 +143,14 @@ add_action('customize_register', 'wtp_customizer_modularscale');
  */
 function hook_wtp_fontsizes_css()
 {
-	global $wtp_font_sizes;
+    global $wtp_font_sizes;
 
-	$style = '';
-	$style_variables = '';
-	$style_fontsizes = '';
+    $style = '';
+    $style_variables = '';
+    $style_fontsizes = '';
 
     $base_font_size = '1.6rem';
-    if (get_theme_mod('wtp_font_size') && (get_theme_mod('wtp_font_size') != 'initial') ) {
+    if (get_theme_mod('wtp_font_size') && (get_theme_mod('wtp_font_size') != 'initial')) {
         $base_font_size = get_theme_mod('wtp_font_size');
     }
 
@@ -162,26 +160,25 @@ function hook_wtp_fontsizes_css()
     }
 
     $style_variables .= '
-        --font-size: '.$base_font_size.';
-        --font-size-ratio: '.$font_ratio.';';
+        --font-size: ' . $base_font_size . ';
+        --font-size-ratio: ' . $font_ratio . ';';
 
 
-	if (!empty($wtp_font_sizes)) {
-		foreach ($wtp_font_sizes as $key => $value) {
-			$style_fontsizes .= '
+    if (!empty($wtp_font_sizes)) {
+        foreach ($wtp_font_sizes as $key => $value) {
+            $style_fontsizes .= '
 			.has-' . $key . '-font-size {
 				font-size: var(--font-size-' . $value . ');
 			}';
-		}
-	}
+        }
+    }
 
-	$style .= '<style>
+    $style .= '<style>
 	:root {' . $style_variables . '
 	}
 	' . $style_fontsizes . '
 	</style>';
 
-	echo $style;
+    echo $style;
 }
 add_action('wp_head', 'hook_wtp_fontsizes_css');
-
