@@ -39,9 +39,7 @@ if (is_active_sidebar('primary-widget-area')) {
 
             <div class="header__item  header__item--branding">
                 <div class="branding">
-                    <?php if (function_exists('wtp_blog_info')) {
-                        echo wtp_blog_info();
-                    } ?>
+                    <?php get_template_part( 'template-parts/header/site-branding' ); ?>
                 </div>
             </div>
 
