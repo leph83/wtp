@@ -51,11 +51,3 @@
 .nav--inline .nav__item {
   margin-left: var(--gutter);
 }
-
-.nav--inline .nav__link {
-  color: var(--color-black);
-}
-
-.nav--inline .nav__item--active .nav__link {
-  color: var(--color-3);
-}
