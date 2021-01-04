@@ -6,12 +6,12 @@
 
     get_header(); 
 
-    $featured_image = false;
+    $featured_image = '';
     if (is_home() && get_option('page_for_posts') ) {
         $img = wp_get_attachment_image_src(get_post_thumbnail_id(get_option('page_for_posts')),'full'); 
 
         $featured_image = '';
-        if ( $img[0] ) {
+        if ( $img && $img[0] ) {
             $featured_image = '<img src="' . $img[0] . '">';
         }
     }
