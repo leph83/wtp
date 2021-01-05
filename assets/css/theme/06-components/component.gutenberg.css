@@ -49,6 +49,9 @@
 .wp-block-template-part > * {
   margin-top: calc(1 * var(--gutter));
   margin-bottom: calc(1 * var(--gutter));
+
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
 }
 
 .entry-content > *:first-child,
@@ -61,4 +64,10 @@
 [class*="inner-container"] > *:last-child,
 .wp-block-template-part > *:last-child {
   margin-bottom: 0;
+}
+
+
+.alignfull {
+  padding-left: initial;
+  padding-right: initial;
 }
