@@ -71,3 +71,34 @@
   padding-left: initial;
   padding-right: initial;
 }
+
+/*--------------------------------------------------------------
+# TESTING CUSTOM GUTENBERG STYLES
+--------------------------------------------------------------*/
+.wp-block-group.has-background {
+  padding-left: initial;
+  padding-right: initial;
+}
+
+.entry-content > ul,
+.entry-content > ol,
+.entry-content > dl {
+  padding-left: 3em;
+}
+
+.wp-block-quote {
+  border-left: none;
+  position: relative;
+  padding-left: 3em;
+}
+
+.wp-block-quote::before {
+  content: '';
+  width: 3px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: var(--gutter);
+  height: 100%;
+  background-color: var(--color-1);
+}
