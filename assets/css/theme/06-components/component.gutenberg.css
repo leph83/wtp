@@ -47,7 +47,14 @@
 .entry-content > *,
 [class*="inner-container"] > *,
 .wp-block-template-part > * {
+  margin-top: calc(1 * var(--gutter));
   margin-bottom: calc(1 * var(--gutter));
+}
+
+.entry-content > *:first-child,
+[class*="inner-container"] > *:first-child,
+.wp-block-template-part > *:first-child {
+  margin-top: 0;
 }
 
 .entry-content > *:last-child,
