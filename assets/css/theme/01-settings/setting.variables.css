@@ -40,8 +40,11 @@ Wordpress Customizer Setting will override this because it's inline
 --------------------------------------------------------------*/
 :root {
   /* Font Family */
-  --font-family: "Hind", serif;
-  --font-family-2: "Open Sans", serif;
+  /* --font-family: "Hind", serif;
+  --font-family-2: "Open Sans", serif; */
+
+  --font-family: serif;
+  --font-family-2: serif;
 
   /* Modular Scale */
   --font-size: 1.6rem;

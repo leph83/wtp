@@ -5,6 +5,10 @@ if (!defined('ABSPATH')) {
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(''); ?>>
+    <h1>
+        <?php echo get_the_title(); ?>
+    </h1>
+
     <div class="">
         <?php echo get_the_post_thumbnail(); ?>
     </div>
@@ -21,5 +25,5 @@ if (!defined('ABSPATH')) {
 
 </article>
 
-<?php get_template_part('template-parts/nav-pagination', 'single'); 
+<?php get_template_part('template-parts/nav-pagination', 'single');
 ?>

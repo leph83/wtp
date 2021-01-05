@@ -17,10 +17,13 @@ if (is_active_sidebar('primary-widget-area')) {
     <link rel="profile" href="https://gmpg.org/xfn/11">
 
     <!-- TODO: Find an easy way to preload assets without wp rocket -->
-    <link rel="preload" href="<?php echo get_stylesheet_directory_uri() ?>/assets/fonts/hind/hind-v10-latin-regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-    <link rel="preload" href="<?php echo get_stylesheet_directory_uri() ?>/assets/fonts/hind/hind-v10-latin-regular.woff" as="font" type="font/woff" crossorigin="anonymous">
+    <?php if (false) : ?>
+        <link rel="preload" href="<?php echo get_stylesheet_directory_uri() ?>/assets/fonts/hind/hind-v10-latin-regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+        <link rel="preload" href="<?php echo get_stylesheet_directory_uri() ?>/assets/fonts/hind/hind-v10-latin-regular.woff" as="font" type="font/woff" crossorigin="anonymous">
 
-    <meta name="referrer" content="no-referrer">
+        <meta name="referrer" content="no-referrer">
+    <?php endif; ?>
+
     <!-- 
         TODO: Add to Customizer and make it work
         <meta 
