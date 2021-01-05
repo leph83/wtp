@@ -39,3 +39,41 @@
     margin-left: auto;
     margin-right: auto;
 }
+
+
+
+/*--------------------------------------------------------------
+# VERTICAL SPACING IN GUTENBERG
+--------------------------------------------------------------*/
+
+/* GROUP VERTICAL SPACING */
+.wp-block-group .wp-block-group__inner-container > * {
+    margin-top: var(--gutter);
+}
+
+.wp-block-group .wp-block-group__inner-container > *:first-child {
+    margin-top: 0;
+}
+
+/* CONTENT VERTICAL SPACING */
+.site-main > article > *, 
+.site-main > .not-found > *, 
+.entry-content > *, 
+[class*=inner-container] > *, 
+.wp-block-template-part > * {
+    margin-top: var(--gutter);
+    margin-bottom: var(--gutter);
+}
+
+.entry-content > *.alignleft, 
+.entry-content > *.alignright, 
+.entry-content > *.alignleft:first-child + *, 
+.entry-content > *.alignright:first-child + *, 
+.entry-content > *.alignfull.has-background {
+    margin-top: 0;
+}
+
+.entry-content > *:last-child, 
+.entry-content > *.alignfull.has-background {
+    margin-bottom: 0;
+}

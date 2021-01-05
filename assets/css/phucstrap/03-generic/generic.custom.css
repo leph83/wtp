@@ -29,6 +29,10 @@ h6 {
   font-weight: inherit;
 }
 
+/*--------------------------------------------------------------
+# Links
+--------------------------------------------------------------*/
+
 h1 a,
 h2 a,
 h3 a,
@@ -42,14 +46,26 @@ h6 a {
   color: inherit;
 }
 
+
+a {
+	cursor: pointer;
+	color: var(--color-1);
+	text-decoration-skip-ink: all;
+}
+
+a:hover {
+	text-decoration-style: dotted;
+	text-decoration-skip-ink: none;
+}
+
 a:focus {
   outline: thin dotted;
 }
 
-a:hover,
-a:active {
-  outline: 0;
-}
+
+/*--------------------------------------------------------------
+# FORM
+--------------------------------------------------------------*/
 
 textarea {
   width: 100%;
@@ -62,6 +78,11 @@ p {
   margin: 0;
 }
 
+
+
+/*--------------------------------------------------------------
+# LISTS
+--------------------------------------------------------------*/
 ul {
   list-style: disc;
 }
@@ -74,19 +95,26 @@ dt {
   font-weight: bold;
 }
 
+
+/*--------------------------------------------------------------
+# IMAGES
+--------------------------------------------------------------*/
 figure {
   padding: 0;
   margin: 0;
 }
 
 img {
-  height: auto;
-  /* Make sure images are scaled correctly. */
-  max-width: 100%;
-  /* Adhere to container width. */
+	display: block;
+	height: auto;
+	max-width: 100%;
   vertical-align: bottom;
 }
 
+
+/*--------------------------------------------------------------
+# MEDIA
+--------------------------------------------------------------*/
 /* Make sure embeds and iframes fit their containers. */
 embed,
 iframe,
@@ -103,11 +131,26 @@ hr {
 pre {
   font-family: monospace, monospace; /* 1 */
   font-size: 1em; /* 2 */
+
+  white-space: pre;
+	overflow-x: auto;
 }
 
+
+
+/*--------------------------------------------------------------
+# TYPOGRAPHY
+--------------------------------------------------------------*/
 b,
 strong {
-  font-weight: bolder;
+	font-weight: 700;
+}
+
+dfn,
+cite,
+em,
+i {
+	font-style: italic;
 }
 
 code,

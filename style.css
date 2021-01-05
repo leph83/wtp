@@ -50,7 +50,6 @@ is all about adjusting the default block styles to the given layout.
 @import 'assets/css/phucstrap/05-objects/object.colors.css';
 @import 'assets/css/phucstrap/05-objects/object.layout.css';
 
-@import 'assets/css/phucstrap/05-objects/object.wordpress.css';
 
 /*--------------------------------------------------------------
 # 06 COMPONENTS - organisms
@@ -74,5 +73,4 @@ e.g hacks or ie11 styles
 
 is for any utility classes that are not assigned to a specific component.
 --------------------------------------------------------------*/
-/* @import 'assets/css/phucstrap/07-utilities/utility.wordpress.css'; */
-/* @import 'assets/css/theme/07-utilities/utility.wordpress.css'; */
+@import 'assets/css/phucstrap/07-utilities/utility.a11y.css';
