@@ -1,0 +1,157 @@
+/**
+ * Reset specific elements to make them easier to style in other contexts.
+ */
+
+html,
+body,
+p,
+ol,
+ul,
+li,
+dl,
+dt,
+dd,
+blockquote,
+figure,
+fieldset,
+form,
+legend,
+textarea,
+pre,
+iframe,
+hr,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  padding: 0;
+  margin: 0;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+}
+
+/**
+  * Apply generic border-box to all elements.
+  * See:
+  * https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+  */
+
+html {
+  /* Apply border-box across the entire page. */
+  box-sizing: border-box;
+  font-size: 62.5%;
+  font-family: var(--font-family);
+  line-height: var(--line-height-7);
+  scroll-behavior: smooth;
+
+  overflow-wrap: break-word;
+  text-rendering: auto;
+}
+
+/**
+  * Relax the definition a bit, to allow components to override it manually.
+  */
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-size: var(--font-size);
+  font-weight: normal;
+  text-align: left;
+}
+
+button {
+  cursor: pointer;
+}
+
+/*--------------------------------------------------------------
+# Links
+--------------------------------------------------------------*/
+a {
+  cursor: pointer;
+  color: var(--color-1);
+  text-decoration-skip-ink: all;
+}
+
+a:hover {
+  text-decoration-style: dotted;
+  text-decoration-skip-ink: none;
+}
+
+a:focus {
+  outline: thin dotted;
+}
+
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+  display: block;
+  text-decoration: inherit;
+  font-style: inherit;
+  font-weight: inherit;
+  color: inherit;
+}
+
+/*--------------------------------------------------------------
+# IMAGES
+--------------------------------------------------------------*/
+figure {
+  padding: 0;
+  margin: 0;
+}
+
+img {
+  display: block;
+  height: auto;
+  max-width: 100%;
+  vertical-align: bottom;
+}
+
+/*--------------------------------------------------------------
+# MEDIA
+--------------------------------------------------------------*/
+/* Make sure embeds and iframes fit their containers. */
+embed,
+iframe,
+object {
+  max-width: 100%;
+}
+
+hr {
+  box-sizing: content-box; /* 1 */
+  height: 0; /* 1 */
+  overflow: visible; /* 2 */
+}
+
+pre {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+
+  white-space: pre;
+  overflow-x: auto;
+}
+
+/*--------------------------------------------------------------
+# TYPOGRAPHY
+--------------------------------------------------------------*/
+b,
+strong {
+	font-weight: 700;
+}
