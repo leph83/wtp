@@ -11,8 +11,3 @@
 .main--container {
     flex-grow: 1;
 }
-
-
-p:not(.has-background) {
-    margin-bottom: var(--gutter);
-}
