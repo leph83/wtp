@@ -1,25 +1,25 @@
-<?php 
-    if ( ! defined( 'ABSPATH' ) ) {
-        exit; // Exit if accessed directly.
-    }
+<?php
+if (!defined('ABSPATH')) {
+    exit; // Exit if accessed directly.
+}
 
-    get_header(); 
+get_header();
 ?>
 
-    <article id="post-0" class="post not-found">
-        <header class="block__header">
-            <h1 class="block__title">
-                <?php esc_html_e('Not Found', 'wtp'); ?>
-            </h1>
-        </header>
 
-        <div class="block__content">
-            <p>
-                <?php esc_html_e('Nothing found for the requested page. Try a search instead?', 'wtp'); ?>
-            </p>
+<header class="alignwide">
+    <h1 class="h1"><?php esc_html_e('Nothing here', 'wtp'); ?></h1>
+</header><!-- .page-header -->
 
-            <?php get_search_form(); ?>
-        </div>
-    </article>
+<div class="error-404 not-found alignwide">
+    <div class="">
+        <p>
+            <?php esc_html_e('It looks like nothing was found at this location. Maybe try a search?', 'wtp'); ?>
+        </p>
+
+        <?php get_search_form(); ?>
+    </div><!-- .page-content -->
+</div><!-- .error-404 -->
+
 
 <?php get_footer();
