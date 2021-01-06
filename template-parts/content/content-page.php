@@ -18,3 +18,17 @@ if (!defined('ABSPATH')) {
     </div>
 
 </article>
+
+
+<?php 
+
+wp_link_pages(
+    array(
+        'before'   => '<nav class="page-links" aria-label="' . esc_attr__( 'Page', 'twentytwentyone' ) . '">',
+        'after'    => '</nav>',
+        /* translators: %: page number. */
+        'pagelink' => esc_html__( 'Page %', 'twentytwentyone' ),
+    )
+);
+
+?>

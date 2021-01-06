@@ -8,7 +8,7 @@
             $template = '
             <nav class="navigation %1$s">
                 <h2 class="screen-reader-text">%2$s</h2>
-                <div class="nav-links">%3$s</div>
+                <div class="nav  nav--pagination">%3$s</div>
             </nav>';
 
             return $template;

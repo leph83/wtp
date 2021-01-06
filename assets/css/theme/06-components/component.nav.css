@@ -51,3 +51,15 @@
 .nav--inline .nav__item {
   margin-left: var(--gutter);
 }
+
+
+/*--------------------------------------------------------------
+# NAV PAGINATION
+--------------------------------------------------------------*/
+.nav--pagination {
+  display: flex;
+  justify-content: space-between;
+
+  margin-top: var(--gutter);
+  margin-bottom: var(--gutter);
+}

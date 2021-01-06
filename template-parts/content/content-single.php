@@ -4,8 +4,8 @@ if (!defined('ABSPATH')) {
 }
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(''); ?>>
-    <h1>
+<article id="post-<?php the_ID(); ?>" <?php post_class('alignwide'); ?>>
+    <h1 class="page__title">
         <?php echo get_the_title(); ?>
     </h1>
 
@@ -24,6 +24,21 @@ if (!defined('ABSPATH')) {
     </div>
 
 </article>
+
+
+<?php 
+
+wp_link_pages(
+    array(
+        'before'   => '<nav class="page-links" aria-label="' . esc_attr__( 'Page', 'twentytwentyone' ) . '">',
+        'after'    => '</nav>',
+        /* translators: %: page number. */
+        'pagelink' => esc_html__( 'Page %', 'twentytwentyone' ),
+    )
+);
+
+?>
+
 
 <?php get_template_part('template-parts/nav-pagination', 'single');
 ?>
