@@ -112,6 +112,8 @@ function wtp_setup()
     // Add support for responsive embedded content.
     add_theme_support('responsive-embeds');
 
+    // add_theme_support('wp-block-styles');
+
     // Add default posts and comments RSS feed links to head.
     //add_theme_support('automatic-feed-links');
 
