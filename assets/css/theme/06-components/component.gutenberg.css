@@ -15,28 +15,19 @@
   > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator):not(.woocommerce),
 *[class*="inner-container"]
   > *:not(.entry-content):not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator):not(.woocommerce),
-.default-max-width,
 .aligncontent {
   margin-left: auto;
   margin-right: auto;
   max-width: var(--max-width-3);
 }
 
-.widget-area,
-.pagination,
-.comments-pagination,
-.post-navigation,
-.site-footer,
-.site-header,
-.alignwide,
-.wide-max-width {
+.alignwide {
   margin-left: auto;
   margin-right: auto;
   max-width: var(--max-width-2);
 }
 
-.alignfull,
-.full-max-width {
+.alignfull {
   max-width: var(--max-width-1);
   margin-left: auto;
   margin-right: auto;
@@ -67,7 +58,6 @@
   margin-bottom: 0;
 }
 
-
 .alignfull {
   padding-left: initial;
   padding-right: initial;
@@ -76,25 +66,39 @@
 /*--------------------------------------------------------------
 # TESTING CUSTOM GUTENBERG STYLES
 --------------------------------------------------------------*/
+
+/* GROUPS WITH BACKGROUND */
 .wp-block-group.has-background {
   padding-left: initial;
   padding-right: initial;
 }
 
-.entry-content > ul,
+.wp-block-group.has-background {
+  padding: calc(var(--gutter) / 3 * 2) var(--gutter);
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* LISTS 
+  keep this order
+*/
+.entry-content ol,
+.entry-content ul,
+.entry-content dd {
+  padding-left: calc(var(--gutter) * 1);
+}
+
 .entry-content > ol,
-.entry-content > dl {
-  padding-left: 3em;
+.entry-content > ul,
+.entry-content > dd {
+  padding-left: calc(var(--gutter) * 2);
 }
 
-.wp-block-quote {
-  border-left: none;
-  position: relative;
-  padding-left: 3em;
-}
 
+
+/* QUOTES */
 .wp-block-quote::before {
-  content: '';
+  content: "";
   width: 3px;
   height: 100%;
   position: absolute;
@@ -104,25 +108,75 @@
   background-color: var(--color-1);
 }
 
-
-.wp-block-group.has-background {
-  padding: calc(var(--gutter) / 3 * 2) var(--gutter);
-  margin-top: 0;
-  margin-bottom: 0;
+/*--------------------------------------------------------------
+# TESTING CUSTOM GUTENBERG STYLES
+--------------------------------------------------------------*/
+blockquote > p::before,
+blockquote > p::after,
+.wp-block-quote > p::before .wp-block-quote > p::after {
+  content: '"';
 }
 
+/* .wp-block-quote {
+  border-left: none;
+  position: relative;
+  padding-left: 3em;
+} */
 
-/*
-  I actually don't like floating stuff
-*/
+/*--------------------------------------------------------------
+# TABLE
+--------------------------------------------------------------*/
+
+/* padding doesn't applay to this if collapse, don't have fix, don't care */
+table,
+.wp-block-table {
+  border-collapse: collapse;
+}
+
+table td,
+table th,
+.wp-block-table td,
+.wp-block-table th {
+  border: 1px solid;
+  padding: calc(var(--gutter) / 2);
+}
+
+/*--------------------------------------------------------------
+#   STUPID FLOAT FIXES
+    I actually don't like floating stuff
+--------------------------------------------------------------*/
+
 .alignleft {
   float: left;
   margin-right: var(--gutter);
+  margin-bottom: var(--gutter);
+}
+
+.entry-content > .alignleft {
   margin-left: calc(50vw - var(--max-width-3) / 2);
 }
 
 .alignright {
   float: right;
   margin-left: var(--gutter);
+  margin-bottom: var(--gutter);
+}
+
+.entry-content > .alignright {
   margin-right: calc(50vw - var(--max-width-3) / 2);
+}
+
+/* because stupid wordpress adds a width to these elements and I add a padding */
+.entry-content figure.alignleft,
+.entry-content figure.alignright {
+  box-sizing: content-box;
+  margin-top: initial;
+}
+
+/* CLEARFIX */
+.entry-content::after {
+  content: "";
+  display: table;
+  table-layout: fixed;
+  clear: both;
 }
