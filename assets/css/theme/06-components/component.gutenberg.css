@@ -109,12 +109,25 @@
 }
 
 /*--------------------------------------------------------------
+# GALLERY UL FIX
+--------------------------------------------------------------*/
+.entry-content figure ul {
+  margin: 0;
+  padding: 0;
+}
+
+/*--------------------------------------------------------------
 # TESTING CUSTOM GUTENBERG STYLES
 --------------------------------------------------------------*/
 blockquote > p::before,
 blockquote > p::after,
-.wp-block-quote > p::before .wp-block-quote > p::after {
+.wp-block-quote > p::before,
+.wp-block-quote > p::after {
   content: '"';
+}
+
+.wp-block-quote::before {
+  content: initial;
 }
 
 /* .wp-block-quote {
