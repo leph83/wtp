@@ -5,7 +5,6 @@ if (!defined('ABSPATH')) {
 
 get_header();
 
-
 // DEFAULT
 $title = single_post_title('', false);
 $description = '';
@@ -68,19 +67,7 @@ if (is_404()) {
 
         <?php endwhile; ?>
 
-
-
-        <?php
-        $args = array(
-            'prev_text'             => __('Older posts'),
-            'next_text'             => __('Newer posts'),
-            'screen_reader_text'    => __('Posts navigation'),
-            'aria_label'            => __('Posts'),
-        );
-
-        the_posts_navigation($args);
-        ?>
-
+        <?php the_posts_navigation(); ?>
 
     <?php else : ?>
         <?php get_template_part('template-parts/content/content', 'none'); ?>

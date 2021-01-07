@@ -4,42 +4,56 @@ if (!defined('ABSPATH')) {
 }
 
 $title = get_the_title('', false);
+$image = get_the_post_thumbnail() ?? false;
+
+
+$author = esc_html('by ') . get_the_author_posts_link();
+$date = get_the_time(get_option('date_format'));
+
+// TAGS
+$tags = '';
+$posttags = get_the_tags();
+if ($posttags) {
+    foreach ($posttags as $tag) {
+        $tags .= '<a href="' . get_tag_link($tag->term_id) . '">' . $tag->name . '</a>';
+    }
+}
+
+// CATEGORIES
+$categories = get_the_category_list(', ');
+
+// POST INFO
+$postmeta = '';
+if (get_post_type() == 'post') {
+    $postmeta .= 
+        '<div class="">'
+           . $author . ' | ' . $date .
+        '</div>'
+        .
+        '<div class="">' . $tags . '</div>' 
+        .
+        '<div class="">' . $categories . '</div>'
+    ;
+}
+
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(''); ?>>
 
     <div class="block  alignwide">
         <div class="block__media">
-            <?php echo get_the_post_thumbnail(); ?>
+            <?php echo $image; ?>
         </div>
 
         <div class="block__content">
             <header class="block__heading">
-                <h1 class="block__title"><?php echo $title; ?></h1>
+                <h1 class="block__title">
+                    <?php echo $title; ?>
+                </h1>
 
-                <?php if (get_post_type() == 'post') : ?>
-                    <div class="entry-meta">
-                        <span class="author">
-                            <?php _e('by'); ?> <?php the_author_posts_link(); ?>
-                        </span>
-
-                        <span class="meta-sep"> | </span>
-
-                        <span class="entry-date">
-                            <?php the_time(get_option('date_format')); ?>
-                        </span>
-
-                        <div>
-                            <?php esc_html_e('Tags: ', 'wtp'); ?>
-                            <?php the_tags('', ' | ', ''); ?>
-                        </div>
-
-                        <div>
-                            <?php esc_html_e('Categories: ', 'wtp'); ?>
-                            <?php the_category(', '); ?>
-                        </div>
-                    </div>
-                <?php endif; ?>
+                <div>
+                    <?php echo $postmeta; ?>
+                </div>
 
             </header>
         </div>
@@ -47,30 +61,14 @@ $title = get_the_title('', false);
 
 
 
-    <div class="entry-content" id="page-content">
+    <div class="entry-content">
         <?php the_content(); ?>
     </div>
 
 
 
-    <div class="entry-links  alignwide">
-        <?php
-        // Pagination inside page or post
-        wp_link_pages(
-            array(
-                'before'           => '<nav class="page-links" aria-label="' . esc_attr__('Page', 'wtp') . '">',
-                'after'            => '</nav>',
-                'link_before'      => '',
-                'link_after'       => '',
-                'next_or_number'   => 'next',
-                'separator'        => ' ',
-                'nextpagelink'     => esc_html__('Next page', 'wtp'),
-                'previouspagelink' => esc_html__('Previous page', 'wtp'),
-                'pagelink'         =>  esc_html__('Page %', 'wtp'),
-                'echo'             => 1
-            )
-        );
-        ?>
+    <div class="alignwide">
+        <?php wp_link_pages(); ?>
     </div>
 
 
