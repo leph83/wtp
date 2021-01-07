@@ -10,7 +10,7 @@ if (!defined('ABSPATH')) {
 <footer class="footer" id="footer">
     <div class="footer__content">
         <div class="">
-            <?php echo get_template_part('template-parts/content', 'widgets'); ?>
+            <?php echo get_template_part('template-parts/widgets/content', 'widgets'); ?>
         </div>
 
         <div class="">

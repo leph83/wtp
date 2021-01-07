@@ -68,7 +68,19 @@ if (is_404()) {
 
         <?php endwhile; ?>
 
-        <?php get_template_part('template-parts/nav', 'pagination'); ?>
+
+
+        <?php
+        $args = array(
+            'prev_text'             => __('Older posts'),
+            'next_text'             => __('Newer posts'),
+            'screen_reader_text'    => __('Posts navigation'),
+            'aria_label'            => __('Posts'),
+        );
+
+        the_posts_navigation($args);
+        ?>
+
 
     <?php else : ?>
         <?php get_template_part('template-parts/content/content', 'none'); ?>

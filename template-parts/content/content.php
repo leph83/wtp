@@ -24,13 +24,11 @@ $title = get_the_title('', false);
         </div>
     </div>
 
+
+
     <div class="entry-content" id="page-content">
         <?php the_content(); ?>
     </div>
-
-
-    
-    <?php comments_template(); ?>
 
 
 
@@ -39,13 +37,25 @@ $title = get_the_title('', false);
         // Pagination inside page or post
         wp_link_pages(
             array(
-                'before'   => '<nav class="page-links" aria-label="' . esc_attr__('Page', 'wtp') . '">',
-                'after'    => '</nav>',
-                /* translators: %: page number. */
-                'pagelink' => esc_html__('Page %', 'wtp'),
+                'before'           => '<nav class="page-links" aria-label="' . esc_attr__('Page', 'wtp') . '">',
+                'after'            => '</nav>',
+                'link_before'      => '',
+                'link_after'       => '',
+                'next_or_number'   => 'next',
+                'separator'        => ' ',
+                'nextpagelink'     => esc_html__('Next page', 'wtp'),
+                'previouspagelink' => esc_html__('Previous page', 'wtp'),
+                'pagelink'         =>  esc_html__('Page %', 'wtp'),
+                'echo'             => 1
             )
         );
         ?>
+    </div>
+
+
+
+    <div class="alignwide">
+        <?php comments_template('', true); ?>
     </div>
 
 </article>
