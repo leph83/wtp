@@ -13,3 +13,21 @@
     );
 
     the_posts_navigation( $args ); 
+?>
+
+
+    <?php
+            wp_link_pages( array(
+                'before'           => '',
+                'after'            => '',
+                'link_before'      => '',
+                'link_after'       => '',
+                'next_or_number'   => 'next',
+                'separator'        => ' ',
+                'nextpagelink'     => 'Next page',
+                'previouspagelink' => 'Previous page',
+                'pagelink'         => '%',
+                'echo'             => 1
+                )
+            );
+        ?>

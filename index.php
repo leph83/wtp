@@ -5,26 +5,57 @@ if (!defined('ABSPATH')) {
 
 get_header();
 
+
+// DEFAULT
+$title = single_post_title('', false);
+$description = '';
+
+// BLOG PAGE
 $featured_image = '';
 if (is_home() && get_option('page_for_posts')) {
     $id = get_post_thumbnail_id(get_option('page_for_posts'));
     $featured_image = wp_get_attachment_image($id, 'full');
 }
 
+// ARCHIVE
+if (is_archive()) {
+    $title = get_the_archive_title();
+    $description = get_the_archive_description();
+}
+
+// SEARCH
+if (is_search()) {
+    $title = _n(
+        'We found ' . (int) $wp_query->found_posts . ' result for',
+        'We found ' . (int) $wp_query->found_posts . ' results for',
+        'wtp'
+    ) . ' <span>"' . esc_html(get_search_query()) . '"</span>';
+
+    $description = get_search_form(false);
+}
+
+// 404
+if (is_404()) {
+    $title = esc_html('404', 'wtp');
+}
+
+
 ?>
 
 
-<div class="block  block--hero">
+<div class="page__header  block  block--hero">
     <div class="block__media">
         <?php echo $featured_image; ?>
     </div>
 
     <div class="block__content  alignwide">
         <header class="block__header">
-            <h1 class="block__title">
-                <?php echo single_post_title(); ?>
+            <h1 class="page__title  block__title">
+                <?php echo $title; ?>
             </h1>
         </header>
+
+        <?php echo $description; ?>
     </div>
 </div>
 

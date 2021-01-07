@@ -13,6 +13,11 @@ if (!defined('ABSPATH')) {
         <?php echo get_the_post_thumbnail(); ?>
     </div>
 
+
+    <?php the_tags('', ' | ', ''); ?>
+
+    <?php the_category( ); ?>
+
     <div class="entry-content" id="page-content">
         <?php the_content(); ?>
     </div>
