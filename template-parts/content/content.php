@@ -17,9 +17,30 @@ $title = get_the_title('', false);
             <header class="block__heading">
                 <h1 class="block__title"><?php echo $title; ?></h1>
 
-                <?php the_tags('', ' | ', ''); ?>
+                <?php if (get_post_type() == 'post') : ?>
+                    <div class="entry-meta">
+                        <span class="author">
+                            <?php _e('by'); ?> <?php the_author_posts_link(); ?>
+                        </span>
 
-                <?php the_category(); ?>
+                        <span class="meta-sep"> | </span>
+
+                        <span class="entry-date">
+                            <?php the_time(get_option('date_format')); ?>
+                        </span>
+
+                        <div>
+                            <?php esc_html_e('Tags: ', 'wtp'); ?>
+                            <?php the_tags('', ' | ', ''); ?>
+                        </div>
+
+                        <div>
+                            <?php esc_html_e('Categories: ', 'wtp'); ?>
+                            <?php the_category(', '); ?>
+                        </div>
+                    </div>
+                <?php endif; ?>
+
             </header>
         </div>
     </div>
