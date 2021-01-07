@@ -15,7 +15,6 @@
     the_posts_navigation( $args ); 
 ?>
 
-
     <?php
             wp_link_pages( array(
                 'before'           => '',
