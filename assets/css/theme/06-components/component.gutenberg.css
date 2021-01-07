@@ -180,3 +180,17 @@ table th,
   table-layout: fixed;
   clear: both;
 }
+
+.clearfix {
+  clear: both;
+}
+
+.clearfix::before,
+.clearfix::after {
+  content: " ";
+  display: table;
+} 
+
+.clearfix::after {
+  clear: both;
+}

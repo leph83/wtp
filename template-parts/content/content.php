@@ -25,56 +25,56 @@ $categories = get_the_category_list(', ');
 // POST INFO
 $postmeta = '';
 if (get_post_type() == 'post') {
-    $postmeta .= 
+    $postmeta .=
         '<div class="">'
-           . $author . ' | ' . $date .
+        . $author . ' | ' . $date .
         '</div>'
         .
-        '<div class="">' . $tags . '</div>' 
+        '<div class="">' . $tags . '</div>'
         .
-        '<div class="">' . $categories . '</div>'
-    ;
+        '<div class="">' . $categories . '</div>';
 }
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(''); ?>>
 
-    <div class="block  alignwide">
-        <div class="block__media">
-            <?php echo $image; ?>
-        </div>
-
-        <div class="block__content">
-            <header class="block__heading">
-                <h1 class="block__title">
-                    <?php echo $title; ?>
-                </h1>
-
-                <div>
-                    <?php echo $postmeta; ?>
-                </div>
-
-            </header>
-        </div>
+<article id="post-<?php the_ID(); ?>" <?php post_class('alignwide  block  alignwide'); ?>>
+    <div class="block__media">
+        <?php echo $image; ?>
     </div>
 
+    <div class="block__content">
+        <header class="block__heading">
+            <h1 class="block__title">
+                <?php echo $title; ?>
+            </h1>
 
+            <div>
+                <?php echo $postmeta; ?>
+            </div>
 
-    <div class="entry-content">
-        <?php the_content(); ?>
+        </header>
     </div>
-
-
-
-    <div class="alignwide">
-        <?php wp_link_pages(); ?>
-    </div>
-
-
-
-    <div class="alignwide">
-        <?php comments_template('', true); ?>
-    </div>
-
 </article>
+
+
+<?php the_content(); ?>
+
+
+
+
+<?php
+$args = array(
+    'before'    => '<nav class="clearfix">',
+    'after'     => '</nav>'
+);
+
+wp_link_pages($args);
+?>
+
+
+
+
+<div class="clearfix">
+    <?php comments_template('', true); ?>
+</div>

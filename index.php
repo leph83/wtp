@@ -58,20 +58,20 @@ if (is_404()) {
     </div>
 </div>
 
-<div class="alignwide">
-    <?php if (have_posts()) : ?>
 
-        <?php while (have_posts()) : the_post(); ?>
+<?php if (have_posts()) : ?>
 
-            <?php get_template_part('template-parts/content/content', 'overview'); ?>
+    <?php while (have_posts()) : the_post(); ?>
 
-        <?php endwhile; ?>
+        <?php get_template_part('template-parts/content/content', 'overview'); ?>
 
-        <?php the_posts_navigation(); ?>
+    <?php endwhile; ?>
 
-    <?php else : ?>
-        <?php get_template_part('template-parts/content/content', 'none'); ?>
-    <?php endif; ?>
-</div>
+    <?php the_posts_navigation(); ?>
+
+<?php else : ?>
+    <?php get_template_part('template-parts/content/content', 'none'); ?>
+<?php endif; ?>
+
 
 <?php get_footer();

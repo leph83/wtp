@@ -57,4 +57,4 @@ if (is_active_sidebar('primary-widget-area')) {
 
 
     <div class="main--container  <?php echo $has_sidebar; ?>">
-        <main id="content" class="main">
+        <main id="content" class="main  entry-content">
