@@ -110,3 +110,19 @@
   margin-top: 0;
   margin-bottom: 0;
 }
+
+
+/*
+  I actually don't like floating stuff
+*/
+.alignleft {
+  float: left;
+  margin-right: var(--gutter);
+  margin-left: calc(50vw - var(--max-width-3) / 2);
+}
+
+.alignright {
+  float: right;
+  margin-left: var(--gutter);
+  margin-right: calc(50vw - var(--max-width-3) / 2);
+}
