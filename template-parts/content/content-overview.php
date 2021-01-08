@@ -33,7 +33,9 @@ if (get_post_type() == 'post') {
 }
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class('entry-content  alignfull'); ?>>
+
+
+<article id="post-<?php the_ID(); ?>" <?php post_class('entry-content'); ?>>
 
     <h2 class="block__title">
         <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark">
@@ -55,7 +57,7 @@ if (get_post_type() == 'post') {
     <?php the_excerpt(); ?>
 
 
-    <div>
+    <div class="alignwide">
         <?php echo $postmeta; ?>
     </div>
 

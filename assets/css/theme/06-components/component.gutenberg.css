@@ -34,6 +34,24 @@
 }
 
 /*--------------------------------------------------------------
+# Content Width padding and fixes
+--------------------------------------------------------------*/
+
+.entry-content > *,
+[class*="inner-container"] > *,
+.wp-block-template-part > * {
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
+}
+
+.entry-content > table,
+.entry-content > .wp-block-table,
+.entry-content > pre {
+  width: calc(var(--max-width-3) - var(--gutter) * 2);
+}
+
+
+/*--------------------------------------------------------------
 # VERTICAL SPACING IN GUTENBERG
 --------------------------------------------------------------*/
 .entry-content > *,
@@ -41,9 +59,6 @@
 .wp-block-template-part > * {
   margin-top: calc(1 * var(--gutter));
   margin-bottom: calc(1 * var(--gutter));
-
-  padding-left: var(--gutter);
-  padding-right: var(--gutter);
 }
 
 .entry-content > *:first-child,
@@ -116,6 +131,16 @@
   padding: 0;
 }
 
+.entry-content figure.alignleft {
+  padding-left: calc(var(--gutter) / 2);
+  padding-right: 0;
+}
+
+.entry-content figure.alignright {
+  padding-right: calc(var(--gutter) / 2);
+  padding-left: 0;
+}
+
 /*--------------------------------------------------------------
 # TESTING CUSTOM GUTENBERG STYLES
 --------------------------------------------------------------*/
@@ -141,8 +166,8 @@ blockquote > p::after,
 --------------------------------------------------------------*/
 
 /* padding doesn't applay to this if collapse, don't have fix, don't care */
-table,
-.wp-block-table {
+.entry-content > table,
+.entry-content > .wp-block-table {
   border-collapse: collapse;
 }
 
@@ -153,6 +178,7 @@ table th,
   border: 1px solid;
   padding: calc(var(--gutter) / 2);
 }
+
 
 /*--------------------------------------------------------------
 #   STUPID FLOAT FIXES
@@ -191,10 +217,6 @@ table th,
   content: "";
   display: table;
   table-layout: fixed;
-  clear: both;
-}
-
-.clearfix {
   clear: both;
 }
 

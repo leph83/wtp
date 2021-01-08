@@ -38,7 +38,7 @@ if (get_post_type() == 'post') {
 ?>
 
 
-<article id="post-<?php the_ID(); ?>" <?php post_class('alignwide  block  alignwide'); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class('block  alignwide'); ?>>
     <div class="block__media">
         <?php echo $image; ?>
     </div>
@@ -58,14 +58,15 @@ if (get_post_type() == 'post') {
 </article>
 
 
-<?php the_content(); ?>
-
+<div class="entry-content">
+    <?php the_content(); ?>
+</div>
 
 
 
 <?php
 $args = array(
-    'before'    => '<nav class="clearfix">',
+    'before'    => '<nav class="alignwide">',
     'after'     => '</nav>'
 );
 
@@ -75,6 +76,6 @@ wp_link_pages($args);
 
 
 
-<div class="clearfix">
+<div class="alignwide">
     <?php comments_template('', true); ?>
 </div>
