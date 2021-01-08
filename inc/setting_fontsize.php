@@ -36,16 +36,16 @@ $wtp_font_sizes = [
     'biggest' => 'c',
     'bigger' => 'b',
     'big' => 'a',
-    'h0' => '0',
-    'h1' => '1',
-    'h2' => '2',
-    'h3' => '3',
-    'h4' => '4',
-    'h5' => '5',
-    'h6' => '6',
-    'h7' => '7',
-    'h8' => '8',
-    'h9' => '9',
+    'h0' => 0,
+    'h1' => 1,
+    'h2' => 2,
+    'h3' => 3,
+    'h4' => 4,
+    'h5' => 5,
+    'h6' => 6,
+    'h7' => 7,
+    'h8' => 8,
+    'h9' => 9,
 ];
 
 
@@ -166,10 +166,19 @@ function hook_wtp_fontsizes_css()
 
     if (!empty($wtp_font_sizes)) {
         foreach ($wtp_font_sizes as $key => $value) {
-            $style_fontsizes .= '
-			.has-' . $key . '-font-size {
-				font-size: var(--font-size-' . $value . ');
-			}';
+            if ( is_int($value) ) {
+                $style_fontsizes .= '
+                .has-h-' . $value . '-font-size {
+                    font-size: var(--font-size-' . $value . ');
+                }';
+            } else {
+                $style_fontsizes .= '
+                .has-' . $key . '-font-size {
+                    font-size: var(--font-size-' . $value . ');
+                }';
+            }
+            
+
         }
     }
 
