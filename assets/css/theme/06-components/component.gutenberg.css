@@ -38,7 +38,6 @@
 --------------------------------------------------------------*/
 
 .entry-content > *,
-[class*="inner-container"] > *,
 .wp-block-template-part > * {
   padding-left: var(--gutter);
   padding-right: var(--gutter);
