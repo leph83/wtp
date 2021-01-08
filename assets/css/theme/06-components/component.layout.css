@@ -11,3 +11,8 @@
 .main--container {
     flex-grow: 1;
 }
+
+.wp-post-image {
+    margin-left: auto;
+    margin-right: auto;
+}

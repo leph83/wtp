@@ -64,3 +64,11 @@
   margin-top: var(--gutter);
   margin-bottom: var(--gutter);
 }
+
+.nav-next {
+  margin-left: auto;
+}
+
+.nav-previous {
+  margin-right: auto;
+}

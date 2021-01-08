@@ -67,7 +67,12 @@ if (is_404()) {
 
     <?php endwhile; ?>
 
-    <?php the_posts_navigation(); ?>
+    <?php 
+        $args = array(
+            'class' => 'alignwide',
+        );
+        the_posts_navigation($args); 
+    ?>
 
 <?php else : ?>
     <?php get_template_part('template-parts/content/content', 'none'); ?>

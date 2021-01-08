@@ -4,6 +4,8 @@ if (!defined('ABSPATH')) {
 }
 
 
+$title = the_title('', '', false) ?? __(esc_html('unnamed'), 'wtp');
+
 $author = esc_html('by ') . get_the_author_posts_link();
 $date = get_the_time(get_option('date_format'));
 
@@ -39,7 +41,7 @@ if (get_post_type() == 'post') {
 
     <h2 class="block__title">
         <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark">
-            <?php the_title(); ?>
+            <?php echo $title; ?>
         </a>
     </h2>
 
@@ -57,7 +59,7 @@ if (get_post_type() == 'post') {
     <?php the_excerpt(); ?>
 
 
-    <div class="alignwide">
+    <div class="aligncontent">
         <?php echo $postmeta; ?>
     </div>
 
