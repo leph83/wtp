@@ -28,17 +28,29 @@
 }
 
 .nav--dropdown .nav__item {
-  margin-left: var(--gutter);
+  position: relative;
 }
 
 .nav--dropdown .nav__link {
   color: var(--color-1);
   background-color: var(--color-2);
   padding: calc(var(--gutter) / 2)  var(--gutter);
+  margin-left: var(--gutter);
+  white-space: nowrap;
 }
 
 .nav--dropdown .nav__item--active .nav__link {
   color: var(--color-5);
+}
+
+.nav--dropdown > .nav__item > ul {
+  display: none;
+  position: absolute;
+}
+
+.nav--dropdown .nav__item:hover > ul,
+.nav--dropdown .nav__item:focus-within > ul {
+  display: block;
 }
 
 /*--------------------------------------------------------------
