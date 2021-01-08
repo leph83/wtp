@@ -1,7 +1,7 @@
-<?php 
-    if ( ! defined( 'ABSPATH' ) ) {
-        exit; // Exit if accessed directly.
-    }
+<?php
+if (!defined('ABSPATH')) {
+    exit; // Exit if accessed directly.
+}
 ?>
 
 <?php
@@ -11,9 +11,13 @@
  */
 
 $blog_info    = get_bloginfo('name');
-$description  = get_bloginfo('description', 'display');
+$blog_description  = get_bloginfo('description', 'display');
 $show_title   = (true === get_theme_mod('display_title_and_tagline', true));
-$header_class = $show_title ? 'site-title' : 'screen-reader-text';
+
+$header_class = 'site-title';
+if (has_custom_logo()) {
+    $header_class = 'screen-reader-text';
+}
 
 if (has_custom_logo()) {
     $custom_logo_id = get_theme_mod('custom_logo');
@@ -54,23 +58,20 @@ if (has_custom_logo()) {
         </div>
     <?php endif; ?>
 
-    <?php if ($show_title) : ?>
 
-        <?php if ($blog_info) : ?>
-            <?php if (is_front_page() || is_home()) : ?>
-                <h1 class="<?php echo esc_attr($header_class); ?>"><a href="<?php echo esc_url(home_url('/')); ?>"><?php echo esc_html($blog_info); ?></a></h1>
-            <?php else : ?>
-                <p class="<?php echo esc_attr($header_class); ?>"><a href="<?php echo esc_url(home_url('/')); ?>"><?php echo esc_html($blog_info); ?></a></p>
-            <?php endif; ?>
+    <?php if ($blog_info) : ?>
+        <?php if (is_front_page() || is_home()) : ?>
+            <h1 class="<?php echo esc_attr($header_class); ?>"><a href="<?php echo esc_url(home_url('/')); ?>"><?php echo esc_html($blog_info); ?></a></h1>
+        <?php else : ?>
+            <p class="<?php echo esc_attr($header_class); ?>"><a href="<?php echo esc_url(home_url('/')); ?>"><?php echo esc_html($blog_info); ?></a></p>
         <?php endif; ?>
-
-
-        <?php if ($description) : ?>
-            <p class="site-description">
-                <?php echo $description; ?>
-            </p>
-        <?php endif; ?>
-
     <?php endif; ?>
+
+    <?php if ($blog_description && !(has_custom_logo()) && $show_title) : ?>
+        <p class="site-description">
+            <?php echo $blog_description; ?>
+        </p>
+    <?php endif; ?>
+
 
 </div>
