@@ -38,7 +38,9 @@
 --------------------------------------------------------------*/
 
 .entry-content > *,
-.wp-block-template-part > * {
+.wp-block-template-part > *,
+.alignwide,
+.aligncontent {
   padding-left: var(--gutter);
   padding-right: var(--gutter);
 }
