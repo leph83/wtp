@@ -51,26 +51,28 @@
   width: calc(var(--max-width-3) - var(--gutter) * 2);
 }
 
-
 /*--------------------------------------------------------------
 # VERTICAL SPACING IN GUTENBERG
 --------------------------------------------------------------*/
 .entry-content > *,
 [class*="inner-container"] > *,
-.wp-block-template-part > * {
+.wp-block-template-part > *,
+.wp-block-columns .wp-block-column > *  {
   margin-top: calc(1 * var(--gutter));
   margin-bottom: calc(1 * var(--gutter));
 }
 
 .entry-content > *:first-child,
 [class*="inner-container"] > *:first-child,
-.wp-block-template-part > *:first-child {
+.wp-block-template-part > *:first-child,
+.wp-block-columns .wp-block-column > *:first-child {
   margin-top: 0;
 }
 
 .entry-content > *:last-child,
 [class*="inner-container"] > *:last-child,
-.wp-block-template-part > *:last-child {
+.wp-block-template-part > *:last-child,
+.wp-block-columns .wp-block-column > *:last-child {
   margin-bottom: 0;
 }
 
