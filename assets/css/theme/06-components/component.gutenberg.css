@@ -144,6 +144,21 @@
   padding-left: 0;
 }
 
+.wp-block-latest-posts.is-grid {
+  padding-left: var(--gutter);
+}
+
+.wp-block-latest-posts.is-grid li {
+  margin: 0 var(--gutter) var(--gutter) 0;
+}
+
+.wp-block-latest-posts.is-grid a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: bold;
+  font-size: var(--font-size-7);
+}
+
 /*--------------------------------------------------------------
 # TESTING CUSTOM GUTENBERG STYLES
 --------------------------------------------------------------*/
@@ -232,3 +247,6 @@ table th,
 .clearfix::after {
   clear: both;
 }
+
+
+

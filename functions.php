@@ -34,3 +34,6 @@ require_once('inc/disable_rest_api.php');
 require_once('inc/disable_emoji.php');
 require_once('inc/disable_embed.php');
 require_once('inc/disable_gutenberg-styles.php');
+
+
+add_filter('xmlrpc_enabled', '__return_false');

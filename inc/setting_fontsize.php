@@ -188,6 +188,6 @@ function hook_wtp_fontsizes_css()
 	' . $style_fontsizes . '
 	</style>';
 
-    echo $style;
+    echo wp_strip_all_tags($style);
 }
 add_action('wp_head', 'hook_wtp_fontsizes_css');
