@@ -185,9 +185,9 @@ function hook_wtp_fontsizes_css()
     $style .= '<style>
 	:root {' . $style_variables . '
 	}
-	' . $style_fontsizes . '
+	' . wp_strip_all_tags($style_fontsizes) . '
 	</style>';
 
-    echo wp_strip_all_tags($style);
+    echo $style;
 }
 add_action('wp_head', 'hook_wtp_fontsizes_css');
