@@ -8,12 +8,17 @@ get_header();
 // DEFAULT
 $title = single_post_title('', false);
 $description = '';
+$featured_image = get_the_post_thumbnail();
 
 // BLOG PAGE
-$featured_image = '';
-if (is_home() && get_option('page_for_posts')) {
-    $id = get_post_thumbnail_id(get_option('page_for_posts'));
-    $featured_image = wp_get_attachment_image($id, 'full');
+if (is_home()) {
+    $featured_image = '';
+
+    // Blog not as Startpage
+    if (get_option('page_for_posts') != 0) {
+        $id = get_post_thumbnail_id(get_option('page_for_posts'));
+        $featured_image = wp_get_attachment_image($id, 'full');
+    }
 }
 
 // ARCHIVE

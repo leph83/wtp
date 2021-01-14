@@ -109,6 +109,27 @@ function wtp_customizer_modularscale($wp_customize)
         )
     );
 
+    // SETTING - BASE FONT SIZE MAX
+    global $wtp_base_font_size;
+
+    $wp_customize->add_setting(
+        'wtp_font_size_max',
+        array(
+            'capability'        => 'edit_theme_options',
+            'default'           => false,
+        )
+    );
+
+    // CONTROL - BASE FONT SIZE MAX
+    $wp_customize->add_control(
+        'wtp_font_size_max',
+        array(
+            'type'    => 'select',
+            'section' => 'wtp_font_section',
+            'label'   => __('Font Size Max', 'wtp'),
+            'choices' => $wtp_base_font_size,
+        )
+    );
 
 
     // SETTING - FONT RATIO
@@ -133,6 +154,26 @@ function wtp_customizer_modularscale($wp_customize)
             'choices' => $wtp_font_ratio,
         )
     );
+
+    $wp_customize->add_setting(
+        'wtp_font_ratio_max',
+        array(
+            'capability'        => 'edit_theme_options',
+            'default'           => false,
+        )
+    );
+
+    // CONTROLL - FONT RATIO
+    $wp_customize->add_control(
+        'wtp_font_ratio_max',
+        array(
+            'type'    => 'select',
+            'section' => 'wtp_font_section',
+
+            'label'   => __('Font Ratio Max', 'wtp'),
+            'choices' => $wtp_font_ratio,
+        )
+    );
 }
 add_action('customize_register', 'wtp_customizer_modularscale');
 
@@ -154,19 +195,32 @@ function hook_wtp_fontsizes_css()
         $base_font_size = get_theme_mod('wtp_font_size');
     }
 
+    $base_font_size_max = '1.6rem';
+    if (get_theme_mod('base_font_size_max') && (get_theme_mod('base_font_size_max') != 'initial')) {
+        $base_font_size_max = get_theme_mod('wtp_font_size_max');
+    }
+
     $font_ratio = 1.125;
     if (get_theme_mod('wtp_font_ratio') && (get_theme_mod('wtp_font_ratio') != 'initial')) {
         $font_ratio = get_theme_mod('wtp_font_ratio');
     }
 
+    $font_ratio_max = 1.125;
+    if (get_theme_mod('wtp_font_ratio_max') && (get_theme_mod('wtp_font_ratio_max') != 'initial')) {
+        $font_ratio_max = get_theme_mod('wtp_font_ratio_max');
+    }
+
     $style_variables .= '
         --font-size: ' . $base_font_size . ';
-        --font-size-ratio: ' . $font_ratio . ';';
+        --font-size-ratio: ' . $font_ratio . ';
+        --font-size-max: ' . $base_font_size_max . ';
+        --font-size-ratio-max: ' . $font_ratio_max . ';
+    ';
 
 
     if (!empty($wtp_font_sizes)) {
         foreach ($wtp_font_sizes as $key => $value) {
-            if ( is_int($value) ) {
+            if (is_int($value)) {
                 $style_fontsizes .= '
                 .has-h-' . $value . '-font-size {
                     font-size: var(--font-size-' . $value . ');
@@ -177,8 +231,6 @@ function hook_wtp_fontsizes_css()
                     font-size: var(--font-size-' . $value . ');
                 }';
             }
-            
-
         }
     }
 

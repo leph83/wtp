@@ -38,7 +38,7 @@ if (get_post_type() == 'post') {
 ?>
 
 
-<article id="post-<?php the_ID(); ?>" <?php post_class('block  alignwide'); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class('block  alignfull'); ?>>
     <div class="block__media">
         <?php echo $image; ?>
     </div>
