@@ -3,7 +3,7 @@ if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly.
 }
 
-
+// ADD Disables - check filename
 $disables = array(
     'custom-fontsize' => 'Custom Font Size',
     'custom-color' => 'Custom Color',
