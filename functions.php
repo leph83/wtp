@@ -24,16 +24,8 @@ require_once('inc/add_pagination-markup.php');
 
 
 // ENABLE
-require_once('inc/enable_increase-security.php');
-require_once('inc/enable_css_defer.php');
+require_once('inc/enable/enable_increase-security.php');
+require_once('inc/enable/enable_css_defer.php');
 
 // DISABLES
-require_once('inc/disable_custom-fontsize.php');
-require_once('inc/disable_custom-color.php');
-require_once('inc/disable_rest_api.php');
-require_once('inc/disable_emoji.php');
-require_once('inc/disable_embed.php');
-require_once('inc/disable_gutenberg-styles.php');
-
-
-add_filter('xmlrpc_enabled', '__return_false');
+require_once('inc/disables.php');
