@@ -1,42 +1,38 @@
 /*
-Theme Name: WTP Theme
-Text Domain: whothephuc
-Version: 2020.1
-Description: Who the Phuc cares?
+Theme Name:     WTP Theme
+Text Domain:    whothephuc
+Version:        2020.1
+Description:    Who the Phuc cares?
 Tags: 
-Author: Phuc Le
-Author URI: http://what-the-phuc.at/
+Author:         Phuc Le
+Author URI:     http://what-the-phuc.com
 */
-
-
 
 /*--------------------------------------------------------------
 # 01 SETTINGS - Variables
 --------------------------------------------------------------*/
 /* @import 'assets/css/theme/01-settings/setting.fonts.css'; */
-@import 'assets/css/theme/01-settings/setting.variables.css';
+@import "assets/css/theme/01-settings/setting.variables.css";
 /* @import 'assets/css/phucstrap/01-settings/setting.variables.css'; */
-
-
 
 /*--------------------------------------------------------------
 # 02 TOOLS - generate additional variables
 --------------------------------------------------------------*/
-@import 'assets/css/phucstrap/02-tools/tool.modularscale.css';
+@import "assets/css/phucstrap/02-tools/tool.modularscale.css";
 
 /*--------------------------------------------------------------
 # 03 GENERIC - normalize
 --------------------------------------------------------------*/
-@import 'assets/css/phucstrap/03-generic/generic.normalize.css';
-@import 'assets/css/phucstrap/03-generic/generic.reset.css';
- 
+@import "assets/css/phucstrap/03-generic/generic.normalize.css";
+@import "assets/css/phucstrap/03-generic/generic.reset.css";
+
 /*--------------------------------------------------------------
 # 04 ELEMENTS
 styling elements without classes
 can contain any default HTML element. Do not add classes here, just give the elements some basic styles.
 --------------------------------------------------------------*/
-@import 'assets/css/phucstrap/04-elements/element.form.css';
-@import 'assets/css/phucstrap/04-elements/element.headings.css';
+@import "assets/css/phucstrap/04-elements/element.form.css";
+@import "assets/css/phucstrap/04-elements/element.headings.css";
 
 /*--------------------------------------------------------------
 # 05 OBJECTS - molecules
@@ -48,10 +44,9 @@ is all about adjusting the default block styles to the given layout.
 @import 'assets/css/phucstrap/05-objects/object.grid.css';
 @import 'assets/css/phucstrap/05-objects/object.functional.css'; */
 
-@import 'assets/css/phucstrap/05-objects/object.typography.css';
-@import 'assets/css/phucstrap/05-objects/object.colors.css';
-@import 'assets/css/phucstrap/05-objects/object.layout.css';
-
+@import "assets/css/phucstrap/05-objects/object.typography.css";
+@import "assets/css/phucstrap/05-objects/object.colors.css";
+@import "assets/css/phucstrap/05-objects/object.layout.css";
 
 /*--------------------------------------------------------------
 # 06 COMPONENTS - organisms
@@ -59,15 +54,15 @@ styling more complex sections - e.g header, blocks, sections
 
 contains all "bigger" components which contain elements of the previous two categories like header, footer, page template, single template, comments section, archives, ...
 --------------------------------------------------------------*/
-@import 'assets/css/theme/06-components/component.layout.css';
+@import "assets/css/theme/06-components/component.layout.css";
 
-@import 'assets/css/theme/06-components/component.header.css';
-@import 'assets/css/theme/06-components/component.footer.css';
+@import "assets/css/theme/06-components/component.header.css";
+@import "assets/css/theme/06-components/component.footer.css";
 
-@import 'assets/css/theme/06-components/component.nav.css';
+@import "assets/css/theme/06-components/component.nav.css";
 
-@import 'assets/css/theme/06-components/component.gutenberg.css';
-@import 'assets/css/theme/06-components/component.blocks.css';
+@import "assets/css/theme/06-components/component.gutenberg.css";
+@import "assets/css/theme/06-components/component.blocks.css";
 
 /*--------------------------------------------------------------
 # 07 UTILITIES
@@ -75,4 +70,4 @@ e.g hacks or ie11 styles
 
 is for any utility classes that are not assigned to a specific component.
 --------------------------------------------------------------*/
-@import 'assets/css/phucstrap/07-utilities/utility.a11y.css';
+@import "assets/css/phucstrap/07-utilities/utility.a11y.css";

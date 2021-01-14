@@ -117,10 +117,10 @@ if (!function_exists('wtp_setup')) {
         //add_theme_support('wp-block-styles');
 
 
-        add_theme_support('custom-units', 'rem', 'em');
+        add_theme_support('custom-units', 'px', 'rem', 'vh', 'vw');
 
         // Add default posts and comments RSS feed links to head.
-        //add_theme_support('automatic-feed-links');
+        // add_theme_support('automatic-feed-links');
 
     }
 }

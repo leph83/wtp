@@ -8,7 +8,6 @@ require_once('inc/setting_setup.php');
 require_once('inc/setting_customizer.php');
 require_once('inc/setting_widgets.php');
 
-require_once('inc/setting_block-styles.php');
 require_once('inc/setting_load-css.php');
 require_once('inc/setting_load-js.php');
 
@@ -19,9 +18,6 @@ require_once('inc/setting_layout_width.php');
 
 // ADD
 require_once('inc/add_nav-classes.php');
-require_once('inc/add_pagination-markup.php');
-// require_once('inc/add_gutenberg-admin-styles.php');
-
 
 // ENABLE
 require_once('inc/enable.php');

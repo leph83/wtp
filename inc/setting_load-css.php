@@ -1,21 +1,24 @@
 <?php
-if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly.
+if (!defined('ABSPATH')) {
+    exit; // Exit if accessed directly.
 }
 
 /**
  * LOAD CSS
  */
-if ( !function_exists('wtp_load_styles') ) {
-    function wtp_load_styles() {
+if (!function_exists('wtp_load_styles')) {
+    function wtp_load_styles()
+    {
         // Version dependend on change date of file
-        $file_name = 'style.min.css';
-        $css_version = filemtime( get_stylesheet_directory() . '/' . $file_name );
+        $file_name = 'style.css';
+        if (file_exists( get_stylesheet_directory() . '/style.min.css')) {
+            $file_name = 'style.min.css';
+        }
+
+        $css_version = filemtime(get_stylesheet_directory() . '/' . $file_name);
 
         // STYLES
-        wp_enqueue_style( 'theme-style', get_stylesheet_directory_uri() . '/' . $file_name, array(), $css_version );
+        wp_enqueue_style('theme-style', get_stylesheet_directory_uri() . '/' . $file_name, array(), $css_version);
     }
     add_action('wp_enqueue_scripts', 'wtp_load_styles');
 }
-
-

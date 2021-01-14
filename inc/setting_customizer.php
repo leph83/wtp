@@ -32,7 +32,7 @@ function wtp_customizer_settings($wp_customize)
 		'panel'      => 'wtp_panel'
 	));
 
-	// SECTION - Enable
+	// SECTION - ENABLE
 	$wp_customize->add_section('wtp_enable_section', array(
 		'title'      => __('Enable', 'wtp'),
 		'capability' => 'edit_theme_options',
@@ -83,7 +83,7 @@ function wtp_customizer_settings($wp_customize)
 		array(
 			'type'    => 'number',
 			'section' => 'title_tagline',
-			'label'   => __('Logo width', 'wtp'),
+			'label'   => __('Logo Size', 'wtp'),
 			// 'input_attrs' => array(
 			// 	'min' => 10,
 			// 	'max' => 200,
