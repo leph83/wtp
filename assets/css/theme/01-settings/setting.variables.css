@@ -49,7 +49,9 @@ Wordpress Customizer Setting will override this because it's inline
   /* Modular Scale */
   --font-size: 1.6rem;
   --font-size-ratio: 1.125;
+  --font-size-max: 1.6rem;
   --line-height: 1.6;
+  --font-size-breakpoint: 2vw;
 }
 
 /*--------------------------------------------------------------
