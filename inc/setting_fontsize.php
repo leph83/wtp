@@ -191,12 +191,12 @@ function hook_wtp_fontsizes_css()
     $style_variables = '';
     $style_fontsizes = '';
 
-    $base_font_size = '1.6rem';
+    $base_font_size = '1.6';
     if (get_theme_mod('wtp_font_size') && (get_theme_mod('wtp_font_size') != 'initial')) {
         $base_font_size = get_theme_mod('wtp_font_size');
     }
 
-    $base_font_size_max = '1.6rem';
+    $base_font_size_max = '1.6';
     if (get_theme_mod('wtp_font_size_max') && (get_theme_mod('wtp_font_size_max') != 'initial')) {
         $base_font_size_max = get_theme_mod('wtp_font_size_max');
     }
