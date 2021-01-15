@@ -10,8 +10,8 @@ $disables = array(
     'restapi' => 'rest API',
     'emoji' => 'emojis',
     'embed' => 'embed',
-    'gutenberg-styles' => 'Gutenberg Styles',
     'xmlrpc' => 'xmlrpc',
+    'gutenberg-styles' => 'Gutenberg Default Styles',
 );
 
 

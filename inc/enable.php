@@ -7,6 +7,7 @@ if (!defined('ABSPATH')) {
 $enables = array(
     'increased-security' => 'increase security',
     'css-defer' => 'CSS defer',
+    'gutenberg-theme' => 'Gutenberg default theme',
 );
 
 
