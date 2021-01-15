@@ -10,7 +10,7 @@
 
 :root {
     /* default font size */
-    --font-size-7:  clamp(var(--font-size), 2vw, var(--font-size-max));
+    --font-size-7:  clamp(var(--font-size), var(--font-size-breakpoint), var(--font-size-max));
 }
 
 :root {

@@ -11,21 +11,21 @@ if (!defined('ABSPATH')) {
  */
 $wtp_base_font_size = array(
     'initial' => 'initial',
-    '1.4rem' => '14px',
-    '1.5rem' => '15px',
-    '1.6rem' => '16px',
-    '1.7rem' => '17px',
-    '1.8rem'  => '18px',
-    '1.9rem'  => '19px',
-    '2.0rem'  => '20px',
-    '2.1rem'  => '21px',
-    '2.2rem'  => '22px',
-    '2.3rem'  => '23px',
-    '2.4rem'  => '24px',
-    '2.5rem'  => '25px',
-    '2.6rem'  => '26px',
-    '2.7rem'  => '27px',
-    '2.8rem'  => '28px',
+    '1.4' => '14px',
+    '1.5' => '15px',
+    '1.6' => '16px',
+    '1.7' => '17px',
+    '1.8' => '18px',
+    '1.9' => '19px',
+    '2.0' => '20px',
+    '2.1' => '21px',
+    '2.2' => '22px',
+    '2.3' => '23px',
+    '2.4' => '24px',
+    '2.5' => '25px',
+    '2.6' => '26px',
+    '2.7' => '27px',
+    '2.8' => '28px',
 );
 
 
@@ -162,6 +162,19 @@ function wtp_customizer_modularscale($wp_customize)
             'choices' => $wtp_font_ratio,
         )
     );
+
+    // FONT SIZE BREAK POINT
+    $wp_customize->add_setting('wtp_font_size_breakpoint', array(
+        'default'   => 1280,
+    ));
+    $wp_customize->add_control(
+        'wtp_font_size_breakpoint',
+        array(
+            'type'    => 'number',
+            'section' => 'wtp_font_section',
+            'label'   => __('Font Size Break Point', 'wtp'),
+        )
+    );
 }
 add_action('customize_register', 'wtp_customizer_modularscale');
 
@@ -193,12 +206,19 @@ function hook_wtp_fontsizes_css()
         $font_ratio = get_theme_mod('wtp_font_ratio');
     }
 
+    $font_size_breakpoint = 1280;
+    if (get_theme_mod('wtp_font_size_breakpoint') && (get_theme_mod('wtp_font_size_breakpoint') != 'initial')) {
+        $font_size_breakpoint = get_theme_mod('wtp_font_size_breakpoint');
+    }
 
+    // CALC VW from breakpoint and font size
+    $font_size_breakpoint = 1 / (intval($font_size_breakpoint) / floatval($base_font_size) / 1000);
 
     $style_variables .= '
-        --font-size: ' . $base_font_size . ';
+        --font-size: ' . $base_font_size . 'rem;
         --font-size-ratio: ' . $font_ratio . ';
-        --font-size-max: ' . $base_font_size_max . ';
+        --font-size-max: ' . $base_font_size_max . 'rem;
+        --font-size-breakpoint: '. $font_size_breakpoint  .'vw;
     ';
 
 
