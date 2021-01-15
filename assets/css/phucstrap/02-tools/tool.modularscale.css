@@ -5,8 +5,15 @@
 
 \*------------------------------------*/
 :root {
+    --font-size-7: var(--font-size)
+}
+
+:root {
     /* default font size */
-    --font-size-7:  var(--font-size);
+    --font-size-7:  clamp(var(--font-size), 2vw, var(--font-size-max));
+}
+
+:root {
     /* smaller font size */
     --font-size-8:  calc( var(--font-size-7) / var(--font-size-ratio) );
     --font-size-9:  calc( var(--font-size-8) / var(--font-size-ratio) );

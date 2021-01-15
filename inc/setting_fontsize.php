@@ -18,6 +18,14 @@ $wtp_base_font_size = array(
     '1.8rem'  => '18px',
     '1.9rem'  => '19px',
     '2.0rem'  => '20px',
+    '2.1rem'  => '21px',
+    '2.2rem'  => '22px',
+    '2.3rem'  => '23px',
+    '2.4rem'  => '24px',
+    '2.5rem'  => '25px',
+    '2.6rem'  => '26px',
+    '2.7rem'  => '27px',
+    '2.8rem'  => '28px',
 );
 
 
@@ -154,26 +162,6 @@ function wtp_customizer_modularscale($wp_customize)
             'choices' => $wtp_font_ratio,
         )
     );
-
-    $wp_customize->add_setting(
-        'wtp_font_ratio_max',
-        array(
-            'capability'        => 'edit_theme_options',
-            'default'           => false,
-        )
-    );
-
-    // CONTROLL - FONT RATIO
-    $wp_customize->add_control(
-        'wtp_font_ratio_max',
-        array(
-            'type'    => 'select',
-            'section' => 'wtp_font_section',
-
-            'label'   => __('Font Ratio Max', 'wtp'),
-            'choices' => $wtp_font_ratio,
-        )
-    );
 }
 add_action('customize_register', 'wtp_customizer_modularscale');
 
@@ -196,7 +184,7 @@ function hook_wtp_fontsizes_css()
     }
 
     $base_font_size_max = '1.6rem';
-    if (get_theme_mod('base_font_size_max') && (get_theme_mod('base_font_size_max') != 'initial')) {
+    if (get_theme_mod('wtp_font_size_max') && (get_theme_mod('wtp_font_size_max') != 'initial')) {
         $base_font_size_max = get_theme_mod('wtp_font_size_max');
     }
 
@@ -205,16 +193,12 @@ function hook_wtp_fontsizes_css()
         $font_ratio = get_theme_mod('wtp_font_ratio');
     }
 
-    $font_ratio_max = 1.125;
-    if (get_theme_mod('wtp_font_ratio_max') && (get_theme_mod('wtp_font_ratio_max') != 'initial')) {
-        $font_ratio_max = get_theme_mod('wtp_font_ratio_max');
-    }
+
 
     $style_variables .= '
         --font-size: ' . $base_font_size . ';
         --font-size-ratio: ' . $font_ratio . ';
         --font-size-max: ' . $base_font_size_max . ';
-        --font-size-ratio-max: ' . $font_ratio_max . ';
     ';
 
 
