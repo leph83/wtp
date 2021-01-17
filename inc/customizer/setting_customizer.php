@@ -26,7 +26,7 @@ function wtp_customizer_settings($wp_customize)
 
 	// SECTION - LAYOUT WIDTHS
 	$wp_customize->add_section('wtp_layoutwidth_section', array(
-		'title' => __('Layout Widths', 'wtp'),
+		'title' => __('Layout', 'wtp'),
 		'capability' => 'edit_theme_options',
 		'panel'      => 'wtp_panel'
 	));

@@ -39,6 +39,20 @@ function wtp_customizer_layout_width($wp_customize)
             );
         }
     }
+
+
+    // GUTTER
+    $wp_customize->add_setting('wtp_layout_gutter', array(
+        'default'   => '',
+    ));
+    $wp_customize->add_control(
+        'wtp_layout_gutter',
+        array(
+            'type'    => 'text',
+            'section' => 'wtp_layoutwidth_section',
+            'label'   => __('Layout Gutter', 'wtp'),
+        )
+    );
 }
 add_action('customize_register', 'wtp_customizer_layout_width');
 
@@ -74,8 +88,13 @@ function hook_wtp_layout_width_css()
         }
     }
 
+    if (get_theme_mod('wtp_layout_gutter')) {
+        $style_variables .= '
+        --gutter: '. get_theme_mod('wtp_layout_gutter') .';';
+    }
+
     $style .= '<style>
-	:root {' . $style_variables . '
+    :root {' . $style_variables . '
 	}
 	' . $style_width . '
 	</style>';
