@@ -10,28 +10,15 @@ if (!defined('ABSPATH')) {
  *
  */
 $wtp_layout_width = array(
-    "alignfull " => 0,
-    "alignwide" => 100,
-    "content-narrow" => 60,
+    "alignfull " => '100%',
+    "alignwide" => '100rem',
+    "aligncontent" => '60rem',
 );
 
 
 
 /**
  * ADD WIDTH TO CUSTOMIZER
- * 
- *  $wp_customize->add_setting('wtp_layout_width_' . $key, array(
- *      'default'   => 0,
- *  ));
- * 
- *	$wp_customize->add_control(
- *		'logo_size',
- *		array(
- *			'type'    => 'number',
- *			'section' => 'wtp_layoutwidth_section',
- *			'label'   => __('Layout width', 'wtp'),
- *		)
- *	);
  * 
  */
 function wtp_customizer_layout_width($wp_customize)
@@ -46,9 +33,9 @@ function wtp_customizer_layout_width($wp_customize)
             $wp_customize->add_control(
                 'wtp_layout_width_' . $key,
                 array(
-                    'type'    => 'number',
+                    'type'    => 'text',
                     'section' => 'wtp_layoutwidth_section',
-                    'label'   => __('Layout width ' . $key . ' in rem', 'wtp'),
+                    'label'   => __('Layout width ' . $key . ' with unit', 'wtp'),
                 )
             );
         }
@@ -76,11 +63,7 @@ function hook_wtp_layout_width_css()
         $count = 1;
         foreach ($wtp_layout_width as $key => $value) {
             if (get_theme_mod('wtp_layout_width_' . $key) && get_theme_mod('wtp_layout_width_' . $key) != 0) {
-                $value = get_theme_mod('wtp_layout_width_' . $key) . 'rem';
-            }
-
-            if ($value == 0) {
-                $value = '100%';
+                $value = get_theme_mod('wtp_layout_width_' . $key);
             }
 
             $style_variables .= '
