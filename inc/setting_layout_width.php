@@ -49,7 +49,7 @@ add_action('customize_register', 'wtp_customizer_layout_width');
 
 
 /**
- * ADD COLOR VARIABLES AS INLINE CSS TO HEADER
+ * ADD LAYOUT WIDTH AS INLINE CSS TO HEADER
  */
 function hook_wtp_layout_width_css()
 {
