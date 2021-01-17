@@ -7,8 +7,6 @@ if (!defined('ABSPATH')) {
 /**
  * SETUP
  */
-add_action('after_setup_theme', 'wtp_setup');
-
 if (!function_exists('wtp_setup')) {
     function wtp_setup()
     {
@@ -121,6 +119,6 @@ if (!function_exists('wtp_setup')) {
 
         // Add default posts and comments RSS feed links to head.
         // add_theme_support('automatic-feed-links');
-
     }
+    add_action('after_setup_theme', 'wtp_setup');
 }
