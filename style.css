@@ -8,12 +8,12 @@ Author:         Phuc Le
 Author URI:     http://what-the-phuc.com
 */
 
+
+
 /*--------------------------------------------------------------
 # 01 SETTINGS - Variables
 --------------------------------------------------------------*/
-/* @import 'assets/css/theme/01-settings/setting.fonts.css'; */
-@import "assets/css/theme/01-settings/setting.variables.css";
-/* @import 'assets/css/phucstrap/01-settings/setting.variables.css'; */
+@import 'assets/css/phucstrap/01-settings/setting.variables.css';
 
 /*--------------------------------------------------------------
 # 02 TOOLS - generate additional variables
@@ -40,9 +40,9 @@ styling elements with classes - e.g functional CSS
 
 is all about adjusting the default block styles to the given layout.
 --------------------------------------------------------------*/
-/* @import 'assets/css/phucstrap/05-objects/object.boxmodel.css';
+@import 'assets/css/phucstrap/05-objects/object.boxmodel.css';
 @import 'assets/css/phucstrap/05-objects/object.grid.css';
-@import 'assets/css/phucstrap/05-objects/object.functional.css'; */
+@import 'assets/css/phucstrap/05-objects/object.functional.css';
 
 @import "assets/css/phucstrap/05-objects/object.typography.css";
 @import "assets/css/phucstrap/05-objects/object.colors.css";
@@ -54,15 +54,8 @@ styling more complex sections - e.g header, blocks, sections
 
 contains all "bigger" components which contain elements of the previous two categories like header, footer, page template, single template, comments section, archives, ...
 --------------------------------------------------------------*/
-@import "assets/css/theme/06-components/component.layout.css";
 
-@import "assets/css/theme/06-components/component.header.css";
-@import "assets/css/theme/06-components/component.footer.css";
 
-@import "assets/css/theme/06-components/component.nav.css";
-
-@import "assets/css/theme/06-components/component.gutenberg.css";
-@import "assets/css/theme/06-components/component.blocks.css";
 
 /*--------------------------------------------------------------
 # 07 UTILITIES
