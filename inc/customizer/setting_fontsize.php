@@ -92,6 +92,7 @@ function wtp_customizer_modularscale($wp_customize)
 {
     // SETTING - BASE FONT SIZE
     global $wtp_base_font_size;
+    global $wtp_font_sizes;
 
     $wp_customize->add_setting(
         'wtp_font_size',
@@ -170,6 +171,22 @@ function wtp_customizer_modularscale($wp_customize)
             'label'   => __('Font Size Break Point', 'wtp'),
         )
     );
+
+    // LINE HEIGHT
+    foreach ($wtp_font_sizes as $key => $value) {
+        // LINE HEIGHT FOR EACH FONT SIZE
+        $wp_customize->add_setting('wtp_lineheight_' . $value, array(
+            'default'   => '',
+        ));
+        $wp_customize->add_control(
+            'wtp_lineheight_' . $value,
+            array(
+                'type'    => 'text',
+                'section' => 'wtp_font_section',
+                'label'   => __('Line Height ' . $key, 'wtp'),
+            )
+        );
+    }
 }
 add_action('customize_register', 'wtp_customizer_modularscale');
 
@@ -216,19 +233,25 @@ function hook_wtp_fontsizes_css()
         --font-size-breakpoint: ' . $font_size_breakpoint  . 'vw;
     ';
 
-
     if (!empty($wtp_font_sizes)) {
         foreach ($wtp_font_sizes as $key => $value) {
             if (is_int($value)) {
                 $style_fontsizes .= '
-                .has-h-' . $value . '-font-size {
-                    font-size: var(--font-size-' . $value . ');
-                }';
+        .has-h-' . $value . '-font-size {
+            font-size: var(--font-size-' . $value . ');
+            line-height: var(--line-height-' . $value . ');
+        }';
             } else {
                 $style_fontsizes .= '
-                .has-' . $key . '-font-size {
-                    font-size: var(--font-size-' . $value . ');
-                }';
+        .has-' . $key . '-font-size {
+            font-size: var(--font-size-' . $value . ');
+            line-height: var(--line-height-' . $value . ');
+        }';
+            }
+
+            if (get_theme_mod('wtp_lineheight_' . $value)) {
+                $style_variables .= '
+        --line-height-' . $value . ': ' . get_theme_mod('wtp_lineheight_' . $value) . ';';
             }
         }
     }
