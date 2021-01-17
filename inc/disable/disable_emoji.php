@@ -3,10 +3,11 @@ if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly.
 }
 
+
+
 /**
  * Disable the emoji's
  */
-
 if (!function_exists('disable_emojis')) {
     function disable_emojis()
     {

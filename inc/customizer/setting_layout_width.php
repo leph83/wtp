@@ -5,7 +5,6 @@ if (!defined('ABSPATH')) {
 
 // TODO: Use GET Option to store all css in that and just output one <style> tag
 
-
 /**
  *
  */
@@ -45,9 +44,6 @@ add_action('customize_register', 'wtp_customizer_layout_width');
 
 
 
-
-
-
 /**
  * ADD LAYOUT WIDTH AS INLINE CSS TO HEADER
  */
@@ -73,7 +69,7 @@ function hook_wtp_layout_width_css()
 			.' . $key . ' {
 				max-width: var(--max-width-' . $count . ');
             }';
-            
+
             $count++;
         }
     }

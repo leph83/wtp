@@ -3,6 +3,8 @@ if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly.
 }
 
+
+
 /**
  * https://crunchify.com/how-to-clean-up-wordpress-header-section-without-any-plugin/
 */

@@ -5,7 +5,6 @@ if (!defined('ABSPATH')) {
 
 // TODO: Use GET Option to store all css in that and just output one <style> tag
 
-
 /**
  * DEFINE AVAILABLE FONT SIZES, RATIO and NAME TO CHOOSE
  */
@@ -28,8 +27,6 @@ $wtp_base_font_size = array(
     '2.8' => '28px',
 );
 
-
-
 $wtp_font_ratio = array(
     'initial' => false,
     '1.067' => '1.067 - minor second - 15:16',
@@ -38,7 +35,6 @@ $wtp_font_ratio = array(
     '1.25'  => '1.25 - major third - 4:5',
     '1.333'  => '1.333 - perfect fourth - 3:4',
 );
-
 
 $wtp_font_sizes = [
     'biggest' => 'c',
@@ -85,7 +81,6 @@ function set_editor_font_sizes()
 
     add_theme_support('editor-font-sizes', $editor_font_sizes);
 }
-
 add_action('after_setup_theme', 'set_editor_font_sizes');
 
 
@@ -218,7 +213,7 @@ function hook_wtp_fontsizes_css()
         --font-size: ' . $base_font_size . 'rem;
         --font-size-ratio: ' . $font_ratio . ';
         --font-size-max: ' . $base_font_size_max . 'rem;
-        --font-size-breakpoint: '. $font_size_breakpoint  .'vw;
+        --font-size-breakpoint: ' . $font_size_breakpoint  . 'vw;
     ';
 
 

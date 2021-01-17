@@ -3,18 +3,21 @@ if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly.
 }
 
+
+
 // SETTINGS
 require_once('inc/setting_setup.php');
-require_once('inc/setting_customizer.php');
+
 require_once('inc/setting_widgets.php');
 
 require_once('inc/setting_load-css.php');
 require_once('inc/setting_load-js.php');
 
-require_once('inc/setting_color.php');
-require_once('inc/setting_fontsize.php');
-require_once('inc/setting_layout_width.php');
-
+// CUSTOMIZER
+require_once('inc/customizer/setting_customizer.php');
+require_once('inc/customizer/setting_color.php');
+require_once('inc/customizer/setting_fontsize.php');
+require_once('inc/customizer/setting_layout_width.php');
 
 // ADD
 require_once('inc/add_nav-classes.php');

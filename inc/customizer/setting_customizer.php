@@ -5,7 +5,6 @@ if (!defined('ABSPATH')) {
 
 
 
-
 function wtp_customizer_settings($wp_customize)
 {
 	// PANEL WTP THEME OPTIONS
@@ -45,7 +44,6 @@ function wtp_customizer_settings($wp_customize)
 		'capability' => 'edit_theme_options',
 		'panel'      => 'wtp_panel'
 	));
-
 
 
 

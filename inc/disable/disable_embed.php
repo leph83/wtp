@@ -4,6 +4,7 @@ if (!defined('ABSPATH')) {
 }
 
 
+
 if (!function_exists('disable_embeds_code_init')) {
     function disable_embeds_code_init()
     {

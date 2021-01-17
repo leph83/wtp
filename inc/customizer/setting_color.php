@@ -3,7 +3,6 @@ if (!defined('ABSPATH')) {
 	exit; // Exit if accessed directly.
 }
 
-
 // TODO: Use GET Option to store all css in that and just output one <style> tag
 
 /**
@@ -21,17 +20,8 @@ $wtp_colors = array(
 	"6" => "#8224e3",
 );
 
-
 /**
  * ADD COLORS TO EDITOR
- * 	
- * add_theme_support('editor-color-palette', array(
- *	 	array(
- *	 		'name' => __('Black', 'wtp'),
- *	 		'slug' => 'black',
- *	 		'color' => $color_black,
- *	 	),
- *	 ));
  */
 function change_gutenberg_color_palette()
 {
@@ -57,28 +47,12 @@ function change_gutenberg_color_palette()
 
 	add_theme_support('editor-color-palette', $colors);
 }
-
 add_action('after_setup_theme', 'change_gutenberg_color_palette');
-
 
 
 
 /**
  * ADD COLORS TO CUSTOMIZER
- * 
- * 	$wp_customize->add_setting('wtp_color_white', array(
- *		'default'   => '#FFFFFF',
- *	));
- *	$wp_customize->add_control(new WP_Customize_Color_Control(
- *		$wp_customize,
- *		'wtp_color_white',
- *		array(
- *			'label' => __('Color White', 'wtp'),
- *			'section' => 'colors',
- *			'settings' => 'wtp_color_white',
- *		)
- *	));
- * 
  */
 function wtp_customizer_colors($wp_customize)
 {
@@ -102,9 +76,6 @@ function wtp_customizer_colors($wp_customize)
 	}
 }
 add_action('customize_register', 'wtp_customizer_colors');
-
-
-
 
 
 

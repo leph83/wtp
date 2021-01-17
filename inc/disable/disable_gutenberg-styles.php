@@ -4,10 +4,10 @@ if (!defined('ABSPATH')) {
 }
 
 
+
 /*
 ** REMOVE GUTENBERG STYLE FRONTEND
 */
-
 if (!function_exists('wtp_remove_wp_block_library_css')) {
     function wtp_remove_wp_block_library_css()
     {
