@@ -15,7 +15,7 @@ $blog_description  = get_bloginfo('description', 'display');
 $show_title   = (true === get_theme_mod('display_title_and_tagline', true));
 
 $header_class = 'site-title';
-if (has_custom_logo()) {
+if (has_custom_logo() && ($show_title == false) ) {
     $header_class = 'screen-reader-text';
 }
 
@@ -67,7 +67,7 @@ if (has_custom_logo()) {
         <?php endif; ?>
     <?php endif; ?>
 
-    <?php if ($blog_description && !(has_custom_logo()) && $show_title) : ?>
+    <?php if ($blog_description && $show_title) : ?>
         <p class="site-description">
             <?php echo $blog_description; ?>
         </p>
