@@ -2,32 +2,59 @@
     $MODULAR SCALE
     https://type-scale.com/
     https://www.modularscale.com/?16&px&1.125
-
+    https://websemantics.uk/tools/responsive-font-calculator/
 \*------------------------------------*/
+
 :root {
-    --font-size-7: var(--font-size)
+  --fontsize-min: 1.6;
+  --fontsize-max: 3.2;
+  --fontsize-minwidth: 100;
+  --fontsize-maxwidth: 200;
+
+  --fontsize-fontdiff: calc(var(--fontsize-max) - var(--fontsize-min));
+  --fontsize-widthdiff: calc(
+    var(--fontsize-maxwidth) - var(--fontsize-minwidth)
+  );
+
+  --fontsize-min-unit: calc(var(--fontsize-min) * 1rem);
+  --fontsize-max-unit: calc(var(--fontsize-max) * 1rem);
+  --fontsize-preferred: calc(
+    var(--fontsize-min-unit) +
+      (
+        var(--fontsize-fontdiff) * (100vw - var(--fontsize-minwidth) * 1rem) /
+          var(--fontsize-widthdiff)
+      )
+  );
 }
 
 :root {
-    /* default font size */
-    --font-size-7:  clamp(var(--font-size), var(--font-size-breakpoint), var(--font-size-max));
+  --font-size-7: var(--font-size);
 }
 
 :root {
-    /* smaller font size */
-    --font-size-8:  calc( var(--font-size-7) / var(--font-size-ratio) );
-    --font-size-9:  calc( var(--font-size-8) / var(--font-size-ratio) );
-    --font-size-10: calc( var(--font-size-9) / var(--font-size-ratio) );
-    /* bigger font size */
-    --font-size-6:  calc( var(--font-size-7) * var(--font-size-ratio) );
-    --font-size-5:  calc( var(--font-size-6) * var(--font-size-ratio) );
-    --font-size-4:  calc( var(--font-size-5) * var(--font-size-ratio) );
-    --font-size-3:  calc( var(--font-size-4) * var(--font-size-ratio) );
-    --font-size-2:  calc( var(--font-size-3) * var(--font-size-ratio) );
-    --font-size-1:  calc( var(--font-size-2) * var(--font-size-ratio) );
-    /* even bigger font size */
-    --font-size-0:  calc( var(--font-size-1) * var(--font-size-ratio) );
-    --font-size-a:  calc( var(--font-size-0) * var(--font-size-ratio) );
-    --font-size-b:  calc( var(--font-size-a) * var(--font-size-ratio) );
-    --font-size-c:  calc( var(--font-size-b) * var(--font-size-ratio) );
+  /* default font size */
+  --font-size-7: clamp(
+    var(--fontsize-min-unit),
+    var(--fontsize-preferred),
+    var(--fontsize-max-unit)
+  );
+}
+
+:root {
+  /* smaller font size */
+  --font-size-8: calc(var(--font-size-7) / var(--font-size-ratio));
+  --font-size-9: calc(var(--font-size-8) / var(--font-size-ratio));
+  --font-size-10: calc(var(--font-size-9) / var(--font-size-ratio));
+  /* bigger font size */
+  --font-size-6: calc(var(--font-size-7) * var(--font-size-ratio));
+  --font-size-5: calc(var(--font-size-6) * var(--font-size-ratio));
+  --font-size-4: calc(var(--font-size-5) * var(--font-size-ratio));
+  --font-size-3: calc(var(--font-size-4) * var(--font-size-ratio));
+  --font-size-2: calc(var(--font-size-3) * var(--font-size-ratio));
+  --font-size-1: calc(var(--font-size-2) * var(--font-size-ratio));
+  /* even bigger font size */
+  --font-size-0: calc(var(--font-size-1) * var(--font-size-ratio));
+  --font-size-a: calc(var(--font-size-0) * var(--font-size-ratio));
+  --font-size-b: calc(var(--font-size-a) * var(--font-size-ratio));
+  --font-size-c: calc(var(--font-size-b) * var(--font-size-ratio));
 }
