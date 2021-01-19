@@ -1,12 +1,12 @@
-:root{--quarter:calc( 1/4 );--third:calc( 1/3 );--half:calc( 1/2 );--two-thirds:calc( 2/3 );--three-quarters:calc( 3/4 );--whole:1;--double:2;--tripple:3;--quadruple:4}:root{--fontsize-min:1.6;--fontsize-max:3.2;--fontsize-minwidth:100;--fontsize-maxwidth:200;--fontsize-fontdiff:calc(var(--fontsize-max) - var(--fontsize-min));--fontsize-widthdiff:calc(
+:root{--quarter:calc( 1/4 );--third:calc( 1/3 );--half:calc( 1/2 );--two-thirds:calc( 2/3 );--three-quarters:calc( 3/4 );--whole:1;--double:2;--tripple:3;--quadruple:4}:root{--fontsize-min:1.6;--fontsize-max:3.2;--fontsize-minwidth:100;--fontsize-maxwidth:200;--fontsize-min-unit:calc(var(--fontsize-min) * 1rem);--fontsize-max-unit:calc(var(--fontsize-max) * 1rem);--fontsize-fontdiff:calc(var(--fontsize-max) - var(--fontsize-min));--fontsize-widthdiff:calc(
     var(--fontsize-maxwidth) - var(--fontsize-minwidth)
-  );--fontsize-min-unit:calc(var(--fontsize-min) * 1rem);--fontsize-max-unit:calc(var(--fontsize-max) * 1rem);--fontsize-preferred:calc(
+  );--fontsize-preferred:calc(
     var(--fontsize-min-unit) +
       (
         var(--fontsize-fontdiff) * (100vw - var(--fontsize-minwidth) * 1rem) /
           var(--fontsize-widthdiff)
       )
-  )}:root{--font-size-7:var(--font-size)}:root{--font-size-7:clamp(
+  );--font-size-7:clamp(
     var(--fontsize-min-unit),
     var(--fontsize-preferred),
     var(--fontsize-max-unit)

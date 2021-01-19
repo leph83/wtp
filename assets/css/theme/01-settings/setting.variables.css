@@ -4,7 +4,6 @@ TODO: Add to Customizer
 --------------------------------------------------------------*/
 :root {
   --gutter: 2.4rem;
-  --gutter-description: var(--font-size);
 }
 
 /*--------------------------------------------------------------
@@ -40,19 +39,17 @@ Wordpress Customizer Setting will override this because it's inline
 --------------------------------------------------------------*/
 :root {
   /* Font Family */
-  /* --font-family: "Hind", serif;
-  --font-family-2: "Open Sans", serif; */
-
   --font-family: sans-serif;
   --font-family-2: serif;
 
-  /* Modular Scale */
-  --font-size: 1.6rem;
-  --font-size-ratio: 1.125;
-  --line-height: 1.6;
+  /* Modular Scale + Fluid Font Size in rem */
+  --fontsize-min: 1.6;
+  --fontsize-max: 3.2;
+  --fontsize-minwidth: 100;
+  --fontsize-maxwidth: 200;
 
-  --font-size-max: 1.6rem;
-  --font-size-breakpoint: 2vw;
+  /* LINE HEIGHT */
+  --line-height: 1.6;
 }
 
 /*--------------------------------------------------------------

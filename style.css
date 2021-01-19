@@ -18,6 +18,7 @@ Author URI:     http://what-the-phuc.com
 /*--------------------------------------------------------------
 # 02 TOOLS - generate additional variables
 --------------------------------------------------------------*/
+@import "assets/css/phucstrap/02-tools/tool.fluidfont.css";
 @import "assets/css/phucstrap/02-tools/tool.modularscale.css";
 
 /*--------------------------------------------------------------
