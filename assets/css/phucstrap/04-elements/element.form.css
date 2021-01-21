@@ -76,8 +76,7 @@ License: MIT.
 
 	input[type="checkbox"],
 	input[type="radio"] {
-		-webkit-appearance: none;
-		-moz-appearance: none;
+
     }
     
     input[type="checkbox"]:disabled,
@@ -121,8 +120,7 @@ input[type="radio"] + label {
 @supports (-webkit-appearance: none) or (-moz-appearance: none) {
 
 	input[type="range"] {
-		-webkit-appearance: none; /* Hides the slider so that custom slider can be made */
-		width: 100%; /* Specific width is required for Firefox. */
+
     }
 
     input[type="range"]:disabled {
@@ -131,12 +129,11 @@ input[type="radio"] + label {
 
 
 	input[type="range"]::-webkit-slider-thumb {
-		-webkit-appearance: none;
-		cursor: pointer;
+
 	}
 
 	input[type="range"]::-moz-range-thumb {
-		cursor: pointer;
+
     }
     
 }
