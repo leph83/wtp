@@ -2,98 +2,125 @@
 # ACCESSIBILITY
 --------------------------------------------------------------*/
 .screen-reader-text {
-	border: 0;
-	clip: rect(1px, 1px, 1px, 1px);
-	-webkit-clip-path: inset(50%);
-	clip-path: inset(50%);
-	height: 1px;
-	margin: -1px;
-	overflow: hidden;
-	padding: 0;
-	position: absolute !important;
-	width: 1px;
-	word-wrap: normal !important;
-	word-break: normal;
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute !important;
+  width: 1px;
+  word-wrap: normal !important;
+  word-break: normal;
 }
 
 .skip-link:focus {
-	background-color: #f1f1f1;
-	border-radius: 3px;
-	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
-	clip: auto !important;
-	-webkit-clip-path: none;
-	clip-path: none;
-	color: #21759b;
-	display: block;
-	font-size: 0.875rem;
-	font-weight: 700;
-	height: auto;
-	left: 5px;
-	line-height: normal;
-	padding: 15px 23px 14px;
-	text-decoration: none;
-	top: 5px;
-	width: auto;
-	z-index: 100000;
+  background-color: #f1f1f1;
+  border-radius: 3px;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+  clip: auto !important;
+  -webkit-clip-path: none;
+  clip-path: none;
+  color: #21759b;
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 700;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000;
 }
 
 /* Do not show the outline on the skip link target. */
 #content[tabindex="-1"]:focus {
-	outline: 0;
+  outline: 0;
 }
 
 @media (prefers-reduced-motion) {
-	* {
-		transition-delay: 0s !important;
-		transition-duration: 0s !important;
-	}
+  * {
+    transition-delay: 0s !important;
+    transition-duration: 0s !important;
+  }
 }
-
-
 
 /*--------------------------------------------------------------
 # WORDPRESS SPECIFIC FIXES
 --------------------------------------------------------------*/
 .clearfix {
-	overflow: auto;
+  overflow: auto;
 }
 .clearfix::after {
-	content: "";
-	clear: both;
-	display: table;
+  content: "";
+  clear: both;
+  display: table;
 }
 
 .alignleft {
-	float: left;
-	margin-right: var(--gutter);
-	margin-bottom: var(--gutter);
+  float: left;
+  margin-right: var(--gutter);
+  margin-bottom: var(--gutter);
 }
 
 .alignright {
-	float: right;
-	margin-left: var(--gutter);
-	margin-bottom: var(--gutter);
+  float: right;
+  margin-left: var(--gutter);
+  margin-bottom: var(--gutter);
 }
 
 .aligncenter {
-    clear: both;
-    display: block;
-    float: none;
-    margin-right: auto;
-    margin-left: auto;
-    text-align: center;
+  clear: both;
+  display: block;
+  float: none;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
 }
 
 /*--------------------------------------------------------------
-# TABLE
+# WIDGETS GALLERY
 --------------------------------------------------------------*/
-/* table, .wp-block-table {
-    width: 100%;
-    border-collapse: collapse;
+.gallery {
+  display: grid;
 }
 
-table td,
-table th{
-    padding: calc(0.5 * var(--gutter));
-    border: 1px solid;
-} */
+.gallery-columns-1 {
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.gallery-columns-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.gallery-columns-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.gallery-columns-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.gallery-columns-5 {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.gallery-columns-6 {
+  grid-template-columns: repeat(6, 1fr);
+}
+
+.gallery-columns-7 {
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.gallery-columns-8 {
+  grid-template-columns: repeat(8, 1fr);
+}
+
+.gallery-columns-9 {
+  grid-template-columns: repeat(9, 1fr);
+}

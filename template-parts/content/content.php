@@ -3,10 +3,14 @@ if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly.
 }
 
-$title = '<a href="' . get_the_permalink() . '">' . get_the_title() . '</a>';
+$title = get_the_title();
 $image = get_the_post_thumbnail(get_the_id(), 'large') ?? false;
 $author = esc_html('by ') . get_the_author_posts_link();
 $date = get_the_time(get_option('date_format'));
+
+if (empty($title)) {
+    $title = __('Unbenannt', 'wtp');
+}
 
 // TAGS
 $tags = '';
@@ -39,11 +43,15 @@ if (get_post_type() == 'post') {
         .
         '<div class="">' . $categories . '</div>
     ';
+
+    if (!empty(get_the_post_thumbnail_caption())) {
+        $image = '<figure>' . $image . '<figcaption>' . get_the_post_thumbnail_caption() . '</figcaption></figure>';
+    }
 }
 
 // SINGULAR
-if (is_singular()) {
-    $title = get_the_title();
+if (!is_singular()) {
+    $title = '<a href="' . get_the_permalink() . '">' . get_the_title() . '</a>';
 }
 
 // BLOG PAGE
