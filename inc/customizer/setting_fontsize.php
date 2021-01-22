@@ -111,7 +111,8 @@ function wtp_customizer_modularscale($wp_customize)
         'wtp_fontsize_min',
         array(
             'capability'        => 'edit_theme_options',
-            'default'           => false,
+            'default'           => '',
+            'sanitize_callback' => 'theme_slug_sanitize_select',
         )
     );
 
@@ -133,7 +134,8 @@ function wtp_customizer_modularscale($wp_customize)
         'wtp_fontsize_max',
         array(
             'capability'        => 'edit_theme_options',
-            'default'           => false,
+            'default'           => '',
+            'sanitize_callback' => 'theme_slug_sanitize_select',
         )
     );
 
@@ -156,7 +158,8 @@ function wtp_customizer_modularscale($wp_customize)
         'wtp_fontsize_ratio',
         array(
             'capability'        => 'edit_theme_options',
-            'default'           => false,
+            'default'           => '',
+            'sanitize_callback' => 'theme_slug_sanitize_select',
         )
     );
 
@@ -175,6 +178,7 @@ function wtp_customizer_modularscale($wp_customize)
     // MIN WIDTH
     $wp_customize->add_setting('wtp_fontsize_minwidth', array(
         'default'   => false,
+        'sanitize_callback' => 'absint',
     ));
     $wp_customize->add_control(
         'wtp_fontsize_minwidth',
@@ -188,6 +192,7 @@ function wtp_customizer_modularscale($wp_customize)
     // MAX WIDTH
     $wp_customize->add_setting('wtp_fontsize_maxwidth', array(
         'default'   => false,
+        'sanitize_callback' => 'absint',
     ));
     $wp_customize->add_control(
         'wtp_fontsize_maxwidth',
@@ -205,6 +210,7 @@ function wtp_customizer_modularscale($wp_customize)
         // LINE HEIGHT FOR EACH FONT SIZE
         $wp_customize->add_setting('wtp_lineheight_' . $value, array(
             'default'   => '',
+            'sanitize_callback' => 'wp_filter_nohtml_kses'
         ));
         $wp_customize->add_control(
             'wtp_lineheight_' . $value,

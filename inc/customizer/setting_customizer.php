@@ -55,6 +55,7 @@ function wtp_customizer_settings($wp_customize)
 		array(
 			'capability'        => 'edit_theme_options',
 			'default'           => true,
+			'sanitize_callback' => 'theme_slug_sanitize_checkbox',
 		)
 	);
 	$wp_customize->add_control(
@@ -74,6 +75,7 @@ function wtp_customizer_settings($wp_customize)
 		array(
 			'capability'        => 'edit_theme_options',
 			'default'           => 100,
+			'sanitize_callback' => 'absint',
 		)
 	);
 	$wp_customize->add_control(
@@ -96,6 +98,7 @@ function wtp_customizer_settings($wp_customize)
 		array(
 			'capability'        => 'edit_theme_options',
 			'default'           => 'width',
+			'sanitize_callback' => 'theme_slug_sanitize_radio',
 		)
 	);
 	$wp_customize->add_control(

@@ -28,6 +28,7 @@ function wtp_customizer_layout_width($wp_customize)
         foreach ($wtp_layout_width as $key => $value) {
             $wp_customize->add_setting('wtp_layout_width_' . $key, array(
                 'default'   => $value,
+                'sanitize_callback' => 'wp_filter_nohtml_kses'
             ));
             $wp_customize->add_control(
                 'wtp_layout_width_' . $key,
@@ -44,6 +45,7 @@ function wtp_customizer_layout_width($wp_customize)
     // GUTTER
     $wp_customize->add_setting('wtp_layout_gutter', array(
         'default'   => '',
+        'sanitize_callback' => 'wp_filter_nohtml_kses'
     ));
     $wp_customize->add_control(
         'wtp_layout_gutter',

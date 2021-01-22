@@ -62,6 +62,7 @@ function wtp_customizer_colors($wp_customize)
 		foreach ($wtp_colors as $key => $value) {
 			$wp_customize->add_setting('wtp_color_' . $key, array(
 				'default'   => $value,
+				'sanitize_callback' => 'sanitize_hex_color',
 			));
 			$wp_customize->add_control(new WP_Customize_Color_Control(
 				$wp_customize,

@@ -27,7 +27,9 @@ function wtp_customizer_disables($wp_customize)
             'wtp_disable_' . $key,
             array(
                 'capability'    => 'edit_theme_options',
-                'default'       => false
+                'default' => '',
+                'sanitize_callback' => 'theme_slug_sanitize_checkbox'
+
             )
         );
 

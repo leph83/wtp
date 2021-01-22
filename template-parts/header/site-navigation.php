@@ -5,7 +5,7 @@ if (!defined('ABSPATH')) {
 ?>
 
 <?php
-$args = array(
+wp_nav_menu(array(
     'theme_location' => 'primary',
     'container'     => 'nav',
     'menu_class'    => 'flex  flex-wrap--wrap  flex-justify--space-between  list-style-type--none  margin--0  padding--0',
@@ -16,6 +16,5 @@ $args = array(
     'add_li_parent_class' => '',
     'add_a_class'   => 'padding--half  text-decoration--none',
     'add_a_active_class'   => 'color--2',
-);
-wp_nav_menu($args);
+));
 ?>

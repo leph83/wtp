@@ -8,8 +8,6 @@ if (!defined('ABSPATH')) {
 // SETTINGS
 require_once('inc/setting_setup.php');
 
-require_once('inc/setting_widgets.php');
-
 require_once('inc/setting_load-css.php');
 require_once('inc/setting_load-js.php');
 
@@ -20,10 +18,10 @@ require_once('inc/customizer/setting_fontsize.php');
 require_once('inc/customizer/setting_layout.php');
 
 // ADD
-require_once('inc/add_nav-classes.php');
+get_template_part('inc/add_nav-classes.php');
 
 // ENABLE
-require_once('inc/enable.php');
+get_template_part('inc/enable.php');
 
 // DISABLES
-require_once('inc/disables.php');
+get_template_part('inc/disables.php');
