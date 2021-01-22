@@ -11,7 +11,7 @@ function wtp_customizer_settings($wp_customize)
 	$wp_customize->add_panel(
 		'wtp_panel',
 		array(
-			'title'      => __('WTP Theme Options', 'wtp'),
+			'title'      => __('WTP Theme Options', 'wtp-theme'),
 			'priority'   => 200,
 			'capability' => 'edit_theme_options',
 		)
@@ -19,28 +19,28 @@ function wtp_customizer_settings($wp_customize)
 
 	// SECTION - FONT SETTING
 	$wp_customize->add_section('wtp_font_section', array(
-		'title' => __('Font Sizes - Modularscale', 'wtp'),
+		'title' => __('Font Sizes - Modularscale', 'wtp-theme'),
 		'capability' => 'edit_theme_options',
 		'panel'      => 'wtp_panel'
 	));
 
 	// SECTION - LAYOUT WIDTHS
 	$wp_customize->add_section('wtp_layoutwidth_section', array(
-		'title' => __('Layout', 'wtp'),
+		'title' => __('Layout', 'wtp-theme'),
 		'capability' => 'edit_theme_options',
 		'panel'      => 'wtp_panel'
 	));
 
 	// SECTION - ENABLE
 	$wp_customize->add_section('wtp_enable_section', array(
-		'title'      => __('Enable', 'wtp'),
+		'title'      => __('Enable', 'wtp-theme'),
 		'capability' => 'edit_theme_options',
 		'panel'      => 'wtp_panel'
 	));
 
 	// SECTION - DISABLES
 	$wp_customize->add_section('wtp_disable_section', array(
-		'title'      => __('Disables', 'wtp'),
+		'title'      => __('Disables', 'wtp-theme'),
 		'capability' => 'edit_theme_options',
 		'panel'      => 'wtp_panel'
 	));
@@ -63,7 +63,7 @@ function wtp_customizer_settings($wp_customize)
 		array(
 			'type'    => 'checkbox',
 			'section' => 'title_tagline',
-			'label'   => __('Display Site Title & Tagline', 'wtp'),
+			'label'   => __('Display Site Title & Tagline', 'wtp-theme'),
 		)
 	);
 
@@ -83,7 +83,7 @@ function wtp_customizer_settings($wp_customize)
 		array(
 			'type'    => 'number',
 			'section' => 'title_tagline',
-			'label'   => __('Logo Size', 'wtp'),
+			'label'   => __('Logo Size', 'wtp-theme'),
 			// 'input_attrs' => array(
 			// 	'min' => 10,
 			// 	'max' => 200,
@@ -106,10 +106,10 @@ function wtp_customizer_settings($wp_customize)
 		array(
 			'type'    => 'radio',
 			'section' => 'title_tagline',
-			'label'   => __('Logo Size', 'wtp'),
+			'label'   => __('Logo Size', 'wtp-theme'),
 			'choices' => array(
-				'width' => __('Width', 'wtp'),
-				'height' => __('Height', 'wtp'),
+				'width' => __('Width', 'wtp-theme'),
+				'height' => __('Height', 'wtp-theme'),
 			),
 		)
 	);

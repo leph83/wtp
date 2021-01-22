@@ -39,7 +39,7 @@ function wtp_customizer_disables($wp_customize)
             array(
                 'type'      => 'checkbox',
                 'section'   => 'wtp_disable_section',
-                'label'     => __('Disable ' . $value, 'wtp'),
+                'label'     => __('Disable ' . $value, 'wtp-theme'),
             )
         );
     }

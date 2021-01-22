@@ -83,7 +83,7 @@ function set_editor_font_sizes()
         array_push(
             $editor_font_sizes,
             array(
-                'name' => __($key, 'wtp'),
+                'name' => __($key, 'wtp-theme'),
                 'size' => 16 + 10 - $count,
                 'slug' => $key,
             )
@@ -122,7 +122,7 @@ function wtp_customizer_modularscale($wp_customize)
         array(
             'type'    => 'select',
             'section' => 'wtp_font_section',
-            'label'   => __('Font Size Min', 'wtp'),
+            'label'   => __('Font Size Min', 'wtp-theme'),
             'choices' => $wtp_fontsize,
         )
     );
@@ -145,7 +145,7 @@ function wtp_customizer_modularscale($wp_customize)
         array(
             'type'    => 'select',
             'section' => 'wtp_font_section',
-            'label'   => __('Font Size Max', 'wtp'),
+            'label'   => __('Font Size Max', 'wtp-theme'),
             'choices' => $wtp_fontsize,
         )
     );
@@ -170,7 +170,7 @@ function wtp_customizer_modularscale($wp_customize)
             'type'    => 'select',
             'section' => 'wtp_font_section',
 
-            'label'   => __('Font Size Ratio', 'wtp'),
+            'label'   => __('Font Size Ratio', 'wtp-theme'),
             'choices' => $wtp_fontsize_ratio,
         )
     );
@@ -185,7 +185,7 @@ function wtp_customizer_modularscale($wp_customize)
         array(
             'type'    => 'number',
             'section' => 'wtp_font_section',
-            'label'   => __('Font Size Min Width in px', 'wtp'),
+            'label'   => __('Font Size Min Width in px', 'wtp-theme'),
         )
     );
 
@@ -199,7 +199,7 @@ function wtp_customizer_modularscale($wp_customize)
         array(
             'type'    => 'number',
             'section' => 'wtp_font_section',
-            'label'   => __('Font Size Max Width in px', 'wtp'),
+            'label'   => __('Font Size Max Width in px', 'wtp-theme'),
         )
     );
 
@@ -217,7 +217,7 @@ function wtp_customizer_modularscale($wp_customize)
             array(
                 'type'    => 'text',
                 'section' => 'wtp_font_section',
-                'label'   => __('Line Height ' . $key, 'wtp'),
+                'label'   => __('Line Height ' . $key, 'wtp-theme'),
             )
         );
     }

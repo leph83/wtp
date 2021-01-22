@@ -9,7 +9,7 @@ $author = esc_html('by ') . get_the_author_posts_link();
 $date = get_the_time(get_option('date_format'));
 
 if (empty($title)) {
-    $title = __('Unbenannt', 'wtp');
+    $title = __('Unbenannt', 'wtp-theme');
 }
 
 // TAGS
@@ -65,7 +65,7 @@ if (is_home()) {
 
 // 404
 if (is_404()) {
-    $title = esc_html('404', 'wtp');
+    $title = esc_html('404', 'wtp-theme');
 }
 
 ?>
