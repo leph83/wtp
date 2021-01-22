@@ -10,10 +10,16 @@ $date = get_the_time(get_option('date_format'));
 
 // TAGS
 $tags = '';
+$count_tags = 0;
 $posttags = get_the_tags();
 if ($posttags) {
     foreach ($posttags as $tag) {
+        if ($count_tags != 0) {
+            $tags .= ', ';
+        }
         $tags .= '<a href="' . get_tag_link($tag->term_id) . '">' . $tag->name . '</a>';
+
+        $count_tags++;
     }
 }
 
@@ -22,6 +28,7 @@ $categories = get_the_category_list(', ');
 
 // POSTS
 $postmeta = '';
+
 if (get_post_type() == 'post') {
     $postmeta .=
         '<div class="">'
