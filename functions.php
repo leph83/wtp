@@ -18,10 +18,10 @@ require_once('inc/customizer/setting_fontsize.php');
 require_once('inc/customizer/setting_layout.php');
 
 // ADD
-get_template_part('inc/add_nav-classes.php');
+require_once('inc/add_nav-classes.php');
 
 // ENABLE
-get_template_part('inc/enable.php');
+require_once('inc/enable.php');
 
 // DISABLES
-get_template_part('inc/disables.php');
+require_once('inc/disables.php');

@@ -35,7 +35,7 @@ function wtp_customizer_layout_width($wp_customize)
                 array(
                     'type'    => 'text',
                     'section' => 'wtp_layoutwidth_section',
-                    'label'   => __('Layout width ' . $key . ' with unit', 'wtp'),
+                    'label'   => 'Layout width ' . $key . ' with unit',
                 )
             );
         }

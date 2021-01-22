@@ -118,7 +118,11 @@ if (!function_exists('wtp_setup')) {
         add_theme_support('custom-units', 'px', 'rem', 'vh', 'vw');
 
         // Add default posts and comments RSS feed links to head.
-        // add_theme_support('automatic-feed-links');
+        add_theme_support('automatic-feed-links');
+
+        if ( ! isset( $content_width ) ) {
+            $content_width = 640;
+        }
     }
     add_action('after_setup_theme', 'wtp_setup');
 }

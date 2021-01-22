@@ -7,6 +7,8 @@ if (!defined('ABSPATH')) {
 
 
 <?php if (have_comments() &&  !post_password_required() ) : ?>
+    <?php wp_enqueue_script( "comment-reply" ); ?>
+
     <div class="comments">
 
         <?php
