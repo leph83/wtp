@@ -18,7 +18,7 @@ if (!function_exists('wtp_load_styles')) {
         $css_version = filemtime(get_stylesheet_directory() . '/' . $file_name);
 
         // STYLES
-        wp_enqueue_style('wtp-phucstrap', get_stylesheet_directory_uri() . '/' . $file_name, array(), $css_version);
+        wp_enqueue_style('wtp-phucstrap', get_template_directory_uri() . '/' . $file_name, array(), $css_version);
     }
     add_action('wp_enqueue_scripts', 'wtp_load_styles');
 }
