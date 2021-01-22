@@ -8,7 +8,7 @@ if (!defined('ABSPATH')) {
 $args = array(
     'theme_location' => 'primary',
     'container'     => 'nav',
-    'menu_class'    => 'flex  flex-justify--space-between  list-style-type--none  margin--0  padding--0',
+    'menu_class'    => 'flex  flex-wrap--wrap  flex-justify--space-between  list-style-type--none  margin--0  padding--0',
     'fallback_cb'   => false,
     'add_submenu_class'  => '',
     'add_li_class'  => '',

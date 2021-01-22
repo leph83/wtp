@@ -14,7 +14,7 @@ $args = array(
     'add_li_class'  => '',
     'add_li_active_class' => '',
     'add_li_parent_class' => '',
-    'add_a_class'   => 'padding--half  text-decoration--none  color--inherit',
+    'add_a_class'   => 'display--block  padding--half  text-decoration--none  color--inherit',
     'add_a_active_class'   => 'color--2',
 );
 wp_nav_menu($args);

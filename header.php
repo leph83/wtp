@@ -15,9 +15,9 @@ if (!defined('ABSPATH')) {
 </head>
 
 <body <?php body_class('body'); ?>>
-    <header id="header" class="">
+    <header id="header" class=" bg-color--black  color--white  ">
 
-        <div class="lc lc--1  padding  bg-color--black  color--white  flex  flex-justify--space-between  flex-align-items--center">
+        <div class="lc  lc--2  padding flex flex-wrap--wrap flex-justify--space-between  flex-align-items--center">
 
             <div class="">
                 <?php get_template_part('template-parts/header/site-branding'); ?>
@@ -30,4 +30,4 @@ if (!defined('ABSPATH')) {
         </div>
     </header>
 
-    <main id="content" class="main  lc  lc--1  padding">
+    <main id="content" class="main  lc  lc--2  padding">

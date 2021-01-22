@@ -17,11 +17,6 @@ if ($posttags) {
     }
 }
 
-// SINGULAR
-if (is_singular()) {
-    $title = get_the_title();
-}
-
 // CATEGORIES
 $categories = get_the_category_list(', ');
 
@@ -39,34 +34,18 @@ if (get_post_type() == 'post') {
     ';
 }
 
-
+// SINGULAR
+if (is_singular()) {
+    $title = get_the_title();
+}
 
 // BLOG PAGE
 if (is_home()) {
-    $featured_image = '';
-
     // Blog not as Startpage
     if (get_option('page_for_posts') != 0) {
         $id = get_post_thumbnail_id(get_option('page_for_posts'));
-        $featured_image = wp_get_attachment_image($id, 'full');
+        $image = wp_get_attachment_image($id, 'full');
     }
-}
-
-// ARCHIVE
-if (is_archive()) {
-    $title = get_the_archive_title();
-    $description = get_the_archive_description();
-}
-
-// SEARCH
-if (is_search()) {
-    $title = _n(
-        'We found ' . (int) $wp_query->found_posts . ' result for',
-        'We found ' . (int) $wp_query->found_posts . ' results for',
-        'wtp'
-    ) . ' <span>"' . esc_html(get_search_query()) . '"</span>';
-
-    $description = get_search_form(false);
 }
 
 // 404
@@ -77,7 +56,8 @@ if (is_404()) {
 ?>
 
 
-<article id="post-<?php the_ID(); ?>" <?php post_class('block  margin padding'); ?>>
+
+<article id="post-<?php the_ID(); ?>" <?php post_class(''); ?>>
 
     <?php echo $image; ?>
 
