@@ -37,12 +37,7 @@ if (is_archive()) {
 
     <?php endwhile; ?>
 
-    <?php
-    $args = array(
-        'class' => 'alignwide',
-    );
-    the_posts_navigation($args);
-    ?>
+    <?php the_posts_navigation(); ?>
 
 <?php else : ?>
     <?php get_template_part('template-parts/content/content', 'none'); ?>

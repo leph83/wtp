@@ -76,18 +76,14 @@ if (is_404()) {
 
     <?php if (is_singular()) : ?>
         <?php the_content(); ?>
+
+        <?php wp_link_pages(); ?>
+
     <?php else : ?>
         <?php the_excerpt(); ?>
     <?php endif; ?>
 
-    <?php
-    $args = array(
-        'before'    => '<nav class="alignwide">',
-        'after'     => '</nav>'
-    );
 
-    wp_link_pages($args);
-    ?>
 
     <?php comments_template('', true); ?>
 
