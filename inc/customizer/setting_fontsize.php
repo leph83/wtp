@@ -174,7 +174,7 @@ function wtp_customizer_modularscale($wp_customize)
 
     // MIN WIDTH
     $wp_customize->add_setting('wtp_fontsize_minwidth', array(
-        'default'   => 1000,
+        'default'   => false,
     ));
     $wp_customize->add_control(
         'wtp_fontsize_minwidth',
@@ -187,7 +187,7 @@ function wtp_customizer_modularscale($wp_customize)
 
     // MAX WIDTH
     $wp_customize->add_setting('wtp_fontsize_maxwidth', array(
-        'default'   => 2000,
+        'default'   => false,
     ));
     $wp_customize->add_control(
         'wtp_fontsize_maxwidth',
@@ -288,7 +288,7 @@ function hook_wtp_fontsizes_css()
     }
 
     $style .= '<style>
-	:root {' . $style_variables . '
+	:root {' . wp_strip_all_tags($style_variables) . '
 	}
 	' . wp_strip_all_tags($style_fontsizes) . '
 	</style>';
