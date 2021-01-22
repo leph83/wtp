@@ -77,14 +77,19 @@ if (is_404()) {
     <?php if (is_singular()) : ?>
         <?php the_content(); ?>
 
-        <?php wp_link_pages(); ?>
-
     <?php else : ?>
         <?php the_excerpt(); ?>
     <?php endif; ?>
 
-
-
-    <?php comments_template('', true); ?>
-
 </article>
+
+<?php comments_template('', true); ?>
+
+<?php if (is_singular()) : ?>
+    <?php wp_link_pages(); ?>
+
+    <?php if (is_single()) : ?>
+        <?php previous_post_link(); ?>
+        <?php next_post_link(); ?>
+    <?php endif; ?>
+<?php endif; ?>

@@ -49,6 +49,11 @@
 	}
 }
 
+
+
+/*--------------------------------------------------------------
+# WORDPRESS SPECIFIC FIXES
+--------------------------------------------------------------*/
 .clearfix {
 	overflow: auto;
 }
@@ -57,3 +62,38 @@
 	clear: both;
 	display: table;
 }
+
+.alignleft {
+	float: left;
+	margin-right: var(--gutter);
+	margin-bottom: var(--gutter);
+}
+
+.alignright {
+	float: right;
+	margin-left: var(--gutter);
+	margin-bottom: var(--gutter);
+}
+
+.aligncenter {
+    clear: both;
+    display: block;
+    float: none;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+}
+
+/*--------------------------------------------------------------
+# TABLE
+--------------------------------------------------------------*/
+/* table, .wp-block-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table td,
+table th{
+    padding: calc(0.5 * var(--gutter));
+    border: 1px solid;
+} */
