@@ -32,7 +32,6 @@ Author URI:     http://what-the-phuc.com
 styling elements without classes
 can contain any default HTML element. Do not add classes here, just give the elements some basic styles.
 --------------------------------------------------------------*/
-@import "assets/css/phucstrap/04-elements/element.form.css";
 @import "assets/css/phucstrap/04-elements/element.headings.css";
 
 /*--------------------------------------------------------------
