@@ -177,3 +177,22 @@
 .lowercase {
   text-transform: lowercase;
 }
+
+/*--------------------------------------------------------------
+# TYPOGRAPHY
+# Text Decoration
+--------------------------------------------------------------*/
+.text-decoration--none {
+  text-decoration: none;
+}
+
+.text-decoration--underline {
+  text-decoration: underline;
+}
+/*--------------------------------------------------------------
+# TYPOGRAPHY
+# LIST
+--------------------------------------------------------------*/
+.list-style-type--none {
+  list-style-type: none;
+}

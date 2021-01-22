@@ -1,6 +1,18 @@
 /*--------------------------------------------------------------
 # COLORS
 --------------------------------------------------------------*/
+.color--inherit {
+    color: inherit;
+}
+
+.color--black {
+    color: var(--color-black);
+}
+
+.color--white {
+    color: var(--color-white);
+}
+
 .color--1 {
     color: var(--color-1);
 }
@@ -28,9 +40,16 @@
 /*--------------------------------------------------------------
 # BACKGROUND COLORS
 --------------------------------------------------------------*/
+.bg-color--black {
+    background-color: var(--color-black);
+}
+
+.bg-color--white {
+    background-color: var(--color-white);
+}
+
 .bg-color--1 {
     background-color: var(--color-1);
-    color: var(--color-white);
 }
 
 .bg-color--2 {

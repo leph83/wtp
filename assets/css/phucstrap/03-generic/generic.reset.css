@@ -46,7 +46,6 @@ h6 {
   * See:
   * https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
   */
-
 html {
   /* Apply border-box across the entire page. */
   box-sizing: border-box;

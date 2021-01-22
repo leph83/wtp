@@ -1,0 +1,82 @@
+/*--------------------------------------------------------------
+# FLEXBOX
+--------------------------------------------------------------*/
+.flex {
+  display: flex;
+}
+
+/*--------------------------------------------------------------
+# FLEX WRAP
+--------------------------------------------------------------*/
+.flex-wrap--wrap {
+  flex-wrap: wrap;
+}
+
+.flex-wrap--nowrap {
+  flex-wrap: nowrap;
+}
+
+/*--------------------------------------------------------------
+# FLEX DIRECTION
+--------------------------------------------------------------*/
+.flex-direction--column {
+  flex-direction: column;
+}
+
+.flex-direction--column-reverse {
+  flex-direction: column-reverse;
+}
+
+.flex-direction--row {
+  flex-direction: row;
+}
+
+.flex-direction--row-reverse {
+  flex-direction: row-reverse;
+}
+
+/*--------------------------------------------------------------
+# JUSTIFY CONTENT
+--------------------------------------------------------------*/
+.flex-justify--start {
+  justify-content: flex-start;
+}
+
+.flex-justify--center {
+  justify-content: center;
+}
+
+.flex-justify--end {
+  justify-content: flex-end;
+}
+
+.flex-justify--space-between {
+  justify-content: space-between;
+}
+
+.flex-justify--space-around {
+  justify-content: space-around;
+}
+
+.flex-justify--baseline {
+  justify-content: baseline;
+}
+
+/*--------------------------------------------------------------
+# ALIGN ITEMS
+--------------------------------------------------------------*/
+.flex-align-items--start {
+  align-items: flex-start;
+}
+
+.flex-align-items--center {
+  align-items: center;
+}
+
+.flex-align-items--end {
+  align-items: flex-end;
+}
+
+.flex-align-items-baseline {
+  align-items: baseline;
+}

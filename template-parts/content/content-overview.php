@@ -3,7 +3,6 @@ if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly.
 }
 
-
 $title = the_title('', '', false) ?? __(esc_html('unnamed'), 'wtp');
 
 $author = esc_html('by ') . get_the_author_posts_link();
@@ -55,13 +54,10 @@ if (get_post_type() == 'post') {
     <?php endif; ?>
 
 
-
     <?php the_excerpt(); ?>
-
 
     <div class="aligncontent">
         <?php echo $postmeta; ?>
     </div>
 
-    
 </article>

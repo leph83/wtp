@@ -42,6 +42,7 @@ styling elements with classes - e.g functional CSS
 is all about adjusting the default block styles to the given layout.
 --------------------------------------------------------------*/
 @import 'assets/css/phucstrap/05-objects/object.boxmodel.css';
+@import 'assets/css/phucstrap/05-objects/object.flexbox.css';
 @import 'assets/css/phucstrap/05-objects/object.grid.css';
 
 @import "assets/css/phucstrap/05-objects/object.typography.css";

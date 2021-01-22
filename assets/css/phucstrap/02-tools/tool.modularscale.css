@@ -6,19 +6,19 @@
 
 :root {
   /* smaller font size */
-  --font-size-8: calc(var(--font-size-7) / var(--font-size-ratio));
-  --font-size-9: calc(var(--font-size-8) / var(--font-size-ratio));
-  --font-size-10: calc(var(--font-size-9) / var(--font-size-ratio));
+  --font-size-8: calc(var(--font-size-7) / var(--fontsize-ratio));
+  --font-size-9: calc(var(--font-size-8) / var(--fontsize-ratio));
+  --font-size-10: calc(var(--font-size-9) / var(--fontsize-ratio));
   /* bigger font size */
-  --font-size-6: calc(var(--font-size-7) * var(--font-size-ratio));
-  --font-size-5: calc(var(--font-size-6) * var(--font-size-ratio));
-  --font-size-4: calc(var(--font-size-5) * var(--font-size-ratio));
-  --font-size-3: calc(var(--font-size-4) * var(--font-size-ratio));
-  --font-size-2: calc(var(--font-size-3) * var(--font-size-ratio));
-  --font-size-1: calc(var(--font-size-2) * var(--font-size-ratio));
+  --font-size-6: calc(var(--font-size-7) * var(--fontsize-ratio));
+  --font-size-5: calc(var(--font-size-6) * var(--fontsize-ratio));
+  --font-size-4: calc(var(--font-size-5) * var(--fontsize-ratio));
+  --font-size-3: calc(var(--font-size-4) * var(--fontsize-ratio));
+  --font-size-2: calc(var(--font-size-3) * var(--fontsize-ratio));
+  --font-size-1: calc(var(--font-size-2) * var(--fontsize-ratio));
   /* even bigger font size */
-  --font-size-0: calc(var(--font-size-1) * var(--font-size-ratio));
-  --font-size-a: calc(var(--font-size-0) * var(--font-size-ratio));
-  --font-size-b: calc(var(--font-size-a) * var(--font-size-ratio));
-  --font-size-c: calc(var(--font-size-b) * var(--font-size-ratio));
+  --font-size-0: calc(var(--font-size-1) * var(--fontsize-ratio));
+  --font-size-a: calc(var(--font-size-0) * var(--fontsize-ratio));
+  --font-size-b: calc(var(--font-size-a) * var(--fontsize-ratio));
+  --font-size-c: calc(var(--font-size-b) * var(--fontsize-ratio));
 }
