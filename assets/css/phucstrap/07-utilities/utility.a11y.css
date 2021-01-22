@@ -48,3 +48,12 @@
 		transition-duration: 0s !important;
 	}
 }
+
+.clearfix {
+	overflow: auto;
+}
+.clearfix::after {
+	content: "";
+	clear: both;
+	display: table;
+}
