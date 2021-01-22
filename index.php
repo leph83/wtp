@@ -24,7 +24,6 @@ if (is_archive()) {
     $description = get_the_archive_description();
 }
 
-
 ?>
 
 <?php echo $title; ?>

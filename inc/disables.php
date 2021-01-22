@@ -10,6 +10,7 @@ $disables = array(
     'restapi' => 'rest API',
     'emoji' => 'emojis',
     'embed' => 'embed',
+    'cookie_expire' => 'Cookie after closing Browser',
     'xmlrpc' => 'xmlrpc',
     'gutenberg-styles' => 'Gutenberg Default Styles',
 );

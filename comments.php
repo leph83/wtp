@@ -2,11 +2,11 @@
 if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly.
 }
+
 ?>
 
 
-<?php if (have_comments()) : ?>
-
+<?php if (have_comments() &&  !post_password_required() ) : ?>
     <div class="comments">
 
         <?php
