@@ -20,9 +20,15 @@
       )
   );
 
+  --font-size-7: var(--fontsize-min-unit);
+}
+
+@supports (font-size: clamp(1rem, 1rem, 1rem) ) {
+  :root {
   --font-size-7: clamp(
     var(--fontsize-min-unit),
     var(--fontsize-preferred),
     var(--fontsize-max-unit)
   );
+  }
 }
