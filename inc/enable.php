@@ -33,7 +33,7 @@ function wtp_customizer_enables($wp_customize)
             array(
                 'type'      => 'checkbox',
                 'section'   => 'wtp_enable_section',
-                'label'     => __('enable ' . $value, 'wtp-theme'),
+                'label'     => __('enable ' . $value, 'wtp'),
             )
         );
     }

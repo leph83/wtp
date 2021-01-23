@@ -10,9 +10,9 @@ $title = '';
 // SEARCH
 if (is_search()) {
     // can't deal with _n for now
-    $title = (int) $wp_query->found_posts . ' ' . __('results for', 'wtp-theme');
+    $title = (int) $wp_query->found_posts . ' ' . __('results for', 'wtp');
     if ((int) $wp_query->found_posts == 1) {
-        $title = (int) $wp_query->found_posts . ' ' . __( 'result for', 'wtp-theme');
+        $title = (int) $wp_query->found_posts . ' ' . __( 'result for', 'wtp');
     }
 
     $title = $title . ' <span>"' . esc_html(get_search_query()) . '"</span>';

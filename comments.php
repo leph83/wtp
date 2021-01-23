@@ -51,7 +51,7 @@ if (!defined('ABSPATH')) {
 
             <section class="comment">
                 <h3 class="comment__title">
-                    <?php echo '<span class="comment__ping-count">' . esc_html($ping_count) . '</span> ' . esc_html(_nx('Trackback or Pingback', 'Trackbacks and Pingbacks', $ping_count, 'comments count', 'wtp-theme')); ?>
+                    <?php echo '<span class="comment__ping-count">' . esc_html($ping_count) . '</span> ' . esc_html(_nx('Trackback or Pingback', 'Trackbacks and Pingbacks', $ping_count, 'comments count', 'wtp')); ?>
                 </h3>
 
                 <ul class="comment__list">

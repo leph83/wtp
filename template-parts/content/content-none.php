@@ -5,7 +5,7 @@ if (!defined('ABSPATH')) {
 ?>
 
 <span class="page__title">
-	<?php esc_html_e('Nothing here', 'wtp-theme'); ?>
+	<?php esc_html_e('Nothing here', 'wtp'); ?>
 </span>
 
-<p><?php esc_html_e('It seems we can&rsquo;t find what you&rsquo;re looking for.', 'wtp-theme'); ?></p>
+<p><?php esc_html_e('It seems we can&rsquo;t find what you&rsquo;re looking for.', 'wtp'); ?></p>

@@ -52,8 +52,8 @@ if (!function_exists('wtp_setup')) {
 
         // NAVIGATION
         register_nav_menus(array(
-            'primary' => __('Primary Menu', 'wtp-theme'),
-            'footer' => __('Secondary Menu', 'wtp-theme'),
+            'primary' => __('Primary Menu', 'wtp'),
+            'footer' => __('Secondary Menu', 'wtp'),
         ));
 
         /*
