@@ -26,7 +26,7 @@ function wtp_customizer_disables($wp_customize)
         $wp_customize->add_setting(
             'wtp_disable_' . $key,
             array(
-                'capability'    => 'edit_theme_options',
+                // 'capability'    => 'edit_theme_options',
                 'default' => '',
                 'sanitize_callback' => 'theme_slug_sanitize_checkbox'
 
