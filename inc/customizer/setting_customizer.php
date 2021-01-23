@@ -46,27 +46,23 @@ function wtp_customizer_settings($wp_customize)
 	));
 
 
-
-
-
 	// Add "display_title_and_tagline" setting for displaying the site-title & tagline.
 	$wp_customize->add_setting(
-		'display_title_and_tagline',
+		'wtp_display_title_and_tagline',
 		array(
 			'capability'        => 'edit_theme_options',
-			'default'           => true,
-			'sanitize_callback' => 'theme_slug_sanitize_checkbox',
+			'default'           => false,
+			// 'sanitize_callback' => 'theme_slug_sanitize_checkbox',
 		)
 	);
 	$wp_customize->add_control(
-		'display_title_and_tagline',
+		'wtp_display_title_and_tagline',
 		array(
 			'type'    => 'checkbox',
 			'section' => 'title_tagline',
 			'label'   => __('Display Site Title & Tagline', 'wtp'),
 		)
 	);
-
 
 
 	// ADD LOGO SIZE
