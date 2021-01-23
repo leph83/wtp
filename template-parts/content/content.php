@@ -89,9 +89,11 @@ if (is_404()) {
         <?php the_excerpt(); ?>
     <?php endif; ?>
 
+    <?php comments_template('', true); ?>
+
 </article>
 
-<?php comments_template('', true); ?>
+
 
 <?php if (is_singular()) : ?>
     <?php wp_link_pages(); ?>

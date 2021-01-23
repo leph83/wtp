@@ -12,11 +12,11 @@ if (!defined('ABSPATH')) {
 
 $blog_info    = get_bloginfo('name');
 $blog_description  = get_bloginfo('description', 'display');
-$show_title   = (true === get_theme_mod('display_title_and_tagline', true));
+$show_title   = get_theme_mod('wtp_display_title_and_tagline');
 
-$header_class = 'site-title';
-if (has_custom_logo() && ($show_title == false) ) {
-    $header_class = 'screen-reader-text';
+$screenreader_class = '';
+if (has_custom_logo() && !$show_title) {
+    $screenreader_class = 'screen-reader-text';
 }
 
 if (has_custom_logo()) {
@@ -51,27 +51,19 @@ if (has_custom_logo()) {
 ?>
 
 <div class="site-branding">
-
     <?php if (has_custom_logo()) : ?>
         <div class="site-logo">
             <?php echo $logo; ?>
         </div>
     <?php endif; ?>
 
-
     <?php if ($blog_info) : ?>
-        <?php if (is_front_page() || is_home()) : ?>
-            <h1 class="<?php echo esc_attr($header_class); ?>"><a href="<?php echo esc_url(home_url('/')); ?>"><?php echo esc_html($blog_info); ?></a></h1>
-        <?php else : ?>
-            <p class="<?php echo esc_attr($header_class); ?>"><a href="<?php echo esc_url(home_url('/')); ?>"><?php echo esc_html($blog_info); ?></a></p>
-        <?php endif; ?>
+        <h2 class="site-title  <?php echo esc_attr($screenreader_class); ?>"><a href="<?php echo esc_url(home_url('/')); ?>"><?php echo esc_html($blog_info); ?></a></h2>
     <?php endif; ?>
 
-    <?php if ($blog_description && $show_title) : ?>
-        <p class="site-description">
+    <?php if ($blog_description) : ?>
+        <p class="site-description  <?php echo esc_attr($screenreader_class); ?>">
             <?php echo $blog_description; ?>
         </p>
     <?php endif; ?>
-
-
 </div>
