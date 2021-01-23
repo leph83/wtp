@@ -9,11 +9,13 @@ $title = '';
 
 // SEARCH
 if (is_search()) {
-    $title = _n(
-        'We found ' . (int) $wp_query->found_posts . ' result for',
-        'We found ' . (int) $wp_query->found_posts . ' results for',
-        'wtp'
-    ) . ' <span>"' . esc_html(get_search_query()) . '"</span>';
+    // can't deal with _n for now
+    $title = __( 'We found ' . (int) $wp_query->found_posts . ' results for', 'wtp-theme');
+    if ((int) $wp_query->found_posts == 1) {
+        $title = __( 'We found ' . (int) $wp_query->found_posts . ' result for', 'wtp-theme');
+    }
+
+    $title = $title . ' <span>"' . esc_html(get_search_query()) . '"</span>';
 
     $description = get_search_form(false);
 }
