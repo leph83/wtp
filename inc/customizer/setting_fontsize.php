@@ -10,42 +10,42 @@ if (!defined('ABSPATH')) {
  */
 $wtp_fontsize = array(
     'initial' => 'initial',
-    '1.4' => '14px',
-    '1.5' => '15px',
-    '1.6' => '16px',
-    '1.7' => '17px',
-    '1.8' => '18px',
-    '1.9' => '19px',
-    '2.0' => '20px',
-    '2.1' => '21px',
-    '2.2' => '22px',
-    '2.3' => '23px',
-    '2.4' => '24px',
-    '2.5' => '25px',
-    '2.6' => '26px',
-    '2.7' => '27px',
-    '2.8' => '28px',
-    '2.9' => '29px',
-    '3.0' => '30px',
-    '3.1' => '31px',
-    '3.2' => '32px',
-    '3.3' => '33px',
-    '3.4' => '34px',
-    '3.5' => '35px',
-    '3.6' => '36px',
-    '3.7' => '37px',
-    '3.8' => '38px',
-    '3.9' => '39px',
-    '4.0' => '40px',
+    14 => '14px',
+    15 => '15px',
+    16 => '16px',
+    17 => '17px',
+    18 => '18px',
+    19 => '19px',
+    20 => '20px',
+    21 => '21px',
+    22 => '22px',
+    23 => '23px',
+    24 => '24px',
+    25 => '25px',
+    26 => '26px',
+    27 => '27px',
+    28 => '28px',
+    29 => '29px',
+    30 => '30px',
+    31 => '31px',
+    32 => '32px',
+    33 => '33px',
+    34 => '34px',
+    35 => '35px',
+    36 => '36px',
+    37 => '37px',
+    38 => '38px',
+    39 => '39px',
+    40 => '40px',
 );
 
 $wtp_fontsize_ratio = array(
     'initial' => false,
-    '1.067' => '1.067 - minor second - 15:16',
-    '1.125' => '1.125 - major second - 8:9',
-    '1.2'  => '1.2 - minor third - 5:6',
-    '1.25'  => '1.25 - major third - 4:5',
-    '1.333'  => '1.333 - perfect fourth - 3:4',
+    '1067' => '1.067 - minor second - 15:16',
+    '1125' => '1.125 - major second - 8:9',
+    '1200'  => '1.2 - minor third - 5:6',
+    '1250'  => '1.25 - major third - 4:5',
+    '1333'  => '1.333 - perfect fourth - 3:4',
 );
 
 $wtp_fontsize_names = [
@@ -237,17 +237,17 @@ function hook_wtp_fontsizes_css()
     $style_variables = '';
     $style_fontsizes = '';
 
-    $base_font_size = '1.6';
+    $base_font_size = 16;
     if (get_theme_mod('wtp_fontsize_min') && (get_theme_mod('wtp_fontsize_min') != 'initial')) {
         $base_font_size = get_theme_mod('wtp_fontsize_min');
     }
 
-    $base_font_size_max = '1.6';
+    $base_font_size_max = 16;
     if (get_theme_mod('wtp_fontsize_max') && (get_theme_mod('wtp_fontsize_max') != 'initial')) {
         $base_font_size_max = get_theme_mod('wtp_fontsize_max');
     }
 
-    $fontsize_ratio = 1.125;
+    $fontsize_ratio = 1125;
     if (get_theme_mod('wtp_fontsize_ratio') && (get_theme_mod('wtp_fontsize_ratio') != 'initial')) {
         $fontsize_ratio = get_theme_mod('wtp_fontsize_ratio');
     }
@@ -263,11 +263,11 @@ function hook_wtp_fontsizes_css()
     }
 
     $style_variables .= '
-        --fontsize-min: ' . $base_font_size . ';
-        --fontsize-max: ' . $base_font_size_max . ';
+        --fontsize-min: ' . $base_font_size / 10 . ';
+        --fontsize-max: ' . $base_font_size_max / 10 . ';
         --fontsize-minwidth: ' . $fontsize_minwidth / 10  . ';
         --fontsize-maxwidth: ' . $fontsize_maxwidth / 10  . ';
-        --fontsize-ratio: ' . $fontsize_ratio . ';
+        --fontsize-ratio: ' . $fontsize_ratio / 1000 . ';
     ';
 
     if (!empty($wtp_fontsize_names)) {
