@@ -16,17 +16,15 @@ if (!defined('ABSPATH')) {
 
 <body <?php body_class('body  flex  flex-direction--column'); ?>>
     <header id="header" class=" bg-color--black  color--white  ">
-
         <div class="lc  lc--2  padding flex flex-wrap--wrap flex-justify--space-between  flex-align-items--center">
 
             <div class="">
                 <?php get_template_part('template-parts/header/site-branding'); ?>
             </div>
 
-            <section class="">
-                <h2 class="screen-reader-text">Header</h2>
+            <div class="">
                 <?php get_template_part('template-parts/header/site-navigation'); ?>
-            </section>
+            </div>
 
         </div>
     </header>
