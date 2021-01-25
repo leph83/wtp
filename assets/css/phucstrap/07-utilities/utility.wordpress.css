@@ -1,14 +1,3 @@
-.wp-caption {
-}
-.wp-caption-text {
-}
-.sticky {
-}
-.gallery-caption {
-}
-.bypostauthor {
-}
-
 /*--------------------------------------------------------------
 # FLOAT
 --------------------------------------------------------------*/
@@ -43,4 +32,18 @@
   content: "";
   clear: both;
   display: table;
+}
+
+/*--------------------------------------------------------------
+# Classes needed to pass Wordpress Theme Checker
+--------------------------------------------------------------*/
+.wp-caption {
+}
+.wp-caption-text {
+}
+.sticky {
+}
+.gallery-caption {
+}
+.bypostauthor {
 }

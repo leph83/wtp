@@ -2,6 +2,7 @@
  * Reset specific elements to make them easier to style in other contexts.
  */
 
+/* I'm not removing margins for these elements */
 html,
 body,
 p,
@@ -30,6 +31,9 @@ h6 {
   -webkit-font-smoothing: antialiased;
 }
 
+/**
+ * Don't make Header Bold by default
+ */
 h1,
 h2,
 h3,
@@ -146,7 +150,10 @@ pre {
 
 /*--------------------------------------------------------------
 # TYPOGRAPHY
+
 --------------------------------------------------------------*/
+
+/* Set it to something usefull not like in the normalize */
 b,
 strong {
 	font-weight: 700;

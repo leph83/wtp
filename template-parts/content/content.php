@@ -32,7 +32,6 @@ $categories = get_the_category_list(', ');
 
 // POSTS
 $postmeta = '';
-
 if (get_post_type() == 'post') {
     $postmeta .=
         '<div class="">'
@@ -49,7 +48,7 @@ if (get_post_type() == 'post') {
     }
 }
 
-// SINGULAR
+// Make title clickable if not page or post detail
 if (!is_singular()) {
     $title = '<a href="' . get_the_permalink() . '">' . get_the_title() . '</a>';
 }
@@ -58,12 +57,12 @@ if (!is_singular()) {
 if (is_home()) {
     // Blog not as Startpage
     if (get_option('page_for_posts') != 0) {
-        $id = get_post_thumbnail_id(get_option('page_for_posts'));
-        $image = wp_get_attachment_image($id, 'full');
+        $image_id = get_post_thumbnail_id(get_option('page_for_posts'));
+        $image = wp_get_attachment_image($image_id, 'full');
     }
 }
 
-// 404
+// 404 - set title for 404 Page
 if (is_404()) {
     $title = esc_html('404', 'wtp');
 }
@@ -72,35 +71,55 @@ if (is_404()) {
 
 
 
-<article id="<?php echo get_post_type(); ?>-<?php the_ID(); ?>" <?php post_class('clearfix'); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class(''); ?>>
 
-    <?php echo $image; ?>
 
-    <h1>
-        <?php echo $title; ?>
-    </h1>
 
-    <?php echo $postmeta; ?>
+    <div class="lc  lc--2  lc--padding">
+        <?php echo $image; ?>
 
-    <?php if (is_singular()) : ?>
-        <?php the_content(); ?>
+        <h1>
+            <?php echo $title; ?>
+        </h1>
 
-    <?php else : ?>
-        <?php the_excerpt(); ?>
-    <?php endif; ?>
+        <?php echo $postmeta; ?>
+    </div>
+
+
+    <div class="entry-content  clearfix">
+        <?php if (is_singular()) : ?>
+            <?php the_content(); ?>
+        <?php else : ?>
+            <?php the_excerpt(); ?>
+        <?php endif; ?>
+    </div>
 
     <?php comments_template('', true); ?>
 
 </article>
 
 
-
 <?php if (is_singular()) : ?>
-    <?php wp_link_pages(); ?>
+    <?php // pages and posts can have pagination - but not for archive etc. 
+    ?>
+    <?php wp_link_pages(array(
+        'before' => '<div class="lc  lc--3  lc--padding">',
+        'after' => '</div>',
+    )); ?>
 
     <?php if (is_single()) : ?>
-        <?php previous_post_link(); ?>
-        <?php next_post_link(); ?>
-    <?php endif; ?>
-<?php endif; ?>
+        <div class="lc  lc--2  lc--padding  flex  flex-justify--space-between">
+            <?php //show previous and next posts - but not for pages duh 
+            ?>
+            <div class="margin-right--auto">
+                <?php previous_post_link(); ?>
+            </div>
 
+            <div class="margin-left--auto">
+                <?php next_post_link(); ?>
+            </div>
+        </div>
+    <?php endif; ?>
+
+    </div>
+<?php endif; ?>

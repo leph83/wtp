@@ -78,11 +78,11 @@
   font-family: var(--font-family);
 }
 
-.font-family-2 {
+.font-family--2 {
   font-family: var(--font-family-2);
 }
 
-.font-family-3 {
+.font-family--3 {
   font-family: var(--font-family-3);
 }
 
@@ -143,7 +143,7 @@
   font-style: italic;
 }
 
-/* fake italic, wenn kein italic vorhanden */
+/* fake italic, italic isn't available */
 .fs--oblique {
   font-style: oblique;
 }
@@ -155,9 +155,11 @@
 .ta--left {
   text-align: left;
 }
+
 .ta--center {
   text-align: center;
 }
+
 .ta---right {
   text-align: right;
 }

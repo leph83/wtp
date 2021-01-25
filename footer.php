@@ -7,7 +7,9 @@ if (!defined('ABSPATH')) {
 </main>
 
 <footer id="footer" class="footer  bg-color--black  color--white">
-    <div class="lc lc--2 flex flex-wrap--wrap  flex-justify--space-between  flex-align-items--center">
+    <section class="lc lc--2 flex flex-wrap--wrap  flex-justify--space-between  flex-align-items--center">
+        <h2 class="screen-reader-text"><?php echo __('Footer', 'wtp-child'); ?></h2>
+
         <div class="padding">
             &copy;<?php echo date('Y'); ?> - <?php echo get_bloginfo('name'); ?>
         </div>
@@ -15,7 +17,7 @@ if (!defined('ABSPATH')) {
         <div class="padding-left--half  padding-right--half">
             <?php get_template_part('template-parts/footer/footer-nav'); ?>
         </div>
-    </div>
+    </section>
 </footer>
 
 <?php wp_footer(); ?>
