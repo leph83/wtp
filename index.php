@@ -42,7 +42,7 @@ if (is_singular()) {
 <<?php echo $section_tag; ?>>
 
     <?php if ($title) : ?>
-        <h2 class="lc  lc--2  padding-left padding-right"><?php echo $title; ?></h2>
+        <h2 class="lc  lc--2"><?php echo $title; ?></h2>
     <?php endif; ?>
 
 

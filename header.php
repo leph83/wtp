@@ -14,7 +14,7 @@ if (!defined('ABSPATH')) {
     <?php wp_head(); ?>
 </head>
 
-<body <?php body_class('body  flex  flex-direction--column'); ?>>
+<body <?php body_class('body  min-height--100vh  flex  flex-direction--column'); ?>>
     <header id="header" class=" bg-color--black  color--white  ">
         <div class="lc  lc--2  padding flex flex-wrap--wrap flex-justify--space-between  flex-align-items--center">
 
@@ -29,4 +29,4 @@ if (!defined('ABSPATH')) {
         </div>
     </header>
 
-    <main id="content" class="main  lc  lc--2  padding  flex-grow--1  min-height--100vh">
+    <main id="content" class="main  lc  lc--2  padding  flex-grow--1">
