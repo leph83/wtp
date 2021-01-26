@@ -6,9 +6,9 @@ if (!defined('ABSPATH')) {
 //checkbox sanitization function
 function theme_slug_sanitize_checkbox($input)
 {
-
-    //returns true if checkbox is checked
-    return (isset($input) ? true : false);
+    // https://gist.github.com/ajskelton/740788f98df3283355dd7e0c2f5abb2a
+    // return ( isset( $input ) ? true : false );
+    return ( ( isset( $input ) && true == $input ) ? true : false );
 }
 
 //radio box sanitization function

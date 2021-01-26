@@ -31,9 +31,9 @@ function wtp_customizer_enables($wp_customize)
         $wp_customize->add_control(
             'wtp_enable_' . $key,
             array(
-                'type'      => 'checkbox',
-                'section'   => 'wtp_enable_section',
                 'label'     => __('enable ' . $value, 'wtp'),
+                'section'   => 'wtp_enable_section',
+                'type'      => 'checkbox',
             )
         );
     }

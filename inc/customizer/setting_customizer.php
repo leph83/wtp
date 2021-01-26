@@ -51,8 +51,8 @@ function wtp_customizer_settings($wp_customize)
 		'wtp_display_title_and_tagline',
 		array(
 			'capability'        => 'edit_theme_options',
-			'default'           => false,
-			// 'sanitize_callback' => 'theme_slug_sanitize_checkbox',
+			'default'           => '',
+			'sanitize_callback' => 'theme_slug_sanitize_checkbox',
 		)
 	);
 	$wp_customize->add_control(
