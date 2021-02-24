@@ -12,35 +12,36 @@ $wtp_theme_disables = array(
 
 
 // ADD SETTING TO CUSTOMIZER
-function wtp_theme_customizer_disables($wp_customize)
-{
-    global $wtp_theme_disables;
+if (!function_exists('wtp_theme_customizer_disables')) {
+    function wtp_theme_customizer_disables($wp_customize)
+    {
+        global $wtp_theme_disables;
 
-    foreach ($wtp_theme_disables as $key => $value) {
-        // SETTING
-        $wp_customize->add_setting(
-            'wtp_disable_' . $key,
-            array(
-                // 'capability'    => 'edit_theme_options',
-                'default' => '',
-                'sanitize_callback' => 'wtp_sanitize_checkbox'
+        foreach ($wtp_theme_disables as $key => $value) {
+            // SETTING
+            $wp_customize->add_setting(
+                'wtp_disable_' . $key,
+                array(
+                    // 'capability'    => 'edit_theme_options',
+                    'default' => '',
+                    'sanitize_callback' => 'wtp_sanitize_checkbox'
 
-            )
-        );
+                )
+            );
 
-        // CONTROL
-        $wp_customize->add_control(
-            'wtp_disable_' . $key,
-            array(
-                'type'      => 'checkbox',
-                'section'   => 'wtp_disable_section',
-                'label'     => $value,
-            )
-        );
+            // CONTROL
+            $wp_customize->add_control(
+                'wtp_disable_' . $key,
+                array(
+                    'type'      => 'checkbox',
+                    'section'   => 'wtp_disable_section',
+                    'label'     => $value,
+                )
+            );
+        }
     }
+    add_action('customize_register', 'wtp_theme_customizer_disables');
 }
-add_action('customize_register', 'wtp_theme_customizer_disables');
-
 
 // LOAD FILE IF DISABLED
 foreach ($wtp_theme_disables as $key => $value) {

@@ -20,87 +20,90 @@ $wtp_layout_width = array(
  * ADD WIDTH TO CUSTOMIZER
  * 
  */
-function wtp_customizer_layout_width($wp_customize)
-{
-    global $wtp_layout_width;
+if (!function_exists('wtp_customizer_layout_width')) {
+    function wtp_customizer_layout_width($wp_customize)
+    {
+        global $wtp_layout_width;
 
-    if (!empty($wtp_layout_width)) {
-        foreach ($wtp_layout_width as $key => $value) {
-            $wp_customize->add_setting('wtp_layout_width_' . $key, array(
-                'default'   => $value,
-                'sanitize_callback' => 'wp_filter_nohtml_kses'
-            ));
-            $wp_customize->add_control(
-                'wtp_layout_width_' . $key,
-                array(
-                    'type'    => 'text',
-                    'section' => 'wtp_layoutwidth_section',
-                    'label'   => 'Layout width ' . $key . ' with unit',
-                )
-            );
+        if (!empty($wtp_layout_width)) {
+            foreach ($wtp_layout_width as $key => $value) {
+                $wp_customize->add_setting('wtp_layout_width_' . $key, array(
+                    'default'   => $value,
+                    'sanitize_callback' => 'wp_filter_nohtml_kses'
+                ));
+                $wp_customize->add_control(
+                    'wtp_layout_width_' . $key,
+                    array(
+                        'type'    => 'text',
+                        'section' => 'wtp_layoutwidth_section',
+                        'label'   => 'Layout width ' . $key . ' with unit',
+                    )
+                );
+            }
         }
+
+
+        // GUTTER
+        $wp_customize->add_setting('wtp_layout_gutter', array(
+            'default'   => '',
+            'sanitize_callback' => 'wp_filter_nohtml_kses'
+        ));
+        $wp_customize->add_control(
+            'wtp_layout_gutter',
+            array(
+                'type'    => 'text',
+                'section' => 'wtp_layoutwidth_section',
+                'label'   => __('Layout Gutter', 'wtp'),
+            )
+        );
     }
-
-
-    // GUTTER
-    $wp_customize->add_setting('wtp_layout_gutter', array(
-        'default'   => '',
-        'sanitize_callback' => 'wp_filter_nohtml_kses'
-    ));
-    $wp_customize->add_control(
-        'wtp_layout_gutter',
-        array(
-            'type'    => 'text',
-            'section' => 'wtp_layoutwidth_section',
-            'label'   => __('Layout Gutter', 'wtp'),
-        )
-    );
+    add_action('customize_register', 'wtp_customizer_layout_width');
 }
-add_action('customize_register', 'wtp_customizer_layout_width');
-
 
 
 /**
  * ADD LAYOUT WIDTH AS INLINE CSS TO HEADER
  */
-function hook_wtp_layout_width_css()
-{
-    global $wtp_layout_width;
+if (!function_exists('wtp_hook_layout_width_css')) {
+    function wtp_hook_layout_width_css()
+    {
+        global $wtp_layout_width;
 
-    $style = '';
-    $style_variables = '';
-    $style_width = '';
+        $style = '';
+        $style_variables = '';
+        $style_width = '';
 
-    if (!empty($wtp_layout_width)) {
-        $count = 1;
-        foreach ($wtp_layout_width as $key => $value) {
-            if (get_theme_mod('wtp_layout_width_' . $key) && get_theme_mod('wtp_layout_width_' . $key) != 0) {
-                $value = get_theme_mod('wtp_layout_width_' . $key);
-            }
+        if (!empty($wtp_layout_width)) {
+            $count = 1;
+            foreach ($wtp_layout_width as $key => $value) {
+                if (get_theme_mod('wtp_layout_width_' . $key) && get_theme_mod('wtp_layout_width_' . $key) != 0) {
+                    $value = get_theme_mod('wtp_layout_width_' . $key);
+                }
 
-            $style_variables .= '
+                $style_variables .= '
 			--max-width-' . $count . ': ' . $value . ';';
 
-            $style_width .= '
+                $style_width .= '
 			.' . $key . ' {
 				max-width: var(--max-width-' . $count . ');
             }';
 
-            $count++;
+                $count++;
+            }
         }
-    }
 
-    if (get_theme_mod('wtp_layout_gutter')) {
-        $style_variables .= '
-        --gutter: '. get_theme_mod('wtp_layout_gutter') .';';
-    }
+        if (get_theme_mod('wtp_layout_gutter')) {
+            $style_variables .= '
+        --gutter: ' . get_theme_mod('wtp_layout_gutter') . ';';
+        }
 
-    $style .= '<style>
+        $style .= '<style>
     :root {' . $style_variables . '
 	}
 	' . $style_width . '
 	</style>';
 
-    echo $style;
+        echo $style;
+    }
+    add_action('wp_head', 'hook_wtp_layout_width_css');
 }
-add_action('wp_head', 'hook_wtp_layout_width_css');

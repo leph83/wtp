@@ -230,40 +230,41 @@ if (!function_exists('wtp_customizer_modularscale')) {
 /**
  * ADD FONT VARIABLES AS INLINE CSS TO HEADER
  */
-function hook_wtp_fontsizes_css()
-{
-    global $wtp_fontsize_names;
+if (!function_exists('wtp_hook_fontsizes_css')) {
+    function wtp_hook_fontsizes_css()
+    {
+        global $wtp_fontsize_names;
 
-    $style = '';
-    $style_variables = '';
-    $style_fontsizes = '';
+        $style = '';
+        $style_variables = '';
+        $style_fontsizes = '';
 
-    $base_font_size = 16;
-    if (get_theme_mod('wtp_fontsize_min') && (get_theme_mod('wtp_fontsize_min') != 'initial')) {
-        $base_font_size = get_theme_mod('wtp_fontsize_min');
-    }
+        $base_font_size = 16;
+        if (get_theme_mod('wtp_fontsize_min') && (get_theme_mod('wtp_fontsize_min') != 'initial')) {
+            $base_font_size = get_theme_mod('wtp_fontsize_min');
+        }
 
-    $base_font_size_max = 16;
-    if (get_theme_mod('wtp_fontsize_max') && (get_theme_mod('wtp_fontsize_max') != 'initial')) {
-        $base_font_size_max = get_theme_mod('wtp_fontsize_max');
-    }
+        $base_font_size_max = 16;
+        if (get_theme_mod('wtp_fontsize_max') && (get_theme_mod('wtp_fontsize_max') != 'initial')) {
+            $base_font_size_max = get_theme_mod('wtp_fontsize_max');
+        }
 
-    $fontsize_ratio = 1125;
-    if (get_theme_mod('wtp_fontsize_ratio') && (get_theme_mod('wtp_fontsize_ratio') != 'initial')) {
-        $fontsize_ratio = get_theme_mod('wtp_fontsize_ratio');
-    }
+        $fontsize_ratio = 1125;
+        if (get_theme_mod('wtp_fontsize_ratio') && (get_theme_mod('wtp_fontsize_ratio') != 'initial')) {
+            $fontsize_ratio = get_theme_mod('wtp_fontsize_ratio');
+        }
 
-    $fontsize_minwidth = 100;
-    if (get_theme_mod('wtp_fontsize_minwidth') && (get_theme_mod('wtp_fontsize_minwidth') != 'initial')) {
-        $fontsize_minwidth = get_theme_mod('wtp_fontsize_minwidth');
-    }
+        $fontsize_minwidth = 100;
+        if (get_theme_mod('wtp_fontsize_minwidth') && (get_theme_mod('wtp_fontsize_minwidth') != 'initial')) {
+            $fontsize_minwidth = get_theme_mod('wtp_fontsize_minwidth');
+        }
 
-    $fontsize_maxwidth = 200;
-    if (get_theme_mod('wtp_fontsize_maxwidth') && (get_theme_mod('wtp_fontsize_maxwidth') != 'initial')) {
-        $fontsize_maxwidth = get_theme_mod('wtp_fontsize_maxwidth');
-    }
+        $fontsize_maxwidth = 200;
+        if (get_theme_mod('wtp_fontsize_maxwidth') && (get_theme_mod('wtp_fontsize_maxwidth') != 'initial')) {
+            $fontsize_maxwidth = get_theme_mod('wtp_fontsize_maxwidth');
+        }
 
-    $style_variables .= '
+        $style_variables .= '
         --fontsize-min: ' . $base_font_size / 10 . ';
         --fontsize-max: ' . $base_font_size_max / 10 . ';
         --fontsize-minwidth: ' . $fontsize_minwidth / 10  . ';
@@ -271,35 +272,36 @@ function hook_wtp_fontsizes_css()
         --fontsize-ratio: ' . $fontsize_ratio / 1000 . ';
     ';
 
-    if (!empty($wtp_fontsize_names)) {
-        foreach ($wtp_fontsize_names as $key => $value) {
-            if (is_int($value)) {
-                $style_fontsizes .= '
+        if (!empty($wtp_fontsize_names)) {
+            foreach ($wtp_fontsize_names as $key => $value) {
+                if (is_int($value)) {
+                    $style_fontsizes .= '
         .has-h-' . $value . '-font-size {
             font-size: var(--font-size-' . $value . ');
             line-height: var(--line-height-' . $value . ');
         }';
-            } else {
-                $style_fontsizes .= '
+                } else {
+                    $style_fontsizes .= '
         .has-' . $key . '-font-size {
             font-size: var(--font-size-' . $value . ');
             line-height: var(--line-height-' . $value . ');
         }';
-            }
+                }
 
-            if (get_theme_mod('wtp_lineheight_' . $value)) {
-                $style_variables .= '
+                if (get_theme_mod('wtp_lineheight_' . $value)) {
+                    $style_variables .= '
         --line-height-' . $value . ': ' . get_theme_mod('wtp_lineheight_' . $value) . ';';
+                }
             }
         }
-    }
 
-    $style .= '<style>
+        $style .= '<style>
 	:root {' . wp_strip_all_tags($style_variables) . '
 	}
 	' . wp_strip_all_tags($style_fontsizes) . '
 	</style>';
 
-    echo $style;
+        echo $style;
+    }
+    add_action('wp_head', 'wtp_hook_fontsizes_css');
 }
-add_action('wp_head', 'hook_wtp_fontsizes_css');
