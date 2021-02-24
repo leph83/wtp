@@ -11,6 +11,7 @@ $title = '';
 if (is_search()) {
     // can't deal with _n for now
     $title = (int) $wp_query->found_posts . ' ' . __('results for', 'wtp');
+    
     if ((int) $wp_query->found_posts == 1) {
         $title = (int) $wp_query->found_posts . ' ' . __('result for', 'wtp');
     }
@@ -30,7 +31,6 @@ if (is_home()) {
         $title = get_the_title($id);
     }
 }
-
 
 // HTML 5 MARKUP
 $section_tag = 'section';

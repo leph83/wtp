@@ -1,6 +1,9 @@
 /*------------------------------------*\
     FLUID FONT
     https://websemantics.uk/tools/responsive-font-calculator/
+
+    if you wonder why i use minus and multiply by -1 in fontsize-preferred
+    it's because minification works this way, doesn't work with plus
 \*------------------------------------*/
 
 :root {
@@ -13,22 +16,22 @@
   );
 
   --fontsize-preferred: calc(
-    var(--fontsize-min-unit) +
+    var(--fontsize-min-unit) -
       (
         var(--fontsize-fontdiff) * (100vw - var(--fontsize-minwidth) * 1rem) /
-          var(--fontsize-widthdiff)
+          var(--fontsize-widthdiff) * -1
       )
   );
 
   --font-size-7: var(--fontsize-min-unit);
 }
 
-@supports (font-size: clamp(1rem, 1rem, 1rem) ) {
+@supports (font-size: clamp(1rem, 1rem, 1rem)) {
   :root {
-  --font-size-7: clamp(
-    var(--fontsize-min-unit),
-    var(--fontsize-preferred),
-    var(--fontsize-max-unit)
-  );
+    --font-size-7: clamp(
+      var(--fontsize-min-unit),
+      var(--fontsize-preferred),
+      var(--fontsize-max-unit)
+    );
   }
 }

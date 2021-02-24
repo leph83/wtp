@@ -1,10 +1,8 @@
-<?php
+<?php 
 if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly.
 }
-
 ?>
-
 
 <?php if (have_comments() &&  !post_password_required() ) : ?>
     <?php wp_enqueue_script( "comment-reply" ); ?>
@@ -19,9 +17,9 @@ if (!defined('ABSPATH')) {
         <?php if (!empty($comments_by_type['comment'])) : ?>
 
             <section class="comment">
-                <h3 class="comment__title">
+                <h2 class="comment__title">
                     <?php comments_number(); ?>
-                </h3>
+                </h2>
 
                 <?php if (get_comment_pages_count() > 1) : ?>
                     <nav class="comment__navigation">
@@ -46,13 +44,12 @@ if (!defined('ABSPATH')) {
 
 
         <?php if (!empty($comments_by_type['pings'])) : ?>
-
             <?php $ping_count = count($comments_by_type['pings']); ?>
 
             <section class="comment">
-                <h3 class="comment__title">
+                <h2 class="comment__title">
                     <?php echo '<span class="comment__ping-count">' . esc_html($ping_count) . '</span> ' . esc_html(_nx('Trackback or Pingback', 'Trackbacks and Pingbacks', $ping_count, 'comments count', 'wtp')); ?>
-                </h3>
+                </h2>
 
                 <ul class="comment__list">
                     <?php wp_list_comments('type=pings&callback=wtp_custom_pings'); ?>
@@ -66,11 +63,6 @@ if (!defined('ABSPATH')) {
 <?php endif; ?>
 
 
-
-
-
 <?php if (comments_open()) : ?>
-
     <?php comment_form(); ?>
-
 <?php endif; ?>

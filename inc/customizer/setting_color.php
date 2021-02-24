@@ -37,7 +37,7 @@ function change_gutenberg_color_palette()
 			array_push(
 				$colors,
 				array(
-					'name' => __('color ' . $key, 'wtp'),
+					'name' => $key,
 					'slug' => 'color--' . $key,
 					'color' => $value,
 				)
@@ -68,7 +68,7 @@ function wtp_customizer_colors($wp_customize)
 				$wp_customize,
 				'wtp_color_' . $key,
 				array(
-					'label' => __('Color ' . $key, 'wtp'),
+					'label' => $key,
 					'section' => 'colors',
 					'settings' => 'wtp_color_' . $key,
 				)

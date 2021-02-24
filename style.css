@@ -1,71 +1,15 @@
-@charset "UTF-8";
-
 /*
-Theme Name:     WTP
-Theme URI:      http://what-the-phuc.com
-Author:         Phuc Le
-Author URI:     http://phuc.at
-Description:    Who the Phuc cares?
-Requires at least: 5.6
-Tested up to:   5.6
-Requires PHP:   7
-Version:        2021.1
-License:        GNU General Public License v2 or later
-License URI:    http://www.gnu.org/licenses/gpl-2.0.html
-Text Domain:    wtp
-
+Theme Name:         wtp
+Theme URI:          https://what-the-phuc.com
+Author:             Phuc Le
+Author URI:         https://phuc.at
+Description:        The what the phuc parent theme to make your life as a developer easier
+Version:            1.0
+Requires at least:  5.6.2
+Tested up to:       5.6.2
+Requires PHP:       7.2
+License:            GNU General Public License v2 or later
+License URI:        http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain:        wtp
+Tags:               blog
 */
-
-/*--------------------------------------------------------------
-# 01 SETTINGS - Variables
---------------------------------------------------------------*/
-@import "assets/css/phucstrap/01-settings/setting.variables.css";
-
-/*--------------------------------------------------------------
-# 02 TOOLS - generate additional variables
---------------------------------------------------------------*/
-@import "assets/css/phucstrap/02-tools/tool.fluidfont.css";
-@import "assets/css/phucstrap/02-tools/tool.modularscale.css";
-
-/*--------------------------------------------------------------
-# 03 GENERIC - normalize
---------------------------------------------------------------*/
-@import "assets/css/phucstrap/03-generic/generic.normalize.css";
-@import "assets/css/phucstrap/03-generic/generic.reset.css";
-
-/*--------------------------------------------------------------
-# 04 ELEMENTS
-styling elements without classes
-can contain any default HTML element. Do not add classes here, just give the elements some basic styles.
---------------------------------------------------------------*/
-@import "assets/css/phucstrap/04-elements/element.headings.css";
-
-/*--------------------------------------------------------------
-# 05 OBJECTS - molecules
-styling elements with classes - e.g functional CSS
-
-is all about adjusting the default block styles to the given layout.
---------------------------------------------------------------*/
-@import "assets/css/phucstrap/05-objects/object.boxmodel.css";
-@import "assets/css/phucstrap/05-objects/object.flexbox.css";
-@import "assets/css/phucstrap/05-objects/object.grid.css";
-
-@import "assets/css/phucstrap/05-objects/object.typography.css";
-@import "assets/css/phucstrap/05-objects/object.colors.css";
-@import "assets/css/phucstrap/05-objects/object.layout.css";
-
-/*--------------------------------------------------------------
-# 06 COMPONENTS - organisms
-styling more complex sections - e.g header, blocks, sections
-
-contains all "bigger" components which contain elements of the previous two categories like header, footer, page template, single template, comments section, archives, ...
---------------------------------------------------------------*/
-
-/*--------------------------------------------------------------
-# 07 UTILITIES
-e.g hacks or ie11 styles
-
-is for any utility classes that are not assigned to a specific component.
---------------------------------------------------------------*/
-@import "assets/css/phucstrap/07-utilities/utility.a11y.css";
-@import "assets/css/phucstrap/07-utilities/utility.wordpress.css";

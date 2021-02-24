@@ -4,7 +4,7 @@ if (!defined('ABSPATH')) {
 }
 
 //checkbox sanitization function
-function theme_slug_sanitize_checkbox($input)
+function wtp_sanitize_checkbox($input)
 {
     // https://gist.github.com/ajskelton/740788f98df3283355dd7e0c2f5abb2a
     // return ( isset( $input ) ? true : false );
@@ -12,7 +12,7 @@ function theme_slug_sanitize_checkbox($input)
 }
 
 //radio box sanitization function
-function theme_slug_sanitize_radio($input, $setting)
+function wtp_sanitize_radio($input, $setting)
 {
 
     //input must be a slug: lowercase alphanumeric characters, dashes and underscores are allowed only
@@ -26,7 +26,7 @@ function theme_slug_sanitize_radio($input, $setting)
 }
 
 //select sanitization function
-function theme_slug_sanitize_select($input, $setting)
+function wtp_sanitize_select($input, $setting)
 {
 
     //input must be a slug: lowercase alphanumeric characters, dashes and underscores are allowed only

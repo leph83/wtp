@@ -83,7 +83,7 @@ function set_editor_font_sizes()
         array_push(
             $editor_font_sizes,
             array(
-                'name' => __($key, 'wtp'),
+                'name' => $key,
                 'size' => 16 + 10 - $count,
                 'slug' => $key,
             )
@@ -217,7 +217,7 @@ function wtp_customizer_modularscale($wp_customize)
             array(
                 'type'    => 'text',
                 'section' => 'wtp_font_section',
-                'label'   => __('Line Height ' . $key, 'wtp'),
+                'label'   => $key,
             )
         );
     }

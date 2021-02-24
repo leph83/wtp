@@ -23,7 +23,7 @@ function wtp_customizer_enables($wp_customize)
             array(
                 'capability'    => 'edit_theme_options',
                 'default'       => '',
-                'sanitize_callback' => 'theme_slug_sanitize_checkbox'
+                'sanitize_callback' => 'wtp_sanitize_checkbox'
             )
         );
 
@@ -31,7 +31,7 @@ function wtp_customizer_enables($wp_customize)
         $wp_customize->add_control(
             'wtp_enable_' . $key,
             array(
-                'label'     => __('enable ' . $value, 'wtp'),
+                'label'     => $value,
                 'section'   => 'wtp_enable_section',
                 'type'      => 'checkbox',
             )
