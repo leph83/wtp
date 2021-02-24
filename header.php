@@ -12,11 +12,7 @@ if (!defined('ABSPATH')) {
     <link rel="profile" href="https://gmpg.org/xfn/11">
 
     <meta name="description" content="
-    <?php if ( is_single() ) {
-        single_post_title('', true); 
-    } else {
-        bloginfo('name'); echo " - "; bloginfo('description');
-    } ?>">
+    <?php echo get_the_excerpt(); ?>">
 
     <?php wp_head(); ?>
 </head>
