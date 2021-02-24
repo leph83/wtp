@@ -10,6 +10,8 @@ if (!defined('ABSPATH')) {
  */
 $wtp_fontsize = array(
     'initial' => 'initial',
+    12 => '12px',
+    13 => '13px',
     14 => '14px',
     15 => '15px',
     16 => '16px',
@@ -73,158 +75,157 @@ $wtp_fontsize_names = [
  * 
  * TODO: add the css to the backend, so changes are visible
  */
-function set_editor_font_sizes()
-{
-    global $wtp_fontsize_names;
+if (!function_exists('wtp_set_editor_font_sizes')) {
+    function wtp_set_editor_font_sizes()
+    {
+        global $wtp_fontsize_names;
 
-    $editor_font_sizes = array();
-    $count = 0;
-    foreach ($wtp_fontsize_names as $key => $value) {
-        array_push(
-            $editor_font_sizes,
-            array(
-                'name' => $key,
-                'size' => 16 + 10 - $count,
-                'slug' => $key,
-            )
-        );
+        $editor_font_sizes = array();
+        $count = 0;
+        foreach ($wtp_fontsize_names as $key => $value) {
+            array_push(
+                $editor_font_sizes,
+                array(
+                    'name' => $key,
+                    'size' => 16 + 10 - $count,
+                    'slug' => $key,
+                )
+            );
 
-        $count++;
+            $count++;
+        }
+
+        add_theme_support('editor-font-sizes', $editor_font_sizes);
     }
-
-    add_theme_support('editor-font-sizes', $editor_font_sizes);
+    add_action('after_setup_theme', 'wtp_set_editor_font_sizes');
 }
-add_action('after_setup_theme', 'set_editor_font_sizes');
-
 
 
 /** 
  * ADD SETTING TO CUSTOMIZER
  */
-function wtp_customizer_modularscale($wp_customize)
-{
-    // SETTING - BASE FONT SIZE
-    global $wtp_fontsize;
-    global $wtp_fontsize_names;
+if (!function_exists('wtp_customizer_modularscale')) {
+    function wtp_customizer_modularscale($wp_customize)
+    {
+        // SETTING - BASE FONT SIZE
+        global $wtp_fontsize;
+        global $wtp_fontsize_names;
 
-    $wp_customize->add_setting(
-        'wtp_fontsize_min',
-        array(
-            'capability'        => 'edit_theme_options',
-            'default'           => '',
-            'sanitize_callback' => 'theme_slug_sanitize_select',
-        )
-    );
-
-    // CONTROL - BASE FONT SIZE
-    $wp_customize->add_control(
-        'wtp_fontsize_min',
-        array(
-            'type'    => 'select',
-            'section' => 'wtp_font_section',
-            'label'   => __('Font Size Min', 'wtp'),
-            'choices' => $wtp_fontsize,
-        )
-    );
-
-    // SETTING - BASE FONT SIZE MAX
-    global $wtp_fontsize;
-
-    $wp_customize->add_setting(
-        'wtp_fontsize_max',
-        array(
-            'capability'        => 'edit_theme_options',
-            'default'           => '',
-            'sanitize_callback' => 'theme_slug_sanitize_select',
-        )
-    );
-
-    // CONTROL - BASE FONT SIZE MAX
-    $wp_customize->add_control(
-        'wtp_fontsize_max',
-        array(
-            'type'    => 'select',
-            'section' => 'wtp_font_section',
-            'label'   => __('Font Size Max', 'wtp'),
-            'choices' => $wtp_fontsize,
-        )
-    );
-
-
-    // SETTING - FONT RATIO
-    global $wtp_fontsize_ratio;
-
-    $wp_customize->add_setting(
-        'wtp_fontsize_ratio',
-        array(
-            'capability'        => 'edit_theme_options',
-            'default'           => '',
-            'sanitize_callback' => 'theme_slug_sanitize_select',
-        )
-    );
-
-    // CONTROLL - FONT RATIO
-    $wp_customize->add_control(
-        'wtp_fontsize_ratio',
-        array(
-            'type'    => 'select',
-            'section' => 'wtp_font_section',
-
-            'label'   => __('Font Size Ratio', 'wtp'),
-            'choices' => $wtp_fontsize_ratio,
-        )
-    );
-
-    // MIN WIDTH
-    $wp_customize->add_setting('wtp_fontsize_minwidth', array(
-        'default'   => false,
-        'sanitize_callback' => 'absint',
-    ));
-    $wp_customize->add_control(
-        'wtp_fontsize_minwidth',
-        array(
-            'type'    => 'number',
-            'section' => 'wtp_font_section',
-            'label'   => __('Font Size Min Width in px', 'wtp'),
-        )
-    );
-
-    // MAX WIDTH
-    $wp_customize->add_setting('wtp_fontsize_maxwidth', array(
-        'default'   => false,
-        'sanitize_callback' => 'absint',
-    ));
-    $wp_customize->add_control(
-        'wtp_fontsize_maxwidth',
-        array(
-            'type'    => 'number',
-            'section' => 'wtp_font_section',
-            'label'   => __('Font Size Max Width in px', 'wtp'),
-        )
-    );
-
-
-
-    // LINE HEIGHT
-    foreach ($wtp_fontsize_names as $key => $value) {
-        // LINE HEIGHT FOR EACH FONT SIZE
-        $wp_customize->add_setting('wtp_lineheight_' . $value, array(
-            'default'   => '',
-            'sanitize_callback' => 'wp_filter_nohtml_kses'
-        ));
-        $wp_customize->add_control(
-            'wtp_lineheight_' . $value,
+        $wp_customize->add_setting(
+            'wtp_fontsize_min',
             array(
-                'type'    => 'text',
-                'section' => 'wtp_font_section',
-                'label'   => $key,
+                'capability'        => 'edit_theme_options',
+                'default'           => '',
+                'sanitize_callback' => 'wtp_theme_sanitize_select',
             )
         );
+
+        // CONTROL - BASE FONT SIZE
+        $wp_customize->add_control(
+            'wtp_fontsize_min',
+            array(
+                'type'    => 'select',
+                'section' => 'wtp_font_section',
+                'label'   => __('Font Size Min', 'wtp'),
+                'choices' => $wtp_fontsize,
+            )
+        );
+
+        // SETTING - BASE FONT SIZE MAX
+        global $wtp_fontsize;
+
+        $wp_customize->add_setting(
+            'wtp_fontsize_max',
+            array(
+                'capability'        => 'edit_theme_options',
+                'default'           => '',
+                'sanitize_callback' => 'wtp_theme_sanitize_select',
+            )
+        );
+
+        // CONTROL - BASE FONT SIZE MAX
+        $wp_customize->add_control(
+            'wtp_fontsize_max',
+            array(
+                'type'    => 'select',
+                'section' => 'wtp_font_section',
+                'label'   => __('Font Size Max', 'wtp'),
+                'choices' => $wtp_fontsize,
+            )
+        );
+
+
+        // SETTING - FONT RATIO
+        global $wtp_fontsize_ratio;
+
+        $wp_customize->add_setting(
+            'wtp_fontsize_ratio',
+            array(
+                'capability'        => 'edit_theme_options',
+                'default'           => '',
+                'sanitize_callback' => 'wtp_theme_sanitize_select',
+            )
+        );
+
+        // CONTROLL - FONT RATIO
+        $wp_customize->add_control(
+            'wtp_fontsize_ratio',
+            array(
+                'type'    => 'select',
+                'section' => 'wtp_font_section',
+
+                'label'   => __('Font Size Ratio', 'wtp'),
+                'choices' => $wtp_fontsize_ratio,
+            )
+        );
+
+        // MIN WIDTH
+        $wp_customize->add_setting('wtp_fontsize_minwidth', array(
+            'default'   => false,
+            'sanitize_callback' => 'absint',
+        ));
+        $wp_customize->add_control(
+            'wtp_fontsize_minwidth',
+            array(
+                'type'    => 'number',
+                'section' => 'wtp_font_section',
+                'label'   => __('Font Size Min Width in px', 'wtp'),
+            )
+        );
+
+        // MAX WIDTH
+        $wp_customize->add_setting('wtp_fontsize_maxwidth', array(
+            'default'   => false,
+            'sanitize_callback' => 'absint',
+        ));
+        $wp_customize->add_control(
+            'wtp_fontsize_maxwidth',
+            array(
+                'type'    => 'number',
+                'section' => 'wtp_font_section',
+                'label'   => __('Font Size Max Width in px', 'wtp'),
+            )
+        );
+
+        // LINE HEIGHT
+        foreach ($wtp_fontsize_names as $key => $value) {
+            // LINE HEIGHT FOR EACH FONT SIZE
+            $wp_customize->add_setting('wtp_lineheight_' . $value, array(
+                'default'   => '',
+                'sanitize_callback' => 'wp_filter_nohtml_kses'
+            ));
+            $wp_customize->add_control(
+                'wtp_lineheight_' . $value,
+                array(
+                    'type'    => 'text',
+                    'section' => 'wtp_font_section',
+                    'label'   => $key,
+                )
+            );
+        }
     }
+    add_action('customize_register', 'wtp_customizer_modularscale');
 }
-add_action('customize_register', 'wtp_customizer_modularscale');
-
-
 
 /**
  * ADD FONT VARIABLES AS INLINE CSS TO HEADER
