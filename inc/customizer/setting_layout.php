@@ -105,5 +105,5 @@ if (!function_exists('wtp_hook_layout_width_css')) {
 
         echo $style;
     }
-    add_action('wp_head', 'hook_wtp_layout_width_css');
+    add_action('wp_head', 'wtp_hook_layout_width_css');
 }

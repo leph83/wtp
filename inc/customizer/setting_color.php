@@ -124,4 +124,5 @@ if (!function_exists('wtp_hook_colors_css')) {
 		echo $style;
 	}
 	add_action('wp_head', 'wtp_hook_colors_css');
+	
 }
