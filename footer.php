@@ -5,8 +5,9 @@ if (!defined('ABSPATH')) {
 ?>
 
 <?php if (is_active_sidebar('sidebar-1')) : ?>
-    <aside class="footer__top">
-        <div class="footer__topcontent">
+    <aside class="sidebar">
+        <h2 class="screen-reader-text">Sidebar</h2>
+        <div class="sidebar__content">
             <ul class="widget">
                 <?php dynamic_sidebar('sidebar-1'); ?>
             </ul>
