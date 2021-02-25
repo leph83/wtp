@@ -8,7 +8,6 @@ if (!defined('ABSPATH')) {
 wp_nav_menu(array(
     'theme_location'        => 'footer',
     'container'             => '',
-    'container_class'       => '',
     'menu_class'            => 'flex  flex-justify--space-between  list-style-type--none  margin--0  padding--0',
     'fallback_cb'           => false,
     'add_submenu_class'     => '',
