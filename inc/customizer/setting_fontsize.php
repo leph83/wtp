@@ -116,7 +116,7 @@ if (!function_exists('wtp_customizer_modularscale')) {
             array(
                 'capability'        => 'edit_theme_options',
                 'default'           => '',
-                'sanitize_callback' => 'wtp_theme_sanitize_select',
+                'sanitize_callback' => 'wtp_sanitize_select',
             )
         );
 
@@ -139,7 +139,7 @@ if (!function_exists('wtp_customizer_modularscale')) {
             array(
                 'capability'        => 'edit_theme_options',
                 'default'           => '',
-                'sanitize_callback' => 'wtp_theme_sanitize_select',
+                'sanitize_callback' => 'wtp_sanitize_select',
             )
         );
 
@@ -163,7 +163,7 @@ if (!function_exists('wtp_customizer_modularscale')) {
             array(
                 'capability'        => 'edit_theme_options',
                 'default'           => '',
-                'sanitize_callback' => 'wtp_theme_sanitize_select',
+                'sanitize_callback' => 'wtp_sanitize_select',
             )
         );
 
