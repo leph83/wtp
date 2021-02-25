@@ -9,9 +9,9 @@ if (!defined('ABSPATH')) {
  *
  */
 $wtp_layout_width = array(
-    "alignfull " => '100%',
-    "alignwide" => '100rem',
-    "aligncontent" => '60rem',
+    "alignfull" => '',
+    "alignwide" => '',
+    "aligncontent" => '',
 );
 
 
@@ -80,13 +80,17 @@ if (!function_exists('wtp_hook_layout_width_css')) {
                     $value = get_theme_mod('wtp_layout_width_' . $key);
                 }
 
-                $style_variables .= '
-			        --max-width-' . $count . ': ' . $value . ';';
-
+                if ($value) {
+                    $style_variables .= '
+                        --max-width-' . $count . ': ' . $value . ';
+                    ';
+                }
+                
                 $style_width .= '
                     .' . $key . ' {
                         max-width: var(--max-width-' . $count . ');
-                    }';
+                    }
+                ';
 
                 $count++;
             }
@@ -94,14 +98,24 @@ if (!function_exists('wtp_hook_layout_width_css')) {
 
         if (get_theme_mod('wtp_layout_gutter')) {
             $style_variables .= '
-        --gutter: ' . get_theme_mod('wtp_layout_gutter') . ';';
+                --gutter: ' . get_theme_mod('wtp_layout_gutter') . ';
+            ';
         }
 
-        $style .= '<style>
-    :root {' . $style_variables . '
-	}
-	' . $style_width . '
-	</style>';
+        $style .= '
+        <style>';
+
+        if ($style_variables) {
+            $style .= '
+                :root {
+                    ' . $style_variables . '
+	            }
+            ';
+        }
+
+        $style .= $style_width;
+
+        $style .= '</style>';
 
         echo $style;
     }
