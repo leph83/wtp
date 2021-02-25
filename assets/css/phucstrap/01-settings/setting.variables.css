@@ -4,6 +4,9 @@
     --fontsize-minwidth: 100;
     --fontsize-maxwidth: 200;
 
+    --line-height: 1.5;
+    --line-height-7: var(--line-height);
+
     --zero: 0;
     --quarter: calc( 1/4 );
     --third: calc( 1/3 );

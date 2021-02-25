@@ -42,7 +42,7 @@ $wtp_fontsize = array(
 );
 
 $wtp_fontsize_ratio = array(
-    'initial' => false,
+    'initial' => 'initial',
     '1067' => '1.067 - minor second - 15:16',
     '1125' => '1.125 - major second - 8:9',
     '1200'  => '1.2 - minor third - 5:6',
@@ -126,7 +126,7 @@ if (!function_exists('wtp_customizer_modularscale')) {
             array(
                 'type'    => 'select',
                 'section' => 'wtp_font_section',
-                'label'   => __('Font Size Min', 'wtp'),
+                'label'   => 'Font Size Min',
                 'choices' => $wtp_fontsize,
             )
         );
@@ -149,7 +149,7 @@ if (!function_exists('wtp_customizer_modularscale')) {
             array(
                 'type'    => 'select',
                 'section' => 'wtp_font_section',
-                'label'   => __('Font Size Max', 'wtp'),
+                'label'   => 'Font Size Max',
                 'choices' => $wtp_fontsize,
             )
         );
@@ -174,7 +174,7 @@ if (!function_exists('wtp_customizer_modularscale')) {
                 'type'    => 'select',
                 'section' => 'wtp_font_section',
 
-                'label'   => __('Font Size Ratio', 'wtp'),
+                'label'   => 'Font Size Ratio',
                 'choices' => $wtp_fontsize_ratio,
             )
         );
@@ -189,7 +189,7 @@ if (!function_exists('wtp_customizer_modularscale')) {
             array(
                 'type'    => 'number',
                 'section' => 'wtp_font_section',
-                'label'   => __('Font Size Min Width in px', 'wtp'),
+                'label'   => 'Font Size Min Width in px',
             )
         );
 
@@ -203,11 +203,24 @@ if (!function_exists('wtp_customizer_modularscale')) {
             array(
                 'type'    => 'number',
                 'section' => 'wtp_font_section',
-                'label'   => __('Font Size Max Width in px', 'wtp'),
+                'label'   => 'Font Size Max Width in px',
             )
         );
 
         // LINE HEIGHT
+        $wp_customize->add_setting('wtp_lineheight_default', array(
+            'default'   => '',
+            'sanitize_callback' => 'wp_filter_nohtml_kses'
+        ));
+        $wp_customize->add_control(
+            'wtp_lineheight_default',
+            array(
+                'type'    => 'text',
+                'section' => 'wtp_font_section',
+                'label'   => 'base line-height',
+            )
+        );
+
         foreach ($wtp_fontsize_names as $key => $value) {
             // LINE HEIGHT FOR EACH FONT SIZE
             $wp_customize->add_setting('wtp_lineheight_' . $value, array(
@@ -239,58 +252,87 @@ if (!function_exists('wtp_hook_fontsizes_css')) {
         $style_variables = '';
         $style_fontsizes = '';
 
-        $base_font_size = 16;
+        $base_font_size = false;
         if (get_theme_mod('wtp_fontsize_min') && (get_theme_mod('wtp_fontsize_min') != 'initial')) {
             $base_font_size = get_theme_mod('wtp_fontsize_min');
         }
 
-        $base_font_size_max = 16;
+        $base_font_size_max = false;
         if (get_theme_mod('wtp_fontsize_max') && (get_theme_mod('wtp_fontsize_max') != 'initial')) {
             $base_font_size_max = get_theme_mod('wtp_fontsize_max');
         }
 
-        $fontsize_ratio = 1125;
+        $fontsize_ratio = false;
         if (get_theme_mod('wtp_fontsize_ratio') && (get_theme_mod('wtp_fontsize_ratio') != 'initial')) {
             $fontsize_ratio = get_theme_mod('wtp_fontsize_ratio');
         }
 
-        $fontsize_minwidth = 100;
+        $fontsize_minwidth = false;
         if (get_theme_mod('wtp_fontsize_minwidth') && (get_theme_mod('wtp_fontsize_minwidth') != 'initial')) {
             $fontsize_minwidth = get_theme_mod('wtp_fontsize_minwidth');
         }
 
-        $fontsize_maxwidth = 200;
+        $fontsize_maxwidth = false;
         if (get_theme_mod('wtp_fontsize_maxwidth') && (get_theme_mod('wtp_fontsize_maxwidth') != 'initial')) {
             $fontsize_maxwidth = get_theme_mod('wtp_fontsize_maxwidth');
         }
 
-        $style_variables .= '
-        --fontsize-min: ' . $base_font_size / 10 . ';
-        --fontsize-max: ' . $base_font_size_max / 10 . ';
-        --fontsize-minwidth: ' . $fontsize_minwidth / 10  . ';
-        --fontsize-maxwidth: ' . $fontsize_maxwidth / 10  . ';
-        --fontsize-ratio: ' . $fontsize_ratio / 1000 . ';
-    ';
+        if ($base_font_size) {
+            $style_variables .= '
+                --fontsize-min: ' . $base_font_size / 10 . ';
+            ';
+        }
 
+        if ($base_font_size_max) {
+            $style_variables .= '
+                --fontsize-max: ' . $base_font_size_max / 10 . ';
+            ';
+        }
+
+        if ($fontsize_minwidth) {
+            $style_variables .= '
+                --fontsize-minwidth: ' . $fontsize_minwidth / 10  . ';
+            ';
+        }
+
+        if ($fontsize_maxwidth) {
+            $style_variables .= '
+                --fontsize-maxwidth: ' . $fontsize_maxwidth / 10  . ';
+            ';
+        }
+
+        if ($fontsize_ratio) {
+            $style_variables .= '
+                --fontsize-ratio: ' . $fontsize_ratio / 1000 . ';
+            ';
+        }
+
+        // base line-height
+        if (get_theme_mod('wtp_lineheight_default')) {
+            $style_variables .= '--line-height: ' . get_theme_mod('wtp_lineheight_default') . ';';
+        }
+        
+
+        // custom line heights
         if (!empty($wtp_fontsize_names)) {
             foreach ($wtp_fontsize_names as $key => $value) {
                 if (is_int($value)) {
                     $style_fontsizes .= '
-        .has-h-' . $value . '-font-size {
-            font-size: var(--font-size-' . $value . ');
-            line-height: var(--line-height-' . $value . ');
-        }';
+                    .has-h-' . $value . '-font-size {
+                        font-size: var(--font-size-' . $value . ');
+                        line-height: var(--line-height-' . $value . ');
+                    }';
                 } else {
                     $style_fontsizes .= '
-        .has-' . $key . '-font-size {
-            font-size: var(--font-size-' . $value . ');
-            line-height: var(--line-height-' . $value . ');
-        }';
+                    .has-' . $key . '-font-size {
+                        font-size: var(--font-size-' . $value . ');
+                        line-height: var(--line-height-' . $value . ');
+                    }';
                 }
 
                 if (get_theme_mod('wtp_lineheight_' . $value)) {
                     $style_variables .= '
-        --line-height-' . $value . ': ' . get_theme_mod('wtp_lineheight_' . $value) . ';';
+                        --line-height-' . $value . ': ' . get_theme_mod('wtp_lineheight_' . $value) . ';';
                 }
             }
         }
