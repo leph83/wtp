@@ -11,6 +11,7 @@ if (!defined('ABSPATH')) {
         <?php
         wp_nav_menu(array(
             'theme_location'        => 'primary',
+            'container'     => '',
             'menu_class'            => 'flex  flex-wrap--wrap  list-style-type--none  margin--0  padding--0',
             'fallback_cb'           => false,
             'add_submenu_class'     => '',
