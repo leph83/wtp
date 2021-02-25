@@ -13,5 +13,5 @@ if (!function_exists('wtp_widgets_init')) {
             'description'   => 'Sidebar Widgets',
         ));
     }
-    add_action('widgets_init', 'wtp_widgets_init');
+    add_action('widgets_init', 'wtp_widgets_init', 0);
 }

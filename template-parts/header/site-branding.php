@@ -10,15 +10,12 @@ if (!defined('ABSPATH')) {
  * Displays header site branding
  */
 
-$blog_info    = get_bloginfo('name');
-$blog_description  = get_bloginfo('description', 'display');
-$show_title   = display_header_text();
+$blog_name = get_bloginfo('name');
+$blog_description = get_bloginfo('description', 'display');
+$show_title = display_header_text();
 
-$screenreader_class = '';
-if (has_custom_logo() && !$show_title) {
-    $screenreader_class = 'screen-reader-text';
-}
-
+// LOGO
+$logo = '';
 if (has_custom_logo()) {
     $custom_logo_id = get_theme_mod('custom_logo');
 
@@ -36,35 +33,41 @@ if (has_custom_logo()) {
     }
 
     $image = wp_get_attachment_image_src($custom_logo_id, [$logo_width, $logo_height]);
-    $logo = '';
 
     if ($image) {
         $logo = '
-        <a class="custom-logo-link" href="' . esc_url(home_url('/')) . '" rel="home">
-            <img class="custom-logo" src="' . $image[0] . '" alt="' . esc_html($blog_info) . '" width="' . $image[1] . '" height="' . $image[2] . '">
-        </a>';
+        <div class="site-branding__logo">
+            <a class="site-branding__logo-link" href="' . esc_url(home_url('/')) . '" rel="home">
+                <img class="site-branding__logo-img" src="' . $image[0] . '" alt="' . esc_html($blog_name) . '" width="' . $image[1] . '" height="' . $image[2] . '">
+            </a>
+        </div>';
     }
 }
 
+// TITLE & TAGLINE
+$screenreader_class = '';
+if (has_custom_logo() && !$show_title) {
+    $screenreader_class = 'screen-reader-text';
+}
+
+if ($blog_description) {
+    $blog_description = '<span class="site-branding__description">' . esc_html($blog_description) . '</span>';
+}
+
+$title_tagline = '
+    <h2 class="site-branding__title-tagline" href="' . esc_attr($screenreader_class) . '">
+        <a class="site-branding__title-link" href="' . home_url('/') . '">
+            <span class="site-branding__title">' . $blog_name . '</span>
+            ' . $blog_description . '
+        </a>
+    </h2>
+';
+
 ?>
 
+
+
 <div class="site-branding">
-    <?php if (has_custom_logo()) : ?>
-        <div class="site-logo">
-            <?php echo $logo; ?>
-        </div>
-    <?php endif; ?>
-
-    <?php if ($blog_info) : ?>
-        <h2 class="site-title  <?php echo esc_attr($screenreader_class); ?>">
-            <a href="<?php echo esc_url(home_url('/')); ?>"><?php echo esc_html($blog_info); ?>
-
-                <?php if ($blog_description) : ?>
-                    <span class="site-description  <?php echo esc_attr($screenreader_class); ?>">
-                        <?php echo $blog_description; ?>
-                    </span>
-                <?php endif; ?>
-            </a>
-        </h2>
-    <?php endif; ?>
+    <?php echo $logo; ?>
+    <?php echo $title_tagline; ?>
 </div>
