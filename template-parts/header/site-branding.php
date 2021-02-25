@@ -12,7 +12,7 @@ if (!defined('ABSPATH')) {
 
 $blog_name = get_bloginfo('name');
 $blog_description = get_bloginfo('description', 'display');
-$show_title = display_header_text();
+$show_title = display_header_text() ?? false;
 
 // LOGO
 $logo = '';
@@ -37,7 +37,7 @@ if (has_custom_logo()) {
     if ($image) {
         $logo = '
         <div class="site-branding__logo">
-            <a class="site-branding__logo-link" href="' . esc_url(home_url('/')) . '" rel="home">
+            <a class="site-branding__logo-link" href="' . get_home_url() . '" rel="home">
                 <img class="site-branding__logo-img" src="' . $image[0] . '" alt="' . esc_html($blog_name) . '" width="' . $image[1] . '" height="' . $image[2] . '">
             </a>
         </div>';
@@ -55,8 +55,8 @@ if ($blog_description) {
 }
 
 $title_tagline = '
-    <h2 class="site-branding__title-tagline" href="' . esc_attr($screenreader_class) . '">
-        <a class="site-branding__title-link" href="' . home_url('/') . '">
+    <h2 class="site-branding__title-tagline  ' . $screenreader_class . '">
+        <a class="site-branding__title-link" href="' . get_home_url() . '">
             <span class="site-branding__title">' . $blog_name . '</span>
             ' . $blog_description . '
         </a>
