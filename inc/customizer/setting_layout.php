@@ -28,7 +28,7 @@ if (!function_exists('wtp_customizer_layout_width')) {
         if (!empty($wtp_layout_width)) {
             foreach ($wtp_layout_width as $key => $value) {
                 $wp_customize->add_setting('wtp_layout_width_' . $key, array(
-                    'default'   => $value,
+                    'default'   => '',
                     'sanitize_callback' => 'wp_filter_nohtml_kses'
                 ));
                 $wp_customize->add_control(
@@ -81,12 +81,12 @@ if (!function_exists('wtp_hook_layout_width_css')) {
                 }
 
                 $style_variables .= '
-			--max-width-' . $count . ': ' . $value . ';';
+			        --max-width-' . $count . ': ' . $value . ';';
 
                 $style_width .= '
-			.' . $key . ' {
-				max-width: var(--max-width-' . $count . ');
-            }';
+                    .' . $key . ' {
+                        max-width: var(--max-width-' . $count . ');
+                    }';
 
                 $count++;
             }

@@ -2,6 +2,12 @@
 if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly.
 }
+
+$meta_description = get_the_excerpt();
+if (empty($meta_description)) {
+    $meta_description = get_bloginfo('name');
+}
+
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -11,8 +17,7 @@ if (!defined('ABSPATH')) {
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="profile" href="https://gmpg.org/xfn/11">
 
-    <meta name="description" content="
-    <?php echo get_the_excerpt(); ?>">
+    <meta name="description" content="<?php echo $meta_description; ?>">
 
     <?php wp_head(); ?>
 </head>

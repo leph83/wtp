@@ -232,7 +232,7 @@ if (!function_exists('wtp_customizer_modularscale')) {
                 array(
                     'type'    => 'text',
                     'section' => 'wtp_font_section',
-                    'label'   => $key,
+                    'label'   => 'line-height ' . $key,
                 )
             );
         }
