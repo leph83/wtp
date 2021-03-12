@@ -26,13 +26,9 @@
 # CLEARFIX
 --------------------------------------------------------------*/
 .clearfix {
-  overflow: auto;
+  display: flow-root;
 }
-.clearfix::after {
-  content: "";
-  clear: both;
-  display: table;
-}
+
 
 /*--------------------------------------------------------------
 # Classes needed to pass Wordpress Theme Checker
