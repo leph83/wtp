@@ -18,7 +18,7 @@ if (!function_exists('wtp_load_styles')) {
             '02-tools/tool.fluidfont.css',
             '02-tools/tool.modularscale.css',
             
-            '03-generic/generic.normalize.css',
+            // '03-generic/generic.normalize.css',
             '03-generic/generic.preset.css',
 
             '04-elements/element.headings.css',
@@ -31,8 +31,8 @@ if (!function_exists('wtp_load_styles')) {
             '05-objects/object.colors.css',
             '05-objects/object.layout.css',
             
-            '07-utilities/utility.a11y.css',
             '07-utilities/utility.wordpress.css',
+            '07-utilities/utility.a11y.css',
         );
 
         // STYLES

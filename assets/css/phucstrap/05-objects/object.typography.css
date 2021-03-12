@@ -90,7 +90,8 @@
 # TYPOGRAPHY
 # Block: fw = font-weight
 --------------------------------------------------------------*/
-.fw--thin .fw--hairline {
+.fw--thin,
+.fw--hairline {
   font-weight: 100;
 }
 

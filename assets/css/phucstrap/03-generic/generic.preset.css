@@ -2,33 +2,8 @@
  * Reset specific elements to make them easier to style in other contexts.
  */
 
-/* I'm not removing margins for these elements */
-html,
-body,
-p,
-ol,
-ul,
-li,
-dl,
-dt,
-dd,
-blockquote,
-figure,
-fieldset,
-form,
-legend,
-textarea,
-pre,
-iframe,
-hr,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
+body {
+  margin: 0;
 }
 
 /**
@@ -71,6 +46,7 @@ html {
 
 body {
   font-size: var(--font-size-7);
+  line-height: var(--line-height-7);
   font-weight: normal;
   text-align: left;
 }
@@ -120,7 +96,6 @@ figure {
 
 img {
   display: block;
-  max-width: 100%;
   height: auto;
 }
 
@@ -144,20 +119,12 @@ img[src$=".svg"] {
 /* Make sure embeds and iframes fit their containers. */
 embed,
 iframe,
-object {
+object,
+img {
   max-width: 100%;
 }
 
-hr {
-  box-sizing: content-box; /* 1 */
-  height: 0; /* 1 */
-  overflow: visible; /* 2 */
-}
-
 pre {
-  font-family: monospace, monospace; /* 1 */
-  font-size: 1em; /* 2 */
-
   white-space: pre;
   overflow-x: auto;
 }
@@ -170,7 +137,7 @@ pre {
 /* Set it to something usefull not like in the normalize */
 b,
 strong {
-	font-weight: 700;
+  font-weight: 700;
 }
 
 /*--------------------------------------------------------------
