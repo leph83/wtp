@@ -18,20 +18,21 @@ if (!function_exists('wtp_load_styles')) {
             '02-tools/tool.fluidfont.css',
             '02-tools/tool.modularscale.css',
             
-            // '03-generic/generic.normalize.css',
             '03-generic/generic.preset.css',
 
             '04-elements/element.headings.css',
             
-            '05-objects/object.boxmodel.css',
-            '05-objects/object.flexbox.css',
-            '05-objects/object.grid.css',
+            // '05-objects/object.boxmodel.css',
+            // '05-objects/object.flexbox.css',
+            // '05-objects/object.grid.css',
             
             '05-objects/object.typography.css',
             '05-objects/object.colors.css',
             '05-objects/object.layout.css',
             
-            '07-utilities/utility.wordpress.css',
+            '06-components/component.wordpress.css',
+            '06-components/component.phuctenberg.css',
+
             '07-utilities/utility.a11y.css',
         );
 

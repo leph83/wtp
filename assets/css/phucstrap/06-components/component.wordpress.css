@@ -48,6 +48,48 @@
   display: flow-root;
 }
 
+/*--------------------------------------------------------------
+  # WIDGETS GALLERY
+  --------------------------------------------------------------*/
+.gallery {
+  display: grid;
+}
+
+.gallery-columns-1 {
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.gallery-columns-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.gallery-columns-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.gallery-columns-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.gallery-columns-5 {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.gallery-columns-6 {
+  grid-template-columns: repeat(6, 1fr);
+}
+
+.gallery-columns-7 {
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.gallery-columns-8 {
+  grid-template-columns: repeat(8, 1fr);
+}
+
+.gallery-columns-9 {
+  grid-template-columns: repeat(9, 1fr);
+}
 
 /*--------------------------------------------------------------
 # Classes needed to pass Wordpress Theme Checker

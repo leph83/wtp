@@ -1,0 +1,372 @@
+/*--------------------------------------------------------------
+# CONTENT WIDTHS
+--------------------------------------------------------------*/
+.entry-content > *,
+.alignwide > [class*="__inner-container"] > *,
+.alignfull > [class*="__inner-container"] > * {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.entry-content > .alignwide,
+.alignwide > [class*="__inner-container"] > .alignwide,
+.alignfull > [class*="__inner-container"] > .alignwide {
+  width: calc(100% - var(--gutter) * 2);
+}
+
+.entry-content > *:not(.alignwide):not(.alignfull),
+.alignwide > [class*="__inner-container"] > *:not(.alignwide):not(.alignfull),
+.alignfull > [class*="__inner-container"] > *:not(.alignwide):not(.alignfull) {
+  max-width: var(--max-width-3);
+  width: calc(100% - var(--gutter) * 2);
+}
+
+.has-background > [class*="__inner-container"] > * {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: var(--max-width-3);
+  width: calc(100% - var(--gutter) * 2);
+}
+
+/*--------------------------------------------------------------
+# VERTICAL RHYTHM
+--------------------------------------------------------------*/
+.entry-content * {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* exceptions defined in not */
+.entry-content * + * {
+  margin-top: var(--gutter);
+}
+
+/* EXCEPTIONS */
+.entry-content .has-background + .has-background {
+  margin-top: 0;
+}
+
+/*--------------------------------------------------------------
+# BLOCK GROUP HAS BACKGROUND
+--------------------------------------------------------------*/
+
+.has-background [class*="__inner-container"] {
+  padding-top: var(--gutter);
+  padding-bottom: var(--gutter);
+}
+
+/*--------------------------------------------------------------
+# BLOCK COVER
+  fixed image
+  repeated
+--------------------------------------------------------------*/
+.wp-block-cover {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 430px;
+  padding: 1em;
+  background-size: cover;
+  background-position: center;
+}
+
+.wp-block-cover__image-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+}
+
+.wp-block-cover::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: inherit;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.wp-block-cover__inner-container {
+  position: relative;
+  z-index: 1;
+}
+
+/* BLOCK COVER FIXED */
+.wp-block-cover.has-parallax {
+  background-attachment: fixed;
+}
+
+.wp-block-cover.is-repeated {
+  background-repeat: repeat;
+  background-size: auto;
+}
+
+/* OPACITY */
+.has-background-dim-10::after {
+  opacity: 0.1;
+}
+.has-background-dim-20::after {
+  opacity: 0.2;
+}
+.has-background-dim-30::after {
+  opacity: 0.3;
+}
+.has-background-dim-40::after {
+  opacity: 0.4;
+}
+.has-background-dim::after {
+  opacity: 0.5;
+}
+.has-background-dim-60::after {
+  opacity: 0.6;
+}
+.has-background-dim-70::after {
+  opacity: 0.7;
+}
+.has-background-dim-80::after {
+  opacity: 0.8;
+}
+.has-background-dim-90::after {
+  opacity: 0.9;
+}
+.has-background-dim-100::after {
+  opacity: 1;
+}
+
+/*--------------------------------------------------------------
+# MEDIA TEXT
+- wp-block-media-text 
+- has-media-on-the-right 
+- is-stacked-on-mobile 
+- is-image-fill
+--------------------------------------------------------------*/
+.wp-block-media-text {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: var(--gutter);
+}
+
+.wp-block-media-text:not(.is-image-fill) {
+  align-items: center;
+}
+
+.wp-block-media-text__content {
+  margin-top: 0;
+  padding-top: var(--gutter);
+  padding-bottom: var(--gutter);
+}
+
+/* has-media-on-the-right */
+.wp-block-media-text.has-media-on-the-right {
+  direction: rtl;
+}
+
+.wp-block-media-text.has-media-on-the-right .wp-block-media-text__content,
+.wp-block-media-text.has-media-on-the-right .wp-block-media-text__media {
+  direction: ltr;
+}
+
+/* is-stacked-on-mobile */
+.wp-block-media-text.is-stacked-on-mobile {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+/* is-image-fill */
+.is-image-fill .wp-block-media-text__media {
+  background-size: cover;
+}
+.is-image-fill .wp-block-media-text__media img {
+  display: none;
+}
+
+/* is-stacked-on-mobile & is-image-fill */
+.is-image-fill.is-stacked-on-mobile .wp-block-media-text__media {
+  min-height: 200px;
+}
+
+/*--------------------------------------------------------------
+# BLOCK COLUMNS
+--------------------------------------------------------------*/
+.entry-content .wp-block-columns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gutter);
+
+  /* width: 100%; */
+}
+
+.wp-block-column {
+  flex-grow: 1;
+  flex-shrink: 1;
+  min-width: 0;
+  word-break: break-word;
+  overflow-wrap: break-word;
+
+  margin-top: 0;
+}
+
+.wp-block-column.is-vertically-aligned-top {
+  align-self: flex-start;
+}
+
+.wp-block-column.is-vertically-aligned-center {
+  align-self: center;
+}
+
+.wp-block-column.is-vertically-aligned-bottom {
+  align-self: flex-end;
+}
+
+@media (min-width: 768px) {
+  .entry-content .wp-block-columns {
+    flex-wrap: nowrap;
+  }
+
+  .wp-block-column[style*="flex-basis"] {
+    flex-grow: 0;
+  }
+
+  .entry-content .wp-block-columns .wp-block-column {
+    flex-shrink: initial;
+    flex-basis: 0;
+  }
+}
+
+/*--------------------------------------------------------------
+# BLOCK BUTTONS
+  is-content-justification-center
+--------------------------------------------------------------*/
+.wp-block-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: calc(var(--gutter) * 1);
+}
+
+.wp-block-button {
+  margin-top: 0;
+}
+
+.wp-block-button__link {
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.is-content-justification-center {
+  justify-content: center;
+}
+
+/*--------------------------------------------------------------
+# BLOCK IMAGE
+--------------------------------------------------------------*/
+.wp-block-image img {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.wp-block-image figcaption {
+  text-align: center;
+  margin-top: calc(var(--gutter) / 2);
+}
+
+/* BLOCK IMAGE ROUNDED */
+.wp-block-image.is-style-rounded img {
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.alignfull.wp-block-image img {
+  max-width: none;
+  width: 100%;
+}
+
+/*--------------------------------------------------------------
+# BLOCK GALLERY
+  is-cropped
+  columns-2
+  columns-3
+  columns-4
+  columns-5
+  columns-6
+  columns-7
+  columns-8
+
+  source: https://www.youtube.com/watch?v=RUyNJaoJH_k
+--------------------------------------------------------------*/
+.entry-content .wp-block-gallery {
+  width: 100%;
+}
+
+.blocks-gallery-grid {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gutter);
+}
+
+.blocks-gallery-item {
+  flex-grow: 1;
+  flex-basis: calc((40ch - 100%) * 999);
+}
+
+.columns-2 .blocks-gallery-item {
+  min-width: calc(100% / 2 - var(--gutter));
+}
+
+.columns-3 .blocks-gallery-item {
+  min-width: calc(100% / 3 - var(--gutter));
+}
+
+.columns-4 .blocks-gallery-item {
+  min-width: calc(100% / 4 - var(--gutter));
+}
+
+.columns-5 .blocks-gallery-item {
+  min-width: calc(100% / 5 - var(--gutter));
+}
+
+.columns-6 .blocks-gallery-item {
+  min-width: calc(100% / 6 - var(--gutter));
+}
+
+.columns-7 .blocks-gallery-item {
+  min-width: calc(100% / 7 - var(--gutter));
+}
+
+.columns-8 .blocks-gallery-item {
+  min-width: calc(100% / 8 - var(--gutter));
+}
+
+/*  is-cropped */
+.is-cropped .blocks-gallery-item figure {
+  height: 100%;
+}
+
+.is-cropped .blocks-gallery-item img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  max-width: none;
+}
+
+/*--------------------------------------------------------------
+# IFRAME
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# LISTS
+--------------------------------------------------------------*/
+.entry-content li {
+  margin-top: 0;
+}
