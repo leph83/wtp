@@ -33,7 +33,7 @@
   outline: 0;
 }
 
-@supports (prefers-reduced-motion) {
+@media (prefers-reduced-motion: reduce) {
   * {
     transition-delay: 0s;
     transition-duration: 0s;
