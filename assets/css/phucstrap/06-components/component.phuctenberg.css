@@ -1,6 +1,8 @@
 /*--------------------------------------------------------------
 # CONTENT WIDTHS
 --------------------------------------------------------------*/
+
+/* GENERAL */
 .entry-content > *,
 .alignwide > [class*="__inner-container"] > *,
 .alignfull > [class*="__inner-container"] > * {
@@ -8,16 +10,14 @@
   margin-right: auto;
 }
 
-.entry-content > .alignwide,
-.alignwide > [class*="__inner-container"] > .alignwide,
-.alignfull > [class*="__inner-container"] > .alignwide {
-  width: calc(100% - var(--gutter) * 2);
+/* MAX WIDTH WHEN NOT WIDE OR FULL */
+.entry-content > *:not(.alignwide):not(.alignfull) {
+  max-width: var(--max-width-3);
 }
 
-.entry-content > *:not(.alignwide):not(.alignfull),
-.alignwide > [class*="__inner-container"] > *:not(.alignwide):not(.alignfull),
-.alignfull > [class*="__inner-container"] > *:not(.alignwide):not(.alignfull) {
-  max-width: var(--max-width-3);
+/* LIMIT WIDTH TO MAKE PADDING */
+.entry-content > .alignwide,
+.entry-content > *:not(.alignwide):not(.alignfull) {
   width: calc(100% - var(--gutter) * 2);
 }
 
@@ -36,7 +36,6 @@
   margin-bottom: 0;
 }
 
-/* exceptions defined in not */
 .entry-content * + * {
   margin-top: var(--gutter);
 }
@@ -47,6 +46,10 @@
 }
 
 .wp-block-cover + .wp-block-cover {
+  margin-top: 0;
+}
+
+.entry-content li {
   margin-top: 0;
 }
 
@@ -370,6 +373,3 @@
 /*--------------------------------------------------------------
 # LISTS
 --------------------------------------------------------------*/
-.entry-content li {
-  margin-top: 0;
-}
