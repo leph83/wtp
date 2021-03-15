@@ -53,7 +53,6 @@
 /*--------------------------------------------------------------
 # BLOCK GROUP HAS BACKGROUND
 --------------------------------------------------------------*/
-
 .has-background [class*="__inner-container"] {
   padding-top: var(--gutter);
   padding-bottom: var(--gutter);
@@ -66,14 +65,13 @@
 --------------------------------------------------------------*/
 .wp-block-cover {
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
   min-height: 430px;
-  padding: 1em;
   background-size: cover;
   background-position: center;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .wp-block-cover__image-background {
@@ -99,6 +97,7 @@
 }
 
 .wp-block-cover__inner-container {
+  margin-top: 0;
   position: relative;
   z-index: 1;
 }
