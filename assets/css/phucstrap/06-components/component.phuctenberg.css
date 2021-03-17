@@ -51,6 +51,8 @@
 }
 
 /* experimental */
+.entry-content ul,
+.entry-content ol,
 .entry-content li {
   margin-top: 0;
 }
