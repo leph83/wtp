@@ -81,7 +81,7 @@
   justify-content: center;
 }
 
-.wp-block-cover__image-background {
+.wp-block-cover > img {
   position: absolute;
   top: 0;
   left: 0;
@@ -151,6 +151,47 @@
   opacity: 1;
 }
 
+/* CONTENT POSITION */
+.wp-block-cover[class*='top'] {
+  justify-content: flex-start;
+}
+
+.wp-block-cover[class*='left'] {
+  align-items: flex-start;
+}
+
+.wp-block-cover[class*='right'] {
+  align-items: flex-end;
+}
+
+.wp-block-cover[class*='bottom'] {
+  justify-content: flex-end;
+}
+
+/* 
+.is-position-top-left {
+  align-items: flex-start;
+
+}
+
+.is-position-top-center {
+  justify-content: flex-start;
+}
+
+.is-position-top-right {
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+
+.is-position-center-left {
+  align-items: flex-start;
+}
+
+.is-position-center-right {
+  align-items: flex-end;
+} */
+
+
 /*--------------------------------------------------------------
 # MEDIA TEXT
 - wp-block-media-text 
@@ -158,10 +199,19 @@
 - is-stacked-on-mobile 
 - is-image-fill
 --------------------------------------------------------------*/
+:root {
+  --containerquery: 768px;
+}
+
 .wp-block-media-text {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: var(--gutter);
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.wp-block-media-text > * {
+  flex-basis: calc((var(--containerquery) - 100vw) * 999);
+  flex-grow: 1;
+  min-width: calc(100% / 2);
 }
 
 .wp-block-media-text:not(.is-image-fill) {
@@ -170,8 +220,7 @@
 
 .wp-block-media-text__content {
   margin-top: 0;
-  padding-top: var(--gutter);
-  padding-bottom: var(--gutter);
+  padding: var(--gutter);
 }
 
 /* has-media-on-the-right */
@@ -179,14 +228,12 @@
   direction: rtl;
 }
 
-.wp-block-media-text.has-media-on-the-right .wp-block-media-text__content,
-.wp-block-media-text.has-media-on-the-right .wp-block-media-text__media {
+.wp-block-media-text.has-media-on-the-right > * {
   direction: ltr;
 }
 
 /* is-stacked-on-mobile */
 .wp-block-media-text.is-stacked-on-mobile {
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
 
 /* is-image-fill */
@@ -199,7 +246,7 @@
 
 /* is-stacked-on-mobile & is-image-fill */
 .is-image-fill.is-stacked-on-mobile .wp-block-media-text__media {
-  min-height: 200px;
+  min-height: calc(var(--containerquery) * 9 / 16 * 2 / 3 );
 }
 
 /*--------------------------------------------------------------
