@@ -21,7 +21,6 @@
   width: calc(100% - var(--gutter) * 2);
 }
 
-[class*="__inner-container"] > *:not(.alignwide):not(.alignfull),
 [class*="__inner-container"] > *:not(.alignwide):not(.alignfull) {
   margin-left: auto;
   margin-right: auto;
@@ -53,6 +52,13 @@
 /* experimental */
 .entry-content li {
   margin-top: 0;
+}
+
+/*--------------------------------------------------------------
+# BLOCK GROUP
+--------------------------------------------------------------*/
+.wp-block-group:not(.has-background) > [class*="__inner-container"] > *:not(.alignwide):not(.alignfull) {
+  width: 100%;
 }
 
 /*--------------------------------------------------------------
