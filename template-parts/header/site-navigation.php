@@ -12,14 +12,14 @@ if (!defined('ABSPATH')) {
         wp_nav_menu(array(
             'theme_location'        => 'primary',
             'container'     => '',
-            'menu_class'            => 'flex  flex-wrap--wrap  list-style-type--none  margin--0  padding--0',
+            'menu_class'            => '',
             'fallback_cb'           => false,
             'add_submenu_class'     => '',
             'add_li_class'          => '',
             'add_li_active_class'   => '',
             'add_li_parent_class'   => '',
-            'add_a_class'           => 'display--block  text-decoration--none  color--inherit  padding--half',
-            'add_a_active_class'    => 'color--2',
+            'add_a_class'           => '',
+            'add_a_active_class'    => '',
         ));
         ?>
     </nav>
