@@ -396,7 +396,7 @@
 /*--------------------------------------------------------------
   # BLOCK COLUMNS
   --------------------------------------------------------------*/
-.entry-content .wp-block-columns {
+.wp-block-columns {
   display: flex;
   flex-wrap: wrap;
   gap: var(--gutter);
@@ -425,7 +425,7 @@
 }
 
 @media (min-width: 768px) {
-  .entry-content .wp-block-columns {
+  .wp-block-columns {
     flex-wrap: nowrap;
   }
 
@@ -433,7 +433,7 @@
     flex-grow: 0;
   }
 
-  .entry-content .wp-block-columns .wp-block-column {
+  .wp-block-columns .wp-block-column {
     flex-shrink: initial;
     flex-basis: 0;
   }
