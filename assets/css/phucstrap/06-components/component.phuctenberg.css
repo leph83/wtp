@@ -1,31 +1,31 @@
+:root {
+  --containerquery: 768px;
+}
+
 /*--------------------------------------------------------------
 # CONTENT WIDTHS
 --------------------------------------------------------------*/
-
-/* GENERAL */
-.entry-content > *,
-.alignwide > [class*="__inner-container"] > *,
-.alignfull > [class*="__inner-container"] > * {
+.entry-content .alignfull,
+.entry-content .alignwide,
+.entry-content > *:not([class*="align"]) {
   margin-left: auto;
   margin-right: auto;
 }
 
-/* MAX WIDTH WHEN NOT WIDE OR FULL */
-.entry-content > *:not(.alignwide):not(.alignfull) {
+/* content without wide or full */
+.entry-content > *:not([class*="align"]) {
   max-width: var(--max-width-3);
 }
 
-/* LIMIT WIDTH TO MAKE PADDING */
-.entry-content > .alignwide,
-.entry-content > *:not(.alignwide):not(.alignfull) {
-  width: calc(100% - var(--gutter) * 2);
+/* add padding for mobile */
+.entry-content > * {
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
 }
 
-[class*="__inner-container"] > *:not(.alignwide):not(.alignfull) {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: var(--max-width-3);
-  width: calc(100% - var(--gutter) * 2);
+/* add padding if background or dim */
+[class*="has-background"] {
+  padding: var(--gutter);
 }
 
 /*--------------------------------------------------------------
@@ -40,16 +40,17 @@
   margin-top: var(--gutter);
 }
 
-/* EXCEPTIONS */
+.alignfull + .alignfull {
+  margin-top: 0;
+}
+
 .has-background + .has-background {
   margin-top: 0;
 }
 
-.wp-block-cover + .wp-block-cover {
-  margin-top: 0;
-}
-
 /* experimental */
+.entry-content ul,
+.entry-content ol,
 .entry-content li {
   margin-top: 0;
 }
@@ -57,35 +58,46 @@
 /*--------------------------------------------------------------
 # BLOCK GROUP
 --------------------------------------------------------------*/
-.wp-block-group:not(.has-background) > [class*="__inner-container"] > *:not(.alignwide):not(.alignfull) {
-  width: 100%;
+[class*="__inner-container"] > *:not([class*="align"]) {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: calc(var(--max-width-3) - var(--gutter) * 2);
 }
 
 /*--------------------------------------------------------------
-# BLOCK GROUP HAS BACKGROUND
+# PARAGRAPH
 --------------------------------------------------------------*/
-.has-background [class*="__inner-container"] {
-  padding-top: var(--gutter);
-  padding-bottom: var(--gutter);
+.has-drop-cap:first-letter {
+  float: left;
+  font-size: var(--font-size-c);
+  line-height: 1;
+  padding-right: 0.125em;
+}
+
+.has-drop-cap {
+  display: flow-root;
 }
 
 /*--------------------------------------------------------------
-# BLOCK COVER
-  fixed image
-  repeated
---------------------------------------------------------------*/
+  # BLOCK COVER
+    fixed image
+    repeated
+  --------------------------------------------------------------*/
 .wp-block-cover {
   position: relative;
-  min-height: 430px;
+  min-height: calc(var(--containerquery) * 9 / 16 * 2 / 3);
   background-size: cover;
   background-position: center;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
 
-  padding-top: var(--gutter);
-  padding-bottom: var(--gutter);
+.wp-block-cover__inner-container {
+  margin-top: 0;
+  position: relative;
+  z-index: 1;
 }
 
 .wp-block-cover__image-background {
@@ -98,6 +110,7 @@
   object-fit: cover;
 }
 
+/* OVERLAY */
 .wp-block-cover::after {
   content: "";
   position: absolute;
@@ -110,23 +123,17 @@
   pointer-events: none;
 }
 
-.wp-block-cover__inner-container {
-  margin-top: 0;
-  position: relative;
-  z-index: 1;
+/* default dim and color */
+.has-background-dim:not([class*="background-color"])::after {
+  background-color: var(--color-black);
+  opacity: 0.5;
 }
 
-/* BLOCK COVER FIXED */
-.wp-block-cover.has-parallax {
-  background-attachment: fixed;
+.has-background-dim {
+  color: var(--color-white);
 }
 
-.wp-block-cover.is-repeated {
-  background-repeat: repeat;
-  background-size: auto;
-}
-
-/* OPACITY */
+/* OPACITY Overlay */
 .has-background-dim-10::after {
   opacity: 0.1;
 }
@@ -158,52 +165,63 @@
   opacity: 1;
 }
 
+/* BACKGROUND FIXED */
+.wp-block-cover.has-parallax {
+  background-attachment: fixed;
+}
+
+/* BACKGROUND REPEAT */
+.wp-block-cover.is-repeated {
+  background-repeat: repeat;
+  background-size: auto;
+}
+
 /* COVER CONTENT POSITION */
-.wp-block-cover[class*='top'] {
+.wp-block-cover[class*="top"] {
   justify-content: flex-start;
 }
 
-.wp-block-cover[class*='left'] {
+.wp-block-cover[class*="left"] {
   align-items: flex-start;
 }
 
-.wp-block-cover[class*='right'] {
+.wp-block-cover[class*="right"] {
   align-items: flex-end;
 }
 
-.wp-block-cover[class*='bottom'] {
+.wp-block-cover[class*="bottom"] {
   justify-content: flex-end;
 }
 
-.wp-block-cover[class*='is-position'] >  [class*="__inner-container"] {
-  padding: var(--gutter);
-}
-
-.wp-block-cover[class*='is-position'] >  [class*="__inner-container"] > * {
-  width: initial;
-}
-
 /*--------------------------------------------------------------
-# MEDIA TEXT
-- wp-block-media-text 
-- has-media-on-the-right 
-- is-stacked-on-mobile 
-- is-image-fill
+  # MEDIA TEXT
+  - wp-block-media-text 
+  - has-media-on-the-right 
+  - is-stacked-on-mobile 
+  - is-image-fill
 --------------------------------------------------------------*/
 .wp-block-media-text {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: var(--gutter);
+  display: flex;
+  padding: initial;
 }
 
-.wp-block-media-text:not(.is-image-fill) {
-  align-items: center;
+.wp-block-media-text > * {
+  flex-basis: calc((var(--containerquery) - 100vw) * 999);
+  flex-grow: 1;
+  min-width: calc(100% / 2);
 }
 
 .wp-block-media-text__content {
   margin-top: 0;
-  padding-top: var(--gutter);
-  padding-bottom: var(--gutter);
+  padding: var(--gutter);
+}
+
+.wp-block-media-text__media img {
+  width: 100%;
+}
+
+.wp-block-media-text:not(.is-image-fill) {
+  align-items: center;
 }
 
 /* has-media-on-the-right */
@@ -211,14 +229,13 @@
   direction: rtl;
 }
 
-.wp-block-media-text.has-media-on-the-right .wp-block-media-text__content,
-.wp-block-media-text.has-media-on-the-right .wp-block-media-text__media {
+.wp-block-media-text.has-media-on-the-right > * {
   direction: ltr;
 }
 
 /* is-stacked-on-mobile */
 .wp-block-media-text.is-stacked-on-mobile {
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  flex-wrap: wrap;
 }
 
 /* is-image-fill */
@@ -231,18 +248,158 @@
 
 /* is-stacked-on-mobile & is-image-fill */
 .is-image-fill.is-stacked-on-mobile .wp-block-media-text__media {
-  min-height: 200px;
+  min-height: calc(var(--containerquery) * 9 / 16 * 2 / 3);
 }
 
 /*--------------------------------------------------------------
-# BLOCK COLUMNS
---------------------------------------------------------------*/
+  # BLOCK IMAGE
+  --------------------------------------------------------------*/
+.wp-block-image {
+  display: flow-root;
+}
+
+.wp-block-image.alignfull {
+  padding: initial;
+}
+
+.wp-block-image img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.wp-block-image.size-full img,
+.wp-block-image .alignleft img,
+.wp-block-image .alignright img,
+.wp-block-image .aligncenter img {
+  max-width: none;
+  width: 100%;
+}
+
+.wp-block-image figcaption {
+  text-align: center;
+  margin-top: calc(var(--gutter) / 2);
+}
+
+/* BLOCK IMAGE ROUNDED */
+.wp-block-image.is-style-rounded img {
+  border-radius: 9999rem;
+  overflow: hidden;
+}
+
+/*--------------------------------------------------------------
+  # BLOCK GALLERY
+    is-cropped
+    columns-2
+    columns-3
+    columns-4
+    columns-5
+    columns-6
+    columns-7
+    columns-8
+  
+    source: https://www.youtube.com/watch?v=RUyNJaoJH_k
+  --------------------------------------------------------------*/
+.wp-block-gallery {
+  display: flow-root;
+}
+
+/* I DONT THINK THIS SHOULD FLOAT */
+.wp-block-gallery.alignright,
+.wp-block-gallery.alignleft,
+.wp-block-gallery.aligncenter {
+  float: none;
+}
+
+.alignfull.wp-block-gallery {
+  padding: initial;
+}
+
+.blocks-gallery-grid {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gutter);
+}
+
+.blocks-gallery-item {
+  flex-grow: 1;
+  flex-basis: calc((var(--containerquery) - 100%) * 999);
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.blocks-gallery-item > figure {
+  position: relative;
+  display: flow-root;
+}
+
+/*  is-cropped */
+.is-cropped .blocks-gallery-item > figure {
+  height: 100%;
+  width: 100%;
+}
+
+.is-cropped .blocks-gallery-item img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  max-width: none;
+}
+
+/* CAPTION */
+.blocks-gallery-item__caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: calc(var(--gutter) * 0.5);
+  text-align: center;
+  color: var(--color-white);
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent);
+}
+
+/* COLUMNS */
+.columns-2 .blocks-gallery-item {
+  min-width: calc(100% / 2 - var(--gutter));
+}
+
+.columns-3 .blocks-gallery-item {
+  min-width: calc(100% / 3 - var(--gutter));
+}
+
+.columns-4 .blocks-gallery-item {
+  min-width: calc(100% / 4 - var(--gutter));
+}
+
+.columns-5 .blocks-gallery-item {
+  min-width: calc(100% / 5 - var(--gutter));
+}
+
+.columns-6 .blocks-gallery-item {
+  min-width: calc(100% / 6 - var(--gutter));
+}
+
+.columns-7 .blocks-gallery-item {
+  min-width: calc(100% / 7 - var(--gutter));
+}
+
+.columns-8 .blocks-gallery-item {
+  min-width: calc(100% / 8 - var(--gutter));
+}
+
+/*--------------------------------------------------------------
+  # BLOCK COLUMNS
+  --------------------------------------------------------------*/
 .entry-content .wp-block-columns {
   display: flex;
   flex-wrap: wrap;
   gap: var(--gutter);
-
-  /* width: 100%; */
 }
 
 .wp-block-column {
@@ -283,9 +440,9 @@
 }
 
 /*--------------------------------------------------------------
-# BLOCK BUTTONS
-  is-content-justification-center
---------------------------------------------------------------*/
+  # BLOCK BUTTONS
+    is-content-justification-center
+  --------------------------------------------------------------*/
 .wp-block-buttons {
   display: flex;
   flex-wrap: wrap;
@@ -304,100 +461,4 @@
 
 .is-content-justification-center {
   justify-content: center;
-}
-
-/*--------------------------------------------------------------
-# BLOCK IMAGE
---------------------------------------------------------------*/
-.wp-block-image img {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.wp-block-image figcaption {
-  text-align: center;
-  margin-top: calc(var(--gutter) / 2);
-}
-
-/* BLOCK IMAGE ROUNDED */
-.wp-block-image.is-style-rounded img {
-  border-radius: 50%;
-  overflow: hidden;
-}
-
-.alignfull.wp-block-image img {
-  max-width: none;
-  width: 100%;
-}
-
-/*--------------------------------------------------------------
-# BLOCK GALLERY
-  is-cropped
-  columns-2
-  columns-3
-  columns-4
-  columns-5
-  columns-6
-  columns-7
-  columns-8
-
-  source: https://www.youtube.com/watch?v=RUyNJaoJH_k
---------------------------------------------------------------*/
-.entry-content .wp-block-gallery {
-  width: 100%;
-}
-
-.blocks-gallery-grid {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--gutter);
-}
-
-.blocks-gallery-item {
-  flex-grow: 1;
-  flex-basis: calc((40ch - 100%) * 999);
-}
-
-.columns-2 .blocks-gallery-item {
-  min-width: calc(100% / 2 - var(--gutter));
-}
-
-.columns-3 .blocks-gallery-item {
-  min-width: calc(100% / 3 - var(--gutter));
-}
-
-.columns-4 .blocks-gallery-item {
-  min-width: calc(100% / 4 - var(--gutter));
-}
-
-.columns-5 .blocks-gallery-item {
-  min-width: calc(100% / 5 - var(--gutter));
-}
-
-.columns-6 .blocks-gallery-item {
-  min-width: calc(100% / 6 - var(--gutter));
-}
-
-.columns-7 .blocks-gallery-item {
-  min-width: calc(100% / 7 - var(--gutter));
-}
-
-.columns-8 .blocks-gallery-item {
-  min-width: calc(100% / 8 - var(--gutter));
-}
-
-/*  is-cropped */
-.is-cropped .blocks-gallery-item figure {
-  height: 100%;
-}
-
-.is-cropped .blocks-gallery-item img {
-  object-fit: cover;
-  height: 100%;
-  width: 100%;
-  max-width: none;
 }
