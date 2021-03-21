@@ -75,7 +75,7 @@ if (is_404()) {
 
 
 
-    <div class="lc  lc--2  lc--padding">
+    <div class="">
         <?php echo $image; ?>
 
         <h1>
@@ -103,19 +103,19 @@ if (is_404()) {
     <?php // pages and posts can have pagination - but not for archive etc. 
     ?>
     <?php wp_link_pages(array(
-        'before' => '<div class="lc  lc--3  lc--padding">',
+        'before' => '<div class="">',
         'after' => '</div>',
     )); ?>
 
     <?php if (is_single()) : ?>
-        <div class="lc  lc--2  lc--padding  flex  flex-justify--space-between">
+        <div class="">
             <?php //show previous and next posts - but not for pages duh 
             ?>
-            <div class="margin-right--auto">
+            <div class="">
                 <?php previous_post_link(); ?>
             </div>
 
-            <div class="margin-left--auto">
+            <div class="">
                 <?php next_post_link(); ?>
             </div>
         </div>

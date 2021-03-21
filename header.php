@@ -22,20 +22,20 @@ if (empty($meta_description)) {
     <?php wp_head(); ?>
 </head>
 
-<body <?php body_class('body  min-height--100vh  flex  flex-direction--column'); ?>>
+<body <?php body_class('body'); ?>>
     <?php wp_body_open(); ?>
-    <header id="header" class=" bg-color--black  color--white  ">
-        <div class="lc  lc--2  padding flex flex-wrap--wrap flex-justify--space-between  flex-align-items--center">
+    <header id="header" class="header">
+        <div class="header__content">
 
-            <div class="">
+            <div class="header__item">
                 <?php get_template_part('template-parts/header/site-branding'); ?>
             </div>
 
-            <div class="">
+            <div class="header__item">
                 <?php get_template_part('template-parts/header/site-navigation'); ?>
             </div>
 
         </div>
     </header>
 
-    <main id="content" class="main  lc  lc--2  padding  flex-grow--1">
+    <main id="content" class="main">

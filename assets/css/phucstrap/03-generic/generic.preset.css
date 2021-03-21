@@ -60,7 +60,7 @@
   }
   
   img {
-    display: block;
+    vertical-align: bottom;
     height: auto;
   }
   
