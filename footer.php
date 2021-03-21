@@ -17,15 +17,15 @@ if (!defined('ABSPATH')) {
 
 </main>
 
-<footer id="footer" class="footer  bg-color--black  color--white">
-    <section class="lc lc--2 flex flex-wrap--wrap  flex-justify--space-between  flex-align-items--center">
+<footer id="footer" class="footer">
+    <section class="">
         <h2 class="screen-reader-text"><?php echo __('Footer', 'wtp'); ?></h2>
 
-        <div class="padding">
+        <div class="">
             &copy;<?php echo date('Y'); ?> - <?php echo get_bloginfo('name'); ?>
         </div>
 
-        <div class="padding-left--half  padding-right--half">
+        <div class="">
             <?php get_template_part('template-parts/footer/footer-nav'); ?>
         </div>
     </section>
