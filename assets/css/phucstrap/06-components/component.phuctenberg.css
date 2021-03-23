@@ -396,7 +396,7 @@
 /*--------------------------------------------------------------
   # BLOCK COLUMNS
   --------------------------------------------------------------*/
-.entry-content .wp-block-columns {
+.wp-block-columns {
   display: flex;
   flex-wrap: wrap;
   gap: var(--gutter);
