@@ -1,68 +1,61 @@
 /*--------------------------------------------------------------
 # CONTENT WIDTHS
 --------------------------------------------------------------*/
-.entry-content .alignfull,
-.entry-content .alignwide,
-.entry-content > *:not([class*="align"]) {
+
+.entry-content .alignfull, .entry-content .alignwide, .entry-content>*:not([class*="align"]) {
   margin-left: auto;
   margin-right: auto;
 }
 
 /* content without wide or full */
-.entry-content > *:not([class*="align"]) {
+
+.entry-content>*:not([class*="align"]) {
   max-width: var(--max-width-3);
 }
 
 /* add padding for mobile */
-.entry-content > * {
+
+.entry-content>* {
   padding-left: var(--gutter);
   padding-right: var(--gutter);
-}
-
-/* add padding if background or dim */
-[class*="has-background"] {
-  padding: var(--gutter);
 }
 
 /*--------------------------------------------------------------
 # VERTICAL RHYTHM
 --------------------------------------------------------------*/
+
 .entry-content * {
   margin-top: 0;
   margin-bottom: 0;
 }
 
-.entry-content * + * {
+.entry-content *+* {
   margin-top: var(--gutter);
 }
 
-.alignfull + .alignfull {
+.alignfull+.alignfull {
   margin-top: 0;
 }
 
-.has-background + .has-background {
-  margin-top: 0;
-}
-
-/* experimental */
-.entry-content ul,
-.entry-content ol,
-.entry-content li {
+.has-background+.has-background {
   margin-top: 0;
 }
 
 /*--------------------------------------------------------------
 # BLOCK GROUP
 --------------------------------------------------------------*/
-[class*="__inner-container"] > *:not([class*="align"]) {
+
+[class*="__inner-container"]>*:not([class*="align"]) {
   margin-left: auto;
   margin-right: auto;
-  max-width: calc(var(--max-width-3) - var(--gutter) * 2);
+  max-width: calc(var(--max-width-3) - var(--gutter) * 0);
+  width: 100%;
 }
 
 /*--------------------------------------------------------------
 # PARAGRAPH
 --------------------------------------------------------------*/
+
 .has-drop-cap:first-letter {
   float: left;
   font-size: var(--font-size-c);
@@ -79,12 +72,12 @@
     fixed image
     repeated
   --------------------------------------------------------------*/
+
 .wp-block-cover {
   position: relative;
   min-height: calc(var(--containerquery) * 9 / 16 * 2 / 3);
   background-size: cover;
   background-position: center;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -96,7 +89,7 @@
   z-index: 1;
 }
 
-.wp-block-cover > img {
+.wp-block-cover>img {
   position: absolute;
   top: 0;
   left: 0;
@@ -107,6 +100,7 @@
 }
 
 /* OVERLAY */
+
 .wp-block-cover::after {
   content: "";
   position: absolute;
@@ -120,6 +114,7 @@
 }
 
 /* default dim and color */
+
 .has-background-dim:not([class*="background-color"])::after {
   background-color: var(--color-black);
   opacity: 0.5;
@@ -130,49 +125,62 @@
 }
 
 /* OPACITY Overlay */
+
 .has-background-dim-10::after {
   opacity: 0.1;
 }
+
 .has-background-dim-20::after {
   opacity: 0.2;
 }
+
 .has-background-dim-30::after {
   opacity: 0.3;
 }
+
 .has-background-dim-40::after {
   opacity: 0.4;
 }
+
 .has-background-dim::after {
   opacity: 0.5;
 }
+
 .has-background-dim-60::after {
   opacity: 0.6;
 }
+
 .has-background-dim-70::after {
   opacity: 0.7;
 }
+
 .has-background-dim-80::after {
   opacity: 0.8;
 }
+
 .has-background-dim-90::after {
   opacity: 0.9;
 }
+
 .has-background-dim-100::after {
   opacity: 1;
 }
 
 /* BACKGROUND FIXED */
+
 .wp-block-cover.has-parallax {
   background-attachment: fixed;
 }
 
 /* BACKGROUND REPEAT */
+
 .wp-block-cover.is-repeated {
   background-repeat: repeat;
   background-size: auto;
 }
 
 /* COVER CONTENT POSITION */
+
 .wp-block-cover[class*="top"] {
   justify-content: flex-start;
 }
@@ -196,12 +204,13 @@
   - is-stacked-on-mobile 
   - is-image-fill
 --------------------------------------------------------------*/
+
 .wp-block-media-text {
   display: flex;
   padding: initial;
 }
 
-.wp-block-media-text > * {
+.wp-block-media-text>* {
   flex-basis: calc((var(--containerquery) - 100vw) * 999);
   flex-grow: 1;
   min-width: calc(100% / 2);
@@ -221,28 +230,33 @@
 }
 
 /* has-media-on-the-right */
+
 .wp-block-media-text.has-media-on-the-right {
   direction: rtl;
 }
 
-.wp-block-media-text.has-media-on-the-right > * {
+.wp-block-media-text.has-media-on-the-right>* {
   direction: ltr;
 }
 
 /* is-stacked-on-mobile */
+
 .wp-block-media-text.is-stacked-on-mobile {
   flex-wrap: wrap;
 }
 
 /* is-image-fill */
+
 .is-image-fill .wp-block-media-text__media {
   background-size: cover;
 }
+
 .is-image-fill .wp-block-media-text__media img {
   display: none;
 }
 
 /* is-stacked-on-mobile & is-image-fill */
+
 .is-image-fill.is-stacked-on-mobile .wp-block-media-text__media {
   min-height: calc(var(--containerquery) * 9 / 16 * 2 / 3);
 }
@@ -250,6 +264,7 @@
 /*--------------------------------------------------------------
   # BLOCK IMAGE
   --------------------------------------------------------------*/
+
 .wp-block-image {
   display: flow-root;
 }
@@ -264,10 +279,7 @@
   margin-right: auto;
 }
 
-.wp-block-image.size-full img,
-.wp-block-image .alignleft img,
-.wp-block-image .alignright img,
-.wp-block-image .aligncenter img {
+.wp-block-image.size-full img, .wp-block-image .alignleft img, .wp-block-image .alignright img, .wp-block-image .aligncenter img {
   max-width: none;
   width: 100%;
 }
@@ -278,6 +290,7 @@
 }
 
 /* BLOCK IMAGE ROUNDED */
+
 .wp-block-image.is-style-rounded img {
   border-radius: 9999rem;
   overflow: hidden;
@@ -296,14 +309,14 @@
   
     source: https://www.youtube.com/watch?v=RUyNJaoJH_k
   --------------------------------------------------------------*/
+
 .wp-block-gallery {
   display: flow-root;
 }
 
 /* I DONT THINK THIS SHOULD FLOAT */
-.wp-block-gallery.alignright,
-.wp-block-gallery.alignleft,
-.wp-block-gallery.aligncenter {
+
+.wp-block-gallery.alignright, .wp-block-gallery.alignleft, .wp-block-gallery.aligncenter {
   float: none;
 }
 
@@ -315,7 +328,6 @@
   list-style-type: none;
   padding: 0;
   margin: 0;
-
   display: flex;
   flex-wrap: wrap;
   gap: var(--gutter);
@@ -324,19 +336,19 @@
 .blocks-gallery-item {
   flex-grow: 1;
   flex-basis: calc((var(--containerquery) - 100%) * 999);
-
   display: flex;
   justify-content: center;
   align-items: flex-end;
 }
 
-.blocks-gallery-item > figure {
+.blocks-gallery-item>figure {
   position: relative;
   display: flow-root;
 }
 
 /*  is-cropped */
-.is-cropped .blocks-gallery-item > figure {
+
+.is-cropped .blocks-gallery-item>figure {
   height: 100%;
   width: 100%;
 }
@@ -349,6 +361,7 @@
 }
 
 /* CAPTION */
+
 .blocks-gallery-item__caption {
   position: absolute;
   bottom: 0;
@@ -361,6 +374,7 @@
 }
 
 /* COLUMNS */
+
 .columns-2 .blocks-gallery-item {
   min-width: calc(100% / 2 - var(--gutter));
 }
@@ -392,6 +406,7 @@
 /*--------------------------------------------------------------
   # BLOCK COLUMNS
   --------------------------------------------------------------*/
+
 .wp-block-columns {
   display: flex;
   flex-wrap: wrap;
@@ -404,7 +419,6 @@
   min-width: 0;
   word-break: break-word;
   overflow-wrap: break-word;
-
   margin-top: 0;
 }
 
@@ -424,11 +438,9 @@
   .wp-block-columns {
     flex-wrap: nowrap;
   }
-
   .wp-block-column[style*="flex-basis"] {
     flex-grow: 0;
   }
-
   .wp-block-columns .wp-block-column {
     flex-shrink: initial;
     flex-basis: 0;
@@ -439,6 +451,7 @@
   # BLOCK BUTTONS
     is-content-justification-center
   --------------------------------------------------------------*/
+
 .wp-block-buttons {
   display: flex;
   flex-wrap: wrap;
@@ -462,6 +475,7 @@
 /*--------------------------------------------------------------
   # EMBED
   --------------------------------------------------------------*/
+
 .wp-block-embed__wrapper {
   position: relative;
 }
@@ -484,4 +498,28 @@
 
 .wp-embed-aspect-4-3 .wp-block-embed__wrapper {
   padding-top: calc(100% / 4 * 3);
+}
+
+/*--------------------------------------------------------------
+  # add padding if background or dim
+  --------------------------------------------------------------*/
+
+[class*="has-background"] {
+  padding: var(--gutter);
+}
+
+/*--------------------------------------------------------------
+  # LISTS
+--------------------------------------------------------------*/
+
+.entry-content ul:not([class]), .entry-content ol:not([class]), .entry-content dl:not([class]) {
+  padding-left: 2.25em;
+}
+
+.entry-content ul:not([class]), .entry-content ol:not([class]), .entry-content dl:not([class]) {
+  margin-top: 0;
+}
+
+.entry-content ul:not([class]) li, .entry-content ol:not([class]) li, .entry-content dl:not([class]) dt {
+  margin-top: 0;
 }
