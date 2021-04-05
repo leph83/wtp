@@ -542,8 +542,7 @@
 .wp-block-code {
   background-color: rgba(0, 0, 0, 0.5);
   color: var(--color-white);
-  padding-top: var(--gutter);
-  padding-bottom: var(--gutter);
+  padding: var(--gutter);
   font-family: var(--font-family-3);
   font-weight: normal;
 }
