@@ -347,9 +347,13 @@
   display: flow-root;
 }
 
+.blocks-gallery-item>figure>a {
+  display: block;
+}
+
 /*  is-cropped */
 
-.is-cropped .blocks-gallery-item>figure {
+.is-cropped .blocks-gallery-item>figure, .is-cropped .blocks-gallery-item>figure>a {
   height: 100%;
   width: 100%;
 }
@@ -359,10 +363,6 @@
   height: 100%;
   width: 100%;
   max-width: none;
-}
-
-.blocks-gallery-item>figure>a{
-  display: block;
 }
 
 /* CAPTION */
@@ -532,6 +532,7 @@
 /*--------------------------------------------------------------
   # VIDEO
 --------------------------------------------------------------*/
+
 .wp-block-video video {
   width: 100%;
 }
@@ -539,6 +540,7 @@
 /*--------------------------------------------------------------
   # BLOCK CODE
 --------------------------------------------------------------*/
+
 .wp-block-code {
   background-color: rgba(0, 0, 0, 0.5);
   color: var(--color-white);
