@@ -30,4 +30,6 @@
     --double: 2;
     --tripple: 3;
     --quadruple: 4;
+
+    --vertical-rhythm: var(--gutter);
 }
