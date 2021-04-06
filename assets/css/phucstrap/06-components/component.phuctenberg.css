@@ -2,15 +2,17 @@
 # CONTENT WIDTHS
 --------------------------------------------------------------*/
 
-.entry-content .alignfull, .entry-content .alignwide, .entry-content>*:not([class*="align"]) {
+.entry-content .alignfull, .entry-content .alignwide {
   margin-left: auto;
   margin-right: auto;
 }
 
 /* content without wide or full */
 
-.entry-content>*:not([class*="align"]) {
+.entry-content>*:not(.alignwide):not(.alignfull) {
   max-width: var(--max-width-3);
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* add padding for mobile */
@@ -547,4 +549,13 @@
   padding: var(--gutter);
   font-family: var(--font-family-3);
   font-weight: normal;
+}
+
+/*--------------------------------------------------------------
+  # BLOCK QUOTE
+--------------------------------------------------------------*/
+
+.wp-block-quote.is-style-large {
+  font-size: var(--font-size-c);
+  line-height: var(--line-height-c);
 }
