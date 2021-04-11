@@ -554,8 +554,20 @@
 /*--------------------------------------------------------------
   # BLOCK QUOTE
 --------------------------------------------------------------*/
+.wp-block-quote blockquote {
+  margin-left: 0;
+  margin-right: 0;
+}
 
 .wp-block-quote.is-style-large {
   font-size: var(--font-size-c);
   line-height: var(--line-height-c);
+}
+
+/*--------------------------------------------------------------
+  # PULLQUOTE
+--------------------------------------------------------------*/
+.wp-block-pullquote blockquote {
+  margin-left: 0;
+  margin-right: 0;
 }
