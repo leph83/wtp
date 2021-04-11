@@ -24,6 +24,7 @@
     line-height: var(--line-height-7);
     font-weight: normal;
     text-align: left;
+    color: var(--color-black);
   }
   
   /**
@@ -115,27 +116,6 @@
     display: block;
   }
   
-  a:hover {
-    text-decoration-style: dotted;
-    text-decoration-skip-ink: none;
-  }
-  
-  a:focus {
-    outline: thin dotted;
-  }
-  
-  h1 a,
-  h2 a,
-  h3 a,
-  h4 a,
-  h5 a,
-  h6 a {
-    display: block;
-    text-decoration: inherit;
-    font-style: inherit;
-    font-weight: inherit;
-    color: inherit;
-  }
   
   /**
     * Relax the definition a bit, to allow components to override it manually.

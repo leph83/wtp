@@ -1,4 +1,6 @@
 :root {
+    --containerquery: 768px;
+
     /* FALL BACK VARIABLES */
     --fontsize-min: 1.6;
     --fontsize-max: 3.2;
@@ -28,4 +30,6 @@
     --double: 2;
     --tripple: 3;
     --quadruple: 4;
+
+    --vertical-rhythm: var(--gutter);
 }

@@ -1,6 +1,10 @@
 /*--------------------------------------------------------------
 # COLORS
 --------------------------------------------------------------*/
+.color--transparent {
+    color: transparent;
+}
+
 .color--inherit {
     color: inherit;
 }
@@ -40,6 +44,14 @@
 /*--------------------------------------------------------------
 # BACKGROUND COLORS
 --------------------------------------------------------------*/
+.bg-color--transparent {
+    background-color: transparent;
+}
+
+.bg-color--inherit {
+    background-color: inherit;
+}
+
 .bg-color--black {
     background-color: var(--color-black);
 }
