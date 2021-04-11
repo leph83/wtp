@@ -462,3 +462,32 @@
 .is-content-justification-center {
   justify-content: center;
 }
+
+/*--------------------------------------------------------------
+  # PULL QUOTE
+  --------------------------------------------------------------*/
+  .wp-block-pullquote {
+  }
+
+  .wp-block-pullquote blockquote {
+    max-width: var(--containerquery);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: var(--gutter);
+    margin-bottom: var(--gutter);
+  }
+
+  .wp-block-pullquote blockquote p {
+  text-align: center;
+  font-size: var(--font-size-a);
+  line-height: var(--line-height-a);
+  font-family: var(--font-family-1);
+  letter-spacing: .1em;
+}
+
+.wp-block-pullquote cite {
+  display: block;
+  text-align: right;
+  font-size: var(--font-size-9);
+  font-style: normal;
+}
