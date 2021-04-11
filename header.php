@@ -23,7 +23,7 @@ if (empty($meta_description)) {
 </head>
 
 <body <?php body_class('body'); ?>>
-    <a class="screen-reader-text" href="#content">skip to content</a>
+    <a class="screen-reader-text  skip-link" href="#content">skip to content</a>
     <?php wp_body_open(); ?>
     <header id="header" class="header">
         <div class="header__content">
