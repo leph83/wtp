@@ -5,8 +5,7 @@ if (!defined('ABSPATH')) {
 
 // SETTINGS
 require_once('inc/setting_setup.php');
-require_once('inc/setting_load-css.php');
-require_once('inc/setting_load-js.php');
+
 require_once('inc/widgets.php');
 
 // CUSTOMIZER
@@ -21,3 +20,8 @@ require_once('inc/add_nav-classes.php');
 
 // DISABLES
 require_once('inc/disables.php');
+
+
+// LOAD FILES
+require_once('inc/setting_load-css.php');
+require_once('inc/setting_load-js.php');
