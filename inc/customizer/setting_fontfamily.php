@@ -61,7 +61,7 @@ if (!function_exists('wtp_hook_font_family_css')) {
         global $wtp_font_families;
         $style = '';
         $style_variables = '';
-        $link = '';
+        $link_value = '';
         $value_parameter = '';
 
         if (!empty($wtp_font_families)) {
