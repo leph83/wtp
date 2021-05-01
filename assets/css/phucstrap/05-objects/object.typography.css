@@ -75,7 +75,7 @@
 # FONT FAMILY
 --------------------------------------------------------------*/
 .font-family {
-  font-family: var(--font-family);
+  font-family: var(--font-family-1);
 }
 
 .font-family--2 {
