@@ -104,3 +104,21 @@
 }
 .bypostauthor {
 }
+
+/*--------------------------------------------------------------
+# WIDGET DEFAULT STYLING
+--------------------------------------------------------------*/
+ul.widget {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li.widget * {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+li.widget * + * {
+  margin-top: var(--gutter);
+}
