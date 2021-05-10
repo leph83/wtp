@@ -60,6 +60,7 @@ if (!function_exists('wtp_hook_font_family_css')) {
     function wtp_hook_font_family_css() {
         global $wtp_font_families;
         $style = '';
+        $link = '';
         $style_variables = '';
         $link_value = '';
         $value_parameter = '';
