@@ -23,7 +23,7 @@ if (!function_exists('wtp_load_styles')) {
             '04-elements/element.headings.css',
             '04-elements/element.links.css',
             
-            // '05-objects/object.boxmodel.css',
+            '05-objects/object.boxmodel.css',
             // '05-objects/object.flexbox.css',
             // '05-objects/object.grid.css',
             
