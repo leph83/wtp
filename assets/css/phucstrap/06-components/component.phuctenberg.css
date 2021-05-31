@@ -534,6 +534,11 @@
   justify-content: center;
 }
 
+
+.is-content-justification-right {
+  justify-content: flex-end;
+}
+
 /*--------------------------------------------------------------
   # EMBED
   --------------------------------------------------------------*/
