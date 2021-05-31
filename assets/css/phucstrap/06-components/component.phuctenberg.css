@@ -658,3 +658,19 @@
   max-height: var(--gutter);
   margin-top: 0;
 }
+
+/*--------------------------------------------------------------
+  # SOCIAL MEDIA
+--------------------------------------------------------------*/
+.wp-block-social-links {
+  list-style-type: none;
+}
+
+.wp-social-link {
+  display: inline-block;
+  margin-top: 0;
+}
+
+.wp-block-social-link-anchor {
+  display: block;
+}
