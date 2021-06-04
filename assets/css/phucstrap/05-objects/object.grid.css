@@ -178,3 +178,18 @@
 .grid--12 {
     grid-template-columns: repeat(12, 1fr);
 }
+
+/*--------------------------------------------------------------
+# GRID ALIGN
+--------------------------------------------------------------*/
+.grid-align--start {
+    align-items: flex-start;
+}
+
+.grid-align--center {
+    align-items: center;
+}
+
+.grid-align--end {
+    align-items: flex-end;
+}

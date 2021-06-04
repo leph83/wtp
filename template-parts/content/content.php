@@ -3,14 +3,26 @@ if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly.
 }
 
+/* TITLE */
 $title = get_the_title();
-$image = get_the_post_thumbnail(get_the_id(), 'large') ?? false;
-$author = esc_html('by ') . get_the_author_posts_link();
-$date = get_the_time(get_option('date_format'));
-
 if (empty($title)) {
     $title = __('Unbenannt', 'wtp');
 }
+
+
+/* IMAGE */
+$image = '';
+
+if (!empty(get_header_image())) {
+    $image = '<img src="'.get_header_image() .'" >';
+}
+
+if (!empty(get_the_post_thumbnail(get_the_id(), 'original'))) {
+    $image = get_the_post_thumbnail(get_the_id(), 'original') ?? false;
+}
+
+$author = esc_html('by ') . get_the_author_posts_link();
+$date = get_the_time(get_option('date_format'));
 
 // TAGS
 $tags = '';

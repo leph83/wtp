@@ -23,6 +23,12 @@ if (!function_exists('wtp_customizer_settings')) {
 			'panel'      => 'wtp_theme_panel'
 		));
 
+		$wp_customize->add_section('wtp_font_family_section', array(
+			'title' => 'Font Families',
+			'capability' => 'edit_theme_options',
+			'panel'      => 'wtp_theme_panel'
+		));
+
 		// SECTION - LAYOUT WIDTHS
 		$wp_customize->add_section('wtp_layoutwidth_section', array(
 			'title' => 'Layout',
