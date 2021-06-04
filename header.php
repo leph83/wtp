@@ -3,10 +3,18 @@ if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly.
 }
 
-$meta_description = get_the_excerpt();
+/**
+ * SEO META DESCRIPTION
+ */
+$meta_description = get_the_excerpt() ?? false;
 if (empty($meta_description)) {
     $meta_description = get_bloginfo('name');
 }
+
+/**
+ * HEADER BACKGROUND FROM CUSTOMIZER
+ */
+$image = get_header_image() ?? false;
 
 ?>
 <!DOCTYPE html>
@@ -23,9 +31,13 @@ if (empty($meta_description)) {
 </head>
 
 <body <?php body_class('body'); ?>>
-    <a class="screen-reader-text  skip-link" href="#content">skip to content</a>
+
     <?php wp_body_open(); ?>
-    <header id="header" class="header">
+
+    <input id="burger" type="checkbox" class="burger__input  hidden">
+    
+    <header id="header" class="header  burger__content" style="background-image: url('<?php echo $image; ?>');">
+
         <div class="header__content">
 
             <div class="header__item">

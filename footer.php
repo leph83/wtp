@@ -18,16 +18,13 @@ if (!defined('ABSPATH')) {
 </main>
 
 <footer id="footer" class="footer">
-    <section class="">
-        <h2 class="screen-reader-text"><?php echo __('Footer', 'wtp'); ?></h2>
+    <section class="footer__content">
+        <h2 class="screen-reader-text">Footer</h2>
 
-        <div class="">
-            &copy;<?php echo date('Y'); ?> - <?php echo get_bloginfo('name'); ?>
-        </div>
+        <ul class="widget">
+            <?php dynamic_sidebar('bottom_bar'); ?>
+        </ul>
 
-        <div class="">
-            <?php get_template_part('template-parts/footer/footer-nav'); ?>
-        </div>
     </section>
 </footer>
 
