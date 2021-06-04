@@ -7,7 +7,9 @@ get_header();
 
 $title = '';
 
-// SEARCH
+/**
+ * SEARCH PAGE
+ */
 if (is_search()) {
     // can't deal with _n for now
     $title = (int) $wp_query->found_posts . ' ' . __('results for', 'wtp');
@@ -19,20 +21,27 @@ if (is_search()) {
     $title = $title . ' <span>"' . esc_html(get_search_query()) . '"</span>';
 }
 
-// ARCHIVE
+/**
+ * CATEGORY AND TAG PAGE
+ */
 if (is_archive()) {
-    $title = get_the_archive_title();
-    $description = get_the_archive_description();
+    $title = get_the_archive_title() ?? false;
+    $description = get_the_archive_description() ?? false;
 }
 
+/**
+ * BLOG PAGE
+ */
 if (is_home()) {
     if (get_option('page_for_posts') != 0) {
-        $id = get_option('page_for_posts');
-        $title = get_the_title($id);
+        $title = get_the_title(get_option('page_for_posts')) ?? false;
     }
 }
 
-// HTML 5 MARKUP
+/**
+ * CHANGE TAG DEPENDING ON TYPE OF PAGE
+ * SINGLE PAGE OR PAGES WITH LISTS OF POSTS
+ */
 $section_tag = 'section';
 if (is_singular()) {
     $section_tag = 'div';
@@ -42,7 +51,7 @@ if (is_singular()) {
 <<?php echo $section_tag; ?>>
 
     <?php if ($title) : ?>
-        <h2 class="lc  lc--2"><?php echo $title; ?></h2>
+        <h2><?php echo $title; ?></h2>
     <?php endif; ?>
 
 

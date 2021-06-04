@@ -32,8 +32,6 @@ if (!function_exists('wtp_load_styles')) {
             '05-objects/object.layout.css',
             
             '06-components/component.wordpress.css',
-            '06-components/component.phuctenberg.css',
-
             '07-utilities/utility.a11y.css',
         );
 
@@ -43,11 +41,9 @@ if (!function_exists('wtp_load_styles')) {
 
             $css_version = filemtime(get_template_directory() . $css_path . $css_file);
 
+            wp_enqueue_style('wtp-' . $css_id, get_template_directory_uri() . $css_path . $css_file, false, $css_version);
+            $css_id++;
 
-            if ($css_id != 10 || get_theme_mod('wtp_disable_gutenberg-styles') ) {
-                wp_enqueue_style('wtp-' . $css_id, get_template_directory_uri() . $css_path . $css_file, false, $css_version);
-                $css_id++;
-            }
         }
     }
     add_action('wp_enqueue_scripts', 'wtp_load_styles');

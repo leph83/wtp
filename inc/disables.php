@@ -7,7 +7,6 @@ if (!defined('ABSPATH')) {
 $wtp_theme_disables = array(
     'custom-fontsize' => 'Custom Font Size',
     'custom-color' => 'Custom Color',
-    'gutenberg-styles' => 'Gutenberg Default Styles',
 );
 
 
