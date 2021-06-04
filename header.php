@@ -9,6 +9,9 @@ if (!defined('ABSPATH')) {
 $meta_description = get_the_excerpt() ?? false;
 if (empty($meta_description)) {
     $meta_description = get_bloginfo('name');
+    if (get_bloginfo('description')) {
+        $meta_description .= ' - ' . get_bloginfo('description');
+    }
 }
 
 /**
