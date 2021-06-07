@@ -1,6 +1,7 @@
 /*--------------------------------------------------------------
 # FLOAT
 --------------------------------------------------------------*/
+
 .alignleft {
   float: left;
   margin-right: var(--gutter);
@@ -23,8 +24,42 @@
 }
 
 /*--------------------------------------------------------------
+# CONTENT WIDTH
+--------------------------------------------------------------*/
+
+/* add default padding for mobile */
+.entry-content>* {
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
+}
+
+.alignfull {
+  max-width: var(--max-width-1);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.alignwide {
+  max-width: var(--max-width-2);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* content without wide or full */
+
+.entry-content>*:not(.alignwide):not(.alignfull) {
+  max-width: var(--max-width-3);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/*--------------------------------------------------------------
 # TEXT ALIGN
 --------------------------------------------------------------*/
+
 .has-text-align-left {
   text-align: left;
 }
@@ -44,6 +79,7 @@
 /*--------------------------------------------------------------
 # CLEARFIX
 --------------------------------------------------------------*/
+
 .clearfix {
   display: flow-root;
 }
@@ -51,6 +87,7 @@
 /*--------------------------------------------------------------
   # WIDGETS GALLERY
   --------------------------------------------------------------*/
+
 [class*="gallery-columns"] {
   display: grid;
 }
@@ -94,20 +131,21 @@
 /*--------------------------------------------------------------
 # Classes needed to pass Wordpress Theme Checker
 --------------------------------------------------------------*/
-.wp-caption {
-}
-.wp-caption-text {
-}
-.sticky {
-}
-.gallery-caption {
-}
-.bypostauthor {
-}
+
+.wp-caption {}
+
+.wp-caption-text {}
+
+.sticky {}
+
+.gallery-caption {}
+
+.bypostauthor {}
 
 /*--------------------------------------------------------------
 # WIDGET DEFAULT STYLING
 --------------------------------------------------------------*/
+
 ul.widget {
   list-style-type: none;
   margin: 0;
@@ -119,6 +157,6 @@ li.widget * {
   margin-bottom: 0;
 }
 
-li.widget * + * {
+li.widget *+* {
   margin-top: var(--gutter);
 }
