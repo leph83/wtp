@@ -1,4 +1,5 @@
 # wtp-theme
-So I made my own Wordpress Theme for future projects. 
-This is the basis for my projects, because I didn't find one that fits my needs
+Yeah, well, I’m gonna go build my own theme
 
+Perfect HTML 5 Outline Guide
+https://juplo.de/a-perfect-outline/

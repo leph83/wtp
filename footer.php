@@ -21,9 +21,13 @@ if (!defined('ABSPATH')) {
     <section class="footer__content">
         <h2 class="screen-reader-text">Footer</h2>
 
-        <ul class="widget">
-            <?php dynamic_sidebar('bottom_bar'); ?>
-        </ul>
+        <div class="footer__item">
+            &copy; <?php echo get_bloginfo('name'); ?>
+        </div>
+
+        <div class="footer__item">
+            <?php get_template_part('template-parts/footer/footer-nav'); ?>
+        </div>
 
     </section>
 </footer>

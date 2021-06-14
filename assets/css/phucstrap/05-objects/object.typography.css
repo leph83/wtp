@@ -1,8 +1,6 @@
 /*--------------------------------------------------------------
-# FONT SIZES + Wordpress Font sizes
+# DEFAULT HEADINGS
 --------------------------------------------------------------*/
-
-/* headings */
 .h1 {
   font-size: var(--font-size-1);
   line-height: var(--line-height-1);
@@ -33,13 +31,17 @@
   line-height: var(--line-height-6);
 }
 
-/* paragraph size */
+/*--------------------------------------------------------------
+# PARAGRAPH SIZE
+--------------------------------------------------------------*/
 .h7 {
   font-size: var(--font-size-7);
   line-height: var(--line-height-7);
 }
 
-/* smaller headings */
+/*--------------------------------------------------------------
+# SMALLER HEADINGS
+--------------------------------------------------------------*/
 .h8 {
   font-size: var(--font-size-8);
   line-height: var(--line-height-8);
@@ -50,7 +52,9 @@
   line-height: var(--line-height-9);
 }
 
-/* bigger headings */
+/*--------------------------------------------------------------
+# BIGGER HEADINGS
+--------------------------------------------------------------*/
 .h0 {
   font-size: var(--font-size-0);
   line-height: var(--line-height-0);
@@ -74,7 +78,7 @@
 /*--------------------------------------------------------------
 # FONT FAMILY
 --------------------------------------------------------------*/
-.font-family {
+.font-family--1 {
   font-family: var(--font-family-1);
 }
 
@@ -87,8 +91,7 @@
 }
 
 /*--------------------------------------------------------------
-# TYPOGRAPHY
-# Block: fw = font-weight
+# FONT WEIGHT
 --------------------------------------------------------------*/
 .fw--thin,
 .fw--hairline {
@@ -133,8 +136,7 @@
 }
 
 /*--------------------------------------------------------------
-# TYPOGRAPHY
-# Block: fs = font-style
+# FONT STYLE
 --------------------------------------------------------------*/
 .fs--normal {
   font-style: normal;
@@ -150,8 +152,7 @@
 }
 
 /*--------------------------------------------------------------
-# TYPOGRAPHY
-# Text Align
+# TEXT ALIGN
 --------------------------------------------------------------*/
 .ta--left {
   text-align: left;
@@ -170,8 +171,7 @@
 }
 
 /*--------------------------------------------------------------
-# TYPOGRAPHY
-# Text Transform
+# TEXT TRANSFORM
 --------------------------------------------------------------*/
 .uppercase {
   text-transform: uppercase;
@@ -182,8 +182,7 @@
 }
 
 /*--------------------------------------------------------------
-# TYPOGRAPHY
-# Text Decoration
+# TEXT DECORATION
 --------------------------------------------------------------*/
 .text-decoration--none {
   text-decoration: none;
@@ -192,9 +191,9 @@
 .text-decoration--underline {
   text-decoration: underline;
 }
+
 /*--------------------------------------------------------------
-# TYPOGRAPHY
-# LIST
+# LISTS
 --------------------------------------------------------------*/
 .list-style-type--none {
   list-style-type: none;

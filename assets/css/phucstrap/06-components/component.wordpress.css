@@ -1,7 +1,6 @@
 /*--------------------------------------------------------------
 # FLOAT
 --------------------------------------------------------------*/
-
 .alignleft {
   float: left;
   margin-right: var(--gutter);
@@ -48,7 +47,6 @@
 }
 
 /* content without wide or full */
-
 .entry-content>*:not(.alignwide):not(.alignfull) {
   max-width: var(--max-width-3);
   margin-left: auto;
@@ -59,7 +57,6 @@
 /*--------------------------------------------------------------
 # TEXT ALIGN
 --------------------------------------------------------------*/
-
 .has-text-align-left {
   text-align: left;
 }
@@ -86,8 +83,7 @@
 
 /*--------------------------------------------------------------
   # WIDGETS GALLERY
-  --------------------------------------------------------------*/
-
+--------------------------------------------------------------*/
 [class*="gallery-columns"] {
   display: grid;
 }
@@ -131,7 +127,6 @@
 /*--------------------------------------------------------------
 # Classes needed to pass Wordpress Theme Checker
 --------------------------------------------------------------*/
-
 .wp-caption {}
 
 .wp-caption-text {}
@@ -145,18 +140,17 @@
 /*--------------------------------------------------------------
 # WIDGET DEFAULT STYLING
 --------------------------------------------------------------*/
-
 ul.widget {
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
 
-li.widget * {
+/* li.widget * {
   margin-top: 0;
   margin-bottom: 0;
 }
 
 li.widget *+* {
   margin-top: var(--gutter);
-}
+} */

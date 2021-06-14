@@ -7,6 +7,7 @@ if (!defined('ABSPATH')) {
 $wtp_theme_disables = array(
     'custom-fontsize' => 'Custom Font Size',
     'custom-color' => 'Custom Color',
+    'disable_fullscreen' => 'Disable Fullscreen Editor',
 );
 
 
@@ -45,6 +46,6 @@ if (!function_exists('wtp_theme_customizer_disables')) {
 // LOAD FILE IF DISABLED
 foreach ($wtp_theme_disables as $key => $value) {
     if (get_theme_mod('wtp_disable_' . $key)) {
-        require_once('disable/disable_' . $key . '.php');
+        get_template_part('inc/disable/disable_' . $key . '.php');
     }
 }
