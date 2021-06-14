@@ -212,14 +212,6 @@ if (!function_exists('wtp_customizer_modularscale')) {
             'default'   => '',
             'sanitize_callback' => 'wp_filter_nohtml_kses'
         ));
-        $wp_customize->add_control(
-            'wtp_lineheight_default',
-            array(
-                'type'    => 'text',
-                'section' => 'wtp_font_section',
-                'label'   => 'base line-height',
-            )
-        );
 
         foreach ($wtp_fontsize_names as $key => $value) {
             // LINE HEIGHT FOR EACH FONT SIZE
@@ -306,12 +298,6 @@ if (!function_exists('wtp_hook_fontsizes_css')) {
                 --fontsize-ratio: ' . $fontsize_ratio / 1000 . ';
             ';
         }
-
-        // base line-height
-        if (get_theme_mod('wtp_lineheight_default')) {
-            $style_variables .= '--line-height: ' . get_theme_mod('wtp_lineheight_default') . ';';
-        }
-        
 
         // custom line heights
         if (!empty($wtp_fontsize_names)) {

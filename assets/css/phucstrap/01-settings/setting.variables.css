@@ -57,6 +57,29 @@
 }
 
 /*--------------------------------------------------------------
+# LINE HEIGHT
+--------------------------------------------------------------*/
+:root {
+    --line-height: 1.5;
+
+    --line-height-a: var(--line-height);
+    --line-height-b: var(--line-height);
+    --line-height-c: var(--line-height);
+    --line-height-0: var(--line-height);
+
+    --line-height-1: var(--line-height);
+    --line-height-2: var(--line-height);
+    --line-height-3: var(--line-height);
+    --line-height-4: var(--line-height);
+    --line-height-5: var(--line-height);
+    --line-height-6: var(--line-height);
+    --line-height-7: var(--line-height);
+
+    --line-height-8: var(--line-height);
+    --line-height-9: var(--line-height);
+}
+
+/*--------------------------------------------------------------
 # CALCULATION VARIABLES
 --------------------------------------------------------------*/
 :root {
