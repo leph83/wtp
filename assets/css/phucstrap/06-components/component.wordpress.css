@@ -3,14 +3,14 @@
 --------------------------------------------------------------*/
 .alignleft {
   float: left;
-  margin-right: var(--gutter);
-  margin-bottom: var(--gutter);
+  margin-right: var(--gutter-outer);
+  margin-bottom: var(--gutter-outer);
 }
 
 .alignright {
   float: right;
-  margin-left: var(--gutter);
-  margin-bottom: var(--gutter);
+  margin-left: var(--gutter-outer);
+  margin-bottom: var(--gutter-outer);
 }
 
 .aligncenter {
@@ -24,26 +24,21 @@
 
 /*--------------------------------------------------------------
 # CONTENT WIDTH
+- also add default padding for mobile
 --------------------------------------------------------------*/
-
-/* add default padding for mobile */
-.entry-content>* {
-  padding-left: var(--gutter);
-  padding-right: var(--gutter);
-}
-
 .alignfull {
   max-width: var(--max-width-1);
   margin-left: auto;
   margin-right: auto;
-  padding-left: 0;
-  padding-right: 0;
 }
 
 .alignwide {
   max-width: var(--max-width-2);
   margin-left: auto;
   margin-right: auto;
+
+  padding-left: var(--gutter-outer);
+  padding-right: var(--gutter-outer);
 }
 
 /* content without wide or full */
@@ -51,8 +46,23 @@
   max-width: var(--max-width-3);
   margin-left: auto;
   margin-right: auto;
+
+  padding-left: var(--gutter-outer);
+  padding-right: var(--gutter-outer);
 }
 
+/*--------------------------------------------------------------
+# COMMENTS
+--------------------------------------------------------------*/
+.comments,
+.comment-respond {
+  max-width: var(--max-width-3);
+  margin-left: auto;
+  margin-right: auto;
+
+  padding-left: var(--gutter-outer);
+  padding-right: var(--gutter-outer);
+}
 
 /*--------------------------------------------------------------
 # TEXT ALIGN
@@ -76,7 +86,6 @@
 /*--------------------------------------------------------------
 # CLEARFIX
 --------------------------------------------------------------*/
-
 .clearfix {
   display: flow-root;
 }
@@ -145,12 +154,3 @@ ul.widget {
   margin: 0;
   padding: 0;
 }
-
-/* li.widget * {
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-li.widget *+* {
-  margin-top: var(--gutter);
-} */

@@ -19,6 +19,11 @@
   max-width: var(--max-width-3);
 }
 
+.lc--padding {
+  padding-left: var(--gutter-outer);
+  padding-right: var(--gutter-outer);
+}
+
 /*--------------------------------------------------------------
 # POSITION
 --------------------------------------------------------------*/
