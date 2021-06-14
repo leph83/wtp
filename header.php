@@ -14,6 +14,11 @@ if (empty($meta_description)) {
     }
 }
 
+$sidebar = '';
+if (is_active_sidebar('sidebar-1')) {
+    $sidebar = 'main--has-sidebar';
+}
+
 /**
  * HEADER BACKGROUND FROM CUSTOMIZER
  */
@@ -54,4 +59,4 @@ $image = get_header_image() ?? false;
         </div>
     </header>
 
-    <main id="content" class="main">
+    <main id="content" class="main <?php echo $sidebar; ?>">
