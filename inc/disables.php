@@ -7,7 +7,7 @@ if (!defined('ABSPATH')) {
 $wtp_theme_disables = array(
     'custom-fontsize' => 'Custom Font Size',
     'custom-color' => 'Custom Color',
-    'disable_fullscreen' => 'Disable Fullscreen Editor',
+    'fullscreen' => 'Disable Fullscreen Editor',
 );
 
 
