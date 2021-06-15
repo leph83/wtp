@@ -23,48 +23,6 @@
 }
 
 /*--------------------------------------------------------------
-# CONTENT WIDTH
-- also add default padding for mobile
---------------------------------------------------------------*/
-.alignfull {
-  max-width: var(--max-width-1);
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.alignwide {
-  max-width: var(--max-width-2);
-  margin-left: auto;
-  margin-right: auto;
-
-  padding-left: var(--gutter-outer);
-  padding-right: var(--gutter-outer);
-}
-
-/* content without wide or full */
-.entry-content>*:not(.alignwide):not(.alignfull) {
-  max-width: var(--max-width-3);
-  margin-left: auto;
-  margin-right: auto;
-
-  padding-left: var(--gutter-outer);
-  padding-right: var(--gutter-outer);
-}
-
-/*--------------------------------------------------------------
-# COMMENTS
---------------------------------------------------------------*/
-.comments,
-.comment-respond {
-  max-width: var(--max-width-3);
-  margin-left: auto;
-  margin-right: auto;
-
-  padding-left: var(--gutter-outer);
-  padding-right: var(--gutter-outer);
-}
-
-/*--------------------------------------------------------------
 # TEXT ALIGN
 --------------------------------------------------------------*/
 .has-text-align-left {

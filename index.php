@@ -47,7 +47,7 @@ $args = array(
     // 'next_text' => '',
     'screen_reader_text' => '',
     'aria_label' => '',
-    'class' => 'nav',
+    'class' => 'nav--prev-next',
 );
 
 ?>
