@@ -10,16 +10,17 @@
     --containerquery: 768px;
 
     --fontsize-min: 1.6;
-    --fontsize-max: 3.2;
-    --fontsize-minwidth: 100;
-    --fontsize-maxwidth: 200;
+    --fontsize-max: 1.6;
+    --fontsize-minwidth: 76.8;
+    --fontsize-maxwidth: 192;
+    --fontsize-ratio: 1.2;
 
     --line-height: 1.5;
     --line-height-7: var(--line-height);
 
     --max-width-1: 100%;
     --max-width-2: 128rem;
-    --max-width-3: 76.8rem;
+    --max-width-3: 96rem;
 }
 
 /*--------------------------------------------------------------
