@@ -46,7 +46,7 @@ if (has_custom_logo()) {
 
 // TITLE & TAGLINE
 $screenreader_class = '';
-if (has_custom_logo() && !$show_title) {
+if (!$show_title) {
     $screenreader_class = 'screen-reader-text';
 }
 
