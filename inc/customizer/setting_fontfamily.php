@@ -17,7 +17,6 @@ if (!function_exists('wtp_customizer_font_family')) {
     {
         global $wtp_font_families;
 
-
         if (!empty($wtp_font_families)) {
             foreach ($wtp_font_families as $key => $value) {
                 $wp_customize->add_setting('wtp_font_families_' . $key, array(

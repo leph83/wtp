@@ -72,6 +72,23 @@ if (!function_exists('wtp_customizer_settings')) {
 				//   ),
 			)
 		);
+
+		// HIDE TAGLINE
+		$wp_customize->add_setting(
+			'hide_tagline',
+			array(
+				'default' => '',
+				'sanitize_callback' => 'wtp_sanitize_checkbox'
+			)
+		);
+		$wp_customize->add_control(
+			'hide_tagline',
+			array(
+				'type'      => 'checkbox',
+				'section'   => 'title_tagline',
+				'label'     => __('hide tagline', 'wtp-theme'),
+			)
+		);
 	}
 	add_action('customize_register', 'wtp_customizer_settings');
 }

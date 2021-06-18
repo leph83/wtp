@@ -11,8 +11,9 @@ if (!defined('ABSPATH')) {
  */
 
 $blog_name = get_bloginfo('name');
-$blog_description = get_bloginfo('description', 'display');
+$blog_description = get_bloginfo('description', 'display') ?? false;
 $show_title = display_header_text() ?? false;
+$hide_tagline = get_theme_mod('hide_tagline') ?? false;
 
 // LOGO
 $logo = '';
@@ -52,6 +53,11 @@ if (!$show_title) {
 
 if ($blog_description) {
     $blog_description = '<span class="site-branding__description">' . esc_html($blog_description) . '</span>';
+    
+    if ($hide_tagline) {
+        $blog_description = '';
+    }
+    
 }
 
 $title_tagline = '

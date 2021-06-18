@@ -25,7 +25,6 @@ if (!function_exists('wtp_theme_customizer_disables')) {
                     // 'capability'    => 'edit_theme_options',
                     'default' => '',
                     'sanitize_callback' => 'wtp_sanitize_checkbox'
-
                 )
             );
 
