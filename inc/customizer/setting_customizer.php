@@ -50,6 +50,13 @@ if (!function_exists('wtp_customizer_settings')) {
 			'panel'      => 'wtp_theme_panel'
 		));
 
+		// SECTION - TITLES
+		$wp_customize->add_section('wtp_hide_titles', array(
+			'title'      => 'Hide Title',
+			'capability' => 'edit_theme_options',
+			'panel'      => 'wtp_theme_panel'
+		));
+
 		// ADD LOGO SIZE
 		$wp_customize->add_setting(
 			'logo_size',

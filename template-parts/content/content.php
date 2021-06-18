@@ -6,6 +6,12 @@ if (!defined('ABSPATH')) {
 /* TITLE */
 $title = get_the_title();
 
+/* hide title */
+$title_class = '';
+if (get_theme_mod('wtp_hide_title_page')) {
+    $title_class = 'screen-reader-text';
+}
+
 /* IMAGE */
 $image = '';
 if (!empty(get_the_post_thumbnail(get_the_id(), 'original'))) {
@@ -22,7 +28,7 @@ if (!empty(get_the_post_thumbnail(get_the_id(), 'original'))) {
 
         <div class="block__content">
             <div class="block__header">
-                <h1 class="block__title">
+                <h1 class="block__title  <?php echo $title_class; ?>">
                     <?php echo $title; ?>
                 </h1>
             </div>
