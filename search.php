@@ -8,7 +8,7 @@ get_header();
 
 
 $searchquery = esc_html(get_search_query());
-$title .= __('Search Results for ', 'wtp') . '"' . $searchquery . '" : ' . $wp_query->found_posts;
+$title .= __('Search Results for ', 'wtp-theme') . '"' . $searchquery . '" : ' . $wp_query->found_posts;
 
 ?>
 

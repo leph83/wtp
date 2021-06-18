@@ -44,8 +44,8 @@ if (!function_exists('wtp_setup')) {
 
         // NAVIGATION
         register_nav_menus(array(
-            'primary' => __('Primary menu', 'wtp'),
-            'footer' => __('Secondary Menu', 'wtp'),
+            'primary' => __('Primary menu', 'wtp-theme'),
+            'footer' => __('Secondary Menu', 'wtp-theme'),
         ));
 
         /*
@@ -61,6 +61,7 @@ if (!function_exists('wtp_setup')) {
                 'caption',
                 'style',
                 'script',
+                'search-form',
                 'navigation-widgets',
             )
         );
@@ -93,7 +94,7 @@ if (!function_exists('wtp_setup')) {
         add_theme_support('customize-selective-refresh-widgets');
 
         // Add support for Block Styles.
-		add_theme_support( 'wp-block-styles' );
+        add_theme_support('wp-block-styles');
 
         // Add support for full and wide align images.
         add_theme_support('align-wide');
@@ -101,12 +102,12 @@ if (!function_exists('wtp_setup')) {
         // Add support for responsive embedded content.
         add_theme_support('responsive-embeds');
 
-		// Add support for experimental cover block spacing.
-		add_theme_support( 'custom-spacing' );
+        // Add support for experimental cover block spacing.
+        add_theme_support('custom-spacing');
 
-		// Add support for custom units.
-		// This was removed in WordPress 5.6 but is still required to properly support WP 5.5.
-        add_theme_support( 'custom-units' );
+        // Add support for custom units.
+        // This was removed in WordPress 5.6 but is still required to properly support WP 5.5.
+        add_theme_support('custom-units');
 
 
 
@@ -118,7 +119,6 @@ if (!function_exists('wtp_setup')) {
         add_editor_style();
         add_theme_support('custom-header');
         add_theme_support('custom-background');
-        
     }
     add_action('after_setup_theme', 'wtp_setup');
 }

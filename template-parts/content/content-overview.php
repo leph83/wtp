@@ -8,7 +8,7 @@ $image = get_the_post_thumbnail() ?? false;
 $description = wpautop(get_the_excerpt()) ?? false;
 
 if (empty($title)) {
-    $title = __('Unbenannt', 'wtp');
+    $title = __('Unbenannt', 'wtp-theme');
 }
 
 /**

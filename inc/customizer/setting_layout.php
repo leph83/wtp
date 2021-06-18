@@ -53,7 +53,7 @@ if (!function_exists('wtp_customizer_layout_width')) {
             array(
                 'type'    => 'text',
                 'section' => 'wtp_layoutwidth_section',
-                'label'   => __('Layout Gutter', 'wtp'),
+                'label'   => __('Layout Gutter', 'wtp-theme'),
             )
         );
     }

@@ -7,9 +7,9 @@ if (!defined('ABSPATH')) {
 <label for="burger" class="burger__label">Menu</label>
 
 <section>
-    <h2 class="screen-reader-text"><?php echo __('Header', 'wtp'); ?></h2>
+    <h2 class="screen-reader-text"><?php echo __('Header', 'wtp-theme'); ?></h2>
     <nav class="">
-        <h2 class="screen-reader-text"><?php echo __('Main navigation', 'wtp'); ?></h2>
+        <h2 class="screen-reader-text"><?php echo __('Main navigation', 'wtp-theme'); ?></h2>
         <?php
         wp_nav_menu(array(
             'theme_location'        => 'primary',

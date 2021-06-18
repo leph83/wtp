@@ -8,7 +8,7 @@ get_header();
 
 <article id="post-404" <?php post_class(''); ?>>
     <h1 class="page__title">
-        <?php echo __('404', 'wtp'); ?>
+        <?php echo __('404', 'wtp-theme'); ?>
     </h1>
 
     <?php get_template_part('template-parts/content/content', 'none'); ?>

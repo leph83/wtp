@@ -64,7 +64,7 @@ if (!function_exists('wtp_customizer_settings')) {
 			array(
 				'type'    => 'number',
 				'section' => 'title_tagline',
-				'label'   => __('Logo Size', 'wtp'),
+				'label'   => __('Logo Size', 'wtp-theme'),
 				// 'input_attrs' => array(
 				// 	'min' => 10,
 				// 	'max' => 200,

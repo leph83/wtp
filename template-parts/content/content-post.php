@@ -22,7 +22,7 @@ $image = get_the_post_thumbnail(get_the_id(), 'large') ?? false;
  $posttags = get_the_tags();
  $tags = '';
  if ($posttags) {
-     $tags = __('tags', 'wtp') . ': ';
+     $tags = __('tags', 'wtp-theme') . ': ';
      foreach ($posttags as $tag) {
          $tags .= '<a href="' . get_term_link($tag->term_id) . '">' . $tag->name . '</a> ';
      }
@@ -31,7 +31,7 @@ $image = get_the_post_thumbnail(get_the_id(), 'large') ?? false;
  $postcategories = get_the_category();
  $categories = '';
  if ($postcategories) {
-     $categories = __('categories', 'wtp') . ': ';
+     $categories = __('categories', 'wtp-theme') . ': ';
      foreach ($postcategories as $category) {
          $categories .= '<a href="' . get_term_link($category->term_id) . '">' . $category->name . '</a> ';
      }
