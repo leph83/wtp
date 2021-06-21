@@ -23,7 +23,7 @@ $author = get_the_author();
 <article id="post-<?php the_ID(); ?>" <?php post_class('block  block--overview'); ?>>
     <div class="block__media">
         <?php if ($image) : ?>
-            <a href="<?php echo get_the_permalink(); ?>">
+            <a aria-label="<?php echo $title; ?>" href="<?php echo get_the_permalink(); ?>">
                 <?php echo $image; ?>
             </a>
         <?php endif; ?>
