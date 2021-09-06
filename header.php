@@ -48,11 +48,11 @@ $image = get_header_image() ?? false;
 
         <div class="header__content">
 
-            <div class="header__item">
+            <div class="header__item  header__item--branding">
                 <?php get_template_part('template-parts/header/site-branding'); ?>
             </div>
 
-            <div class="header__item">
+            <div class="header__item  header__item--nav">
                 <?php get_template_part('template-parts/header/site-navigation'); ?>
             </div>
 
