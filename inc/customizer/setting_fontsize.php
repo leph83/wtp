@@ -305,13 +305,13 @@ if (!function_exists('wtp_hook_fontsizes_css')) {
                 if (is_int($value)) {
                     $style_fontsizes .= '
                     .has-h-' . $value . '-font-size {
-                        font-size: var(--font-size-' . $value . ');
+                        font-size: var(--font-size-' . $value . ') !important;
                         line-height: var(--line-height-' . $value . ');
                     }';
                 } else {
                     $style_fontsizes .= '
                     .has-' . $key . '-font-size {
-                        font-size: var(--font-size-' . $value . ');
+                        font-size: var(--font-size-' . $value . ') !important;
                         line-height: var(--line-height-' . $value . ');
                     }';
                 }

@@ -36,16 +36,16 @@
 # COLORS FALLBACK
 --------------------------------------------------------------*/
 :root {
-    --color-white: #ffffff;
-    --color-black: #000000;
+    --color-white: var(--wp--preset--color--white, #ffffff);
+    --color-black: var(--wp--preset--color--black, #000000);
 
-    --color-1: #058935;
-    --color-2: #1f518e;
-    --color-3: #7c0202;
+    --color-1: var(--wp--preset--color--1);
+    --color-2: var(--wp--preset--color--2);
+    --color-3: var(--wp--preset--color--3);
 
-    --color-4: #141414;
-    --color-5: #c4c4c4;
-    --color-6: #212121;
+    --color-4: var(--wp--preset--color--4);
+    --color-5: var(--wp--preset--color--5);
+    --color-6: var(--wp--preset--color--6);
 }
 
 /*--------------------------------------------------------------

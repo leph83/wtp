@@ -112,8 +112,8 @@ if (!function_exists('wtp_setup')) {
 
 
         // to pass theme checker for now
-        if (!isset($content_width)) {
-            $content_width = 640;
+        if ( ! isset( $content_width ) ) {
+            $content_width = 600;
         }
 
         add_editor_style();

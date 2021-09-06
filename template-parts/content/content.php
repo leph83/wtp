@@ -22,9 +22,11 @@ if (!empty(get_the_post_thumbnail(get_the_id(), 'original'))) {
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(''); ?>>
     <div class="block  block--pagedetail">
-        <div class="block__media">
-            <?php echo $image; ?>
-        </div>
+        <?php if ($image) : ?>
+            <div class="block__media">
+                <?php echo $image; ?>
+            </div>
+        <?php endif; ?>
 
         <div class="block__content">
             <div class="block__header">
