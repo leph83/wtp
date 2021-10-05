@@ -33,7 +33,6 @@ if (!function_exists('wtp_load_styles')) {
             '07-utilities/utility.a11y.css',
         );
 
-
         // STYLES
         foreach ($css_files as $key => $css_file) {
             $css_version = filemtime(get_template_directory() . $css_path . $css_file);
