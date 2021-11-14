@@ -1,11 +1,11 @@
-<?php 
+<?php
 if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly.
 }
 ?>
 
-<?php if (have_comments() &&  !post_password_required() ) : ?>
-    <?php wp_enqueue_script( "comment-reply" ); ?>
+<?php if (have_comments() &&  !post_password_required()) : ?>
+    <?php wp_enqueue_script("comment-reply"); ?>
 
     <div class="comments">
 

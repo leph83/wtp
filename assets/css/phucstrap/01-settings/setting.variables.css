@@ -10,17 +10,17 @@
     --containerquery: 768px;
 
     --fontsize-min: 1.6;
-    --fontsize-max: 1.6;
-    --fontsize-minwidth: 76.8;
-    --fontsize-maxwidth: 192;
+    --fontsize-max: 3.2;
+    --fontsize-minwidth: 192;
+    --fontsize-maxwidth: 384;
     --fontsize-ratio: 1.2;
 
     --line-height: 1.5;
     --line-height-7: var(--line-height);
 
-    --max-width-1: 100%;
-    --max-width-2: 128rem;
-    --max-width-3: 96rem;
+    --max-width-1-setting: 1900;
+    --max-width-2-setting: 1280;
+    --max-width-3-setting: 768;
 }
 
 /*--------------------------------------------------------------
@@ -93,6 +93,8 @@
     --three-quarters: calc(3/4);
 
     --whole: 1;
+
+    --and-half: 1.5;
 
     --double: 2;
     --tripple: 3;

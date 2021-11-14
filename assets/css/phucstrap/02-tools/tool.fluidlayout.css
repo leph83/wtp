@@ -1,0 +1,5 @@
+:root {
+    --max-width-1: calc( var(--font-size-7) * var(--max-width-1-setting) / var(--fontsize-min) / 10 );
+    --max-width-2: calc( var(--font-size-7) * var(--max-width-2-setting) / var(--fontsize-min) / 10 );
+    --max-width-3: calc( var(--font-size-7) * var(--max-width-3-setting) / var(--fontsize-min) / 10 );
+}

@@ -33,13 +33,10 @@ if (!function_exists('wtp_sanitize_radio')) {
 if (!function_exists('wtp_sanitize_select')) {
     function wtp_sanitize_select($input, $setting)
     {
-
         //input must be a slug: lowercase alphanumeric characters, dashes and underscores are allowed only
         $input = sanitize_key($input);
-
-        //get the list of possible select options 
+        //get the list of possible select options
         $choices = $setting->manager->get_control($setting->id)->choices;
-
         //return input if valid or return default option
         return (array_key_exists($input, $choices) ? $input : $setting->default);
     }

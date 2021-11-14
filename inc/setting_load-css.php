@@ -14,6 +14,7 @@ if (!function_exists('wtp_load_styles')) {
             '01-settings/setting.variables.css',
     
             '02-tools/tool.fluidfont.css',
+            '02-tools/tool.fluidlayout.css',
             '02-tools/tool.modularscale.css',
             
             '03-generic/generic.preset.css',
