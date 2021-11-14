@@ -18,7 +18,7 @@
     --line-height: 1.5;
     --line-height-7: var(--line-height);
 
-    --max-width-1-setting: 1900;
+    --max-width-1-setting: 999999; /* stupid high number to always fill the width */
     --max-width-2-setting: 1280;
     --max-width-3-setting: 768;
 }
