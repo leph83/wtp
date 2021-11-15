@@ -3,71 +3,85 @@
   * See:
   * https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
   */
-  html {
-    /* Apply border-box across the entire page. */
-    box-sizing: border-box;
-    font-size: 62.5%;
-    font-family: var(--font-family-1);
-    line-height: var(--line-height-7);
-    scroll-behavior: smooth;
-  
-    overflow-wrap: break-word;
-    text-rendering: auto;
-  }
-  
-  /**
-   * Reset specific elements to make them easier to style in other contexts.
-   */
-  body {
-    margin: 0;
-    font-size: var(--font-size-7);
-    line-height: var(--line-height-7);
-    font-family: var(--font-family-1);
+html {
+  /* Apply border-box across the entire page. */
+  box-sizing: border-box;
+  font-size: 62.5%;
+  font-family: var(--font-family-1);
+  line-height: var(--line-height-7);
+  scroll-behavior: smooth;
 
-    font-weight: normal;
-    text-align: left;
-    color: var(--color-black);
-  }
-  
-  /**
-   * Don't make Header Bold by default
-   */
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-weight: inherit;
-  }
-  
-  button {
-    cursor: pointer;
-  }
-  
-  /*--------------------------------------------------------------
+  overflow-wrap: break-word;
+  text-rendering: auto;
+}
+
+/**
+  * Reset specific elements to make them easier to style in other contexts.
+  */
+body {
+  margin: 0;
+  font-size: var(--font-size-7);
+  line-height: var(--line-height-7);
+  font-family: var(--font-family-1);
+
+  font-weight: normal;
+  text-align: left;
+  color: var(--color-black);
+}
+
+/**
+  * Don't make Header Bold by default
+  */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+}
+
+
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+  display: inherit;
+  text-decoration: inherit;
+  font-style: inherit;
+  font-weight: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+/*--------------------------------------------------------------
   # Links
   --------------------------------------------------------------*/
-  a {
-    cursor: pointer;
-    text-decoration-skip-ink: all;
-  }
-  
-  /*--------------------------------------------------------------
+a {
+  cursor: pointer;
+  text-decoration-skip-ink: all;
+}
+
+/*--------------------------------------------------------------
   # IMAGES
   --------------------------------------------------------------*/
-  figure {
-    padding: 0;
-    margin: 0;
-    max-width: 100%;
-  }
-  
-  img {
-    vertical-align: bottom;
-    height: auto;
-  }
-  
-  /* img[width] {
+figure {
+  padding: 0;
+  margin: 0;
+  max-width: 100%;
+}
+
+img {
+  vertical-align: bottom;
+  height: auto;
+}
+
+/* img[width] {
     width: auto;
   }
   
@@ -80,51 +94,50 @@
     height: auto;
     max-width: none;
   } */
-  
-  /*--------------------------------------------------------------
+
+/*--------------------------------------------------------------
   # MEDIA
   --------------------------------------------------------------*/
-  /* Make sure embeds and iframes fit their containers. */
-  embed,
-  iframe,
-  object,
-  img {
-    max-width: 100%;
-  }
-  
-  pre {
-    white-space: pre;
-    overflow-x: auto;
-  }
-  
-  /*--------------------------------------------------------------
+/* Make sure embeds and iframes fit their containers. */
+embed,
+iframe,
+object,
+img {
+  max-width: 100%;
+}
+
+pre {
+  white-space: pre;
+  overflow-x: auto;
+}
+
+/*--------------------------------------------------------------
   # TYPOGRAPHY
   
   --------------------------------------------------------------*/
-  
-  /* Set it to something usefull not like in the normalize */
-  b,
-  strong {
-    font-weight: 700;
-  }
-  
-  /*--------------------------------------------------------------
+
+/* Set it to something usefull not like in the normalize */
+b,
+strong {
+  font-weight: 700;
+}
+
+/*--------------------------------------------------------------
   # FORM
   --------------------------------------------------------------*/
-  
-  /* I just dare to do this */
-  textarea {
-    max-width: 100%;
-    display: block;
-  }
-  
-  
-  /**
+
+/* I just dare to do this */
+textarea {
+  max-width: 100%;
+  display: block;
+}
+
+
+/**
     * Relax the definition a bit, to allow components to override it manually.
     */
-  *,
-  *::before,
-  *::after {
-    box-sizing: inherit;
-  }
-  
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
