@@ -24,6 +24,10 @@ if (is_active_sidebar('sidebar-1')) {
  */
 $image = get_header_image() ?? false;
 
+if ($image) {
+    $image = ' style="background-image: url('. $image .');" ';
+}
+
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -44,7 +48,7 @@ $image = get_header_image() ?? false;
 
     <input id="burger" type="checkbox" class="burger__input  hidden">
     
-    <header id="header" class="header  burger__content" style="background-image: url('<?php echo $image; ?>');">
+    <header id="header" class="header  burger__content" <?php echo $image; ?>>
 
         <div class="header__content">
 
