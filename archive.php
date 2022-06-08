@@ -63,19 +63,20 @@ if (get_theme_mod('wtp_hide_title_archive')) {
             <?php if ($image) : ?>
                 <?php echo $image; ?>
             <?php endif; ?>
+        </div>
 
-            <div class="block__content">
-                <div class="block__header">
-                    <h1 class="block__title  <?php echo $title_class; ?>">
-                        <?php echo $title; ?>
-                    </h1>
-                </div>
+        <div class="block__content">
+            <div class="block__header">
+                <h1 class="block__title  <?php echo $title_class; ?>">
+                    <?php echo $title; ?>
+                </h1>
+            </div>
 
-                <div class="block__description">
-                    <?php echo $description; ?>
-                </div>
+            <div class="block__description">
+                <?php echo $description; ?>
             </div>
         </div>
+
     </div>
 
     <?php if (have_posts()) : ?>
