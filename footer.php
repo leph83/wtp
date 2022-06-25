@@ -18,7 +18,7 @@ if (!defined('ABSPATH')) {
 </main>
 
 <footer id="footer" class="footer">
-    <section class="">
+    <section class="footer__content">
         <h2 class="screen-reader-text"><?php echo __('Footer', 'wtp'); ?></h2>
 
         <?php if (is_active_sidebar('footer')) : ?>
