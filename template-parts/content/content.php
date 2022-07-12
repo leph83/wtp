@@ -12,16 +12,21 @@ if (get_theme_mod('wtp_hide_title_page')) {
     $title_class = 'screen-reader-text';
 }
 
+$class_has_image = '';
+
 /* IMAGE */
 $image = '';
 if (!empty(get_the_post_thumbnail(get_the_id(), 'original'))) {
     $image = get_the_post_thumbnail(get_the_id(), 'original') ?? false;
+    $class_has_image = 'block--pagedetail-with-image';
 }
+
+
 
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(''); ?>>
-    <div class="block  block--pagedetail">
+    <div class="block  block--pagedetail <?php echo $class_has_image; ?>">
         <?php if ($image) : ?>
             <div class="block__media">
                 <?php echo $image; ?>
