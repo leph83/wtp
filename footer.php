@@ -22,7 +22,7 @@ if (!defined('ABSPATH')) {
         <h2 class="screen-reader-text"><?php echo __('Footer', 'wtp'); ?></h2>
 
         <?php if (is_active_sidebar('footer')) : ?>
-            <ul class="widget">
+            <ul class="widgets">
                 <?php dynamic_sidebar('footer'); ?>
             </ul>
         <?php endif; ?>
