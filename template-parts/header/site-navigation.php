@@ -4,7 +4,11 @@ if (!defined('ABSPATH')) {
 }
 ?>
 
-<label for="burger" class="burger__label">Menu</label>
+<label for="burger" class="burger__label">
+    <span class="burger__name">
+        Menu
+    </span>
+</label>
 
 <section>
     <h2 class="screen-reader-text"><?php echo __('Header', 'wtp-theme'); ?></h2>
